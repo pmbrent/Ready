@@ -21,6 +21,9 @@
 ## Search Results
 ![search-results]
 
+## Hierarchy
+![hierarchy]
+
 [logged-out]: ./wireframes/logged_out.png
 [user-feed]: ./wireframes/user_home.png
 [user-shelves]: ./wireframes/user_shelves.png
@@ -28,3 +31,4 @@
 [recommendations]: ./wireframes/recommended.png
 [user-show]: ./wireframes/user_show.png
 [search-results]: ./wireframes/search_results.png
+[hierarchy]: ./wireframes/hierarchy.png
