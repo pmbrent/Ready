@@ -1,26 +1,30 @@
 # View Wireframes
 
-## New User
-![new-user]
+## LoggedOut
+![logged-out]
 
-## New Session
-![new-session]
+## User Feed
+![user-feed]
 
-## NotesIndex / NoteIndexItem / NoteForm
-![notes]
+## User Shelves
+![user-shelves]
 
-## NotebooksIndex / NotebookIndexItem
-![notebooks]
+## User Reviews
+![user-reviews]
 
-## NoteBookForm
-![notebook-form]
+## Recommendations
+![recommendations]
 
-## Component Heirarchy
-![component-heirarchy]
+## User Show
+![user-show]
 
-[new-user]: ./wireframes/new_user.png
-[new-session]: ./wireframes/new_session.png
-[notes]: ./wireframes/root_notes.png
-[notebooks]: ./wireframes/root_notebooks.png
-[notebook-form]: ./wireframes/notebook_form.png
-[component-heirarchy]: ./wireframes/component_heirarchy.png
+## Search Results
+![search-results]
+
+[logged-out]: ./wireframes/logged_out.png
+[user-feed]: ./wireframes/user_feed.png
+[user-shelves]: ./wireframes/user_shelves.png
+[user-reviews]: ./wireframes/user_reviews.png
+[recommendations]: ./wireframes/recommendations.png
+[user-show]: ./wireframes/user-show.png
+[search-results]: ./wireframes/search_results.png
