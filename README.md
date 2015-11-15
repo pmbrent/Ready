@@ -40,7 +40,7 @@ The user model will contain a username, email, and a Librarian boolean indicatin
 
 ### Phase 2: Books, Shelves, Flux and Views (2.5 days)
 
-In Phase 2, I'll create the Book model (with title, author, ISBN, and space for genre_tags) and seed with some example books. Next, there will be a shelf model (belonging to a user and having many books through Shelvings). The next step will be to set up Flux routing for individual book view pages, genres, and an individual's shelves. There will be a Book Store, although only Librarians will be able to perform CRUD.
+In Phase 2, I'll create the Book model (with title, author, ISBN) and seed with some example books. Next, there will be a shelf model (belonging to a user and having many books through Shelvings). The next step will be to set up Flux routing for individual book view pages, genres, and an individual's shelves. There will be a Book Store, although only Librarians will be able to perform CRUD.
 
 [Details][phase-two]
 

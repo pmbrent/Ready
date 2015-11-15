@@ -1,51 +1,53 @@
 # Schema Information
 
-## notes
+## users
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-title       | string    | not null
-body        | text      | not null
-author_id   | integer   | not null, foreign key (references users), indexed
-notebook_id | integer   | not null, foreign key (references notebooks), indexed
-archived    | boolean   | not null, default: false
+email       | string    | not null, unique, indexed
+name        | string    | not null
+photo_url   | string    |
 
-## notebooks
+## books
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-author_id   | integer   | not null, foreign key (references users), indexed
-title       | string    | not null
-description | string    | 
+author      | string    | not null, indexed
+author_id   | integer   | indexed, foreign key (refernces users)
+title       | string    | not null, indexed
+ISBN        | integer   | not null, unique, indexed
+description | string    |
 
-## reminders
+## shelves
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 user_id     | integer   | not null, foreign key (references users), indexed
-note_id     | string    | not null, foreign key (references notes), indexed
-date        | datetime  | not null
-type        | string    | not null
-prev_id     | integer   | foreign key (references reminders), indexed
+title       | string    | not null
 
-## tags
+## shelvings
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-name        | string    | not null
+book_id     | integer   | not null, foreign key (references books)
+shelf_id    | integer   | not null, foreign key (references shelves)
 
-## taggings
+## genres
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-name        | string    | not null
-note_id     | integer   | not null, foreign key (references notes), indexed, unique [tag_id]
-tag_id      | integer   | not null, foreign key (references tags), indexed
+name        | string    | not null, indexed
 
-## users
+## genre_taggings
 column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
-username        | string    | not null, indexed, unique
-password_digest | string    | not null
-session_token   | string    | not null, indexed, unique
+genre_id        | integer   | not null, indexed, foreign key (references genres)
+book_id         | integer   | not null, indexed, foreign key (references books)
+
+## friendships
+column name     | data type | details
+----------------|-----------|-----------------------
+id              | integer   | not null, primary key
+followed_user   | integer   | not null, indexed, foreign key (references users)
+following_user  | integer   | not null, indexed, foreign key (references users)
