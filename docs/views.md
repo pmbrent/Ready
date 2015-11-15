@@ -22,7 +22,7 @@
 ![search-results]
 
 [logged-out]: ./wireframes/logged_out.png
-[user-feed]: ./wireframes/user_feed.png
+[user-feed]: ./wireframes/user_home.png
 [user-shelves]: ./wireframes/user_shelves.png
 [user-reviews]: ./wireframes/user_reviews.png
 [recommendations]: ./wireframes/recommendations.png
