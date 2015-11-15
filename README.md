@@ -1,4 +1,4 @@
-# FresherNote
+# Ready
 
 [Heroku link][heroku] **NB:** This should be a link to your production site
 
@@ -6,19 +6,19 @@
 
 ## Minimum Viable Product
 
-FresherNote is a web application inspired by Evernote built using Ruby on Rails
-and React.js. FresherNote allows users to:
+Ready is a web application inspired by Goodreads built using Ruby on Rails
+and React.js. Ready allows users to:
 
 <!-- This is a Markdown checklist. Use it to keep track of your progress! -->
 
 - [ ] Create an account
 - [ ] Log in / Log out
-- [ ] Create, read, edit, and delete notes
-- [ ] Organize notes within Notebooks
-- [ ] Tag notes with multiple tags and search notes by tag
-- [ ] Search through notes for blocks of text
-- [ ] Apply complex styling to notes while editing
-- [ ] Set reminders on notes
+- [ ] Organize books within Shelves displayed on User pages
+- [ ] Add Friends
+- [ ] Tag books with multiple genres and search books by genre
+- [ ] Rate books, write reviews, and get recommendations
+- [ ] View a Feed of Friend activity and recommended books
+- [ ] Comment on reviews
 
 ## Design Docs
 * [View Wireframes][view]
@@ -29,70 +29,73 @@ and React.js. FresherNote allows users to:
 
 ## Implementation Timeline
 
-### Phase 1: User Authentication, Note Model and JSON API (1.5 days)
+### Phase 1: User Authentication, JSON API (1 day)
 
-In Phase 1, I will begin by implementing user signup and authentication (using
-BCrypt). There will be a basic landing page after signup that will contain the
-container for the application's root React component. Before building out the
-front end, I will begin by setting up a full JSON API for Notes.
+Phase 1 will use BCrypt to allow user signup and secure login. On login, users will
+be taken to the main page, with containers for the user's feed/React components.
+For now, pages will render JSON.
+The user model will contain a username, email, and a Librarian boolean indicating administrator access. They will also have an optional favorite_genres attribute, to be used later.
 
 [Details][phase-one]
 
-### Phase 2: Flux Architecture and Note CRUD (2.5 days)
+### Phase 2: Books, Shelves, Flux and Views (2.5 days)
 
-Phase 2 is focused on setting up Flux, the React Router, and the React view
-structure for the main application. After the basic Flux architecture has been
-set up, a Note store will be implemented and a set of actions corresponding to
-the needed CRUD functionality created. Once this is done, I will create React
-views for the Notes `Index`, `IndexItem` and `Form`. At the end of Phase 2,
-Notes can be created, read, edited and destroyed in the browser. Notes should
-save to the database when the form loses focus or is left idle after editing.
-Lastly, while constructing the views I will start using basic bootstrap for
-styling.
+In Phase 2, I'll create the Book model (with title, author, ISBN, and space for genre_tags) and seed with some example books. Next, there will be a shelf model (belonging to a user and having many books through Shelvings). The next step will be to set up Flux routing for individual book view pages, genres, and an individual's shelves. There will be a Book Store, although only Librarians will be able to perform CRUD.
 
 [Details][phase-two]
 
-### Phase 3: Notebooks and Tags (2 days)
+### Phase 3: Book Searching (1 day)
 
-Phase 3 adds organization to the Notes. Notes belong to a Notebook, which has
-its own `Index` view. Create JSON API for Notebooks. Notes can also now be
-tagged with multiple tags. Users can bring up notes in a separate `SearchIndex`
-view by searching for their tags. Once the tag search is implemented, I will
-extend this to a fuzzy search through every Note's content.
+Phase 3 will be to give the Book model (with title, author, ISBN) live searching by any of those three. Search result components should allow immediate rating or adding to shelves, or a redirect to the book's show page, which also allows those actions.
 
 [Details][phase-three]
 
-### Phase 4: Allow Complex Styling in Notes (1 day)
+### Phase 4: Friending and Activity Feed (1.5 days)
 
-Using quill.js, allow for complex styling of notes. 
+Users will be able to add friends through a Friendship join table and see those friends' recently shelved books in their homepages.
 
 [Details][phase-four]
 
-### Phase 5: Reminders and Garbage Collection (1 day)
+### Phase 5: Book Genre Tagging and Searching (1 day)
 
-Phase 5 introduces two new features. First, users can set reminders on notes
-which will at the time they are set for prompt the user to review and edit the
-given note. In addition, I will implement a feature that asks users to review
-notes once they reach a certain age and ask whether they should be kept,
-archived, or deleted.
+In Phase 5, books will be taggable by genre [for Librarians only] via Tags and Taggings join tables. I'll add a view for each genre to show popular books for that genre. Users will also be able to select favorite genres.
 
 [Details][phase-five]
 
-### Phase 6: Styling Cleanup and Seeding (1 day)
+### Phase 6: Rating, Reviews, & Recommendations (1.5 days)
 
-Bootstrap will have been used to keep things organized up until now, but in
-Phase 6 I will add styling flourishes and make modals out of some elements (like
-the NotebookForm).
+Users will be able to rate a book on a 5-point scale; their ratings will be used to generate a list of recommended books by genre (using only the user's favorites if any). Top recommended books will also be shown in the user's activity feed, along with books rated by friends and any "sponsored" books.
+
+[Details][phase-six]
+
+### Phase 7: Comments (1 day)
+
+Users will be able to comment on reviews made by other users.
+
+[Details][phase-seven]
+
+### Phase 8: CSS! (1 day)
+
+In Phase 8, the user experience will be enhanced dramatically by the implementation of more polished layouts.
+
+[Details][phase-eight]
 
 ### Bonus Features (TBD)
-- [ ] Prettify transitions
-- [ ] Use javascript library for cleaner tag selection
-- [ ] Changelogs for Notes
-- [ ] Pagination / infinite scroll for Notes Index
+- [ ] Receive notifications of new Friends and comments
+- [ ] Set reading goals and track progress
+- [ ] Users can edit profiles and add photos
+- [ ] Author pages
+- [ ] Favorite quotes lists
+- [ ] Email confirmation on signup
+- [ ] Optimizations: Genres can be encoded as numbers for faster lookup
 - [ ] Multiple sessions
+- [ ] Users can import books from Amazon
 
 [phase-one]: ./docs/phases/phase1.md
 [phase-two]: ./docs/phases/phase2.md
 [phase-three]: ./docs/phases/phase3.md
 [phase-four]: ./docs/phases/phase4.md
 [phase-five]: ./docs/phases/phase5.md
+[phase-six]: ./docs/phases/phase6.md
+[phase-seven]: ./docs/phases/phase7.md
+[phase-eight]: ./docs/phases/phase8.md
