@@ -1,33 +1,36 @@
-# Phase 2: Flux Architecture and Note CRUD (2 days)
+# Phase 2: Books, Shelves, Flux and Views (2.5 days)
 
 ## Rails
 ### Models
+* Book
+* Shelf
+* Shelving
 
 ### Controllers
+* Api::BooksController (create, destroy, index, show, update)
+* Api::ShelvesController (create, destroy, index, show, edit, update)
 
 ### Views
 
 ## Flux
 ### Views (React Components)
-* NotesIndex
-  - NotesIndexItem
-* NoteForm
+* Book
+* Shelf
 
 ### Stores
-* Note
+* Book
 
 ### Actions
-* ApiActions.receiveAllNotes
-* ApiActions.receiveSingleNote
+* ApiActions.receiveAllBooks
+* ApiActions.receiveBook
 * ApiActions.deleteNote
 
 ### ApiUtil
-* ApiUtil.fetchAllNotes
-* ApiUtil.fetchSingleNote
-* ApiUtil.createNote
-* ApiUtil.editNote
-* ApiUtil.destroyNote
+* ApiUtil.fetchAllBooks
+* ApiUtil.fetchBook
+* ApiUtil.createShelf
+* ApiUtil.editShelf
+* ApiUtil.removeBook
 
 ## Gems/Libraries
 * Flux Dispatcher
-* Twitter Bootstrap

@@ -1,35 +1,26 @@
-# Phase 5: Reminders and Garbage Collection
+# Phase 5: Book Genre Tagging and Searching (1 day)
 
 ## Rails
 ### Models
-* Reminder
+* Genre
+* Genre-Tagging
+* User (add favorite genres)
 
 ### Controllers
-* Api::RemindersController (create, destroy, index, show, update)
+* Api::GenresController (create, destroy, index, show)
+* Api::GenreTaggingsController (create, destroy)
 
 ### Views
-* reminders/index.json.jbuilder
+* genre/index.json.jbuilder
 
 ## Flux
 ### Views (React Components)
-* RemindersIndex
-  - ReminderIndexItem
-* ReminderShow
-* ReminderForm
+* GenreIndex
 
 ### Stores
-* Reminder
 
 ### Actions
-* ApiActions.receiveAllReminders
-* ApiActions.receiveSingleReminder
-* ApiActions.deleteReminder
 
 ### ApiUtil
-* ApiUtil.fetchAllReminders
-* ApiUtil.fetchSingleReminder
-* ApiUtil.createReminder
-* ApiUtil.updateReminder
-* ApiUtil.destroyReminder
 
 ## Gems/Libraries

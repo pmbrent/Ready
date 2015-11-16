@@ -58,7 +58,7 @@ Users will be able to add friends through a Friendship join table and see those 
 
 ### Phase 5: Book Genre Tagging and Searching (1 day)
 
-In Phase 5, books will be taggable by genre [for Librarians only] via Tags and Taggings join tables. I'll add a view for each genre to show popular books for that genre. Users will also be able to select favorite genres.
+In Phase 5, books will be taggable by genre [for Librarians only] via Genres and Genre-Taggings join tables. I'll optionally add a view for each genre to show popular books for that genre. Users will also be able to select favorite genres.
 
 [Details][phase-five]
 
@@ -68,19 +68,14 @@ Users will be able to rate a book on a 5-point scale; their ratings will be used
 
 [Details][phase-six]
 
-### Phase 7: Comments (1 day)
+### Phase 7: Refactoring and CSS (1 day)
 
-Users will be able to comment on reviews made by other users.
+In Phase 7, the user experience will be enhanced dramatically by the implementation of more polished layouts.
 
 [Details][phase-seven]
 
-### Phase 8: CSS! (1 day)
-
-In Phase 8, the user experience will be enhanced dramatically by the implementation of more polished layouts.
-
-[Details][phase-eight]
-
 ### Bonus Features (TBD)
+- [ ] Users can like/comment on other users' ratings
 - [ ] Receive notifications of new Friends and comments
 - [ ] Set reading goals and track progress
 - [ ] Users can edit profiles and add photos
@@ -98,4 +93,3 @@ In Phase 8, the user experience will be enhanced dramatically by the implementat
 [phase-five]: ./docs/phases/phase5.md
 [phase-six]: ./docs/phases/phase6.md
 [phase-seven]: ./docs/phases/phase7.md
-[phase-eight]: ./docs/phases/phase8.md
