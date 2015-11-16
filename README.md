@@ -18,7 +18,6 @@ and React.js. Ready allows users to:
 - [ ] Tag books with multiple genres and search books by genre
 - [ ] Rate books, write reviews, and get recommendations
 - [ ] View a Feed of Friend activity and recommended books
-- [ ] Comment on reviews
 
 ## Design Docs
 * [View Wireframes][view]
