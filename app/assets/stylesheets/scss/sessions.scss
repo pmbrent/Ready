@@ -12,21 +12,37 @@
 }
 
 .welcome {
+  background: $tan;
   float: left;
   padding: 40px;
-  width: calc(100% - 340px); //accounting for padding
+  padding-bottom: 0px;
+  width: calc(100% - 342px); //accounting for padding
+  height: 200px;
   text-align: center;
-  background: darken($tan, 5%);
 }
 
 .welcome strong {
+  font-family: Pacifico;
   font-size: 36px;
   font-weight: bold;
 }
 
 .new_user {
+  background: $tan;
   float: right;
   width: 220px;
+  height: 199px;
   padding: 20px;
-  background: $tan;
+  border: 1px solid darken($tan, 5%);
+  border-top: 0;
+}
+
+.new_user p {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.new_user input {
+  position: absolute;
+  right: 10px;
 }

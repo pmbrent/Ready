@@ -2,7 +2,8 @@
 @import "scss/sessions.scss";
 @import "scss/static_pages.scss";
 @import "scss/users.scss";
-@import url(https://fonts.googleapis.com/css?family=Vollkorn:400,400italic,700);
+@import url(https://fonts.googleapis.com/css?family=Pacifico);
+@import url(https://fonts.googleapis.com/css?family=Vollkorn:400,400italic);
 
 .logo {
   font-size: 36px;
@@ -15,4 +16,12 @@
   height: 40px;
   background: lighten($tan, 5%);
   color: $darkerred;
+  overflow: hidden;
+  border-bottom: 1px solid $darkred;
+}
+
+.nav img {
+  position: absolute;
+  top: -13px;
+  height: 65px;
 }
