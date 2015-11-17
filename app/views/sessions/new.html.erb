@@ -1,4 +1,4 @@
-<div class="login_header">
+<div class="login nav">
   <form action="session" method="POST">
     <%= auth_token %>
     <label for="userinfo">Username/Email:
@@ -15,8 +15,8 @@
 <h2>You should join!</h2>
 
 <div class="new_user">
-  <%= auth_token %>
-  <form action="/users/new" method="POST">
+  <form action="/users" method="POST">
+    <%= auth_token %>
     <label for="name">Name:
       <input type="text"
              id="name"

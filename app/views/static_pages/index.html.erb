@@ -1,0 +1,8 @@
+<div id="ready">
+  "Here's Ready!"
+  <form action="/session" method="POST">
+    <%= auth_token %>
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="Log Out">
+  </form>
+</div>
