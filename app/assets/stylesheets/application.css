@@ -26,6 +26,8 @@ html, body, h1, div, h2, a, ul, li {
   text-align: inherit;
   color: inherit;
 
+  display: block;
+
   background: transparent
 }
 

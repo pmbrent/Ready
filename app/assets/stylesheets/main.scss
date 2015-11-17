@@ -1,31 +1,18 @@
+@import "scss/globals.scss";
 @import "scss/sessions.scss";
 @import "scss/static_pages.scss";
 @import "scss/users.scss";
 @import url(https://fonts.googleapis.com/css?family=Vollkorn:400,400italic,700);
 
-// $darkred : #80122B;
-$darkerred: #280000;
-$darkred: #570000;
-$brightred: #AF0E0E;
-$offwhite: #FDFFFF;
-$tan: #FAD6AC;
-
 .logo {
   font-size: 36px;
-  padding-left: 10px;
+  padding-left: 15px;
   color: $darkerred;
 }
 
 .nav {
   position: relative;
   height: 40px;
-  background: $tan;
+  background: lighten($tan, 5%);
   color: $darkerred;
-}
-
-.login {
-  position: absolute;
-  top: 50%;
-  right: 10px;
-  transform: translateY(-50%);
 }

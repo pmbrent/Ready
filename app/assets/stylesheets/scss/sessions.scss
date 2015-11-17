@@ -1,3 +1,32 @@
 // Place all the styles related to the sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "scss/globals.scss";
+
+.login {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+}
+
+.welcome {
+  float: left;
+  padding: 40px;
+  width: calc(100% - 340px); //accounting for padding
+  text-align: center;
+  background: darken($tan, 5%);
+}
+
+.welcome strong {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.new_user {
+  float: right;
+  width: 220px;
+  padding: 20px;
+  background: $tan;
+}
