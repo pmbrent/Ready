@@ -7,13 +7,14 @@ var rootEl = document.getElementById("content");
 
 var ReadyApp = React.createClass({
   render: function() {
-    return <userIndex/>
+    return <UserIndex/>;
   }
 });
 
 React.render((
   <Router>
     <Route path="/" component={ReadyApp}>
+      <Route path="/users" component={UserIndex}/>
     </Route>
   </Router>
 ), rootEl);

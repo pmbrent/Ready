@@ -1,11 +1,11 @@
-window.userIndex = React.createClass({
+window.UserIndex = React.createClass({
   getInitialState: function() {
     return { users: UserStore.all() };
   },
 
   componentDidMount: function() {
     UserStore.addChangeListener(this.updateUsers);
-    ApiUtil.fetchUsers(showUsers);
+    ApiUtil.fetchUsers();
   },
 
   updateUsers: function() {
@@ -13,12 +13,13 @@ window.userIndex = React.createClass({
   },
 
   render: function() {
+    var uidx = this;
     return (
       <div>
-        {UserStore.all().map(function(user) {
-          return <User user={user}/>;
+        {uidx.state.users.map(function(user) {
+          return (<User user={user}/>);
         })};
       </div>
     );
-  }.bind(this)
+  }
 });
