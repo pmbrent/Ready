@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
 
   def new
     if logged_in?
-      redirect_to static_pages_url
+      redirect_to root_url
     end
     @user = User.new
   end

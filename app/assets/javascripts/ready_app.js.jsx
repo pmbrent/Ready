@@ -7,11 +7,7 @@ var rootEl = document.getElementById("content");
 
 var ReadyApp = React.createClass({
   render: function() {
-    return (
-      <div>
-        "It's working!"
-      </div>
-    );
+    return <userIndex/>
   }
 });
 

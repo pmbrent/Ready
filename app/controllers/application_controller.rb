@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
   def log_in(user)
     session[:session_token] = user.reset_session_token!
     @current_user = user
-    redirect_to static_pages_url
+    redirect_to root_url
   end
 
   def logged_in?
