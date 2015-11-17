@@ -5,4 +5,5 @@ class Book < ActiveRecord::Base
 
   # has_one :author, foreign_key: :author_id
 
+  
 end

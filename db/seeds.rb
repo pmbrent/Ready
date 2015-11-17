@@ -11,11 +11,29 @@ User.create!(name: "admin",
              password: "admin",
              librarian: true)
 
+Shelf.create!(title: "Read",
+              user_id: 1)
+
+Shelf.create!(title: "Reading",
+              user_id: 1)
+
+Shelf.create!(title: "Want to Read",
+              user_id: 1)
+
 20.times do |i|
   User.create!(name: "user#{i+2}",
                email: "user#{i+2}@place.com",
                password: "password#{i+2}",
                librarian: false)
+
+  Shelf.create!(title: "Read",
+                user_id: i+2)
+
+  Shelf.create!(title: "Reading",
+                user_id: i+2)
+
+  Shelf.create!(title: "Want to Read",
+                user_id: i+2)
 end
 
 Book.create!(title: "Ancillary Justice",
