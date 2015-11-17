@@ -5,7 +5,7 @@ column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 email       | string    | not null, unique, indexed
-name        | string    | not null
+name        | string    | not null, unique, indexed
 photo_url   | string    |
 
 ## books
@@ -15,7 +15,7 @@ id          | integer   | not null, primary key
 author      | string    | not null, indexed
 author_id   | integer   | indexed, foreign key (refernces users)
 title       | string    | not null, indexed
-ISBN        | integer   | not null, unique, indexed
+isbn        | integer   | not null, unique, indexed
 description | string    |
 
 ## shelves
