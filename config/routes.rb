@@ -6,6 +6,10 @@ Rails.application.routes.draw do
 
   resources :static_pages, only: [:index]
 
+  resources :books, only: [:index]
+
+  resources :shelves, only: [:index]
+
   root 'static_pages#index'
 
   # The priority is based upon order of creation: first created -> highest priority.

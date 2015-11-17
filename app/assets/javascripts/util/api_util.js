@@ -9,6 +9,17 @@ window.ApiUtil = {
         ApiActions.receiveAllUsers(users);
       }
     });
+  },
+
+  fetchBooks: function() {
+    $.ajax({
+      url: "/books",
+      method: "GET",
+      dataType: "json",
+      success: function(users) {
+        ApiActions.receiveAllBooks(books);
+      }
+    });
   }
 
 };

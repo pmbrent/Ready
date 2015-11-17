@@ -1,7 +1,12 @@
 window.Shelf = React.createClass({
 
   render: function() {
-    <div>"I am a shelf."</div>
+    return (<div className="shelf">
+      {this.props.shelf.title}
+      {this.props.shelf.books.map(function(book) {
+        return <Book book={book}/>;
+      })}
+    </div>);
   }
 
 });

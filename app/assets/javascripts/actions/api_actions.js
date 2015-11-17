@@ -4,13 +4,13 @@ window.ApiActions = {
       actionType: UserConstants.USERS_RECEIVED,
       users: users
     });
-  }
+  },
 
-  // receiveAllBooks: function(books) {
-  //   AppDispatcher.dispatch({
-  //     actionType: BookConstants.BOOKS_RECEIVED,
-  //     books: books
-  //   });
-  // }
+  receiveAllBooks: function(books) {
+    AppDispatcher.dispatch({
+      actionType: BookConstants.BOOKS_RECEIVED,
+      books: books
+    });
+  }
 
 };

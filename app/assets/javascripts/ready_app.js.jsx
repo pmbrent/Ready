@@ -7,7 +7,10 @@ var rootEl = document.getElementById("content");
 
 var ReadyApp = React.createClass({
   render: function() {
-    return <UserIndex/>;
+    return (
+      <div className="coming_soon">
+        Welcome! More is coming soon!
+      </div>);
   }
 });
 

@@ -1,7 +1,12 @@
-window.Shelf = React.createClass({
+window.Book = React.createClass({
 
   render: function() {
-    <div>"I am a book."</div>
+    return (
+    <div className="book">
+      <p>{this.props.book.title}</p>
+      <p>{this.props.book.author}</p>
+      <p>{this.props.book.description}</p>
+    </div>);
   }
 
 });
