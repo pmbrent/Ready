@@ -5,5 +5,7 @@ class Book < ActiveRecord::Base
 
   # has_one :author, foreign_key: :author_id
 
-  
+  has_many :shelvings
+  has_many :shelves, through: :shelvings
+
 end

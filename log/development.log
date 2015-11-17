@@ -12477,3 +12477,1310 @@ WHERE c.contype = 'f'
   AND t3.nspname = ANY (current_schemas(false))
 ORDER BY c.conname
 
+
+
+Started GET "/session/new" for ::1 at 2015-11-17 14:08:25 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#new as HTML
+  [1m[35mUser Load (9.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1
+  Rendered sessions/new.html.erb within layouts/application (243.2ms)
+Completed 200 OK in 2022ms (Views: 1961.4ms | ActiveRecord: 14.2ms)
+
+
+Started GET "/assets/main.self-3523c650ec1c3cf2c3e8f6eeef0a12449cae70914b0a76aa0cbc9a343bf7bf0f.css?body=1" for ::1 at 2015-11-17 14:08:28 -0500
+
+
+Started GET "/assets/scss/static_pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-17 14:08:28 -0500
+
+
+Started GET "/assets/scss/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-17 14:08:28 -0500
+
+
+Started GET "/assets/scss/sessions.self-8b644ab22b7ddc56bd2e4cbe5d8830d5066debf213d04fb3cffb30219b253c21.css?body=1" for ::1 at 2015-11-17 14:08:28 -0500
+
+
+Started GET "/assets/scss/globals.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-17 14:08:28 -0500
+
+
+Started GET "/assets/application.self-9ba9cd344ddc763a2bb6be3ffebb8d834548a11741eb916e305b8abe9414413f.css?body=1" for ::1 at 2015-11-17 14:08:28 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-11-17 14:08:28 -0500
+
+
+Started GET "/assets/development/react.self-93bc62cb6c7b74ee7e5a2fcf623f3abbd365440bf90eba740c625f159078aa82.js?body=1" for ::1 at 2015-11-17 14:08:28 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-11-17 14:08:28 -0500
+
+
+Started GET "/assets/react_ujs.self-c42e5ee44bcda6910afca6fb40f99d9963074b3aefe72365ce90c24312e73b2b.js?body=1" for ::1 at 2015-11-17 14:08:28 -0500
+
+
+Started GET "/assets/flux.self-c2206dc953bbad23c0ee331879560545a4ec58709c89fe78db57a156ec19c08f.js?body=1" for ::1 at 2015-11-17 14:08:28 -0500
+
+
+Started GET "/assets/eventemitter.self-b7e538902dfb3dce50e80598efaa7b435781b7bc8fe936a7aca64a6f2699d411.js?body=1" for ::1 at 2015-11-17 14:08:28 -0500
+
+
+Started GET "/assets/components.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-11-17 14:08:28 -0500
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-17 14:08:28 -0500
+
+
+Started GET "/assets/react_router.self-b2fb42fc48326928f091759585ae1eab0cd35ab15ba475d0fbb6c01c9dedc5bb.js?body=1" for ::1 at 2015-11-17 14:08:28 -0500
+
+
+Started GET "/assets/stores/user.self-48562fd31f0b8510509a2ed3e7fd374e3d986d4ea1a2b20b8a9e93c479a0a7ec.js?body=1" for ::1 at 2015-11-17 14:08:28 -0500
+
+
+Started GET "/assets/static_pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-17 14:08:28 -0500
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-17 14:08:28 -0500
+
+
+Started GET "/assets/application.self-a1a74291c4c48f2f663a025ffa678498d6448b849a2d74c0ca25e39ee192c0a7.js?body=1" for ::1 at 2015-11-17 14:08:28 -0500
+
+
+Started GET "/assets/Ready-logo-6e1f3dddf6bde24a0173705541071a86d2866ba848c7bf5d629595631c1f4c09.png" for ::1 at 2015-11-17 14:08:28 -0500
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1[0m
+  [1m[35mShelf Load (0.8ms)[0m  SELECT "shelves".* FROM "shelves" WHERE "shelves"."user_id" = $1  [["user_id", 21]]
+  [1m[36mShelf Load (0.7ms)[0m  [1mSELECT  "shelves".* FROM "shelves"  ORDER BY "shelves"."id" DESC LIMIT 1[0m
+  [1m[35mShelf Load (0.3ms)[0m  SELECT  "shelves".* FROM "shelves"  ORDER BY "shelves"."id" DESC LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 21]]
+
+
+Started POST "/session/session" for ::1 at 2015-11-17 14:13:42 -0500
+
+ActionController::RoutingError (No route matches [POST] "/session/session"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/var/rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/var/rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/var/rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.4ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (28.9ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.7ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (94.8ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (33.9ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (87.1ms)
+
+
+Started GET "/session/new" for ::1 at 2015-11-17 14:14:28 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1[0m
+  Rendered sessions/new.html.erb within layouts/application (16.9ms)
+Completed 200 OK in 230ms (Views: 214.8ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/assets/scss/globals.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-17 14:14:28 -0500
+
+
+Started GET "/assets/application.self-9ba9cd344ddc763a2bb6be3ffebb8d834548a11741eb916e305b8abe9414413f.css?body=1" for ::1 at 2015-11-17 14:14:28 -0500
+
+
+Started GET "/assets/scss/static_pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-17 14:14:28 -0500
+
+
+Started GET "/assets/scss/sessions.self-8b644ab22b7ddc56bd2e4cbe5d8830d5066debf213d04fb3cffb30219b253c21.css?body=1" for ::1 at 2015-11-17 14:14:28 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-11-17 14:14:28 -0500
+
+
+Started GET "/assets/scss/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-17 14:14:28 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-11-17 14:14:28 -0500
+
+
+Started GET "/assets/development/react.self-93bc62cb6c7b74ee7e5a2fcf623f3abbd365440bf90eba740c625f159078aa82.js?body=1" for ::1 at 2015-11-17 14:14:28 -0500
+
+
+Started GET "/assets/react_ujs.self-c42e5ee44bcda6910afca6fb40f99d9963074b3aefe72365ce90c24312e73b2b.js?body=1" for ::1 at 2015-11-17 14:14:28 -0500
+
+
+Started GET "/assets/eventemitter.self-b7e538902dfb3dce50e80598efaa7b435781b7bc8fe936a7aca64a6f2699d411.js?body=1" for ::1 at 2015-11-17 14:14:28 -0500
+
+
+Started GET "/assets/flux.self-c2206dc953bbad23c0ee331879560545a4ec58709c89fe78db57a156ec19c08f.js?body=1" for ::1 at 2015-11-17 14:14:28 -0500
+
+
+Started GET "/assets/react_router.self-b2fb42fc48326928f091759585ae1eab0cd35ab15ba475d0fbb6c01c9dedc5bb.js?body=1" for ::1 at 2015-11-17 14:14:28 -0500
+
+
+Started GET "/assets/components.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-11-17 14:14:28 -0500
+
+
+Started GET "/assets/main.self-3523c650ec1c3cf2c3e8f6eeef0a12449cae70914b0a76aa0cbc9a343bf7bf0f.css?body=1" for ::1 at 2015-11-17 14:14:28 -0500
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-17 14:14:28 -0500
+
+
+Started GET "/assets/static_pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-17 14:14:28 -0500
+
+
+Started GET "/assets/stores/user.self-48562fd31f0b8510509a2ed3e7fd374e3d986d4ea1a2b20b8a9e93c479a0a7ec.js?body=1" for ::1 at 2015-11-17 14:14:28 -0500
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-17 14:14:28 -0500
+
+
+Started GET "/assets/application.self-a1a74291c4c48f2f663a025ffa678498d6448b849a2d74c0ca25e39ee192c0a7.js?body=1" for ::1 at 2015-11-17 14:14:28 -0500
+
+
+Started GET "/assets/Ready-logo-6e1f3dddf6bde24a0173705541071a86d2866ba848c7bf5d629595631c1f4c09.png" for ::1 at 2015-11-17 14:14:28 -0500
+
+
+Started GET "/assets/react_ujs.self-c42e5ee44bcda6910afca6fb40f99d9963074b3aefe72365ce90c24312e73b2b.js?body=1" for ::1 at 2015-11-17 14:14:37 -0500
+
+
+Started GET "/assets/flux.self-c2206dc953bbad23c0ee331879560545a4ec58709c89fe78db57a156ec19c08f.js?body=1" for ::1 at 2015-11-17 14:14:37 -0500
+
+
+Started GET "/assets/eventemitter.self-b7e538902dfb3dce50e80598efaa7b435781b7bc8fe936a7aca64a6f2699d411.js?body=1" for ::1 at 2015-11-17 14:14:37 -0500
+
+
+Started GET "/assets/react_router.self-b2fb42fc48326928f091759585ae1eab0cd35ab15ba475d0fbb6c01c9dedc5bb.js?body=1" for ::1 at 2015-11-17 14:14:37 -0500
+
+
+Started GET "/assets/components.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-11-17 14:14:37 -0500
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-17 14:14:37 -0500
+
+
+Started GET "/assets/static_pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-17 14:14:37 -0500
+
+
+Started GET "/assets/stores/user.self-48562fd31f0b8510509a2ed3e7fd374e3d986d4ea1a2b20b8a9e93c479a0a7ec.js?body=1" for ::1 at 2015-11-17 14:14:37 -0500
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-17 14:14:37 -0500
+
+
+Started GET "/assets/application.self-a1a74291c4c48f2f663a025ffa678498d6448b849a2d74c0ca25e39ee192c0a7.js?body=1" for ::1 at 2015-11-17 14:14:37 -0500
+
+
+Started GET "/assets/Ready-logo-6e1f3dddf6bde24a0173705541071a86d2866ba848c7bf5d629595631c1f4c09.png" for ::1 at 2015-11-17 14:14:37 -0500
+
+
+Started POST "/session" for ::1 at 2015-11-17 14:14:42 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"NjjanwYztzdLd1dAgUkoBFofrbxMjWNgPvmIlfc32I93EDPoSNX1WmB5Tlk7cVXKyYM9FKotbsVEMcWJbitbEA==", "user"=>{"info"=>"admin", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "admin"]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."name" = $1 LIMIT 1[0m  [["name", "admin"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."name" = 'admin' AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35mUser Exists (0.7ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."email" = 'admin@ready.com' AND "users"."id" != 1) LIMIT 1
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."session_token" = 'NubRKTr_hk6arIOWa17nDw' AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35mSQL (12.4ms)[0m  UPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3  [["session_token", "NubRKTr_hk6arIOWa17nDw"], ["updated_at", "2015-11-17 19:14:42.867330"], ["id", 1]]
+  [1m[36m (12.3ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/static_pages
+Completed 302 Found in 550ms (ActiveRecord: 28.3ms)
+
+
+Started GET "/static_pages" for ::1 at 2015-11-17 14:14:42 -0500
+Processing by StaticPagesController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "NubRKTr_hk6arIOWa17nDw"]]
+  [1m[36mShelf Load (0.5ms)[0m  [1mSELECT "shelves".* FROM "shelves" WHERE "shelves"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered static_pages/index.html.erb within layouts/application (20.7ms)
+Completed 200 OK in 128ms (Views: 123.1ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/assets/scss/globals.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-17 14:14:43 -0500
+
+
+Started GET "/assets/scss/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-17 14:14:43 -0500
+
+
+Started GET "/assets/scss/sessions.self-8b644ab22b7ddc56bd2e4cbe5d8830d5066debf213d04fb3cffb30219b253c21.css?body=1" for ::1 at 2015-11-17 14:14:43 -0500
+
+
+Started GET "/assets/application.self-9ba9cd344ddc763a2bb6be3ffebb8d834548a11741eb916e305b8abe9414413f.css?body=1" for ::1 at 2015-11-17 14:14:43 -0500
+
+
+Started GET "/assets/main.self-3523c650ec1c3cf2c3e8f6eeef0a12449cae70914b0a76aa0cbc9a343bf7bf0f.css?body=1" for ::1 at 2015-11-17 14:14:43 -0500
+
+
+Started GET "/assets/scss/static_pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-17 14:14:43 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-11-17 14:14:43 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-11-17 14:14:43 -0500
+
+
+Started GET "/assets/development/react.self-93bc62cb6c7b74ee7e5a2fcf623f3abbd365440bf90eba740c625f159078aa82.js?body=1" for ::1 at 2015-11-17 14:14:43 -0500
+
+
+Started GET "/assets/react_ujs.self-c42e5ee44bcda6910afca6fb40f99d9963074b3aefe72365ce90c24312e73b2b.js?body=1" for ::1 at 2015-11-17 14:14:43 -0500
+
+
+Started GET "/assets/flux.self-c2206dc953bbad23c0ee331879560545a4ec58709c89fe78db57a156ec19c08f.js?body=1" for ::1 at 2015-11-17 14:14:43 -0500
+
+
+Started GET "/assets/eventemitter.self-b7e538902dfb3dce50e80598efaa7b435781b7bc8fe936a7aca64a6f2699d411.js?body=1" for ::1 at 2015-11-17 14:14:43 -0500
+
+
+Started GET "/assets/react_router.self-b2fb42fc48326928f091759585ae1eab0cd35ab15ba475d0fbb6c01c9dedc5bb.js?body=1" for ::1 at 2015-11-17 14:14:43 -0500
+
+
+Started GET "/assets/components.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-11-17 14:14:43 -0500
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-17 14:14:43 -0500
+
+
+Started GET "/assets/static_pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-17 14:14:43 -0500
+
+
+Started GET "/assets/stores/user.self-48562fd31f0b8510509a2ed3e7fd374e3d986d4ea1a2b20b8a9e93c479a0a7ec.js?body=1" for ::1 at 2015-11-17 14:14:43 -0500
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-17 14:14:43 -0500
+
+
+Started GET "/assets/application.self-a1a74291c4c48f2f663a025ffa678498d6448b849a2d74c0ca25e39ee192c0a7.js?body=1" for ::1 at 2015-11-17 14:14:43 -0500
+
+
+Started GET "/assets/react_ujs.self-c42e5ee44bcda6910afca6fb40f99d9963074b3aefe72365ce90c24312e73b2b.js?body=1" for ::1 at 2015-11-17 14:14:45 -0500
+
+
+Started GET "/assets/flux.self-c2206dc953bbad23c0ee331879560545a4ec58709c89fe78db57a156ec19c08f.js?body=1" for ::1 at 2015-11-17 14:14:45 -0500
+
+
+Started GET "/assets/eventemitter.self-b7e538902dfb3dce50e80598efaa7b435781b7bc8fe936a7aca64a6f2699d411.js?body=1" for ::1 at 2015-11-17 14:14:45 -0500
+
+
+Started GET "/assets/react_router.self-b2fb42fc48326928f091759585ae1eab0cd35ab15ba475d0fbb6c01c9dedc5bb.js?body=1" for ::1 at 2015-11-17 14:14:45 -0500
+
+
+Started GET "/assets/components.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-11-17 14:14:45 -0500
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-17 14:14:45 -0500
+
+
+Started GET "/assets/static_pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-17 14:14:45 -0500
+
+
+Started GET "/assets/stores/user.self-48562fd31f0b8510509a2ed3e7fd374e3d986d4ea1a2b20b8a9e93c479a0a7ec.js?body=1" for ::1 at 2015-11-17 14:14:45 -0500
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-17 14:14:45 -0500
+
+
+Started GET "/assets/application.self-a1a74291c4c48f2f663a025ffa678498d6448b849a2d74c0ca25e39ee192c0a7.js?body=1" for ::1 at 2015-11-17 14:14:45 -0500
+
+
+Started DELETE "/session" for ::1 at 2015-11-17 14:15:00 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"QImvPaWhPCMh4g0/xEmmYJ/X9y7qic3GVIQXYCu7+NIBoUZK60d+TgrsFCZ+cduuDEtnhgwpwGMuTFp8sqd7TQ=="}
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "NubRKTr_hk6arIOWa17nDw"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.6ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."name" = 'admin' AND "users"."id" != 1) LIMIT 1
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."email" = 'admin@ready.com' AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35mUser Exists (0.7ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."session_token" = 'Ic9PDZH1NJM8C1hon23K0Q' AND "users"."id" != 1) LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "Ic9PDZH1NJM8C1hon23K0Q"], ["updated_at", "2015-11-17 19:15:00.857110"], ["id", 1]]
+  [1m[35m (0.5ms)[0m  COMMIT
+Redirected to http://localhost:3000/session/new
+Completed 302 Found in 13ms (ActiveRecord: 3.9ms)
+
+
+Started GET "/session/new" for ::1 at 2015-11-17 14:15:00 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1[0m
+  Rendered sessions/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 80ms (Views: 78.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/main.self-3523c650ec1c3cf2c3e8f6eeef0a12449cae70914b0a76aa0cbc9a343bf7bf0f.css?body=1" for ::1 at 2015-11-17 14:15:01 -0500
+
+
+Started GET "/assets/scss/globals.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-17 14:15:01 -0500
+
+
+Started GET "/assets/application.self-9ba9cd344ddc763a2bb6be3ffebb8d834548a11741eb916e305b8abe9414413f.css?body=1" for ::1 at 2015-11-17 14:15:01 -0500
+
+
+Started GET "/assets/scss/sessions.self-8b644ab22b7ddc56bd2e4cbe5d8830d5066debf213d04fb3cffb30219b253c21.css?body=1" for ::1 at 2015-11-17 14:15:01 -0500
+
+
+Started GET "/assets/scss/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-17 14:15:01 -0500
+
+
+Started GET "/assets/scss/static_pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-17 14:15:01 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-11-17 14:15:01 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-11-17 14:15:01 -0500
+
+
+Started GET "/assets/development/react.self-93bc62cb6c7b74ee7e5a2fcf623f3abbd365440bf90eba740c625f159078aa82.js?body=1" for ::1 at 2015-11-17 14:15:01 -0500
+
+
+Started GET "/assets/react_ujs.self-c42e5ee44bcda6910afca6fb40f99d9963074b3aefe72365ce90c24312e73b2b.js?body=1" for ::1 at 2015-11-17 14:15:01 -0500
+
+
+Started GET "/assets/flux.self-c2206dc953bbad23c0ee331879560545a4ec58709c89fe78db57a156ec19c08f.js?body=1" for ::1 at 2015-11-17 14:15:01 -0500
+
+
+Started GET "/assets/eventemitter.self-b7e538902dfb3dce50e80598efaa7b435781b7bc8fe936a7aca64a6f2699d411.js?body=1" for ::1 at 2015-11-17 14:15:01 -0500
+
+
+Started GET "/assets/react_router.self-b2fb42fc48326928f091759585ae1eab0cd35ab15ba475d0fbb6c01c9dedc5bb.js?body=1" for ::1 at 2015-11-17 14:15:01 -0500
+
+
+Started GET "/assets/components.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-11-17 14:15:01 -0500
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-17 14:15:01 -0500
+
+
+Started GET "/assets/static_pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-17 14:15:01 -0500
+
+
+Started GET "/assets/stores/user.self-48562fd31f0b8510509a2ed3e7fd374e3d986d4ea1a2b20b8a9e93c479a0a7ec.js?body=1" for ::1 at 2015-11-17 14:15:01 -0500
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-17 14:15:01 -0500
+
+
+Started GET "/assets/application.self-a1a74291c4c48f2f663a025ffa678498d6448b849a2d74c0ca25e39ee192c0a7.js?body=1" for ::1 at 2015-11-17 14:15:01 -0500
+
+
+Started GET "/assets/Ready-logo-6e1f3dddf6bde24a0173705541071a86d2866ba848c7bf5d629595631c1f4c09.png" for ::1 at 2015-11-17 14:15:01 -0500
+  [1m[36m (5094.9ms)[0m  [1mDROP DATABASE IF EXISTS "Ready_development"[0m
+PG::ObjectInUse: ERROR:  database "Ready_development" is being accessed by other users
+DETAIL:  There is 1 other session using the database.
+: DROP DATABASE IF EXISTS "Ready_development"
+  [1m[35m (242.5ms)[0m  DROP DATABASE IF EXISTS "Ready_test"
+  [1m[36m (1.1ms)[0m  [1mCREATE DATABASE "Ready_development" ENCODING = 'unicode'[0m
+PG::DuplicateDatabase: ERROR:  database "Ready_development" already exists
+: CREATE DATABASE "Ready_development" ENCODING = 'unicode'
+  [1m[35m (544.9ms)[0m  CREATE DATABASE "Ready_test" ENCODING = 'unicode'
+  [1m[36mSQL (0.3ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (127.9ms)[0m  DROP TABLE "books" CASCADE
+  [1m[36m (38.6ms)[0m  [1mCREATE TABLE "books" ("id" serial primary key, "title" character varying NOT NULL, "author" character varying NOT NULL, "isbn" bigint NOT NULL, "author_id" integer, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (1.5ms)[0m  CREATE  INDEX  "index_books_on_author" ON "books" USING btree ("author")
+  [1m[36m (1.4ms)[0m  [1mCREATE  INDEX  "index_books_on_author_id" ON "books" USING btree ("author_id")[0m
+  [1m[35m (1.5ms)[0m  CREATE UNIQUE INDEX  "index_books_on_isbn" ON "books" USING btree ("isbn")
+  [1m[36m (1.4ms)[0m  [1mCREATE  INDEX  "index_books_on_title" ON "books" USING btree ("title")[0m
+  [1m[35m (4.1ms)[0m  DROP TABLE "shelves" CASCADE
+  [1m[36m (34.6ms)[0m  [1mCREATE TABLE "shelves" ("id" serial primary key, "user_id" integer NOT NULL, "title" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (1.3ms)[0m  CREATE  INDEX  "index_shelves_on_user_id" ON "shelves" USING btree ("user_id")
+  [1m[36m (2.7ms)[0m  [1mDROP TABLE "shelvings" CASCADE[0m
+  [1m[35m (3.3ms)[0m  CREATE TABLE "shelvings" ("id" serial primary key, "shelf_id" integer NOT NULL, "book_id" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (1.6ms)[0m  [1mCREATE  INDEX  "index_shelvings_on_book_id" ON "shelvings" USING btree ("book_id")[0m
+  [1m[35m (1.3ms)[0m  CREATE  INDEX  "index_shelvings_on_shelf_id" ON "shelvings" USING btree ("shelf_id")
+  [1m[36m (3.3ms)[0m  [1mDROP TABLE "users" CASCADE[0m
+  [1m[35m (5.0ms)[0m  CREATE TABLE "users" ("id" serial primary key, "name" character varying NOT NULL, "email" character varying NOT NULL, "password_digest" character varying NOT NULL, "session_token" character varying NOT NULL, "librarian" boolean DEFAULT 'f', "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (1.4ms)[0m  [1mCREATE UNIQUE INDEX  "index_users_on_email" ON "users" USING btree ("email")[0m
+  [1m[35m (1.4ms)[0m  CREATE UNIQUE INDEX  "index_users_on_name" ON "users" USING btree ("name")
+  [1m[36m (1.4ms)[0m  [1mCREATE UNIQUE INDEX  "index_users_on_session_token" ON "users" USING btree ("session_token")[0m
+  [1m[35m (11.2ms)[0m  ALTER TABLE "shelves" ADD CONSTRAINT "fk_rails_6b65d5b892"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+
+  [1m[36m (2.4ms)[0m  [1mALTER TABLE "shelvings" ADD CONSTRAINT "fk_rails_164a9ce3d9"
+FOREIGN KEY ("book_id")
+  REFERENCES "books" ("id")
+[0m
+  [1m[35m (1.8ms)[0m  ALTER TABLE "shelvings" ADD CONSTRAINT "fk_rails_de894d22c7"
+FOREIGN KEY ("shelf_id")
+  REFERENCES "shelves" ("id")
+
+  [1m[36m (0.8ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35mSQL (0.3ms)[0m  CREATE EXTENSION IF NOT EXISTS "plpgsql"
+  [1m[36m (9.7ms)[0m  [1mCREATE TABLE "books" ("id" serial primary key, "title" character varying NOT NULL, "author" character varying NOT NULL, "isbn" bigint NOT NULL, "author_id" integer, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (1.6ms)[0m  CREATE  INDEX  "index_books_on_author" ON "books" USING btree ("author")
+  [1m[36m (1.4ms)[0m  [1mCREATE  INDEX  "index_books_on_author_id" ON "books" USING btree ("author_id")[0m
+  [1m[35m (1.6ms)[0m  CREATE UNIQUE INDEX  "index_books_on_isbn" ON "books" USING btree ("isbn")
+  [1m[36m (1.3ms)[0m  [1mCREATE  INDEX  "index_books_on_title" ON "books" USING btree ("title")[0m
+  [1m[35m (4.9ms)[0m  CREATE TABLE "shelves" ("id" serial primary key, "user_id" integer NOT NULL, "title" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (2.1ms)[0m  [1mCREATE  INDEX  "index_shelves_on_user_id" ON "shelves" USING btree ("user_id")[0m
+  [1m[35m (3.4ms)[0m  CREATE TABLE "shelvings" ("id" serial primary key, "shelf_id" integer NOT NULL, "book_id" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (1.4ms)[0m  [1mCREATE  INDEX  "index_shelvings_on_book_id" ON "shelvings" USING btree ("book_id")[0m
+  [1m[35m (1.2ms)[0m  CREATE  INDEX  "index_shelvings_on_shelf_id" ON "shelvings" USING btree ("shelf_id")
+  [1m[36m (6.3ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "name" character varying NOT NULL, "email" character varying NOT NULL, "password_digest" character varying NOT NULL, "session_token" character varying NOT NULL, "librarian" boolean DEFAULT 'f', "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (1.4ms)[0m  CREATE UNIQUE INDEX  "index_users_on_email" ON "users" USING btree ("email")
+  [1m[36m (1.4ms)[0m  [1mCREATE UNIQUE INDEX  "index_users_on_name" ON "users" USING btree ("name")[0m
+  [1m[35m (1.8ms)[0m  CREATE UNIQUE INDEX  "index_users_on_session_token" ON "users" USING btree ("session_token")
+  [1m[36m (3.9ms)[0m  [1mALTER TABLE "shelves" ADD CONSTRAINT "fk_rails_6b65d5b892"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35m (2.4ms)[0m  ALTER TABLE "shelvings" ADD CONSTRAINT "fk_rails_164a9ce3d9"
+FOREIGN KEY ("book_id")
+  REFERENCES "books" ("id")
+
+  [1m[36m (1.9ms)[0m  [1mALTER TABLE "shelvings" ADD CONSTRAINT "fk_rails_de894d22c7"
+FOREIGN KEY ("shelf_id")
+  REFERENCES "shelves" ("id")
+[0m
+  [1m[35m (2.4ms)[0m  CREATE TABLE "schema_migrations" ("version" character varying NOT NULL) 
+  [1m[36m (1.4ms)[0m  [1mCREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")[0m
+  [1m[35m (0.4ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20151117185937')[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151117140000')
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20151117182221')[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151117185237')
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'admin' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'admin@ready.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'RMqnvaFExzVul8lKaPYEog' LIMIT 1[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "librarian", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["name", "admin"], ["email", "admin@ready.com"], ["password_digest", "$2a$10$l1VNlpPmp4.le4sxqYFBaeik4B/NZSm29s3deJYlxWAlK0yfwOiKK"], ["librarian", "t"], ["session_token", "RMqnvaFExzVul8lKaPYEog"], ["created_at", "2015-11-17 19:17:49.588700"], ["updated_at", "2015-11-17 19:17:49.588700"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (1.3ms)[0m  [1mINSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Read"], ["user_id", 1], ["created_at", "2015-11-17 19:17:49.603150"], ["updated_at", "2015-11-17 19:17:49.603150"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Reading"], ["user_id", 1], ["created_at", "2015-11-17 19:17:49.606844"], ["updated_at", "2015-11-17 19:17:49.606844"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Want to Read"], ["user_id", 1], ["created_at", "2015-11-17 19:17:49.609259"], ["updated_at", "2015-11-17 19:17:49.609259"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."name" = 'user2' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'user2@place.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = '09EnBNKxA5oIJBQQwocKPg' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "user2"], ["email", "user2@place.com"], ["password_digest", "$2a$10$ZAqyQiZKkfrvOL.NeqIZveiR7iFGx6dWfzGX/9J7yyBonwGBfa.AK"], ["session_token", "09EnBNKxA5oIJBQQwocKPg"], ["created_at", "2015-11-17 19:17:49.693161"], ["updated_at", "2015-11-17 19:17:49.693161"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Read"], ["user_id", 2], ["created_at", "2015-11-17 19:17:49.696431"], ["updated_at", "2015-11-17 19:17:49.696431"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Reading"], ["user_id", 2], ["created_at", "2015-11-17 19:17:49.698825"], ["updated_at", "2015-11-17 19:17:49.698825"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Want to Read"], ["user_id", 2], ["created_at", "2015-11-17 19:17:49.701102"], ["updated_at", "2015-11-17 19:17:49.701102"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user3' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user3@place.com' LIMIT 1
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'eI5W1SC0aWvEdy1b8W-vnw' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user3"], ["email", "user3@place.com"], ["password_digest", "$2a$10$VxQ8z6z2ELavd1KDFsA5EeqNbD.Fi2xQItz74x/kzADqKNqP/WjqW"], ["session_token", "eI5W1SC0aWvEdy1b8W-vnw"], ["created_at", "2015-11-17 19:17:49.781664"], ["updated_at", "2015-11-17 19:17:49.781664"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Read"], ["user_id", 3], ["created_at", "2015-11-17 19:17:49.784165"], ["updated_at", "2015-11-17 19:17:49.784165"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Reading"], ["user_id", 3], ["created_at", "2015-11-17 19:17:49.786312"], ["updated_at", "2015-11-17 19:17:49.786312"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Want to Read"], ["user_id", 3], ["created_at", "2015-11-17 19:17:49.788453"], ["updated_at", "2015-11-17 19:17:49.788453"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."name" = 'user4' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'user4@place.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'rkm-wNM0E88MUUTXrgVsOw' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "user4"], ["email", "user4@place.com"], ["password_digest", "$2a$10$m1bVPyzZNYl4z94rqPhgk.oX1dBCCz.CGECHS9p1rzr8wks8Y11zO"], ["session_token", "rkm-wNM0E88MUUTXrgVsOw"], ["created_at", "2015-11-17 19:17:49.870104"], ["updated_at", "2015-11-17 19:17:49.870104"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Read"], ["user_id", 4], ["created_at", "2015-11-17 19:17:49.872991"], ["updated_at", "2015-11-17 19:17:49.872991"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Reading"], ["user_id", 4], ["created_at", "2015-11-17 19:17:49.875344"], ["updated_at", "2015-11-17 19:17:49.875344"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Want to Read"], ["user_id", 4], ["created_at", "2015-11-17 19:17:49.877583"], ["updated_at", "2015-11-17 19:17:49.877583"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user5' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user5@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'UqasUGBT1sKRENcchyNjLg' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user5"], ["email", "user5@place.com"], ["password_digest", "$2a$10$dcbjjcnI8UYzF/octE.tFeiJV2Ol7ahYE8F/9hmKarswSIHJ06hsy"], ["session_token", "UqasUGBT1sKRENcchyNjLg"], ["created_at", "2015-11-17 19:17:49.958842"], ["updated_at", "2015-11-17 19:17:49.958842"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Read"], ["user_id", 5], ["created_at", "2015-11-17 19:17:49.961383"], ["updated_at", "2015-11-17 19:17:49.961383"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Reading"], ["user_id", 5], ["created_at", "2015-11-17 19:17:49.963599"], ["updated_at", "2015-11-17 19:17:49.963599"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Want to Read"], ["user_id", 5], ["created_at", "2015-11-17 19:17:49.965645"], ["updated_at", "2015-11-17 19:17:49.965645"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."name" = 'user6' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'user6@place.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'TQuyTAlGqVxUCpSlPm18uA' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "user6"], ["email", "user6@place.com"], ["password_digest", "$2a$10$XLPq/QOuAV1bC/mzxlFOce0gdmlnrccsPJnpwpgXfezDgmVfPlPBm"], ["session_token", "TQuyTAlGqVxUCpSlPm18uA"], ["created_at", "2015-11-17 19:17:50.047692"], ["updated_at", "2015-11-17 19:17:50.047692"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Read"], ["user_id", 6], ["created_at", "2015-11-17 19:17:50.050599"], ["updated_at", "2015-11-17 19:17:50.050599"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Reading"], ["user_id", 6], ["created_at", "2015-11-17 19:17:50.053631"], ["updated_at", "2015-11-17 19:17:50.053631"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Want to Read"], ["user_id", 6], ["created_at", "2015-11-17 19:17:50.056420"], ["updated_at", "2015-11-17 19:17:50.056420"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user7' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user7@place.com' LIMIT 1
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = '9DYbNE3cSMFeREvyN0QDjQ' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user7"], ["email", "user7@place.com"], ["password_digest", "$2a$10$SUUtTfVcxqy.BkUSCRYW5eOjYYitCeQ8dVKEgxkPfnOiJpCsox2Q6"], ["session_token", "9DYbNE3cSMFeREvyN0QDjQ"], ["created_at", "2015-11-17 19:17:50.140860"], ["updated_at", "2015-11-17 19:17:50.140860"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Read"], ["user_id", 7], ["created_at", "2015-11-17 19:17:50.143692"], ["updated_at", "2015-11-17 19:17:50.143692"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Reading"], ["user_id", 7], ["created_at", "2015-11-17 19:17:50.146501"], ["updated_at", "2015-11-17 19:17:50.146501"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Want to Read"], ["user_id", 7], ["created_at", "2015-11-17 19:17:50.148771"], ["updated_at", "2015-11-17 19:17:50.148771"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."name" = 'user8' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'user8@place.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = '10jYR6_8Zaf8LFwSenhQlg' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "user8"], ["email", "user8@place.com"], ["password_digest", "$2a$10$lmRU64nxPdDvQxsq2UtAi./h32Gvti3iTAv7H8DrtQEGaWGSPPs0."], ["session_token", "10jYR6_8Zaf8LFwSenhQlg"], ["created_at", "2015-11-17 19:17:50.228962"], ["updated_at", "2015-11-17 19:17:50.228962"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Read"], ["user_id", 8], ["created_at", "2015-11-17 19:17:50.231658"], ["updated_at", "2015-11-17 19:17:50.231658"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Reading"], ["user_id", 8], ["created_at", "2015-11-17 19:17:50.233932"], ["updated_at", "2015-11-17 19:17:50.233932"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Want to Read"], ["user_id", 8], ["created_at", "2015-11-17 19:17:50.236106"], ["updated_at", "2015-11-17 19:17:50.236106"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user9' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user9@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'XmVJxxq6xezGLIFUgPBHlA' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user9"], ["email", "user9@place.com"], ["password_digest", "$2a$10$Hw5YfIyZnu3KJWCyRnAqR.hxX8ZQEQltMl9HdyPIwSjjaBf05expW"], ["session_token", "XmVJxxq6xezGLIFUgPBHlA"], ["created_at", "2015-11-17 19:17:50.318561"], ["updated_at", "2015-11-17 19:17:50.318561"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Read"], ["user_id", 9], ["created_at", "2015-11-17 19:17:50.321100"], ["updated_at", "2015-11-17 19:17:50.321100"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Reading"], ["user_id", 9], ["created_at", "2015-11-17 19:17:50.323351"], ["updated_at", "2015-11-17 19:17:50.323351"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Want to Read"], ["user_id", 9], ["created_at", "2015-11-17 19:17:50.325421"], ["updated_at", "2015-11-17 19:17:50.325421"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."name" = 'user10' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'user10@place.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'gN28n3C67e7fglO6UiaN-Q' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "user10"], ["email", "user10@place.com"], ["password_digest", "$2a$10$Ye3myFYsYzm.2rgcU5GbMOTsKpoWTUAysOmjJgilDk2JdUHb0KfK."], ["session_token", "gN28n3C67e7fglO6UiaN-Q"], ["created_at", "2015-11-17 19:17:50.403329"], ["updated_at", "2015-11-17 19:17:50.403329"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Read"], ["user_id", 10], ["created_at", "2015-11-17 19:17:50.406195"], ["updated_at", "2015-11-17 19:17:50.406195"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Reading"], ["user_id", 10], ["created_at", "2015-11-17 19:17:50.409123"], ["updated_at", "2015-11-17 19:17:50.409123"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Want to Read"], ["user_id", 10], ["created_at", "2015-11-17 19:17:50.411627"], ["updated_at", "2015-11-17 19:17:50.411627"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user11' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user11@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'iA63i9zOg684TZLZcyIzqQ' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user11"], ["email", "user11@place.com"], ["password_digest", "$2a$10$yEvSesmZywxZ16QJubolP.D8paqUhKc0Ht7b3xAzU4NjovJCYz5Yu"], ["session_token", "iA63i9zOg684TZLZcyIzqQ"], ["created_at", "2015-11-17 19:17:50.488203"], ["updated_at", "2015-11-17 19:17:50.488203"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Read"], ["user_id", 11], ["created_at", "2015-11-17 19:17:50.490672"], ["updated_at", "2015-11-17 19:17:50.490672"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Reading"], ["user_id", 11], ["created_at", "2015-11-17 19:17:50.492859"], ["updated_at", "2015-11-17 19:17:50.492859"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Want to Read"], ["user_id", 11], ["created_at", "2015-11-17 19:17:50.495028"], ["updated_at", "2015-11-17 19:17:50.495028"]]
+  [1m[35m (0.8ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.6ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."name" = 'user12' LIMIT 1
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'user12@place.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.6ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'YVKTFQRGcZ7blke0p93CPw' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "user12"], ["email", "user12@place.com"], ["password_digest", "$2a$10$1q13ncufdjQ1ultuqJyM0.Pe7KBcbF0q4f5NgJTqcDNDkujkgh9m."], ["session_token", "YVKTFQRGcZ7blke0p93CPw"], ["created_at", "2015-11-17 19:17:50.575343"], ["updated_at", "2015-11-17 19:17:50.575343"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Read"], ["user_id", 12], ["created_at", "2015-11-17 19:17:50.577809"], ["updated_at", "2015-11-17 19:17:50.577809"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Reading"], ["user_id", 12], ["created_at", "2015-11-17 19:17:50.580238"], ["updated_at", "2015-11-17 19:17:50.580238"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Want to Read"], ["user_id", 12], ["created_at", "2015-11-17 19:17:50.582775"], ["updated_at", "2015-11-17 19:17:50.582775"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user13' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user13@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'LyU2Ni11Q05eWLcOi1A5_Q' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user13"], ["email", "user13@place.com"], ["password_digest", "$2a$10$FoaAhUTBaKfEytnuadbfDuku6Tm.9PDfkJDLsiB2I72Ha79at9hQy"], ["session_token", "LyU2Ni11Q05eWLcOi1A5_Q"], ["created_at", "2015-11-17 19:17:50.663814"], ["updated_at", "2015-11-17 19:17:50.663814"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Read"], ["user_id", 13], ["created_at", "2015-11-17 19:17:50.666412"], ["updated_at", "2015-11-17 19:17:50.666412"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Reading"], ["user_id", 13], ["created_at", "2015-11-17 19:17:50.668673"], ["updated_at", "2015-11-17 19:17:50.668673"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Want to Read"], ["user_id", 13], ["created_at", "2015-11-17 19:17:50.670848"], ["updated_at", "2015-11-17 19:17:50.670848"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."name" = 'user14' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'user14@place.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'Hmz_Du4YTWSEp-19OXakRw' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "user14"], ["email", "user14@place.com"], ["password_digest", "$2a$10$e1vB5PbLMbt1x61eSOj8XeyT9RFR1myuXtB1bVY7ralSp/yGU7n7."], ["session_token", "Hmz_Du4YTWSEp-19OXakRw"], ["created_at", "2015-11-17 19:17:50.754535"], ["updated_at", "2015-11-17 19:17:50.754535"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Read"], ["user_id", 14], ["created_at", "2015-11-17 19:17:50.757275"], ["updated_at", "2015-11-17 19:17:50.757275"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Reading"], ["user_id", 14], ["created_at", "2015-11-17 19:17:50.759598"], ["updated_at", "2015-11-17 19:17:50.759598"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Want to Read"], ["user_id", 14], ["created_at", "2015-11-17 19:17:50.761809"], ["updated_at", "2015-11-17 19:17:50.761809"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user15' LIMIT 1[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user15@place.com' LIMIT 1
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = '-UiuNlpsCatohlPDkbwrXA' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user15"], ["email", "user15@place.com"], ["password_digest", "$2a$10$ZQsUnapobpvGPJSDwyh/zuSbIWF0fLcAcOqhKBJM13Bbcuu2K25mW"], ["session_token", "-UiuNlpsCatohlPDkbwrXA"], ["created_at", "2015-11-17 19:17:50.842218"], ["updated_at", "2015-11-17 19:17:50.842218"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Read"], ["user_id", 15], ["created_at", "2015-11-17 19:17:50.845438"], ["updated_at", "2015-11-17 19:17:50.845438"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Reading"], ["user_id", 15], ["created_at", "2015-11-17 19:17:50.847850"], ["updated_at", "2015-11-17 19:17:50.847850"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Want to Read"], ["user_id", 15], ["created_at", "2015-11-17 19:17:50.850274"], ["updated_at", "2015-11-17 19:17:50.850274"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."name" = 'user16' LIMIT 1
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'user16@place.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'Wy1wA2Vys40sFnR1_j3m3g' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "user16"], ["email", "user16@place.com"], ["password_digest", "$2a$10$osJtQgTg2I0UAIShpQEce.QPaI1r0zefaU1QSJzMzGITV56rVTDnm"], ["session_token", "Wy1wA2Vys40sFnR1_j3m3g"], ["created_at", "2015-11-17 19:17:50.931338"], ["updated_at", "2015-11-17 19:17:50.931338"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Read"], ["user_id", 16], ["created_at", "2015-11-17 19:17:50.934052"], ["updated_at", "2015-11-17 19:17:50.934052"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Reading"], ["user_id", 16], ["created_at", "2015-11-17 19:17:50.936366"], ["updated_at", "2015-11-17 19:17:50.936366"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Want to Read"], ["user_id", 16], ["created_at", "2015-11-17 19:17:50.938496"], ["updated_at", "2015-11-17 19:17:50.938496"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user17' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user17@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'cFGSt_xR-2A-sYjNRmVAPQ' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user17"], ["email", "user17@place.com"], ["password_digest", "$2a$10$OuYTN4TO07NtG0qHKO.a0ux7gxN6kvoCT7alCN4stZmR.wjmrxVs6"], ["session_token", "cFGSt_xR-2A-sYjNRmVAPQ"], ["created_at", "2015-11-17 19:17:51.019563"], ["updated_at", "2015-11-17 19:17:51.019563"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Read"], ["user_id", 17], ["created_at", "2015-11-17 19:17:51.022277"], ["updated_at", "2015-11-17 19:17:51.022277"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Reading"], ["user_id", 17], ["created_at", "2015-11-17 19:17:51.024906"], ["updated_at", "2015-11-17 19:17:51.024906"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Want to Read"], ["user_id", 17], ["created_at", "2015-11-17 19:17:51.027764"], ["updated_at", "2015-11-17 19:17:51.027764"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."name" = 'user18' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'user18@place.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'ug7jdSngIOu1st6GLf0XhQ' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "user18"], ["email", "user18@place.com"], ["password_digest", "$2a$10$1.JU7Vu/g9Y/iNSqv9xVSe2IF8hpEzh1vu4n4TpSKZNZk9sypWV4C"], ["session_token", "ug7jdSngIOu1st6GLf0XhQ"], ["created_at", "2015-11-17 19:17:51.105670"], ["updated_at", "2015-11-17 19:17:51.105670"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Read"], ["user_id", 18], ["created_at", "2015-11-17 19:17:51.108348"], ["updated_at", "2015-11-17 19:17:51.108348"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Reading"], ["user_id", 18], ["created_at", "2015-11-17 19:17:51.110523"], ["updated_at", "2015-11-17 19:17:51.110523"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Want to Read"], ["user_id", 18], ["created_at", "2015-11-17 19:17:51.112647"], ["updated_at", "2015-11-17 19:17:51.112647"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user19' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user19@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'b-vFTraGhsv6KJfebltobg' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user19"], ["email", "user19@place.com"], ["password_digest", "$2a$10$ds.MF6aNayz5C8bSk.gABOKWAlDYzMzIJdTW1ei3JY/gYjhaaqv3e"], ["session_token", "b-vFTraGhsv6KJfebltobg"], ["created_at", "2015-11-17 19:17:51.190703"], ["updated_at", "2015-11-17 19:17:51.190703"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Read"], ["user_id", 19], ["created_at", "2015-11-17 19:17:51.193680"], ["updated_at", "2015-11-17 19:17:51.193680"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Reading"], ["user_id", 19], ["created_at", "2015-11-17 19:17:51.196845"], ["updated_at", "2015-11-17 19:17:51.196845"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Want to Read"], ["user_id", 19], ["created_at", "2015-11-17 19:17:51.199254"], ["updated_at", "2015-11-17 19:17:51.199254"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."name" = 'user20' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'user20@place.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'g8_7JkLC1FH5w4vlvu5daQ' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "user20"], ["email", "user20@place.com"], ["password_digest", "$2a$10$fCazMBJGn90snmnCnWVNfexZtRYahWYHKxoAD..tPtS5U0AOZardC"], ["session_token", "g8_7JkLC1FH5w4vlvu5daQ"], ["created_at", "2015-11-17 19:17:51.282394"], ["updated_at", "2015-11-17 19:17:51.282394"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Read"], ["user_id", 20], ["created_at", "2015-11-17 19:17:51.285003"], ["updated_at", "2015-11-17 19:17:51.285003"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Reading"], ["user_id", 20], ["created_at", "2015-11-17 19:17:51.287198"], ["updated_at", "2015-11-17 19:17:51.287198"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Want to Read"], ["user_id", 20], ["created_at", "2015-11-17 19:17:51.289397"], ["updated_at", "2015-11-17 19:17:51.289397"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user21' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user21@place.com' LIMIT 1
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'tmpjMwbrF5A9IW6P43vB7g' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user21"], ["email", "user21@place.com"], ["password_digest", "$2a$10$T0huMPadYpvRtrU.s4ECLuNL4hgEOL2zwZ4RSxiWVj7iNJRAljMpu"], ["session_token", "tmpjMwbrF5A9IW6P43vB7g"], ["created_at", "2015-11-17 19:17:51.372602"], ["updated_at", "2015-11-17 19:17:51.372602"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Read"], ["user_id", 21], ["created_at", "2015-11-17 19:17:51.375403"], ["updated_at", "2015-11-17 19:17:51.375403"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Reading"], ["user_id", 21], ["created_at", "2015-11-17 19:17:51.377742"], ["updated_at", "2015-11-17 19:17:51.377742"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Want to Read"], ["user_id", 21], ["created_at", "2015-11-17 19:17:51.379907"], ["updated_at", "2015-11-17 19:17:51.379907"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.7ms)[0m  INSERT INTO "books" ("title", "author", "isbn", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["title", "Ancillary Justice"], ["author", "Ann Leckie"], ["isbn", 9780316246620], ["description", "Winner of the Hugo, Nebula, British Science Fiction, Locus and Arthur C. Clarke Awards.\nOn a remote, icy planet, the soldier known as Breq is drawing closer to completing her quest.\nOnce, she was the Justice of Toren - a colossal starship with an artificial intelligence linking thousands of soldiers in the service of the Radch, the empire that conquered the galaxy.\nNow, an act of treachery has ripped it all away, leaving her with one fragile human body, unanswered questions, and a burning desire for vengeance."], ["created_at", "2015-11-17 19:17:51.413230"], ["updated_at", "2015-11-17 19:17:51.413230"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "books" ("title", "author", "isbn", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "American Gods"], ["author", "Neil Gaiman"], ["isbn", 9780380789030], ["description", "Shadow is a man with a past. But now he wants nothing more than to live a quiet life with his wife and stay out of trouble. Until he learns that she's been killed in a terrible accident.\nFlying home for the funeral, as a violent storm rocks the plane, a strange man in the seat next to him introduces himself. The man calls himself Mr. Wednesday, and he knows more about Shadow than is possible.\nHe warns Shadow that a far bigger storm is coming. And from that moment on, nothing will ever be the same..."], ["created_at", "2015-11-17 19:17:51.424379"], ["updated_at", "2015-11-17 19:17:51.424379"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "books" ("title", "author", "isbn", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["title", "Annihilation"], ["author", "Jeff VanderMeer"], ["isbn", 9780374104092], ["description", "Area X has been cut off from the rest of the continent for decades. Nature has reclaimed the last vestiges of human civilization. The first expedition returned with reports of a pristine, Edenic landscape; the second expedition ended in mass suicide, the third expedition in a hail of gunfire as its members turned on one another. The members of the eleventh expedition returned as shadows of their former selves, and within weeks, all had died of cancer. In Annihilation, the first volume of Jeff VanderMeer's Southern Reach trilogy, we join the twelfth expedition.\nThe group is made up of four women: an anthropologist; a surveyor; a psychologist, the de facto leader; and our narrator, a biologist. Their mission is to map the terrain, record all observations of their surroundings and of one anotioner, and, above all, avoid being contaminated by Area X itself.\nThey arrive expecting the unexpected, and Area X delivers―they discover a massive topographic anomaly and life forms that surpass understanding―but it's the surprises that came across the border with them and the secrets the expedition members are keeping from one another that change everything."], ["created_at", "2015-11-17 19:17:51.427220"], ["updated_at", "2015-11-17 19:17:51.427220"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (1.5ms)[0m  [1mINSERT INTO "shelvings" ("book_id", "shelf_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["book_id", 1], ["shelf_id", 1], ["created_at", "2015-11-17 19:17:51.468067"], ["updated_at", "2015-11-17 19:17:51.468067"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "shelvings" ("book_id", "shelf_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["book_id", 2], ["shelf_id", 1], ["created_at", "2015-11-17 19:17:51.471942"], ["updated_at", "2015-11-17 19:17:51.471942"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "shelvings" ("book_id", "shelf_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["book_id", 3], ["shelf_id", 2], ["created_at", "2015-11-17 19:17:51.475105"], ["updated_at", "2015-11-17 19:17:51.475105"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (139.2ms)[0m  [1mDROP DATABASE IF EXISTS "Ready_development"[0m
+  [1m[35m (118.1ms)[0m  DROP DATABASE IF EXISTS "Ready_test"
+  [1m[36m (289.6ms)[0m  [1mCREATE DATABASE "Ready_development" ENCODING = 'unicode'[0m
+  [1m[35m (252.9ms)[0m  CREATE DATABASE "Ready_test" ENCODING = 'unicode'
+  [1m[36mSQL (0.4ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (9.4ms)[0m  CREATE TABLE "books" ("id" serial primary key, "title" character varying NOT NULL, "author" character varying NOT NULL, "isbn" bigint NOT NULL, "author_id" integer, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (1.5ms)[0m  [1mCREATE  INDEX  "index_books_on_author" ON "books" USING btree ("author")[0m
+  [1m[35m (1.4ms)[0m  CREATE  INDEX  "index_books_on_author_id" ON "books" USING btree ("author_id")
+  [1m[36m (1.5ms)[0m  [1mCREATE UNIQUE INDEX  "index_books_on_isbn" ON "books" USING btree ("isbn")[0m
+  [1m[35m (2.0ms)[0m  CREATE  INDEX  "index_books_on_title" ON "books" USING btree ("title")
+  [1m[36m (4.9ms)[0m  [1mCREATE TABLE "shelves" ("id" serial primary key, "user_id" integer NOT NULL, "title" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (1.5ms)[0m  CREATE  INDEX  "index_shelves_on_user_id" ON "shelves" USING btree ("user_id")
+  [1m[36m (3.8ms)[0m  [1mCREATE TABLE "shelvings" ("id" serial primary key, "shelf_id" integer NOT NULL, "book_id" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (1.3ms)[0m  CREATE  INDEX  "index_shelvings_on_book_id" ON "shelvings" USING btree ("book_id")
+  [1m[36m (1.5ms)[0m  [1mCREATE  INDEX  "index_shelvings_on_shelf_id" ON "shelvings" USING btree ("shelf_id")[0m
+  [1m[35m (4.9ms)[0m  CREATE TABLE "users" ("id" serial primary key, "name" character varying NOT NULL, "email" character varying NOT NULL, "password_digest" character varying NOT NULL, "session_token" character varying NOT NULL, "librarian" boolean DEFAULT 'f', "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (1.9ms)[0m  [1mCREATE UNIQUE INDEX  "index_users_on_email" ON "users" USING btree ("email")[0m
+  [1m[35m (1.4ms)[0m  CREATE UNIQUE INDEX  "index_users_on_name" ON "users" USING btree ("name")
+  [1m[36m (1.4ms)[0m  [1mCREATE UNIQUE INDEX  "index_users_on_session_token" ON "users" USING btree ("session_token")[0m
+  [1m[35m (3.3ms)[0m  ALTER TABLE "shelves" ADD CONSTRAINT "fk_rails_6b65d5b892"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+
+  [1m[36m (2.7ms)[0m  [1mALTER TABLE "shelvings" ADD CONSTRAINT "fk_rails_164a9ce3d9"
+FOREIGN KEY ("book_id")
+  REFERENCES "books" ("id")
+[0m
+  [1m[35m (2.0ms)[0m  ALTER TABLE "shelvings" ADD CONSTRAINT "fk_rails_de894d22c7"
+FOREIGN KEY ("shelf_id")
+  REFERENCES "shelves" ("id")
+
+  [1m[36m (2.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (1.4ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36m (0.4ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151117185937')
+  [1m[36m (0.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20151117140000')[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151117182221')
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20151117185237')[0m
+  [1m[35mSQL (0.4ms)[0m  CREATE EXTENSION IF NOT EXISTS "plpgsql"
+  [1m[36m (10.4ms)[0m  [1mCREATE TABLE "books" ("id" serial primary key, "title" character varying NOT NULL, "author" character varying NOT NULL, "isbn" bigint NOT NULL, "author_id" integer, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (1.6ms)[0m  CREATE  INDEX  "index_books_on_author" ON "books" USING btree ("author")
+  [1m[36m (1.4ms)[0m  [1mCREATE  INDEX  "index_books_on_author_id" ON "books" USING btree ("author_id")[0m
+  [1m[35m (1.5ms)[0m  CREATE UNIQUE INDEX  "index_books_on_isbn" ON "books" USING btree ("isbn")
+  [1m[36m (1.5ms)[0m  [1mCREATE  INDEX  "index_books_on_title" ON "books" USING btree ("title")[0m
+  [1m[35m (5.4ms)[0m  CREATE TABLE "shelves" ("id" serial primary key, "user_id" integer NOT NULL, "title" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (1.4ms)[0m  [1mCREATE  INDEX  "index_shelves_on_user_id" ON "shelves" USING btree ("user_id")[0m
+  [1m[35m (3.2ms)[0m  CREATE TABLE "shelvings" ("id" serial primary key, "shelf_id" integer NOT NULL, "book_id" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (1.4ms)[0m  [1mCREATE  INDEX  "index_shelvings_on_book_id" ON "shelvings" USING btree ("book_id")[0m
+  [1m[35m (1.3ms)[0m  CREATE  INDEX  "index_shelvings_on_shelf_id" ON "shelvings" USING btree ("shelf_id")
+  [1m[36m (4.8ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "name" character varying NOT NULL, "email" character varying NOT NULL, "password_digest" character varying NOT NULL, "session_token" character varying NOT NULL, "librarian" boolean DEFAULT 'f', "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (1.3ms)[0m  CREATE UNIQUE INDEX  "index_users_on_email" ON "users" USING btree ("email")
+  [1m[36m (1.7ms)[0m  [1mCREATE UNIQUE INDEX  "index_users_on_name" ON "users" USING btree ("name")[0m
+  [1m[35m (1.4ms)[0m  CREATE UNIQUE INDEX  "index_users_on_session_token" ON "users" USING btree ("session_token")
+  [1m[36m (3.2ms)[0m  [1mALTER TABLE "shelves" ADD CONSTRAINT "fk_rails_6b65d5b892"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35m (3.2ms)[0m  ALTER TABLE "shelvings" ADD CONSTRAINT "fk_rails_164a9ce3d9"
+FOREIGN KEY ("book_id")
+  REFERENCES "books" ("id")
+
+  [1m[36m (2.2ms)[0m  [1mALTER TABLE "shelvings" ADD CONSTRAINT "fk_rails_de894d22c7"
+FOREIGN KEY ("shelf_id")
+  REFERENCES "shelves" ("id")
+[0m
+  [1m[35m (2.3ms)[0m  CREATE TABLE "schema_migrations" ("version" character varying NOT NULL) 
+  [1m[36m (1.4ms)[0m  [1mCREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")[0m
+  [1m[35m (0.4ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20151117185937')[0m
+  [1m[35m (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151117140000')
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20151117182221')[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151117185237')
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'admin' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'admin@ready.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = '-hB0wwjsu6gFM-Vd-ij4wQ' LIMIT 1[0m
+  [1m[35mSQL (1.4ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "librarian", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["name", "admin"], ["email", "admin@ready.com"], ["password_digest", "$2a$10$aycUC7CBB9JXQ7tcJz7icONMLmqZMNsG.RXqP9r970Y/5qOAtTKKC"], ["librarian", "t"], ["session_token", "-hB0wwjsu6gFM-Vd-ij4wQ"], ["created_at", "2015-11-17 19:18:05.928170"], ["updated_at", "2015-11-17 19:18:05.928170"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (1.5ms)[0m  [1mINSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Read"], ["user_id", 1], ["created_at", "2015-11-17 19:18:05.943501"], ["updated_at", "2015-11-17 19:18:05.943501"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Reading"], ["user_id", 1], ["created_at", "2015-11-17 19:18:05.948266"], ["updated_at", "2015-11-17 19:18:05.948266"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Want to Read"], ["user_id", 1], ["created_at", "2015-11-17 19:18:05.951043"], ["updated_at", "2015-11-17 19:18:05.951043"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."name" = 'user2' LIMIT 1
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'user2@place.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'v8s9tZtGKNv0pzd8WUguYw' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "user2"], ["email", "user2@place.com"], ["password_digest", "$2a$10$Gm9HJ7VWLjJXhe7XrftsEeaDKJ5YlM9/ySDiUO/Tont8kH6mLNlp6"], ["session_token", "v8s9tZtGKNv0pzd8WUguYw"], ["created_at", "2015-11-17 19:18:06.034908"], ["updated_at", "2015-11-17 19:18:06.034908"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Read"], ["user_id", 2], ["created_at", "2015-11-17 19:18:06.037781"], ["updated_at", "2015-11-17 19:18:06.037781"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Reading"], ["user_id", 2], ["created_at", "2015-11-17 19:18:06.040281"], ["updated_at", "2015-11-17 19:18:06.040281"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Want to Read"], ["user_id", 2], ["created_at", "2015-11-17 19:18:06.042872"], ["updated_at", "2015-11-17 19:18:06.042872"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user3' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user3@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'F4qq7T3IuKZm2rZW7MorHw' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user3"], ["email", "user3@place.com"], ["password_digest", "$2a$10$hGYfCbKGZnDyrNnxqA4gJufAHihVTdo1.3ytSLwqVcKeGY6uru4uS"], ["session_token", "F4qq7T3IuKZm2rZW7MorHw"], ["created_at", "2015-11-17 19:18:06.127606"], ["updated_at", "2015-11-17 19:18:06.127606"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Read"], ["user_id", 3], ["created_at", "2015-11-17 19:18:06.129968"], ["updated_at", "2015-11-17 19:18:06.129968"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Reading"], ["user_id", 3], ["created_at", "2015-11-17 19:18:06.132111"], ["updated_at", "2015-11-17 19:18:06.132111"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Want to Read"], ["user_id", 3], ["created_at", "2015-11-17 19:18:06.134171"], ["updated_at", "2015-11-17 19:18:06.134171"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."name" = 'user4' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'user4@place.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'IrGzYMk5HPYz7YEJbDpIew' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "user4"], ["email", "user4@place.com"], ["password_digest", "$2a$10$ayX8c84w0REG7r2yN.7WPuPe3zgS34hKVvRdf6tQF1gAHv.BhAM72"], ["session_token", "IrGzYMk5HPYz7YEJbDpIew"], ["created_at", "2015-11-17 19:18:06.215938"], ["updated_at", "2015-11-17 19:18:06.215938"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Read"], ["user_id", 4], ["created_at", "2015-11-17 19:18:06.218389"], ["updated_at", "2015-11-17 19:18:06.218389"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Reading"], ["user_id", 4], ["created_at", "2015-11-17 19:18:06.220586"], ["updated_at", "2015-11-17 19:18:06.220586"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Want to Read"], ["user_id", 4], ["created_at", "2015-11-17 19:18:06.223215"], ["updated_at", "2015-11-17 19:18:06.223215"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user5' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user5@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = '0mAfe450_ijhfR-Tm5Z4sg' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user5"], ["email", "user5@place.com"], ["password_digest", "$2a$10$UD2TUAcVE/TuAV33mQA71eAnf.4JsHGe90x7BidlIZHrV5n.Ysr3O"], ["session_token", "0mAfe450_ijhfR-Tm5Z4sg"], ["created_at", "2015-11-17 19:18:06.305105"], ["updated_at", "2015-11-17 19:18:06.305105"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Read"], ["user_id", 5], ["created_at", "2015-11-17 19:18:06.307970"], ["updated_at", "2015-11-17 19:18:06.307970"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Reading"], ["user_id", 5], ["created_at", "2015-11-17 19:18:06.310167"], ["updated_at", "2015-11-17 19:18:06.310167"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Want to Read"], ["user_id", 5], ["created_at", "2015-11-17 19:18:06.312458"], ["updated_at", "2015-11-17 19:18:06.312458"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."name" = 'user6' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'user6@place.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = '16h4TY9D2kcdaLQUso_3gQ' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "user6"], ["email", "user6@place.com"], ["password_digest", "$2a$10$yRci0H9OIILL/6THfKXY7OOAXSLPSYYF/QnlZRkbIHEEHexf9l.Vi"], ["session_token", "16h4TY9D2kcdaLQUso_3gQ"], ["created_at", "2015-11-17 19:18:06.395014"], ["updated_at", "2015-11-17 19:18:06.395014"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Read"], ["user_id", 6], ["created_at", "2015-11-17 19:18:06.397597"], ["updated_at", "2015-11-17 19:18:06.397597"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Reading"], ["user_id", 6], ["created_at", "2015-11-17 19:18:06.399933"], ["updated_at", "2015-11-17 19:18:06.399933"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Want to Read"], ["user_id", 6], ["created_at", "2015-11-17 19:18:06.402072"], ["updated_at", "2015-11-17 19:18:06.402072"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user7' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user7@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'o1_Tq6xFaeFtFci5e1NzMA' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user7"], ["email", "user7@place.com"], ["password_digest", "$2a$10$1NCBbnTBFH/b6XG8SB1eJu0HzXlDmPuR8qHwzsDI2x2OyOEq/33mu"], ["session_token", "o1_Tq6xFaeFtFci5e1NzMA"], ["created_at", "2015-11-17 19:18:06.479269"], ["updated_at", "2015-11-17 19:18:06.479269"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Read"], ["user_id", 7], ["created_at", "2015-11-17 19:18:06.481715"], ["updated_at", "2015-11-17 19:18:06.481715"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Reading"], ["user_id", 7], ["created_at", "2015-11-17 19:18:06.483778"], ["updated_at", "2015-11-17 19:18:06.483778"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Want to Read"], ["user_id", 7], ["created_at", "2015-11-17 19:18:06.486161"], ["updated_at", "2015-11-17 19:18:06.486161"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."name" = 'user8' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'user8@place.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.6ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = '74uoM57JbwpuFSOZ2mPSpQ' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "user8"], ["email", "user8@place.com"], ["password_digest", "$2a$10$5kj0oYBmmFvhga8yfcxMxO2PHEl3aGNt1aglf41uxwYZIzWKiFmjy"], ["session_token", "74uoM57JbwpuFSOZ2mPSpQ"], ["created_at", "2015-11-17 19:18:06.569872"], ["updated_at", "2015-11-17 19:18:06.569872"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Read"], ["user_id", 8], ["created_at", "2015-11-17 19:18:06.572810"], ["updated_at", "2015-11-17 19:18:06.572810"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Reading"], ["user_id", 8], ["created_at", "2015-11-17 19:18:06.575166"], ["updated_at", "2015-11-17 19:18:06.575166"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Want to Read"], ["user_id", 8], ["created_at", "2015-11-17 19:18:06.577325"], ["updated_at", "2015-11-17 19:18:06.577325"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user9' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user9@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'G5GN94xexqUCrqxUTKuzvA' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user9"], ["email", "user9@place.com"], ["password_digest", "$2a$10$TOxNnXG01zqZWMg6A2bh/.1OsIodW.irJ/Awj2cOCznMXPaxnj.cC"], ["session_token", "G5GN94xexqUCrqxUTKuzvA"], ["created_at", "2015-11-17 19:18:06.653737"], ["updated_at", "2015-11-17 19:18:06.653737"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Read"], ["user_id", 9], ["created_at", "2015-11-17 19:18:06.656732"], ["updated_at", "2015-11-17 19:18:06.656732"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Reading"], ["user_id", 9], ["created_at", "2015-11-17 19:18:06.659677"], ["updated_at", "2015-11-17 19:18:06.659677"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Want to Read"], ["user_id", 9], ["created_at", "2015-11-17 19:18:06.662253"], ["updated_at", "2015-11-17 19:18:06.662253"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."name" = 'user10' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'user10@place.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'JyRX23UDY8aQ7Yp35Bg4iQ' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "user10"], ["email", "user10@place.com"], ["password_digest", "$2a$10$FMm3TZ7TfIWM5KFmQqeC4eMPtUjfvXJp6TU9O2vtHDwY8BvPT7Tdm"], ["session_token", "JyRX23UDY8aQ7Yp35Bg4iQ"], ["created_at", "2015-11-17 19:18:06.745408"], ["updated_at", "2015-11-17 19:18:06.745408"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Read"], ["user_id", 10], ["created_at", "2015-11-17 19:18:06.748417"], ["updated_at", "2015-11-17 19:18:06.748417"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Reading"], ["user_id", 10], ["created_at", "2015-11-17 19:18:06.751383"], ["updated_at", "2015-11-17 19:18:06.751383"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Want to Read"], ["user_id", 10], ["created_at", "2015-11-17 19:18:06.753915"], ["updated_at", "2015-11-17 19:18:06.753915"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user11' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user11@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'gP3wPzQvkNyM0URrgVdM2A' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user11"], ["email", "user11@place.com"], ["password_digest", "$2a$10$rZrfXwZd0w0RDdf9ogTkkuGP46Luz4RXXMPvYfsG9F7chJdTnasNW"], ["session_token", "gP3wPzQvkNyM0URrgVdM2A"], ["created_at", "2015-11-17 19:18:06.838394"], ["updated_at", "2015-11-17 19:18:06.838394"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Read"], ["user_id", 11], ["created_at", "2015-11-17 19:18:06.840902"], ["updated_at", "2015-11-17 19:18:06.840902"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Reading"], ["user_id", 11], ["created_at", "2015-11-17 19:18:06.843340"], ["updated_at", "2015-11-17 19:18:06.843340"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Want to Read"], ["user_id", 11], ["created_at", "2015-11-17 19:18:06.845658"], ["updated_at", "2015-11-17 19:18:06.845658"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."name" = 'user12' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'user12@place.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = '9sLkiibBmxIzYioBTIo3LA' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "user12"], ["email", "user12@place.com"], ["password_digest", "$2a$10$I/gMVsR/oGGJNJbAYwCakejYk.j6YrDjklrXAHusIxqYUtjLoSJV."], ["session_token", "9sLkiibBmxIzYioBTIo3LA"], ["created_at", "2015-11-17 19:18:06.927991"], ["updated_at", "2015-11-17 19:18:06.927991"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Read"], ["user_id", 12], ["created_at", "2015-11-17 19:18:06.931012"], ["updated_at", "2015-11-17 19:18:06.931012"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Reading"], ["user_id", 12], ["created_at", "2015-11-17 19:18:06.933983"], ["updated_at", "2015-11-17 19:18:06.933983"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Want to Read"], ["user_id", 12], ["created_at", "2015-11-17 19:18:06.936683"], ["updated_at", "2015-11-17 19:18:06.936683"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user13' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user13@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'EDah87Viq3T1uSlZLY97YA' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user13"], ["email", "user13@place.com"], ["password_digest", "$2a$10$.zc.9ffC7iu0x5HzWqZtEOXniQlle0dFP57qgC3tZbdTbJeqriBsy"], ["session_token", "EDah87Viq3T1uSlZLY97YA"], ["created_at", "2015-11-17 19:18:07.017557"], ["updated_at", "2015-11-17 19:18:07.017557"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Read"], ["user_id", 13], ["created_at", "2015-11-17 19:18:07.019986"], ["updated_at", "2015-11-17 19:18:07.019986"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Reading"], ["user_id", 13], ["created_at", "2015-11-17 19:18:07.022160"], ["updated_at", "2015-11-17 19:18:07.022160"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Want to Read"], ["user_id", 13], ["created_at", "2015-11-17 19:18:07.024246"], ["updated_at", "2015-11-17 19:18:07.024246"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."name" = 'user14' LIMIT 1
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'user14@place.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = '8yBDkqT5hvtMH1Z_PT7BOQ' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "user14"], ["email", "user14@place.com"], ["password_digest", "$2a$10$bENeAkAlj.9cb1l8lPGZaOFTQ71dIdGv6KzK0D2Pmw8j3zkX/ArK."], ["session_token", "8yBDkqT5hvtMH1Z_PT7BOQ"], ["created_at", "2015-11-17 19:18:07.107762"], ["updated_at", "2015-11-17 19:18:07.107762"]]
+  [1m[35m (18.4ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Read"], ["user_id", 14], ["created_at", "2015-11-17 19:18:07.129493"], ["updated_at", "2015-11-17 19:18:07.129493"]]
+  [1m[36m (62.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Reading"], ["user_id", 14], ["created_at", "2015-11-17 19:18:07.195654"], ["updated_at", "2015-11-17 19:18:07.195654"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Want to Read"], ["user_id", 14], ["created_at", "2015-11-17 19:18:07.199463"], ["updated_at", "2015-11-17 19:18:07.199463"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user15' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user15@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'hDSgqfaX5Wk8NlfXT3b9BA' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user15"], ["email", "user15@place.com"], ["password_digest", "$2a$10$lxNRVj/DGJ/.uk3aEXDMU.pMmHPadzgyyPoZeECAW1SM69HGyqT6."], ["session_token", "hDSgqfaX5Wk8NlfXT3b9BA"], ["created_at", "2015-11-17 19:18:07.277966"], ["updated_at", "2015-11-17 19:18:07.277966"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Read"], ["user_id", 15], ["created_at", "2015-11-17 19:18:07.280501"], ["updated_at", "2015-11-17 19:18:07.280501"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Reading"], ["user_id", 15], ["created_at", "2015-11-17 19:18:07.282724"], ["updated_at", "2015-11-17 19:18:07.282724"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Want to Read"], ["user_id", 15], ["created_at", "2015-11-17 19:18:07.284980"], ["updated_at", "2015-11-17 19:18:07.284980"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."name" = 'user16' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'user16@place.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = '4KmBothg97jnJ92ljWhBrg' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "user16"], ["email", "user16@place.com"], ["password_digest", "$2a$10$GMrAIUhsDNz5GUBCCGqR6eIDGStZ0cwXZ89Y6gXLEkswmObaPeTcm"], ["session_token", "4KmBothg97jnJ92ljWhBrg"], ["created_at", "2015-11-17 19:18:07.361700"], ["updated_at", "2015-11-17 19:18:07.361700"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Read"], ["user_id", 16], ["created_at", "2015-11-17 19:18:07.364397"], ["updated_at", "2015-11-17 19:18:07.364397"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Reading"], ["user_id", 16], ["created_at", "2015-11-17 19:18:07.367002"], ["updated_at", "2015-11-17 19:18:07.367002"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Want to Read"], ["user_id", 16], ["created_at", "2015-11-17 19:18:07.370043"], ["updated_at", "2015-11-17 19:18:07.370043"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user17' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user17@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'ZOdi-Z1fxf8RTxziubJkAA' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user17"], ["email", "user17@place.com"], ["password_digest", "$2a$10$8ajgim1DvElzmH7lAA0go.9r2itbhWTaDYl7ZAf9cQdK3SHcWp9di"], ["session_token", "ZOdi-Z1fxf8RTxziubJkAA"], ["created_at", "2015-11-17 19:18:07.453257"], ["updated_at", "2015-11-17 19:18:07.453257"]]
+  [1m[36m (1.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Read"], ["user_id", 17], ["created_at", "2015-11-17 19:18:07.456561"], ["updated_at", "2015-11-17 19:18:07.456561"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Reading"], ["user_id", 17], ["created_at", "2015-11-17 19:18:07.459382"], ["updated_at", "2015-11-17 19:18:07.459382"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Want to Read"], ["user_id", 17], ["created_at", "2015-11-17 19:18:07.461777"], ["updated_at", "2015-11-17 19:18:07.461777"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.6ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."name" = 'user18' LIMIT 1
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'user18@place.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'lrgJwIRgQM6AiS4mGoff0Q' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "user18"], ["email", "user18@place.com"], ["password_digest", "$2a$10$umN/lYs0e.EdGi8gYg.6yuJij.66C1FTK2TBT2zMXsWiBQaq9ItKi"], ["session_token", "lrgJwIRgQM6AiS4mGoff0Q"], ["created_at", "2015-11-17 19:18:07.538580"], ["updated_at", "2015-11-17 19:18:07.538580"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Read"], ["user_id", 18], ["created_at", "2015-11-17 19:18:07.541646"], ["updated_at", "2015-11-17 19:18:07.541646"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Reading"], ["user_id", 18], ["created_at", "2015-11-17 19:18:07.543854"], ["updated_at", "2015-11-17 19:18:07.543854"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Want to Read"], ["user_id", 18], ["created_at", "2015-11-17 19:18:07.546088"], ["updated_at", "2015-11-17 19:18:07.546088"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user19' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user19@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'teWLf1RdQx0WjPeN7eX9_A' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user19"], ["email", "user19@place.com"], ["password_digest", "$2a$10$hK9QnIMFjphkBhFJ7tk2p.IcJXCC7vuqVdzpCsErdOmfJNLalqjWa"], ["session_token", "teWLf1RdQx0WjPeN7eX9_A"], ["created_at", "2015-11-17 19:18:07.626211"], ["updated_at", "2015-11-17 19:18:07.626211"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Read"], ["user_id", 19], ["created_at", "2015-11-17 19:18:07.628764"], ["updated_at", "2015-11-17 19:18:07.628764"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Reading"], ["user_id", 19], ["created_at", "2015-11-17 19:18:07.631044"], ["updated_at", "2015-11-17 19:18:07.631044"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Want to Read"], ["user_id", 19], ["created_at", "2015-11-17 19:18:07.633266"], ["updated_at", "2015-11-17 19:18:07.633266"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."name" = 'user20' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'user20@place.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'lTQELMhleYCXNP07XPNa2w' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "user20"], ["email", "user20@place.com"], ["password_digest", "$2a$10$dy6vRFH9gPEZQ7ZAK2H2aOcwO.YKRv58k.dZcqHac7yWt6ynXcsja"], ["session_token", "lTQELMhleYCXNP07XPNa2w"], ["created_at", "2015-11-17 19:18:07.713447"], ["updated_at", "2015-11-17 19:18:07.713447"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Read"], ["user_id", 20], ["created_at", "2015-11-17 19:18:07.715984"], ["updated_at", "2015-11-17 19:18:07.715984"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Reading"], ["user_id", 20], ["created_at", "2015-11-17 19:18:07.718400"], ["updated_at", "2015-11-17 19:18:07.718400"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Want to Read"], ["user_id", 20], ["created_at", "2015-11-17 19:18:07.720943"], ["updated_at", "2015-11-17 19:18:07.720943"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user21' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user21@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'i2HXesay6EeTHGyt8FXS_w' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user21"], ["email", "user21@place.com"], ["password_digest", "$2a$10$XHR2L7xZCj/pHWOFxiFEEOa/Incpl8SPzX8CTD90GO8RIiZVZQxO."], ["session_token", "i2HXesay6EeTHGyt8FXS_w"], ["created_at", "2015-11-17 19:18:07.800780"], ["updated_at", "2015-11-17 19:18:07.800780"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Read"], ["user_id", 21], ["created_at", "2015-11-17 19:18:07.803829"], ["updated_at", "2015-11-17 19:18:07.803829"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Reading"], ["user_id", 21], ["created_at", "2015-11-17 19:18:07.806365"], ["updated_at", "2015-11-17 19:18:07.806365"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "shelves" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Want to Read"], ["user_id", 21], ["created_at", "2015-11-17 19:18:07.808877"], ["updated_at", "2015-11-17 19:18:07.808877"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.2ms)[0m  INSERT INTO "books" ("title", "author", "isbn", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["title", "Ancillary Justice"], ["author", "Ann Leckie"], ["isbn", 9780316246620], ["description", "Winner of the Hugo, Nebula, British Science Fiction, Locus and Arthur C. Clarke Awards.\nOn a remote, icy planet, the soldier known as Breq is drawing closer to completing her quest.\nOnce, she was the Justice of Toren - a colossal starship with an artificial intelligence linking thousands of soldiers in the service of the Radch, the empire that conquered the galaxy.\nNow, an act of treachery has ripped it all away, leaving her with one fragile human body, unanswered questions, and a burning desire for vengeance."], ["created_at", "2015-11-17 19:18:07.823451"], ["updated_at", "2015-11-17 19:18:07.823451"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "books" ("title", "author", "isbn", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "American Gods"], ["author", "Neil Gaiman"], ["isbn", 9780380789030], ["description", "Shadow is a man with a past. But now he wants nothing more than to live a quiet life with his wife and stay out of trouble. Until he learns that she's been killed in a terrible accident.\nFlying home for the funeral, as a violent storm rocks the plane, a strange man in the seat next to him introduces himself. The man calls himself Mr. Wednesday, and he knows more about Shadow than is possible.\nHe warns Shadow that a far bigger storm is coming. And from that moment on, nothing will ever be the same..."], ["created_at", "2015-11-17 19:18:07.827674"], ["updated_at", "2015-11-17 19:18:07.827674"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "books" ("title", "author", "isbn", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["title", "Annihilation"], ["author", "Jeff VanderMeer"], ["isbn", 9780374104092], ["description", "Area X has been cut off from the rest of the continent for decades. Nature has reclaimed the last vestiges of human civilization. The first expedition returned with reports of a pristine, Edenic landscape; the second expedition ended in mass suicide, the third expedition in a hail of gunfire as its members turned on one another. The members of the eleventh expedition returned as shadows of their former selves, and within weeks, all had died of cancer. In Annihilation, the first volume of Jeff VanderMeer's Southern Reach trilogy, we join the twelfth expedition.\nThe group is made up of four women: an anthropologist; a surveyor; a psychologist, the de facto leader; and our narrator, a biologist. Their mission is to map the terrain, record all observations of their surroundings and of one anotioner, and, above all, avoid being contaminated by Area X itself.\nThey arrive expecting the unexpected, and Area X delivers―they discover a massive topographic anomaly and life forms that surpass understanding―but it's the surprises that came across the border with them and the secrets the expedition members are keeping from one another that change everything."], ["created_at", "2015-11-17 19:18:07.830327"], ["updated_at", "2015-11-17 19:18:07.830327"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (1.9ms)[0m  [1mINSERT INTO "shelvings" ("book_id", "shelf_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["book_id", 1], ["shelf_id", 1], ["created_at", "2015-11-17 19:18:07.848356"], ["updated_at", "2015-11-17 19:18:07.848356"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "shelvings" ("book_id", "shelf_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["book_id", 2], ["shelf_id", 1], ["created_at", "2015-11-17 19:18:07.853220"], ["updated_at", "2015-11-17 19:18:07.853220"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "shelvings" ("book_id", "shelf_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["book_id", 3], ["shelf_id", 2], ["created_at", "2015-11-17 19:18:07.856098"], ["updated_at", "2015-11-17 19:18:07.856098"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+
+
+Started POST "/session" for ::1 at 2015-11-17 14:18:26 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"/hyptNfY3ZRi7tsht09oflgjlbwfFl2HTjx35QflU2S/NEDDmT6f+UngwjgNdxWwy78FFPm2UCI09Dr5nvnQ+w==", "user"=>{"info"=>"admin", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.9ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "admin"]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."name" = $1 LIMIT 1[0m  [["name", "admin"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."name" = 'admin' AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."email" = 'admin@ready.com' AND "users"."id" != 1) LIMIT 1
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."session_token" = '-qBrJ-8MVZAzs_P886STjw' AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  UPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3  [["session_token", "-qBrJ-8MVZAzs_P886STjw"], ["updated_at", "2015-11-17 19:18:26.742294"], ["id", 1]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/static_pages
+Completed 302 Found in 155ms (ActiveRecord: 8.3ms)
+
+
+Started GET "/static_pages" for ::1 at 2015-11-17 14:18:26 -0500
+Processing by StaticPagesController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "-qBrJ-8MVZAzs_P886STjw"]]
+  [1m[36mShelf Load (0.6ms)[0m  [1mSELECT "shelves".* FROM "shelves" WHERE "shelves"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35mBook Load (1.2ms)[0m  SELECT "books".* FROM "books" INNER JOIN "shelvings" ON "books"."id" = "shelvings"."book_id" WHERE "shelvings"."shelf_id" = $1  [["shelf_id", 1]]
+  [1m[36mBook Load (0.7ms)[0m  [1mSELECT "books".* FROM "books" INNER JOIN "shelvings" ON "books"."id" = "shelvings"."book_id" WHERE "shelvings"."shelf_id" = $1[0m  [["shelf_id", 2]]
+  [1m[35mBook Load (0.5ms)[0m  SELECT "books".* FROM "books" INNER JOIN "shelvings" ON "books"."id" = "shelvings"."book_id" WHERE "shelvings"."shelf_id" = $1  [["shelf_id", 3]]
+  Rendered static_pages/index.html.erb within layouts/application (84.6ms)
+Completed 200 OK in 765ms (Views: 753.3ms | ActiveRecord: 8.7ms)
+
+
+Started GET "/assets/main.self-3523c650ec1c3cf2c3e8f6eeef0a12449cae70914b0a76aa0cbc9a343bf7bf0f.css?body=1" for ::1 at 2015-11-17 14:18:27 -0500
+
+
+Started GET "/assets/scss/sessions.self-8b644ab22b7ddc56bd2e4cbe5d8830d5066debf213d04fb3cffb30219b253c21.css?body=1" for ::1 at 2015-11-17 14:18:27 -0500
+
+
+Started GET "/assets/application.self-9ba9cd344ddc763a2bb6be3ffebb8d834548a11741eb916e305b8abe9414413f.css?body=1" for ::1 at 2015-11-17 14:18:27 -0500
+
+
+Started GET "/assets/scss/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-17 14:18:27 -0500
+
+
+Started GET "/assets/scss/static_pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-17 14:18:27 -0500
+
+
+Started GET "/assets/scss/globals.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-17 14:18:27 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-11-17 14:18:27 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-11-17 14:18:27 -0500
+
+
+Started GET "/assets/development/react.self-93bc62cb6c7b74ee7e5a2fcf623f3abbd365440bf90eba740c625f159078aa82.js?body=1" for ::1 at 2015-11-17 14:18:27 -0500
+
+
+Started GET "/assets/flux.self-c2206dc953bbad23c0ee331879560545a4ec58709c89fe78db57a156ec19c08f.js?body=1" for ::1 at 2015-11-17 14:18:28 -0500
+
+
+Started GET "/assets/react_ujs.self-c42e5ee44bcda6910afca6fb40f99d9963074b3aefe72365ce90c24312e73b2b.js?body=1" for ::1 at 2015-11-17 14:18:28 -0500
+
+
+Started GET "/assets/react_router.self-b2fb42fc48326928f091759585ae1eab0cd35ab15ba475d0fbb6c01c9dedc5bb.js?body=1" for ::1 at 2015-11-17 14:18:28 -0500
+
+
+Started GET "/assets/eventemitter.self-b7e538902dfb3dce50e80598efaa7b435781b7bc8fe936a7aca64a6f2699d411.js?body=1" for ::1 at 2015-11-17 14:18:28 -0500
+
+
+Started GET "/assets/components.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-11-17 14:18:28 -0500
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-17 14:18:28 -0500
+
+
+Started GET "/assets/static_pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-17 14:18:28 -0500
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-17 14:18:28 -0500
+
+
+Started GET "/assets/stores/user.self-48562fd31f0b8510509a2ed3e7fd374e3d986d4ea1a2b20b8a9e93c479a0a7ec.js?body=1" for ::1 at 2015-11-17 14:18:28 -0500
+
+
+Started GET "/assets/application.self-a1a74291c4c48f2f663a025ffa678498d6448b849a2d74c0ca25e39ee192c0a7.js?body=1" for ::1 at 2015-11-17 14:18:28 -0500

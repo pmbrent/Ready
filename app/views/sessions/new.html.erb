@@ -1,7 +1,7 @@
 <div class="nav">
   <img src="<%= image_path('Ready-logo.png') %>">
   <div class="login">
-    <form action="session" method="POST">
+    <form action="/session" method="POST">
       <%= auth_token %>
       <label for="userinfo">Username/Email:
         <input type="text" name="[user]info" id="userinfo"></input>

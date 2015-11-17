@@ -5,4 +5,14 @@
     <input type="hidden" name="_method" value="DELETE">
     <input type="submit" value="Log Out">
   </form>
+
+  <section>
+    Your Shelves!
+    <% current_user.shelves.each do |shelf| %>
+    <%= shelf.title %>
+      <% shelf.books.each do |book| %>
+      <%= "#{book.title} by #{book.author}" %>
+      <% end %>
+    <% end %>
+
 </div>
