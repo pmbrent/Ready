@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
   validates :librarian, inclusion: {in: [true, false]}
   validates :password, length: {minimum: 8}, allow_nil: true
 
+  after_initialize :ensure_session_token
+
   def self.find_by_credentials(userinfo, password)
     user = User.find_by_email(userinfo) || User.find_by_name(userinfo)
     return nil if user.nil?

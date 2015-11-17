@@ -6,19 +6,14 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-admin = User.new(name: "admin",
+User.create!(name: "admin",
              email: "admin@ready.com",
              password: "admin",
              librarian: true)
 
-admin.ensure_session_token
-admin.save!
-
 20.times do |i|
-  new_user = User.new(name: "user#{i+2}",
+  User.create!(name: "user#{i+2}",
                email: "user#{i+2}@place.com",
                password: "password#{i+2}",
                librarian: false)
-  new_user.ensure_session_token
-  new_user.save
 end
