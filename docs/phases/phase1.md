@@ -15,12 +15,16 @@
 
 ## Flux
 ### Views (React Components)
+NewUserForm
 
 ### Stores
+UserStore
 
 ### Actions
+createNewUser
 
 ### ApiUtil
+receiveUsers
 
 ## Gems/Libraries
 * BCrypt
