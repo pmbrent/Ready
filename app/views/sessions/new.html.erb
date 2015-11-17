@@ -1,14 +1,17 @@
-<div class="login nav">
-  <form action="session" method="POST">
-    <%= auth_token %>
-    <label for="userinfo">Username/Email:
-      <input type="text" name="[user]info" id="userinfo"></input>
-    </label>
-    <label for="password">Password:
-      <input type="password" name="[user]password" id="password"></input>
-    </label>
-    <input type="submit" value="Log in!"></input>
-  </form>
+<div class="nav">
+  <strong class="logo">R<span style="color: #570000">e</span>ady</strong>
+  <div class="login">
+    <form action="session" method="POST">
+      <%= auth_token %>
+      <label for="userinfo">Username/Email:
+        <input type="text" name="[user]info" id="userinfo"></input>
+      </label>
+      <label for="password">Password:
+        <input type="password" name="[user]password" id="password"></input>
+      </label>
+      <input type="submit" value="Log in!"></input>
+    </form>
+  </div>
 </div>
 
 <h1>Welcome to Ready!</h1>
