@@ -11085,3 +11085,917 @@ Started GET "/assets/application.self-16c207b3ca1b52afcfc7f4b662487caf1bbe084a66
 
 
 Started GET "/assets/Ready-logo-6e1f3dddf6bde24a0173705541071a86d2866ba848c7bf5d629595631c1f4c09.png" for ::1 at 2015-11-17 13:18:17 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateBooks (20151117182221)
+  [1m[35m (6.4ms)[0m  BEGIN
+  [1m[36m (78.0ms)[0m  [1mCREATE TABLE "books" ("id" serial primary key, "title" character varying NOT NULL, "author" character varying NOT NULL, "isbn" integer NOT NULL, "author_id" integer, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (1.3ms)[0m  CREATE UNIQUE INDEX  "index_books_on_isbn" ON "books"  ("isbn")
+  [1m[36m (1.1ms)[0m  [1mCREATE  INDEX  "index_books_on_title" ON "books"  ("title")[0m
+  [1m[35m (1.0ms)[0m  CREATE  INDEX  "index_books_on_author" ON "books"  ("author")
+  [1m[36m (1.0ms)[0m  [1mCREATE  INDEX  "index_books_on_author_id" ON "books"  ("author_id")[0m
+  [1m[35mSQL (31.6ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20151117182221"]]
+  [1m[36m (28.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (4.8ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'books'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (3.8ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (5126.4ms)[0m  [1mDROP DATABASE IF EXISTS "Ready_development"[0m
+PG::ObjectInUse: ERROR:  database "Ready_development" is being accessed by other users
+DETAIL:  There are 2 other sessions using the database.
+: DROP DATABASE IF EXISTS "Ready_development"
+  [1m[35m (184.7ms)[0m  DROP DATABASE IF EXISTS "Ready_test"
+  [1m[36m (0.8ms)[0m  [1mCREATE DATABASE "Ready_development" ENCODING = 'unicode'[0m
+PG::DuplicateDatabase: ERROR:  database "Ready_development" already exists
+: CREATE DATABASE "Ready_development" ENCODING = 'unicode'
+  [1m[35m (605.7ms)[0m  CREATE DATABASE "Ready_test" ENCODING = 'unicode'
+  [1m[36mSQL (43.8ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (106.2ms)[0m  DROP TABLE "books" CASCADE
+  [1m[36m (24.6ms)[0m  [1mCREATE TABLE "books" ("id" serial primary key, "title" character varying NOT NULL, "author" character varying NOT NULL, "isbn" integer NOT NULL, "author_id" integer, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (1.4ms)[0m  CREATE  INDEX  "index_books_on_author" ON "books" USING btree ("author")
+  [1m[36m (1.5ms)[0m  [1mCREATE  INDEX  "index_books_on_author_id" ON "books" USING btree ("author_id")[0m
+  [1m[35m (1.4ms)[0m  CREATE UNIQUE INDEX  "index_books_on_isbn" ON "books" USING btree ("isbn")
+  [1m[36m (1.3ms)[0m  [1mCREATE  INDEX  "index_books_on_title" ON "books" USING btree ("title")[0m
+  [1m[35m (27.5ms)[0m  DROP TABLE "users" CASCADE
+  [1m[36m (6.2ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "name" character varying NOT NULL, "email" character varying NOT NULL, "password_digest" character varying NOT NULL, "session_token" character varying NOT NULL, "librarian" boolean DEFAULT 'f', "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (1.5ms)[0m  CREATE UNIQUE INDEX  "index_users_on_email" ON "users" USING btree ("email")
+  [1m[36m (1.4ms)[0m  [1mCREATE UNIQUE INDEX  "index_users_on_name" ON "users" USING btree ("name")[0m
+  [1m[35m (1.4ms)[0m  CREATE UNIQUE INDEX  "index_users_on_session_token" ON "users" USING btree ("session_token")
+  [1m[36m (0.5ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35mSQL (0.4ms)[0m  CREATE EXTENSION IF NOT EXISTS "plpgsql"
+  [1m[36m (8.6ms)[0m  [1mCREATE TABLE "books" ("id" serial primary key, "title" character varying NOT NULL, "author" character varying NOT NULL, "isbn" integer NOT NULL, "author_id" integer, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (2.1ms)[0m  CREATE  INDEX  "index_books_on_author" ON "books" USING btree ("author")
+  [1m[36m (1.7ms)[0m  [1mCREATE  INDEX  "index_books_on_author_id" ON "books" USING btree ("author_id")[0m
+  [1m[35m (2.1ms)[0m  CREATE UNIQUE INDEX  "index_books_on_isbn" ON "books" USING btree ("isbn")
+  [1m[36m (1.5ms)[0m  [1mCREATE  INDEX  "index_books_on_title" ON "books" USING btree ("title")[0m
+  [1m[35m (5.4ms)[0m  CREATE TABLE "users" ("id" serial primary key, "name" character varying NOT NULL, "email" character varying NOT NULL, "password_digest" character varying NOT NULL, "session_token" character varying NOT NULL, "librarian" boolean DEFAULT 'f', "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (1.4ms)[0m  [1mCREATE UNIQUE INDEX  "index_users_on_email" ON "users" USING btree ("email")[0m
+  [1m[35m (1.6ms)[0m  CREATE UNIQUE INDEX  "index_users_on_name" ON "users" USING btree ("name")
+  [1m[36m (1.3ms)[0m  [1mCREATE UNIQUE INDEX  "index_users_on_session_token" ON "users" USING btree ("session_token")[0m
+  [1m[35m (3.7ms)[0m  CREATE TABLE "schema_migrations" ("version" character varying NOT NULL) 
+  [1m[36m (1.5ms)[0m  [1mCREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")[0m
+  [1m[35m (0.6ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20151117182221')[0m
+  [1m[35m (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151117140000')
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (1.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'admin' LIMIT 1[0m
+  [1m[35mUser Exists (0.7ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'admin@ready.com' LIMIT 1
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = '8ecYzJTMOhZQS9hUxKCfoQ' LIMIT 1[0m
+  [1m[35mSQL (21.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "librarian", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["name", "admin"], ["email", "admin@ready.com"], ["password_digest", "$2a$10$nyv2DBIzUii351hWqaC49OpYw4l.vL8/heKpRF/PCJIur5JEV40ei"], ["librarian", "t"], ["session_token", "8ecYzJTMOhZQS9hUxKCfoQ"], ["created_at", "2015-11-17 18:46:30.905387"], ["updated_at", "2015-11-17 18:46:30.905387"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user2' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user2@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'NEMiJakYZAvZT78o8JJnDw' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user2"], ["email", "user2@place.com"], ["password_digest", "$2a$10$q7LPxuuByTs9Sxq5sfPeiOa8/EaY1/Nu1344rvBHWN8IwABRQ2Mn."], ["session_token", "NEMiJakYZAvZT78o8JJnDw"], ["created_at", "2015-11-17 18:46:31.007547"], ["updated_at", "2015-11-17 18:46:31.007547"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user3' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user3@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'FOZF-ldMnM2njGLcselt6g' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user3"], ["email", "user3@place.com"], ["password_digest", "$2a$10$BEbQ3dLIGt1AZYHPQGIWgOUniU0BOwM5uFDJ/7mRfT1i9Kb3i39Dq"], ["session_token", "FOZF-ldMnM2njGLcselt6g"], ["created_at", "2015-11-17 18:46:31.087889"], ["updated_at", "2015-11-17 18:46:31.087889"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user4' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user4@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'R2YtDhDTnRQYh_DBe7VzYA' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user4"], ["email", "user4@place.com"], ["password_digest", "$2a$10$5Zq163vkwT/m5LGCAyRm0.Za.pCNaKzEKdRykCzGQdEjfdWSNjZCy"], ["session_token", "R2YtDhDTnRQYh_DBe7VzYA"], ["created_at", "2015-11-17 18:46:31.164982"], ["updated_at", "2015-11-17 18:46:31.164982"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user5' LIMIT 1[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user5@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = '3uomv2cxyOWObeKmbVgxZg' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user5"], ["email", "user5@place.com"], ["password_digest", "$2a$10$L0zzBUPjKhI4g6ylXom4U.JkxKVGOI5PdDEoBEKHq769KcdJXQ92G"], ["session_token", "3uomv2cxyOWObeKmbVgxZg"], ["created_at", "2015-11-17 18:46:31.242793"], ["updated_at", "2015-11-17 18:46:31.242793"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user6' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user6@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'qjCcvIMymjWjlIddF2WKTA' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user6"], ["email", "user6@place.com"], ["password_digest", "$2a$10$ciwv0rO6UYLJvvNJxMwufOT7tNvhsiwWLEk3.PCvdR.bBLMZypYeS"], ["session_token", "qjCcvIMymjWjlIddF2WKTA"], ["created_at", "2015-11-17 18:46:31.321905"], ["updated_at", "2015-11-17 18:46:31.321905"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user7' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user7@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'rskjmx2UdSG4BYERWZH5nQ' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user7"], ["email", "user7@place.com"], ["password_digest", "$2a$10$M6DoB.LqPrQ5IbEqzKOEseSwfkpZF8BEfR/ZhDVHMpNeIvG2E/F0e"], ["session_token", "rskjmx2UdSG4BYERWZH5nQ"], ["created_at", "2015-11-17 18:46:31.403719"], ["updated_at", "2015-11-17 18:46:31.403719"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user8' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user8@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'L2GBEfTzhLQ4lxiTMyCfXA' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user8"], ["email", "user8@place.com"], ["password_digest", "$2a$10$GoKQSxCuts5EkFS2x/1Bd.Kmlq9nmVEkq75M7rGgJsaX77DJTxIvi"], ["session_token", "L2GBEfTzhLQ4lxiTMyCfXA"], ["created_at", "2015-11-17 18:46:31.484108"], ["updated_at", "2015-11-17 18:46:31.484108"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user9' LIMIT 1[0m
+  [1m[35mUser Exists (0.6ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user9@place.com' LIMIT 1
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'Mgnxm9AiP6idO-hPnNfSkQ' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user9"], ["email", "user9@place.com"], ["password_digest", "$2a$10$z36vKV2rd9wbkVdl2lo8ceo4k6OdVCk/E7kpyADGWUMRuZerm9lE2"], ["session_token", "Mgnxm9AiP6idO-hPnNfSkQ"], ["created_at", "2015-11-17 18:46:31.575146"], ["updated_at", "2015-11-17 18:46:31.575146"]]
+  [1m[36m (10.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user10' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user10@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'meWATSgpEWKob3r4w75h5Q' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user10"], ["email", "user10@place.com"], ["password_digest", "$2a$10$wXUcCCJEbzED1a1YXdxHr.kTsLen6bpXPcReGGzuWwhk4IkTVDsg."], ["session_token", "meWATSgpEWKob3r4w75h5Q"], ["created_at", "2015-11-17 18:46:31.670142"], ["updated_at", "2015-11-17 18:46:31.670142"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user11' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user11@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'IuguHGJNwCF86ZYkDjP44Q' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user11"], ["email", "user11@place.com"], ["password_digest", "$2a$10$TZ66ieTObGPn29i33sErzOO8xsM0Jd5nlJ5ugarsl6IhClENOWO2q"], ["session_token", "IuguHGJNwCF86ZYkDjP44Q"], ["created_at", "2015-11-17 18:46:31.750794"], ["updated_at", "2015-11-17 18:46:31.750794"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user12' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user12@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'z2kVF7R33OcA_JWsLoEwCw' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user12"], ["email", "user12@place.com"], ["password_digest", "$2a$10$dYjpbQ4jniuWx4j4D6r90OiHy5YMkA6GZwwg2UieC1IYGgjIjZwxu"], ["session_token", "z2kVF7R33OcA_JWsLoEwCw"], ["created_at", "2015-11-17 18:46:31.833186"], ["updated_at", "2015-11-17 18:46:31.833186"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user13' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user13@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = '-CBJFKyLJfnkioLSfrmUUg' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user13"], ["email", "user13@place.com"], ["password_digest", "$2a$10$dCdcMls01rj4KgqXnpG1buqPku8p8mmyWJUZWISaFNW7NCu.sh9Wa"], ["session_token", "-CBJFKyLJfnkioLSfrmUUg"], ["created_at", "2015-11-17 18:46:31.911265"], ["updated_at", "2015-11-17 18:46:31.911265"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user14' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user14@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'kfl4aHL2HZX_W2V8nkhsuw' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user14"], ["email", "user14@place.com"], ["password_digest", "$2a$10$HsW87kZ5L/00QMSmf1.y4eP5xwIjSypMV1Pp86fIrj52frcmhn5WW"], ["session_token", "kfl4aHL2HZX_W2V8nkhsuw"], ["created_at", "2015-11-17 18:46:31.987910"], ["updated_at", "2015-11-17 18:46:31.987910"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user15' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user15@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'AO4kjRWpypmc2e87GWYGhg' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user15"], ["email", "user15@place.com"], ["password_digest", "$2a$10$uCSmPWEl9N1chVZ8SY79oeNiTtArUby6b3/Q/DuwYp.W9zxB4Ni5y"], ["session_token", "AO4kjRWpypmc2e87GWYGhg"], ["created_at", "2015-11-17 18:46:32.062657"], ["updated_at", "2015-11-17 18:46:32.062657"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user16' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user16@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = '4ZSaAY1oe5KFdKj-4GIMtA' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user16"], ["email", "user16@place.com"], ["password_digest", "$2a$10$WIlTHepPMKmnwm1xgJyAjOnkZbq6mMyyvJlhSt.vuUtJT9U68GvO2"], ["session_token", "4ZSaAY1oe5KFdKj-4GIMtA"], ["created_at", "2015-11-17 18:46:32.140685"], ["updated_at", "2015-11-17 18:46:32.140685"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user17' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user17@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'iE78OKKhUzqCsRsYCiiElw' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user17"], ["email", "user17@place.com"], ["password_digest", "$2a$10$RWxCwjVtZFcgkapU6qpLeencDOy2DjCKxJno/Q0mlKLasd9MG91vK"], ["session_token", "iE78OKKhUzqCsRsYCiiElw"], ["created_at", "2015-11-17 18:46:32.224603"], ["updated_at", "2015-11-17 18:46:32.224603"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user18' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user18@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'ELLof0XsHjYMIpnZ_N79Ag' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user18"], ["email", "user18@place.com"], ["password_digest", "$2a$10$drNjRzaVv40QECpgkXYPueusz4YmtKl1deAIhYbVaHT6kxthgldJi"], ["session_token", "ELLof0XsHjYMIpnZ_N79Ag"], ["created_at", "2015-11-17 18:46:32.308713"], ["updated_at", "2015-11-17 18:46:32.308713"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user19' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user19@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'qidWVlT_bkSBZXwrRrcDeA' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user19"], ["email", "user19@place.com"], ["password_digest", "$2a$10$rGiMeaiE7zNFD0v6POJIw.iWlY.Ih.D0rRvMTTBQ4VQTU/t3HXQyu"], ["session_token", "qidWVlT_bkSBZXwrRrcDeA"], ["created_at", "2015-11-17 18:46:32.390339"], ["updated_at", "2015-11-17 18:46:32.390339"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user20' LIMIT 1[0m
+  [1m[35mUser Exists (0.6ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user20@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = '_fdghhB09KRnHQJ5zKDk9Q' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user20"], ["email", "user20@place.com"], ["password_digest", "$2a$10$TIpK/3JgQ2MApgHMqVtLPeJXUS5SWqMjbEmrnrw6oD5BJz9d1VgmG"], ["session_token", "_fdghhB09KRnHQJ5zKDk9Q"], ["created_at", "2015-11-17 18:46:32.470169"], ["updated_at", "2015-11-17 18:46:32.470169"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.9ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user21' LIMIT 1[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user21@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'aD5-A3ac4ZkG-InLLMyNXQ' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user21"], ["email", "user21@place.com"], ["password_digest", "$2a$10$nC6GjVth7FWALI7FTVZJLeqXHaPmk0LPcEOYtzkN1wek5taBHjs1C"], ["session_token", "aD5-A3ac4ZkG-InLLMyNXQ"], ["created_at", "2015-11-17 18:46:32.556571"], ["updated_at", "2015-11-17 18:46:32.556571"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[36m (147.4ms)[0m  [1mDROP DATABASE IF EXISTS "Ready_development"[0m
+  [1m[35m (117.7ms)[0m  DROP DATABASE IF EXISTS "Ready_test"
+  [1m[36m (242.4ms)[0m  [1mCREATE DATABASE "Ready_development" ENCODING = 'unicode'[0m
+  [1m[35m (246.3ms)[0m  CREATE DATABASE "Ready_test" ENCODING = 'unicode'
+  [1m[36mSQL (0.3ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (9.7ms)[0m  CREATE TABLE "books" ("id" serial primary key, "title" character varying NOT NULL, "author" character varying NOT NULL, "isbn" integer NOT NULL, "author_id" integer, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (1.7ms)[0m  [1mCREATE  INDEX  "index_books_on_author" ON "books" USING btree ("author")[0m
+  [1m[35m (1.6ms)[0m  CREATE  INDEX  "index_books_on_author_id" ON "books" USING btree ("author_id")
+  [1m[36m (1.6ms)[0m  [1mCREATE UNIQUE INDEX  "index_books_on_isbn" ON "books" USING btree ("isbn")[0m
+  [1m[35m (1.3ms)[0m  CREATE  INDEX  "index_books_on_title" ON "books" USING btree ("title")
+  [1m[36m (5.5ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "name" character varying NOT NULL, "email" character varying NOT NULL, "password_digest" character varying NOT NULL, "session_token" character varying NOT NULL, "librarian" boolean DEFAULT 'f', "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (1.3ms)[0m  CREATE UNIQUE INDEX  "index_users_on_email" ON "users" USING btree ("email")
+  [1m[36m (1.5ms)[0m  [1mCREATE UNIQUE INDEX  "index_users_on_name" ON "users" USING btree ("name")[0m
+  [1m[35m (1.4ms)[0m  CREATE UNIQUE INDEX  "index_users_on_session_token" ON "users" USING btree ("session_token")
+  [1m[36m (2.7ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (1.4ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36m (0.4ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151117182221')
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20151117140000')[0m
+  [1m[35mSQL (0.5ms)[0m  CREATE EXTENSION IF NOT EXISTS "plpgsql"
+  [1m[36m (9.7ms)[0m  [1mCREATE TABLE "books" ("id" serial primary key, "title" character varying NOT NULL, "author" character varying NOT NULL, "isbn" integer NOT NULL, "author_id" integer, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (1.6ms)[0m  CREATE  INDEX  "index_books_on_author" ON "books" USING btree ("author")
+  [1m[36m (1.4ms)[0m  [1mCREATE  INDEX  "index_books_on_author_id" ON "books" USING btree ("author_id")[0m
+  [1m[35m (1.5ms)[0m  CREATE UNIQUE INDEX  "index_books_on_isbn" ON "books" USING btree ("isbn")
+  [1m[36m (1.4ms)[0m  [1mCREATE  INDEX  "index_books_on_title" ON "books" USING btree ("title")[0m
+  [1m[35m (5.0ms)[0m  CREATE TABLE "users" ("id" serial primary key, "name" character varying NOT NULL, "email" character varying NOT NULL, "password_digest" character varying NOT NULL, "session_token" character varying NOT NULL, "librarian" boolean DEFAULT 'f', "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (1.6ms)[0m  [1mCREATE UNIQUE INDEX  "index_users_on_email" ON "users" USING btree ("email")[0m
+  [1m[35m (1.6ms)[0m  CREATE UNIQUE INDEX  "index_users_on_name" ON "users" USING btree ("name")
+  [1m[36m (1.4ms)[0m  [1mCREATE UNIQUE INDEX  "index_users_on_session_token" ON "users" USING btree ("session_token")[0m
+  [1m[35m (2.5ms)[0m  CREATE TABLE "schema_migrations" ("version" character varying NOT NULL) 
+  [1m[36m (1.5ms)[0m  [1mCREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")[0m
+  [1m[35m (0.9ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20151117182221')[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151117140000')
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.9ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'admin' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'admin@ready.com' LIMIT 1
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'KROJynLmCmI-j95DB1Zaeg' LIMIT 1[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "librarian", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["name", "admin"], ["email", "admin@ready.com"], ["password_digest", "$2a$10$t8REGG/Ix7YCh7IOM5qMK.cB.ptjnb2mmUCRkFqrPfE9kYSutUngW"], ["librarian", "t"], ["session_token", "KROJynLmCmI-j95DB1Zaeg"], ["created_at", "2015-11-17 18:47:31.277379"], ["updated_at", "2015-11-17 18:47:31.277379"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.9ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user2' LIMIT 1[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user2@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'AkfmAWBCu0xhhit1Ssm-BQ' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user2"], ["email", "user2@place.com"], ["password_digest", "$2a$10$Z7ORaJhxXxzktDIWTdEhFewDCj8aU9XkQ2KNX2U4/YJYOVaqrqF/G"], ["session_token", "AkfmAWBCu0xhhit1Ssm-BQ"], ["created_at", "2015-11-17 18:47:31.358006"], ["updated_at", "2015-11-17 18:47:31.358006"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user3' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user3@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = '-p6gvf7MQ0_WRZRLBLF4qQ' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user3"], ["email", "user3@place.com"], ["password_digest", "$2a$10$FNOSD2U0zMk51Mfwd3WhP.ygbmrpqF8Gg9MK3pc1sfYNgUFw1f5Ji"], ["session_token", "-p6gvf7MQ0_WRZRLBLF4qQ"], ["created_at", "2015-11-17 18:47:31.436647"], ["updated_at", "2015-11-17 18:47:31.436647"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user4' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user4@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'To6ElZlwMdxSW_OMzItcIA' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user4"], ["email", "user4@place.com"], ["password_digest", "$2a$10$UMYI1Nwros5CPsvL/Eyxr.1iG5jdOH5f6HWlB/ytfrAzvzX4XD5pu"], ["session_token", "To6ElZlwMdxSW_OMzItcIA"], ["created_at", "2015-11-17 18:47:31.513046"], ["updated_at", "2015-11-17 18:47:31.513046"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user5' LIMIT 1[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user5@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = '534J7tpNfKJnDNJx1gnVpQ' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user5"], ["email", "user5@place.com"], ["password_digest", "$2a$10$W/TWt.KxnvqV6/kykqBFNuVQNkxxAWv9k07sguVRL3i1dzy0j3/wG"], ["session_token", "534J7tpNfKJnDNJx1gnVpQ"], ["created_at", "2015-11-17 18:47:31.591381"], ["updated_at", "2015-11-17 18:47:31.591381"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user6' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user6@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = '_-bTcCSGAHH21ryktqt9OQ' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user6"], ["email", "user6@place.com"], ["password_digest", "$2a$10$zIxJVcxGLV6i9ZVMbTrIrOt2JvAFua/VF7MvGZ/2KdcZ0cVimUEU6"], ["session_token", "_-bTcCSGAHH21ryktqt9OQ"], ["created_at", "2015-11-17 18:47:31.672042"], ["updated_at", "2015-11-17 18:47:31.672042"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user7' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user7@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'DeRnevOk2_MHDK9TMiEKEg' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user7"], ["email", "user7@place.com"], ["password_digest", "$2a$10$whaFVfMkLRFxiU3TlXtOI.UIIMiCwXGz5qI20Hl8sGicK/wNA1pjG"], ["session_token", "DeRnevOk2_MHDK9TMiEKEg"], ["created_at", "2015-11-17 18:47:31.754074"], ["updated_at", "2015-11-17 18:47:31.754074"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user8' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user8@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'qt6pvIhtvBhjlA7wlCI2bQ' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user8"], ["email", "user8@place.com"], ["password_digest", "$2a$10$Mi17ZJBC2tt0YCtQ5gSJ8Oiml3GbAknoKvOXYRTUo5Q0qNFdcHN8i"], ["session_token", "qt6pvIhtvBhjlA7wlCI2bQ"], ["created_at", "2015-11-17 18:47:31.830250"], ["updated_at", "2015-11-17 18:47:31.830250"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user9' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user9@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'EWbKspxyqYHhmqX5e9FOrA' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user9"], ["email", "user9@place.com"], ["password_digest", "$2a$10$unKdJIoqx/Uk5JSsbkeLFO4vmVm0YSkHqxqEunc5NHplUTtAncfI6"], ["session_token", "EWbKspxyqYHhmqX5e9FOrA"], ["created_at", "2015-11-17 18:47:31.909186"], ["updated_at", "2015-11-17 18:47:31.909186"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user10' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user10@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'iN38F2BGj__wCrGqi8KuGw' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user10"], ["email", "user10@place.com"], ["password_digest", "$2a$10$nJcaiqvZibaT.busjB3MKeLKzGoP.iKq9cpmNXGjVBYGAP83v5iJ6"], ["session_token", "iN38F2BGj__wCrGqi8KuGw"], ["created_at", "2015-11-17 18:47:31.982217"], ["updated_at", "2015-11-17 18:47:31.982217"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user11' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user11@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'V-rsP54PZt3QZb51Eeh2eg' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user11"], ["email", "user11@place.com"], ["password_digest", "$2a$10$PdfPUqDkn1CfSSLHppEOROlgb4ZXUb8Nj7kQ33DXAAFnYr5LKyZNi"], ["session_token", "V-rsP54PZt3QZb51Eeh2eg"], ["created_at", "2015-11-17 18:47:32.065556"], ["updated_at", "2015-11-17 18:47:32.065556"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user12' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user12@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = '48VyEU4CZX2RS2usZ_vmyQ' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user12"], ["email", "user12@place.com"], ["password_digest", "$2a$10$qppzEHsn2AyGFLYd.5mSQOC.InOHdJBJbPXsvm0lFkek.B8Af8L0m"], ["session_token", "48VyEU4CZX2RS2usZ_vmyQ"], ["created_at", "2015-11-17 18:47:32.144785"], ["updated_at", "2015-11-17 18:47:32.144785"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user13' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user13@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'j7n7fv5Wj9IMd8lqtvpaIA' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user13"], ["email", "user13@place.com"], ["password_digest", "$2a$10$b5SxCU4rxF3Ph3KGAzXBje0jAvmQ9WcEGSKqi4zg5j8Hw2vEZfsZO"], ["session_token", "j7n7fv5Wj9IMd8lqtvpaIA"], ["created_at", "2015-11-17 18:47:32.221235"], ["updated_at", "2015-11-17 18:47:32.221235"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user14' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user14@place.com' LIMIT 1
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = '0usgLjXy1yxO3Tw42BpeVg' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user14"], ["email", "user14@place.com"], ["password_digest", "$2a$10$yRlff66B3SUG9kklNzIFIuD2RWMgHrb1W9zj9DqNGjZzzoKlbmDRW"], ["session_token", "0usgLjXy1yxO3Tw42BpeVg"], ["created_at", "2015-11-17 18:47:32.296759"], ["updated_at", "2015-11-17 18:47:32.296759"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user15' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user15@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'balyrKrb8yyjzFiBaNk48g' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user15"], ["email", "user15@place.com"], ["password_digest", "$2a$10$eNursOBkXRPcRSgNXc9dVu26l1TjZ75sjR7nj.e3eDNAf35X3b2Jy"], ["session_token", "balyrKrb8yyjzFiBaNk48g"], ["created_at", "2015-11-17 18:47:32.374031"], ["updated_at", "2015-11-17 18:47:32.374031"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user16' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user16@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = '2WJAAo4dh0wm79Y7Nj5XAA' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user16"], ["email", "user16@place.com"], ["password_digest", "$2a$10$rTz3ek/CbmM9gXYmBq6ljOd1UJeu.FWOInNFLZpmToQRffJBlC5B."], ["session_token", "2WJAAo4dh0wm79Y7Nj5XAA"], ["created_at", "2015-11-17 18:47:32.453539"], ["updated_at", "2015-11-17 18:47:32.453539"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user17' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user17@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = '_VD3qa5N8WusyNI3I7ymLw' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user17"], ["email", "user17@place.com"], ["password_digest", "$2a$10$AOfWKgwdKoWh0IxB4w50he0gqsgryZVpAFWRkWm.7NdaNagaKPjS6"], ["session_token", "_VD3qa5N8WusyNI3I7ymLw"], ["created_at", "2015-11-17 18:47:32.529926"], ["updated_at", "2015-11-17 18:47:32.529926"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user18' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user18@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'CyFOQuWapmrUon3VGl5LGg' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user18"], ["email", "user18@place.com"], ["password_digest", "$2a$10$VwW/S2/BCBAs5lPb7WFnAuwT/AV5B2jETC2CBDqZpTS/1EB/VPeMO"], ["session_token", "CyFOQuWapmrUon3VGl5LGg"], ["created_at", "2015-11-17 18:47:32.608993"], ["updated_at", "2015-11-17 18:47:32.608993"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user19' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user19@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'XCy_vNk4vhrwDgFJEISOqw' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user19"], ["email", "user19@place.com"], ["password_digest", "$2a$10$uTygjYEhxNafQdwmRM7VyegGZPvhnlr8ZAIn8ShCyVg.TRNLwxEHG"], ["session_token", "XCy_vNk4vhrwDgFJEISOqw"], ["created_at", "2015-11-17 18:47:32.683887"], ["updated_at", "2015-11-17 18:47:32.683887"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user20' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user20@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'O0yt092oc24kYup547e5Eg' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user20"], ["email", "user20@place.com"], ["password_digest", "$2a$10$rIvx1mUNfa.7kFBXCtTNSuCa7BgwsjfH5NXv94bURRy7hUtgesb4q"], ["session_token", "O0yt092oc24kYup547e5Eg"], ["created_at", "2015-11-17 18:47:32.763904"], ["updated_at", "2015-11-17 18:47:32.763904"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user21' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user21@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'R7SncZiCS9uUNXWTF2jnNQ' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user21"], ["email", "user21@place.com"], ["password_digest", "$2a$10$MLIBaG4VsThVZ6G1Qb6WPeutg1L08MLLu0p2/xjzMFIp.QDQrCfDu"], ["session_token", "R7SncZiCS9uUNXWTF2jnNQ"], ["created_at", "2015-11-17 18:47:32.842517"], ["updated_at", "2015-11-17 18:47:32.842517"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[36m (117.7ms)[0m  [1mDROP DATABASE IF EXISTS "Ready_development"[0m
+  [1m[35m (117.5ms)[0m  DROP DATABASE IF EXISTS "Ready_test"
+  [1m[36m (252.8ms)[0m  [1mCREATE DATABASE "Ready_development" ENCODING = 'unicode'[0m
+  [1m[35m (262.9ms)[0m  CREATE DATABASE "Ready_test" ENCODING = 'unicode'
+  [1m[36mSQL (0.3ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (8.7ms)[0m  CREATE TABLE "books" ("id" serial primary key, "title" character varying NOT NULL, "author" character varying NOT NULL, "isbn" integer NOT NULL, "author_id" integer, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (1.6ms)[0m  [1mCREATE  INDEX  "index_books_on_author" ON "books" USING btree ("author")[0m
+  [1m[35m (1.4ms)[0m  CREATE  INDEX  "index_books_on_author_id" ON "books" USING btree ("author_id")
+  [1m[36m (1.5ms)[0m  [1mCREATE UNIQUE INDEX  "index_books_on_isbn" ON "books" USING btree ("isbn")[0m
+  [1m[35m (1.4ms)[0m  CREATE  INDEX  "index_books_on_title" ON "books" USING btree ("title")
+  [1m[36m (5.5ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "name" character varying NOT NULL, "email" character varying NOT NULL, "password_digest" character varying NOT NULL, "session_token" character varying NOT NULL, "librarian" boolean DEFAULT 'f', "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (1.4ms)[0m  CREATE UNIQUE INDEX  "index_users_on_email" ON "users" USING btree ("email")
+  [1m[36m (1.4ms)[0m  [1mCREATE UNIQUE INDEX  "index_users_on_name" ON "users" USING btree ("name")[0m
+  [1m[35m (1.4ms)[0m  CREATE UNIQUE INDEX  "index_users_on_session_token" ON "users" USING btree ("session_token")
+  [1m[36m (2.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (1.8ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36m (0.6ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151117182221')
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20151117140000')[0m
+  [1m[35mSQL (0.4ms)[0m  CREATE EXTENSION IF NOT EXISTS "plpgsql"
+  [1m[36m (8.7ms)[0m  [1mCREATE TABLE "books" ("id" serial primary key, "title" character varying NOT NULL, "author" character varying NOT NULL, "isbn" integer NOT NULL, "author_id" integer, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (1.7ms)[0m  CREATE  INDEX  "index_books_on_author" ON "books" USING btree ("author")
+  [1m[36m (1.3ms)[0m  [1mCREATE  INDEX  "index_books_on_author_id" ON "books" USING btree ("author_id")[0m
+  [1m[35m (1.6ms)[0m  CREATE UNIQUE INDEX  "index_books_on_isbn" ON "books" USING btree ("isbn")
+  [1m[36m (1.3ms)[0m  [1mCREATE  INDEX  "index_books_on_title" ON "books" USING btree ("title")[0m
+  [1m[35m (5.0ms)[0m  CREATE TABLE "users" ("id" serial primary key, "name" character varying NOT NULL, "email" character varying NOT NULL, "password_digest" character varying NOT NULL, "session_token" character varying NOT NULL, "librarian" boolean DEFAULT 'f', "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (1.4ms)[0m  [1mCREATE UNIQUE INDEX  "index_users_on_email" ON "users" USING btree ("email")[0m
+  [1m[35m (1.5ms)[0m  CREATE UNIQUE INDEX  "index_users_on_name" ON "users" USING btree ("name")
+  [1m[36m (1.3ms)[0m  [1mCREATE UNIQUE INDEX  "index_users_on_session_token" ON "users" USING btree ("session_token")[0m
+  [1m[35m (2.8ms)[0m  CREATE TABLE "schema_migrations" ("version" character varying NOT NULL) 
+  [1m[36m (1.5ms)[0m  [1mCREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")[0m
+  [1m[35m (0.5ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20151117182221')[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151117140000')
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.9ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'admin' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'admin@ready.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'w84JH1eDJzASZV4TQo-jvw' LIMIT 1[0m
+  [1m[35mSQL (1.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "librarian", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["name", "admin"], ["email", "admin@ready.com"], ["password_digest", "$2a$10$i1AUUVPhsf3XBd41RbeotuQW.zAteXaFHSBFV4cyVfj1uRU2GHAbu"], ["librarian", "t"], ["session_token", "w84JH1eDJzASZV4TQo-jvw"], ["created_at", "2015-11-17 18:48:39.911748"], ["updated_at", "2015-11-17 18:48:39.911748"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user2' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user2@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'IBf6QCZA2vCtnbYd5U-yiw' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user2"], ["email", "user2@place.com"], ["password_digest", "$2a$10$z9i2i3Bd1KyIUkiB0bTIruY0qDr7UeW8fd4iKJPJKn1KiH/NBV8Rq"], ["session_token", "IBf6QCZA2vCtnbYd5U-yiw"], ["created_at", "2015-11-17 18:48:39.993568"], ["updated_at", "2015-11-17 18:48:39.993568"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user3' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user3@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = '1UEsRjCq-QjXmXB3qPdtWQ' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user3"], ["email", "user3@place.com"], ["password_digest", "$2a$10$towuFz30Q2/R8d.zeli79.ooXZGjM5Q8.ADeA145jZMOoqw6vnCRC"], ["session_token", "1UEsRjCq-QjXmXB3qPdtWQ"], ["created_at", "2015-11-17 18:48:40.077703"], ["updated_at", "2015-11-17 18:48:40.077703"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user4' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user4@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'rEMxEQoBhiJNA3pXehxZaQ' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user4"], ["email", "user4@place.com"], ["password_digest", "$2a$10$kWbmtdPC50/t2JTB8hBmDO34Emrae5tadbbcg5cmuZIuRdzR9sdB2"], ["session_token", "rEMxEQoBhiJNA3pXehxZaQ"], ["created_at", "2015-11-17 18:48:40.151854"], ["updated_at", "2015-11-17 18:48:40.151854"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user5' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user5@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'byCXqD3NN3K3uTvt93wzlw' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user5"], ["email", "user5@place.com"], ["password_digest", "$2a$10$cLKvaLUYYQGYDXb..wu6nOW3WUX82mIG0aMHp5RoVagGwGix9mqO2"], ["session_token", "byCXqD3NN3K3uTvt93wzlw"], ["created_at", "2015-11-17 18:48:40.231408"], ["updated_at", "2015-11-17 18:48:40.231408"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user6' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user6@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'mOgtmVynkHgYQqdoB1hltg' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user6"], ["email", "user6@place.com"], ["password_digest", "$2a$10$QVwvp6I3uf0dxEsqpirSKeHtFVNIdkRCAKkpHsnTjtAAFsXrKX2Yq"], ["session_token", "mOgtmVynkHgYQqdoB1hltg"], ["created_at", "2015-11-17 18:48:40.310298"], ["updated_at", "2015-11-17 18:48:40.310298"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user7' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user7@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'PUOFkMkhB1q6WcZtSle-6Q' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user7"], ["email", "user7@place.com"], ["password_digest", "$2a$10$o7CnRCVcgw/pDZzRed/QHePk5mgaFN.AZtArF.VmLUZCJ5dIY7eoq"], ["session_token", "PUOFkMkhB1q6WcZtSle-6Q"], ["created_at", "2015-11-17 18:48:40.387080"], ["updated_at", "2015-11-17 18:48:40.387080"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user8' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user8@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'XJsLJopNDt-rdd0EuL-0dw' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user8"], ["email", "user8@place.com"], ["password_digest", "$2a$10$aA33gwwavFkFAqUJ0vkSLOc9nmcm0AsKqNju..PLWCNuag23AqRFS"], ["session_token", "XJsLJopNDt-rdd0EuL-0dw"], ["created_at", "2015-11-17 18:48:40.467934"], ["updated_at", "2015-11-17 18:48:40.467934"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user9' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user9@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = '_1j1IOE2CJOLw5ch3M697Q' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user9"], ["email", "user9@place.com"], ["password_digest", "$2a$10$e3xy/iMkAr5hzFfE6XhxvOqWGFQaKvwQraV4crGNJspWqY/kOuFlW"], ["session_token", "_1j1IOE2CJOLw5ch3M697Q"], ["created_at", "2015-11-17 18:48:40.544136"], ["updated_at", "2015-11-17 18:48:40.544136"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user10' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user10@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = '5fW9KOP_xNTBDFcEcjo8LQ' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user10"], ["email", "user10@place.com"], ["password_digest", "$2a$10$X7gJi1hMjCR4DQrYHwta3ehDi53m0de9NaxtXwM.gQd8uNoyuhGt."], ["session_token", "5fW9KOP_xNTBDFcEcjo8LQ"], ["created_at", "2015-11-17 18:48:40.623129"], ["updated_at", "2015-11-17 18:48:40.623129"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user11' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user11@place.com' LIMIT 1
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'ffHZJJJCH73S7qTe-zt8WA' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user11"], ["email", "user11@place.com"], ["password_digest", "$2a$10$SKgcytMWoknMlCDMrfAG8OlZgLT4mjHUgkUMd4kQ98SWVtCSkwN2K"], ["session_token", "ffHZJJJCH73S7qTe-zt8WA"], ["created_at", "2015-11-17 18:48:40.699905"], ["updated_at", "2015-11-17 18:48:40.699905"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user12' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user12@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'pVRMmsws9g79IyURMmBqfg' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user12"], ["email", "user12@place.com"], ["password_digest", "$2a$10$x/8dwrYpxL2zONCd4Co9KuomUBUgmr5C7xlkzWxl2ClRx2NGPv6fm"], ["session_token", "pVRMmsws9g79IyURMmBqfg"], ["created_at", "2015-11-17 18:48:40.778746"], ["updated_at", "2015-11-17 18:48:40.778746"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user13' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user13@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'wvnLgkDZJbnu8l7BYfqvaw' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user13"], ["email", "user13@place.com"], ["password_digest", "$2a$10$e2zWfo0IEwytaW7hV8/FgOaOVYuKfYNLlUMc/NH7aiys7xjdwmFl6"], ["session_token", "wvnLgkDZJbnu8l7BYfqvaw"], ["created_at", "2015-11-17 18:48:40.855900"], ["updated_at", "2015-11-17 18:48:40.855900"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user14' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user14@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'UnhvZFyzC2Ded_wRyRAbbQ' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user14"], ["email", "user14@place.com"], ["password_digest", "$2a$10$t670kcsKgXHHn2yO9pwP/.i6t9WdJMB.iiYsE2z4WVc9tWyOv8mDq"], ["session_token", "UnhvZFyzC2Ded_wRyRAbbQ"], ["created_at", "2015-11-17 18:48:40.935802"], ["updated_at", "2015-11-17 18:48:40.935802"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user15' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user15@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'S6XNcbmktlJqm3yd7YPZ8w' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user15"], ["email", "user15@place.com"], ["password_digest", "$2a$10$xeqbETdD1U7rGdUyC8dGXecHtWM/aO0ZqFV8FSfkhdsguRQ2.UGEO"], ["session_token", "S6XNcbmktlJqm3yd7YPZ8w"], ["created_at", "2015-11-17 18:48:41.011972"], ["updated_at", "2015-11-17 18:48:41.011972"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user16' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user16@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = '1tKYhpId2CmhFARY_WrEUg' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user16"], ["email", "user16@place.com"], ["password_digest", "$2a$10$VqS2PhUf2X6KQDdsYUddiOxZIlwtNt.K8S2jtaH2UYblvs3dMmp5y"], ["session_token", "1tKYhpId2CmhFARY_WrEUg"], ["created_at", "2015-11-17 18:48:41.090274"], ["updated_at", "2015-11-17 18:48:41.090274"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user17' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user17@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'Teb8tGm-1Srd6xSQ78-spg' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user17"], ["email", "user17@place.com"], ["password_digest", "$2a$10$OXVMsOMZRvNtuqC1plofKOk6pvVEDmiVrHNteHmZha0rkXY1.Q1TC"], ["session_token", "Teb8tGm-1Srd6xSQ78-spg"], ["created_at", "2015-11-17 18:48:41.169877"], ["updated_at", "2015-11-17 18:48:41.169877"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user18' LIMIT 1[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user18@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'PLT427jsJWpigHxl69BGTA' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user18"], ["email", "user18@place.com"], ["password_digest", "$2a$10$B9UnLZcF6/Tcf7M5pIzeAO/476.kOHPZQ45AXPb5EclWvk8zb.xFC"], ["session_token", "PLT427jsJWpigHxl69BGTA"], ["created_at", "2015-11-17 18:48:41.250042"], ["updated_at", "2015-11-17 18:48:41.250042"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user19' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user19@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'xrUfCRz2BXHL2w6E7YL31A' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user19"], ["email", "user19@place.com"], ["password_digest", "$2a$10$o3mBIxcL65ROt9P37/9/BuBUbB5.FlopwHzJr/O43iDsKoF9Pcn2m"], ["session_token", "xrUfCRz2BXHL2w6E7YL31A"], ["created_at", "2015-11-17 18:48:41.329197"], ["updated_at", "2015-11-17 18:48:41.329197"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user20' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user20@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'jtJmP0-BWhhfIG49H6YOZQ' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user20"], ["email", "user20@place.com"], ["password_digest", "$2a$10$kr8jOfBn11dgsf1j71OiCOtfCcZzoP7bec7bpOC.qE.Xr55Xu9nA."], ["session_token", "jtJmP0-BWhhfIG49H6YOZQ"], ["created_at", "2015-11-17 18:48:41.405325"], ["updated_at", "2015-11-17 18:48:41.405325"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user21' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user21@place.com' LIMIT 1
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = '4UM8lCEq5R-SzslFKZLjng' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user21"], ["email", "user21@place.com"], ["password_digest", "$2a$10$s6H7OW9vdoA5ReGUmdTMDeCmZdLDg3MMzcRMN6Ky.KydMUlkIfSw2"], ["session_token", "4UM8lCEq5R-SzslFKZLjng"], ["created_at", "2015-11-17 18:48:41.483524"], ["updated_at", "2015-11-17 18:48:41.483524"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[36m (117.9ms)[0m  [1mDROP DATABASE IF EXISTS "Ready_development"[0m
+  [1m[35m (117.4ms)[0m  DROP DATABASE IF EXISTS "Ready_test"
+  [1m[36m (263.0ms)[0m  [1mCREATE DATABASE "Ready_development" ENCODING = 'unicode'[0m
+  [1m[35m (248.9ms)[0m  CREATE DATABASE "Ready_test" ENCODING = 'unicode'
+  [1m[36mSQL (0.3ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (7.7ms)[0m  CREATE TABLE "books" ("id" serial primary key, "title" character varying NOT NULL, "author" character varying NOT NULL, "isbn" integer NOT NULL, "author_id" integer, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (1.4ms)[0m  [1mCREATE  INDEX  "index_books_on_author" ON "books" USING btree ("author")[0m
+  [1m[35m (1.9ms)[0m  CREATE  INDEX  "index_books_on_author_id" ON "books" USING btree ("author_id")
+  [1m[36m (1.5ms)[0m  [1mCREATE UNIQUE INDEX  "index_books_on_isbn" ON "books" USING btree ("isbn")[0m
+  [1m[35m (1.4ms)[0m  CREATE  INDEX  "index_books_on_title" ON "books" USING btree ("title")
+  [1m[36m (5.0ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "name" character varying NOT NULL, "email" character varying NOT NULL, "password_digest" character varying NOT NULL, "session_token" character varying NOT NULL, "librarian" boolean DEFAULT 'f', "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (1.4ms)[0m  CREATE UNIQUE INDEX  "index_users_on_email" ON "users" USING btree ("email")
+  [1m[36m (1.5ms)[0m  [1mCREATE UNIQUE INDEX  "index_users_on_name" ON "users" USING btree ("name")[0m
+  [1m[35m (1.4ms)[0m  CREATE UNIQUE INDEX  "index_users_on_session_token" ON "users" USING btree ("session_token")
+  [1m[36m (2.5ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (1.4ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36m (0.5ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151117182221')
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20151117140000')[0m
+  [1m[35mSQL (0.5ms)[0m  CREATE EXTENSION IF NOT EXISTS "plpgsql"
+  [1m[36m (8.9ms)[0m  [1mCREATE TABLE "books" ("id" serial primary key, "title" character varying NOT NULL, "author" character varying NOT NULL, "isbn" integer NOT NULL, "author_id" integer, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (2.0ms)[0m  CREATE  INDEX  "index_books_on_author" ON "books" USING btree ("author")
+  [1m[36m (1.3ms)[0m  [1mCREATE  INDEX  "index_books_on_author_id" ON "books" USING btree ("author_id")[0m
+  [1m[35m (1.3ms)[0m  CREATE UNIQUE INDEX  "index_books_on_isbn" ON "books" USING btree ("isbn")
+  [1m[36m (1.9ms)[0m  [1mCREATE  INDEX  "index_books_on_title" ON "books" USING btree ("title")[0m
+  [1m[35m (4.8ms)[0m  CREATE TABLE "users" ("id" serial primary key, "name" character varying NOT NULL, "email" character varying NOT NULL, "password_digest" character varying NOT NULL, "session_token" character varying NOT NULL, "librarian" boolean DEFAULT 'f', "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (1.4ms)[0m  [1mCREATE UNIQUE INDEX  "index_users_on_email" ON "users" USING btree ("email")[0m
+  [1m[35m (1.4ms)[0m  CREATE UNIQUE INDEX  "index_users_on_name" ON "users" USING btree ("name")
+  [1m[36m (1.4ms)[0m  [1mCREATE UNIQUE INDEX  "index_users_on_session_token" ON "users" USING btree ("session_token")[0m
+  [1m[35m (2.7ms)[0m  CREATE TABLE "schema_migrations" ("version" character varying NOT NULL) 
+  [1m[36m (1.4ms)[0m  [1mCREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")[0m
+  [1m[35m (0.4ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20151117182221')[0m
+  [1m[35m (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151117140000')
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.9ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'admin' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'admin@ready.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'l4OaMAQ7v9tt87F2CEkxXw' LIMIT 1[0m
+  [1m[35mSQL (1.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "librarian", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["name", "admin"], ["email", "admin@ready.com"], ["password_digest", "$2a$10$5lAufqOvz3m9jqEIws7cIuFArXLl11rX6DDPHQayujeFn2zpF/y3W"], ["librarian", "t"], ["session_token", "l4OaMAQ7v9tt87F2CEkxXw"], ["created_at", "2015-11-17 18:49:35.340409"], ["updated_at", "2015-11-17 18:49:35.340409"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user2' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user2@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'awp7xlZrSPnT2U5SAZFbNw' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user2"], ["email", "user2@place.com"], ["password_digest", "$2a$10$AF9UyM3UyMqinMj1qnhyPeQwWc08gGqW2QfTB4Xqg2uP6nvRlPe4K"], ["session_token", "awp7xlZrSPnT2U5SAZFbNw"], ["created_at", "2015-11-17 18:49:35.419918"], ["updated_at", "2015-11-17 18:49:35.419918"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user3' LIMIT 1[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user3@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'tSsmFTAtiY9IyPgKuw5LMw' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user3"], ["email", "user3@place.com"], ["password_digest", "$2a$10$vJQq2F8danN5NRFcEuIOfOkh.UYXRVnjARFtGDWOapNP7M0ySyUsi"], ["session_token", "tSsmFTAtiY9IyPgKuw5LMw"], ["created_at", "2015-11-17 18:49:35.497341"], ["updated_at", "2015-11-17 18:49:35.497341"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user4' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user4@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = '2vzeh6OI954y20B52AQd_Q' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user4"], ["email", "user4@place.com"], ["password_digest", "$2a$10$JRuj5yKgJLO4AdvXLsO2Ne6RoGFBxmHBGSsMwerJtciQ68.S2DzAG"], ["session_token", "2vzeh6OI954y20B52AQd_Q"], ["created_at", "2015-11-17 18:49:35.570479"], ["updated_at", "2015-11-17 18:49:35.570479"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user5' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user5@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'bYlOeuJLkQMxcGDUqJGxmA' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user5"], ["email", "user5@place.com"], ["password_digest", "$2a$10$jJfrzDGtSOLIiAA6dsUQZuXtbid7/Owq3KINKhdiDrzhXPirS.7XO"], ["session_token", "bYlOeuJLkQMxcGDUqJGxmA"], ["created_at", "2015-11-17 18:49:35.652919"], ["updated_at", "2015-11-17 18:49:35.652919"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user6' LIMIT 1[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user6@place.com' LIMIT 1
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'ZUVzBDTCBobCMn92ILL7qw' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user6"], ["email", "user6@place.com"], ["password_digest", "$2a$10$GD.mQKrjoHEfCPTCFNQrHe/FTO2IrHeHtKIqFTyn8evHDWF.VJvjq"], ["session_token", "ZUVzBDTCBobCMn92ILL7qw"], ["created_at", "2015-11-17 18:49:35.727049"], ["updated_at", "2015-11-17 18:49:35.727049"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user7' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user7@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'nxQ-B8hVVGrDwfgfyexNLQ' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user7"], ["email", "user7@place.com"], ["password_digest", "$2a$10$YtlcqkgAXhgNnj.rWNGoGOWpjtethDSHuEzNiufXG/wwv/ii77NIe"], ["session_token", "nxQ-B8hVVGrDwfgfyexNLQ"], ["created_at", "2015-11-17 18:49:35.802487"], ["updated_at", "2015-11-17 18:49:35.802487"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user8' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user8@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'GxJGganv9BPc2k2Hh4xvrg' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user8"], ["email", "user8@place.com"], ["password_digest", "$2a$10$mo4jnBWmlARczEOgfrTr/Ot3zeGTRozW9Dwmwwbh1qIRyv3ydKyxe"], ["session_token", "GxJGganv9BPc2k2Hh4xvrg"], ["created_at", "2015-11-17 18:49:35.884483"], ["updated_at", "2015-11-17 18:49:35.884483"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user9' LIMIT 1[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user9@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'AUSVBsZnp3KOsf_SsjbYzQ' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user9"], ["email", "user9@place.com"], ["password_digest", "$2a$10$8hcdcFgl.4pvs26LRxsG8.l19ItN5Lb2.tKeXpFSoCbrjGrL5ktLa"], ["session_token", "AUSVBsZnp3KOsf_SsjbYzQ"], ["created_at", "2015-11-17 18:49:35.964933"], ["updated_at", "2015-11-17 18:49:35.964933"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user10' LIMIT 1[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user10@place.com' LIMIT 1
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'kuHTameWwNbSjd57XKAEog' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user10"], ["email", "user10@place.com"], ["password_digest", "$2a$10$Vi/xJR1Lwgga99RcbuT7e.JxI5xsEhHYFJJbMbYjhYoMh88yJ97ru"], ["session_token", "kuHTameWwNbSjd57XKAEog"], ["created_at", "2015-11-17 18:49:36.041034"], ["updated_at", "2015-11-17 18:49:36.041034"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user11' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user11@place.com' LIMIT 1
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = '0OooMDc8FXzOlLXj4YXBTQ' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user11"], ["email", "user11@place.com"], ["password_digest", "$2a$10$pC9CE4G/d0c9HuKpgh3h2uhfPgnE6a7WhQ8jXmSG1wb6wuL9YXFci"], ["session_token", "0OooMDc8FXzOlLXj4YXBTQ"], ["created_at", "2015-11-17 18:49:36.122226"], ["updated_at", "2015-11-17 18:49:36.122226"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user12' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user12@place.com' LIMIT 1
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'UKGojEK6gGPFMJTKCjg4yA' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user12"], ["email", "user12@place.com"], ["password_digest", "$2a$10$t4Rp0quBmAbWBeaNKfwLjuTfNaRI3XOB1y1FFbUEx8qJDPDo/focm"], ["session_token", "UKGojEK6gGPFMJTKCjg4yA"], ["created_at", "2015-11-17 18:49:36.199748"], ["updated_at", "2015-11-17 18:49:36.199748"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user13' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user13@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'xSG3BHK2L53E70hjJPlcaQ' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user13"], ["email", "user13@place.com"], ["password_digest", "$2a$10$jy0jUH8hX1/3Wd6kTi8/0ug9CVYhMLgTZmg/FuJ5LIvC.tjo1gqsm"], ["session_token", "xSG3BHK2L53E70hjJPlcaQ"], ["created_at", "2015-11-17 18:49:36.277582"], ["updated_at", "2015-11-17 18:49:36.277582"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user14' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user14@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'or_I9NdU_CKeRSuRQl1VzQ' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user14"], ["email", "user14@place.com"], ["password_digest", "$2a$10$J7TTJUFe.L2wz7BSGMmibuHfP5Ze2bjZXlV2EDMACuYlgrFt3jk7i"], ["session_token", "or_I9NdU_CKeRSuRQl1VzQ"], ["created_at", "2015-11-17 18:49:36.361943"], ["updated_at", "2015-11-17 18:49:36.361943"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user15' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user15@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'OGS7iNosU2XUzZs_GMcquw' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user15"], ["email", "user15@place.com"], ["password_digest", "$2a$10$LjaCYXRw2dGjImyD2FleaO9Ezd6aluFFe6ESpXPA.o.oaftl/SrV6"], ["session_token", "OGS7iNosU2XUzZs_GMcquw"], ["created_at", "2015-11-17 18:49:36.439587"], ["updated_at", "2015-11-17 18:49:36.439587"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user16' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user16@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'pwjv1MAt6quEBGA8-1IB0A' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user16"], ["email", "user16@place.com"], ["password_digest", "$2a$10$GJbZAv1zfmxOfb6lE4OCTuPzgDoFQkiCmI588BqO9GO1Ed5DhmzEi"], ["session_token", "pwjv1MAt6quEBGA8-1IB0A"], ["created_at", "2015-11-17 18:49:36.518582"], ["updated_at", "2015-11-17 18:49:36.518582"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user17' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user17@place.com' LIMIT 1
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'SOmQ-1-4isPQWx4gwOtMlg' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user17"], ["email", "user17@place.com"], ["password_digest", "$2a$10$gK93Oe3hx/qu903T9xk.4uKkqLLN47nOfOaSP8EOHgsGbxn0Eoyj."], ["session_token", "SOmQ-1-4isPQWx4gwOtMlg"], ["created_at", "2015-11-17 18:49:36.598663"], ["updated_at", "2015-11-17 18:49:36.598663"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user18' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user18@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'il-o1hLsf_qa72qGd7XcRw' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user18"], ["email", "user18@place.com"], ["password_digest", "$2a$10$.sIdt6ijcmMZeH3LVwx3VeTEgIRGSSexfOnuD4gyaNidEYjixHaf6"], ["session_token", "il-o1hLsf_qa72qGd7XcRw"], ["created_at", "2015-11-17 18:49:36.674811"], ["updated_at", "2015-11-17 18:49:36.674811"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user19' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user19@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'doiWxRGsNQUNu-gUO31XAA' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user19"], ["email", "user19@place.com"], ["password_digest", "$2a$10$/vDhzpIQDy4YAp7.Qq69o.ul1/rZEvv03wfre63G6Zcl/5OAFECmO"], ["session_token", "doiWxRGsNQUNu-gUO31XAA"], ["created_at", "2015-11-17 18:49:36.751481"], ["updated_at", "2015-11-17 18:49:36.751481"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user20' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user20@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'WVPKFaIupeNXdpomF0ZnFA' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user20"], ["email", "user20@place.com"], ["password_digest", "$2a$10$0mzD8nJnrhtjM9FJ.8sQmefYOOXGvGnXVFfShXh4OEmVHK99zSRRy"], ["session_token", "WVPKFaIupeNXdpomF0ZnFA"], ["created_at", "2015-11-17 18:49:36.833342"], ["updated_at", "2015-11-17 18:49:36.833342"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user21' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user21@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'aQu18Q744ElXkA7Czk33Yw' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user21"], ["email", "user21@place.com"], ["password_digest", "$2a$10$x.VZBnQ8FFbmC7lmTWfzEuyBRv9gilYCjNE0YszDgnteVjNwich0W"], ["session_token", "aQu18Q744ElXkA7Czk33Yw"], ["created_at", "2015-11-17 18:49:36.912987"], ["updated_at", "2015-11-17 18:49:36.912987"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateBooks (20151117182221)
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (1.0ms)[0m  DROP INDEX "index_books_on_author_id"
+  [1m[36m (0.3ms)[0m  [1mDROP INDEX "index_books_on_author"[0m
+  [1m[35m (0.4ms)[0m  DROP INDEX "index_books_on_title"
+  [1m[36m (0.3ms)[0m  [1mDROP INDEX "index_books_on_isbn"[0m
+  [1m[35m (12.9ms)[0m  DROP TABLE "books"
+  [1m[36mSQL (8.7ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20151117182221"]]
+  [1m[35m (2.7ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (5.1ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateBooks (20151117182221)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (20.1ms)[0m  [1mCREATE TABLE "books" ("id" serial primary key, "title" character varying NOT NULL, "author" character varying NOT NULL, "isbn" bigint NOT NULL, "author_id" integer, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (1.4ms)[0m  CREATE UNIQUE INDEX  "index_books_on_isbn" ON "books"  ("isbn")
+  [1m[36m (1.2ms)[0m  [1mCREATE  INDEX  "index_books_on_title" ON "books"  ("title")[0m
+  [1m[35m (1.3ms)[0m  CREATE  INDEX  "index_books_on_author" ON "books"  ("author")
+  [1m[36m (1.2ms)[0m  [1mCREATE  INDEX  "index_books_on_author_id" ON "books"  ("author_id")[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20151117182221"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (4.2ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'books'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (3.5ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (117.7ms)[0m  [1mDROP DATABASE IF EXISTS "Ready_development"[0m
+  [1m[35m (117.4ms)[0m  DROP DATABASE IF EXISTS "Ready_test"
+  [1m[36m (303.0ms)[0m  [1mCREATE DATABASE "Ready_development" ENCODING = 'unicode'[0m
+  [1m[35m (515.3ms)[0m  CREATE DATABASE "Ready_test" ENCODING = 'unicode'
+  [1m[36mSQL (0.3ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (9.5ms)[0m  CREATE TABLE "books" ("id" serial primary key, "title" character varying NOT NULL, "author" character varying NOT NULL, "isbn" bigint NOT NULL, "author_id" integer, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (1.4ms)[0m  [1mCREATE  INDEX  "index_books_on_author" ON "books" USING btree ("author")[0m
+  [1m[35m (1.4ms)[0m  CREATE  INDEX  "index_books_on_author_id" ON "books" USING btree ("author_id")
+  [1m[36m (1.5ms)[0m  [1mCREATE UNIQUE INDEX  "index_books_on_isbn" ON "books" USING btree ("isbn")[0m
+  [1m[35m (1.4ms)[0m  CREATE  INDEX  "index_books_on_title" ON "books" USING btree ("title")
+  [1m[36m (177.5ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "name" character varying NOT NULL, "email" character varying NOT NULL, "password_digest" character varying NOT NULL, "session_token" character varying NOT NULL, "librarian" boolean DEFAULT 'f', "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (2.1ms)[0m  CREATE UNIQUE INDEX  "index_users_on_email" ON "users" USING btree ("email")
+  [1m[36m (1.8ms)[0m  [1mCREATE UNIQUE INDEX  "index_users_on_name" ON "users" USING btree ("name")[0m
+  [1m[35m (1.4ms)[0m  CREATE UNIQUE INDEX  "index_users_on_session_token" ON "users" USING btree ("session_token")
+  [1m[36m (2.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (1.4ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36m (0.4ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151117182221')
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20151117140000')[0m
+  [1m[35mSQL (0.4ms)[0m  CREATE EXTENSION IF NOT EXISTS "plpgsql"
+  [1m[36m (8.8ms)[0m  [1mCREATE TABLE "books" ("id" serial primary key, "title" character varying NOT NULL, "author" character varying NOT NULL, "isbn" bigint NOT NULL, "author_id" integer, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (1.7ms)[0m  CREATE  INDEX  "index_books_on_author" ON "books" USING btree ("author")
+  [1m[36m (1.4ms)[0m  [1mCREATE  INDEX  "index_books_on_author_id" ON "books" USING btree ("author_id")[0m
+  [1m[35m (1.4ms)[0m  CREATE UNIQUE INDEX  "index_books_on_isbn" ON "books" USING btree ("isbn")
+  [1m[36m (1.9ms)[0m  [1mCREATE  INDEX  "index_books_on_title" ON "books" USING btree ("title")[0m
+  [1m[35m (5.2ms)[0m  CREATE TABLE "users" ("id" serial primary key, "name" character varying NOT NULL, "email" character varying NOT NULL, "password_digest" character varying NOT NULL, "session_token" character varying NOT NULL, "librarian" boolean DEFAULT 'f', "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (1.3ms)[0m  [1mCREATE UNIQUE INDEX  "index_users_on_email" ON "users" USING btree ("email")[0m
+  [1m[35m (2.0ms)[0m  CREATE UNIQUE INDEX  "index_users_on_name" ON "users" USING btree ("name")
+  [1m[36m (1.4ms)[0m  [1mCREATE UNIQUE INDEX  "index_users_on_session_token" ON "users" USING btree ("session_token")[0m
+  [1m[35m (2.4ms)[0m  CREATE TABLE "schema_migrations" ("version" character varying NOT NULL) 
+  [1m[36m (1.3ms)[0m  [1mCREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")[0m
+  [1m[35m (0.4ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20151117182221')[0m
+  [1m[35m (1.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151117140000')
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (1.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'admin' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'admin@ready.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'O14EHPkH2FgzhDDgyDphjg' LIMIT 1[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "librarian", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["name", "admin"], ["email", "admin@ready.com"], ["password_digest", "$2a$10$I0wE84BBUyG1pT5KKOJYruDT7LvtAJebfgnGdvyxGtC7XiU/jUw7a"], ["librarian", "t"], ["session_token", "O14EHPkH2FgzhDDgyDphjg"], ["created_at", "2015-11-17 18:50:54.640286"], ["updated_at", "2015-11-17 18:50:54.640286"]]
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user2' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user2@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = '7wMaTrEa6RqbBl7nTlCVfQ' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user2"], ["email", "user2@place.com"], ["password_digest", "$2a$10$2k1fxadlz2tot7PoD3rz9eemKjIOQ76Axgs8qMx6dyFYvCN0CWdOu"], ["session_token", "7wMaTrEa6RqbBl7nTlCVfQ"], ["created_at", "2015-11-17 18:50:54.722244"], ["updated_at", "2015-11-17 18:50:54.722244"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user3' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user3@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'V7UdYR5DsUJXHBIhTV2Pdw' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user3"], ["email", "user3@place.com"], ["password_digest", "$2a$10$UiFFDZg1ThmPojGnjzgwEedbuKl31egvQOMcIua/RfEWAcsKggyLm"], ["session_token", "V7UdYR5DsUJXHBIhTV2Pdw"], ["created_at", "2015-11-17 18:50:54.803497"], ["updated_at", "2015-11-17 18:50:54.803497"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user4' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user4@place.com' LIMIT 1
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'KvKecKGaAEXq29uJ9A8BzA' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user4"], ["email", "user4@place.com"], ["password_digest", "$2a$10$t2IFADyiuSQmS9tJibgloOlVmHQtiD3VulnqC..MyZkBxcLfghg8a"], ["session_token", "KvKecKGaAEXq29uJ9A8BzA"], ["created_at", "2015-11-17 18:50:54.877739"], ["updated_at", "2015-11-17 18:50:54.877739"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user5' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user5@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'X-JFK5UM7PCuqKYvXa9TkQ' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user5"], ["email", "user5@place.com"], ["password_digest", "$2a$10$wEK7AnNnw4/Pbu7hCvOP1.RCCI277TNoqUyQHSs9U9e4T/Y6q4JB6"], ["session_token", "X-JFK5UM7PCuqKYvXa9TkQ"], ["created_at", "2015-11-17 18:50:54.962817"], ["updated_at", "2015-11-17 18:50:54.962817"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user6' LIMIT 1[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user6@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'u3-30T101FHrff0PicKNAg' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user6"], ["email", "user6@place.com"], ["password_digest", "$2a$10$w/Ly4O0i6w3IAPcOCjwul.quXZlq/veb4m1om2FU8wBWAcGWtGUD2"], ["session_token", "u3-30T101FHrff0PicKNAg"], ["created_at", "2015-11-17 18:50:55.043653"], ["updated_at", "2015-11-17 18:50:55.043653"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user7' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user7@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'Ls_oI9-TspPPSwhHijV6XA' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user7"], ["email", "user7@place.com"], ["password_digest", "$2a$10$iIwCqSd59Q.dzaj/TuMaIOBlbReAnOJVLijMsO.0cl5SSzafKctx."], ["session_token", "Ls_oI9-TspPPSwhHijV6XA"], ["created_at", "2015-11-17 18:50:55.120496"], ["updated_at", "2015-11-17 18:50:55.120496"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user8' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user8@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'yYgm8cKRW7bA9DNJXwWvJA' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user8"], ["email", "user8@place.com"], ["password_digest", "$2a$10$6.8znRa6UkaTUNFj3UvNoePt/j5p3LVhvAZiGe/ANtnAZXZv4wOse"], ["session_token", "yYgm8cKRW7bA9DNJXwWvJA"], ["created_at", "2015-11-17 18:50:55.200115"], ["updated_at", "2015-11-17 18:50:55.200115"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user9' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user9@place.com' LIMIT 1
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'S34x8cNUe4r1Ff_OJzrhag' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user9"], ["email", "user9@place.com"], ["password_digest", "$2a$10$j0DbMrqWU.7UWTtmPZMyheXzAajhZeLZ/sC2foa0L5n6nnV4GTn.i"], ["session_token", "S34x8cNUe4r1Ff_OJzrhag"], ["created_at", "2015-11-17 18:50:55.277257"], ["updated_at", "2015-11-17 18:50:55.277257"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user10' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user10@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'KRneX2hZz6iTQ7Oxf4zCNA' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user10"], ["email", "user10@place.com"], ["password_digest", "$2a$10$4uVM6ZcbBWUbzhpFrGVD2esTA1Fv/FlrwlLJtGHnMkOTg49mgxHJu"], ["session_token", "KRneX2hZz6iTQ7Oxf4zCNA"], ["created_at", "2015-11-17 18:50:55.356478"], ["updated_at", "2015-11-17 18:50:55.356478"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user11' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user11@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'RtHI3j4pLpDaUVG5qiYQEw' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user11"], ["email", "user11@place.com"], ["password_digest", "$2a$10$jkL8dUbJ0o/1ui1XoiU7A.hoe7wWIV.xCtQ/v6XTLmuQ3Hg9ycGDy"], ["session_token", "RtHI3j4pLpDaUVG5qiYQEw"], ["created_at", "2015-11-17 18:50:55.433273"], ["updated_at", "2015-11-17 18:50:55.433273"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user12' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user12@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = '1RIqDSpc0hrwTCm71BZqzQ' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user12"], ["email", "user12@place.com"], ["password_digest", "$2a$10$Use1touxqjDmJ380YGVWhOnxnGgw13.kXQglGRw7H0OYpSgmxt/9m"], ["session_token", "1RIqDSpc0hrwTCm71BZqzQ"], ["created_at", "2015-11-17 18:50:55.511830"], ["updated_at", "2015-11-17 18:50:55.511830"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user13' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user13@place.com' LIMIT 1
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'sOVzyILn8UxuWxbXFOyXPQ' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user13"], ["email", "user13@place.com"], ["password_digest", "$2a$10$9kqwqZvcsT2neu5CB3bUD.aP1wHPZnN4Kn4Xd/i46eYdEMDVmVXYu"], ["session_token", "sOVzyILn8UxuWxbXFOyXPQ"], ["created_at", "2015-11-17 18:50:55.593386"], ["updated_at", "2015-11-17 18:50:55.593386"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user14' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user14@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'UJUH9E60-B8owlCNlM2lrw' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user14"], ["email", "user14@place.com"], ["password_digest", "$2a$10$tafKAuTPDUPllmizHyz3Ue5auYACDGGlAJqyemRUWC3ts3GWHukK2"], ["session_token", "UJUH9E60-B8owlCNlM2lrw"], ["created_at", "2015-11-17 18:50:55.674845"], ["updated_at", "2015-11-17 18:50:55.674845"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user15' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user15@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'abAdDSUpsvWsIH9KBCONzw' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user15"], ["email", "user15@place.com"], ["password_digest", "$2a$10$PuvZt6tejtnxkD5c.O2yF.1ZlJITGjMWjo9HFP2Ee4n3jiG4Y24Km"], ["session_token", "abAdDSUpsvWsIH9KBCONzw"], ["created_at", "2015-11-17 18:50:55.758074"], ["updated_at", "2015-11-17 18:50:55.758074"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user16' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user16@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'J5LfhRsIJiH1XJuci_3FSw' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user16"], ["email", "user16@place.com"], ["password_digest", "$2a$10$2njGKTwTHvMQTSPM33/8rOcbmeFT22eYWZX.ICkROEr5c.zJkx36."], ["session_token", "J5LfhRsIJiH1XJuci_3FSw"], ["created_at", "2015-11-17 18:50:55.839608"], ["updated_at", "2015-11-17 18:50:55.839608"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user17' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user17@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'e0Se8XnczhF73pFxCKrg_w' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user17"], ["email", "user17@place.com"], ["password_digest", "$2a$10$uS.X2ndl9NuGedgacHnLw.kT9Lr4o.Rd46vijjmFZfrOESbZOg1CK"], ["session_token", "e0Se8XnczhF73pFxCKrg_w"], ["created_at", "2015-11-17 18:50:55.921195"], ["updated_at", "2015-11-17 18:50:55.921195"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user18' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user18@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'O1gSAgQosHTCSb1PfTp-SA' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user18"], ["email", "user18@place.com"], ["password_digest", "$2a$10$Qbw51/rEwixLBfqijxAY/etG0xzrljLSlsWGUzBHpmoGVV4vh2oUu"], ["session_token", "O1gSAgQosHTCSb1PfTp-SA"], ["created_at", "2015-11-17 18:50:56.004517"], ["updated_at", "2015-11-17 18:50:56.004517"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user19' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user19@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = '00wiL4sYMtVUvKYj1TFA1Q' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user19"], ["email", "user19@place.com"], ["password_digest", "$2a$10$IcFVnVhDFvD8Z7t0ukrN4ujoVgUkvE3RQo4d7Q.0XjgIGvjgnoKQi"], ["session_token", "00wiL4sYMtVUvKYj1TFA1Q"], ["created_at", "2015-11-17 18:50:56.085513"], ["updated_at", "2015-11-17 18:50:56.085513"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user20' LIMIT 1[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user20@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = '-qbP-rSaMCbcYCKoAmuxSQ' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user20"], ["email", "user20@place.com"], ["password_digest", "$2a$10$TrxQUfa7EHRB0sr.Agwu7uNVl715tsapOhgT6/.q0.hsw.kvkRZMe"], ["session_token", "-qbP-rSaMCbcYCKoAmuxSQ"], ["created_at", "2015-11-17 18:50:56.164718"], ["updated_at", "2015-11-17 18:50:56.164718"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'user21' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user21@place.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'WDBzN4PjxbF8uZ_yBqmgqg' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "user21"], ["email", "user21@place.com"], ["password_digest", "$2a$10$9dChXSG0keJIx4ksV09j6eG8ATmMhtDkhGYZ4i7/jqjA.TN2ElmWe"], ["session_token", "WDBzN4PjxbF8uZ_yBqmgqg"], ["created_at", "2015-11-17 18:50:56.243090"], ["updated_at", "2015-11-17 18:50:56.243090"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (1.2ms)[0m  [1mINSERT INTO "books" ("title", "author", "isbn", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Ancillary Justice"], ["author", "Ann Leckie"], ["isbn", 9780316246620], ["description", "Winner of the Hugo, Nebula, British Science Fiction, Locus and Arthur C. Clarke Awards.\nOn a remote, icy planet, the soldier known as Breq is drawing closer to completing her quest.\nOnce, she was the Justice of Toren - a colossal starship with an artificial intelligence linking thousands of soldiers in the service of the Radch, the empire that conquered the galaxy.\nNow, an act of treachery has ripped it all away, leaving her with one fragile human body, unanswered questions, and a burning desire for vengeance."], ["created_at", "2015-11-17 18:50:56.253431"], ["updated_at", "2015-11-17 18:50:56.253431"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "books" ("title", "author", "isbn", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["title", "American Gods"], ["author", "Neil Gaiman"], ["isbn", 9780380789030], ["description", "Shadow is a man with a past. But now he wants nothing more than to live a quiet life with his wife and stay out of trouble. Until he learns that she's been killed in a terrible accident.\nFlying home for the funeral, as a violent storm rocks the plane, a strange man in the seat next to him introduces himself. The man calls himself Mr. Wednesday, and he knows more about Shadow than is possible.\nHe warns Shadow that a far bigger storm is coming. And from that moment on, nothing will ever be the same..."], ["created_at", "2015-11-17 18:50:56.257647"], ["updated_at", "2015-11-17 18:50:56.257647"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (24.6ms)[0m  [1mINSERT INTO "books" ("title", "author", "isbn", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Annihilation"], ["author", "Jeff VanderMeer"], ["isbn", 9780374104092], ["description", "Area X has been cut off from the rest of the continent for decades. Nature has reclaimed the last vestiges of human civilization. The first expedition returned with reports of a pristine, Edenic landscape; the second expedition ended in mass suicide, the third expedition in a hail of gunfire as its members turned on one another. The members of the eleventh expedition returned as shadows of their former selves, and within weeks, all had died of cancer. In Annihilation, the first volume of Jeff VanderMeer's Southern Reach trilogy, we join the twelfth expedition.\nThe group is made up of four women: an anthropologist; a surveyor; a psychologist, the de facto leader; and our narrator, a biologist. Their mission is to map the terrain, record all observations of their surroundings and of one anotioner, and, above all, avoid being contaminated by Area X itself.\nThey arrive expecting the unexpected, and Area X delivers―they discover a massive topographic anomaly and life forms that surpass understanding―but it's the surprises that came across the border with them and the secrets the expedition members are keeping from one another that change everything."], ["created_at", "2015-11-17 18:50:56.261005"], ["updated_at", "2015-11-17 18:50:56.261005"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36mBook Load (1.6ms)[0m  [1mSELECT "books".* FROM "books"[0m
