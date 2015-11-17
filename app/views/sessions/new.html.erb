@@ -1,12 +1,13 @@
 <div class="login_header">
-  <form>
+  <form action="session" method="POST">
+    <%= auth_token %>
     <label for="userinfo">Username/Email:
-      <input type="text" id="userinfo"></input>
+      <input type="text" name="[user]info" id="userinfo"></input>
     </label>
     <label for="password">Password:
-      <input type="password" id="password"></input>
+      <input type="password" name="[user]password" id="password"></input>
     </label>
-    <input type="submit">Log in!</input>
+    <input type="submit" value="Log in!"></input>
   </form>
 </div>
 
@@ -14,19 +15,28 @@
 <h2>You should join!</h2>
 
 <div class="new_user">
-  <form>
+  <%= auth_token %>
+  <form action="/users/new" method="POST">
     <label for="name">Name:
-      <input type="text" id="name"></input>
+      <input type="text"
+             id="name"
+             name="[user]name"
+             value="<%=@user.name%>">
+      </input>
     </label>
     <br>
     <label for="email">Email:
-      <input type="text" id="email"></input>
+      <input type="text"
+             id="email"
+             name="[user]email"
+             value="<%=@user.email%>">
+      </input>
     </label>
     <br>
     <label for="password">Password:
-      <input type="password" id="password"></input>
+      <input type="password" name="user[password]" id="password"></input>
     </label>
     <br>
-    <input type="submit">Sign up!</input>
+    <input type="submit" value="Sign up!"></input>
   </form>
 </div>

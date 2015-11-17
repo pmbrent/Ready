@@ -13,3 +13,7 @@
  *= require_tree .
  *= require_self
  */
+
+html, body, h1, div, h2, a, ul, li {
+  background: transparent
+}

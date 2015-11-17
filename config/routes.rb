@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   resource :session, only: [:new, :create, :destroy]
 
+  resources :static_pages, only: [:index]
+
   root 'sessions#new'
 
   # The priority is based upon order of creation: first created -> highest priority.

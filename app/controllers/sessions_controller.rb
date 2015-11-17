@@ -1,13 +1,19 @@
 class SessionsController < ApplicationController
 
   def new
+    if logged_in?
+      redirect_to static_pages_url
+    end
     @user = User.new
   end
 
   def create
-    @user = User.find_by_credentials(params[:userinfo], params[:password])
+    @user = User.find_by_credentials(user_params[:info], user_params[:password])
     if @user
-      session[:sesion_token] = @user.reset_session_token!
+      log_in(@user)
+    else
+      @user = User.new
+      render :new
     end
   end
 
@@ -19,7 +25,7 @@ class SessionsController < ApplicationController
 
 private
   def user_params
-    params.require(:user).permit(:userinfo, :password)
+    params.require(:user).permit(:info, :password)
   end
 
 end
