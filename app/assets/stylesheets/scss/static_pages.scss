@@ -1,3 +1,10 @@
 // Place all the styles related to the static_pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.logged_in {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+}
