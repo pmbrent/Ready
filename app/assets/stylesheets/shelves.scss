@@ -4,10 +4,6 @@
 
 @import "scss/globals.scss";
 
-.shelfIndex {
-
-}
-
 .books {
   border: 1px solid $darkerred;
   margin: 10px;
@@ -35,6 +31,8 @@
 
 .shelves {
   float: right;
+  width: calc(100% - 300px);
+  padding: 25px;
 }
 
 .shelfIndex {
@@ -53,4 +51,18 @@
 
   padding: 20px;
   border-right: 1px solid $darkerred;
+}
+
+.shelfList {
+  border: 1px solid $darkred;
+  padding: 5px;
+  margin: 5px;
+}
+
+.shelfList p {
+  padding: 0px 15px;
+}
+
+.shelfList > :first-child {
+  margin: 10px;
 }
