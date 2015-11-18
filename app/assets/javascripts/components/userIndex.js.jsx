@@ -17,7 +17,7 @@ window.UserIndex = React.createClass({
     return (
       <div>
         {uidx.state.users.map(function(user) {
-          return (<User user={user}/>);
+          return (<User id={user.id} user={user}/>);
         })};
       </div>
     );
