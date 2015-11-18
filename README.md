@@ -11,8 +11,8 @@ and React.js. Ready allows users to:
 
 <!-- This is a Markdown checklist. Use it to keep track of your progress! -->
 
-- [ ] Create an account
-- [ ] Log in / Log out
+- [x] Create an account
+- [x] Log in / Log out
 - [ ] Organize books within Shelves displayed on User pages
 - [ ] Add Friends
 - [ ] Tag books with multiple genres and search books by genre
