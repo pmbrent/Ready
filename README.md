@@ -13,7 +13,7 @@ and React.js. Ready allows users to:
 
 - [x] Create an account
 - [x] Log in / Log out
-- [ ] Organize books within Shelves displayed on User pages
+- [x] Organize books within Shelves displayed on User pages
 - [ ] Add Friends
 - [ ] Tag books with multiple genres and search books by genre
 - [ ] Rate books, write reviews, and get recommendations
