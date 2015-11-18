@@ -18,6 +18,17 @@ class UsersController < ApplicationController
     render json: @users
   end
 
+  def show
+    @user = User.find(params[:id])
+    render json: @user.as_json(include: {
+                                  shelves: {
+                                    include: {
+                                      books: {only: [:title]}
+                                    }
+                                  }
+                                })
+  end
+
 private
   def user_params
     params.require(:user).permit(:name, :email, :password)

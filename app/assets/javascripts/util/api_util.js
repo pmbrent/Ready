@@ -11,6 +11,17 @@ window.ApiUtil = {
     });
   },
 
+  fetchUserShelves: function(userId) {
+    $.ajax({
+      url: "/users/" + userId,
+      method: "GET",
+      dataType: "json",
+      success: function(user) {
+        ApiActions.receiveUserShelves(user);
+      }
+    });
+  },
+
   fetchBooks: function() {
     $.ajax({
       url: "/books",

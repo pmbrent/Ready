@@ -6,6 +6,13 @@ window.ApiActions = {
     });
   },
 
+  receiveUserShelves: function(user) {
+    AppDispatcher.dispatch({
+      actionType: UserConstants.USER_SHELVES_RECEIVED,
+      user: user
+    });
+  },
+
   receiveAllBooks: function(books) {
     AppDispatcher.dispatch({
       actionType: BookConstants.BOOKS_RECEIVED,
