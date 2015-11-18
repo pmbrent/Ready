@@ -1,0 +1,36 @@
+// Place all the styles related to the shelves controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "scss/globals.scss";
+
+.tabs {
+  height: 40px;
+  background: $darkred;
+}
+
+.tabs a {
+  font-size: 18px;
+  font-family: Pacifico;
+  text-align: center;
+
+  height: 30px;
+  width: 100px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: 1px solid $darkerred;
+  margin: 2px;
+  margin-top: 8px;
+  margin-bottom: 0px;
+
+  background: $tan;
+  float: left;
+}
+
+.tabs :first-child {
+  margin-left: 10px;
+}
+
+.tabs a .active {
+  background: lighten($tan, 5%);
+}

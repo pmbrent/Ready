@@ -8,10 +8,14 @@ $(function () {
   // window.startUp = function() {
     React.render((
       <Router>
-        <Route path="/" component={Home}/>
+        <Route path="/" component={Home}>
+          <Route path="updates" component={Updates}/>
+          <Route path="shelves" component={UserShelves}/>
+          // Reviews
+          // Recommended
+        </Route>
         <Route path="users" component={UserIndex}/>
         <Route path="books/:bookId" component={BookView}/>
-        <Route path="shelves" component={ShelfIndex}/>
       </Router>
     ), rootEl);
   // };

@@ -15,15 +15,22 @@ window.ShelfIndex = React.createClass({
       return <div/>;
     } else {
       return (
-        this.props.user.shelves.map(function(shelf) {
-          return <Shelf id={shelf.id} shelf={shelf}/>;
-        })
+        <div>
+          <section className="sideColumn">
+            <ShelfList shelves={this.props.user.shelves}/>
+          </section>
+          <section className="shelves">
+          {this.props.user.shelves.map(function(shelf) {
+            return <Shelf id={shelf.id} shelf={shelf}/>;
+          })}
+          </section>
+        </div>
       );
     }
   },
 
   render: function() {
-    return (<div className="shelfIndex">
+    return (<div className="shelfIndex group">
       {this.getUserShelves()}
     </div>);
   }

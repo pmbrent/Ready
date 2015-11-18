@@ -1,4 +1,4 @@
-window.Home = React.createClass({
+window.UserShelves = React.createClass({
 
   getInitialState: function() {
     return ({ user: UserStore.find(window.currentUserId) });
@@ -13,25 +13,23 @@ window.Home = React.createClass({
     this.setState({ user: UserStore.find(window.currentUserId) });
   },
 
-  userPage: function() {
+  shelfPage: function() {
     if (typeof this.state.user === "undefined") {
       return <div/>;
     } else {
       return (
         <div>
-          <UserTabs/>
+          <ShelfIndex user={this.state.user}/>
         </div>);
     }
   },
 
   render: function() {
     return (
-      <div className="home">
-        {this.userPage()}
-        {this.props.children}
+      <div className="userShelf">
+        {this.shelfPage()}
       </div>
     );
   }
-});
 
-// <ShelfIndex user={this.state.user}/>
+});

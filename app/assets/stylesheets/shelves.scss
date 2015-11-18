@@ -25,6 +25,32 @@
   float: left;
   height: 150px;
   width: 100px;
-  background: blue;
+  background: $tan;
   margin: 10px;
+}
+
+.shelf {
+  margin: 10px;
+}
+
+.shelves {
+  float: right;
+}
+
+.shelfIndex {
+  position: relative;
+}
+
+.sideColumn {
+  position: absolute;
+  display: block;
+  float: left;
+
+  top: 0;
+  bottom: 0;
+
+  width: 200px;
+
+  padding: 20px;
+  border-right: 1px solid $darkerred;
 }
