@@ -9,6 +9,12 @@
       return _books.slice();
     },
 
+    find: function(bookId) {
+      return _books.filter(function(book) {
+        return book.id === bookId;
+      })[0];
+    },
+
     addChangeListener: function(callback) {
       this.on(CHANGE_EVENT, callback);
     },

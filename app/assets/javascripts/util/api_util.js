@@ -16,10 +16,9 @@ window.ApiUtil = {
       url: "/books",
       method: "GET",
       dataType: "json",
-      success: function(users) {
+      success: function(books) {
         ApiActions.receiveAllBooks(books);
       }
     });
   }
-
 };

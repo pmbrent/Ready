@@ -5,4 +5,9 @@ class ShelvesController < ApplicationController
     render json: @shelves
   end
 
+  def show
+    @shelf = Shelf.find(params[:id])
+    render json: @shelf
+  end
+
 end

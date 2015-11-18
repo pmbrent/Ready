@@ -6,9 +6,9 @@ Rails.application.routes.draw do
 
   resources :static_pages, only: [:index]
 
-  resources :books, only: [:index]
+  resources :books, only: [:index, :show]
 
-  resources :shelves, only: [:index]
+  resources :shelves, only: [:index, :show]
 
   root 'static_pages#index'
 
