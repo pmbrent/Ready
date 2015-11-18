@@ -23,8 +23,10 @@ window.Home = React.createClass({
 
   render: function() {
     return (
+      <div className="home">
       <div className="coming_soon">
         Welcome! More is coming soon!
+      </div>
         {this.userPage()}
         {this.props.children}
       </div>

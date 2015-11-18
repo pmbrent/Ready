@@ -1,3 +1,30 @@
 // Place all the styles related to the shelves controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "scss/globals.scss";
+
+.shelfIndex {
+
+}
+
+.books {
+  border: 1px solid $darkerred;
+  margin: 10px;
+  background: $offwhite;
+}
+
+.shelf strong {
+  font-family: Pacifico;
+  font-size: 20px;
+  font-color: $darkred;
+}
+
+.shelf a {
+  display: block;
+  float: left;
+  height: 150px;
+  width: 100px;
+  background: blue;
+  margin: 10px;
+}

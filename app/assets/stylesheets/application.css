@@ -30,3 +30,9 @@ html, body, h1, div, h2, a, ul, li {
 
   background: transparent
 }
+
+.group:after {
+  display: block;
+  content: "";
+  clear: both;
+}
