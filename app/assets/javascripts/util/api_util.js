@@ -31,5 +31,11 @@ window.ApiUtil = {
         ApiActions.receiveAllBooks(books);
       }
     });
+  },
+
+  shelveBook: function() {
+    $.ajax({
+      url: "/shelvings"
+    });
   }
 };

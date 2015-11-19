@@ -1,14 +1,22 @@
 window.BookView = React.createClass ({
 
   getInitialState: function() {
-    return { book: BookStore.find(parseInt(this.props.params.bookId)) };
-  },
+
+    return {
+      book: BookStore.find(parseInt(this.props.params.bookId)),
+      shelves: [] };
+    },
 
   componentDidMount: function() {
     BookStore.addChangeListener(this.updateBook);
-    if (typeof this.state.book === "undefined") {
-      ApiUtil.fetchBooks();
-    }
+    ApiUtil.fetchBooks();
+
+    UserStore.addChangeListener(this.updateShelves);
+    ApiUtil.fetchUserShelves(window.currentUserId);
+  },
+
+  updateShelves: function() {
+    this.setState({ shelves: UserStore.find(window.currentUserId).shelves });
   },
 
   updateBook: function() {
@@ -16,13 +24,17 @@ window.BookView = React.createClass ({
   },
 
   showBook: function() {
-    if (typeof this.state.book === "undefined") {
+    if (typeof this.state.book === "undefined" ||
+        typeof this.state.shelves === "undefined" ) {
       return <div/>;
     } else {
       return (
         <div>
           <Book book={this.state.book}/>
-          <BookShelver book={this.state.book}/>
+          <BookShelver
+            book={this.state.book}
+            shelves={this.state.shelves}
+          />
         </div>
       );
     }
