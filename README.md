@@ -15,9 +15,9 @@ and React.js. Ready allows users to:
 - [x] Log in / Log out
 - [x] Organize books within Shelves displayed on User pages
 - [ ] Add Friends
+- [ ] View a Feed of Friend activity and recommended books
 - [ ] Tag books with multiple genres and search books by genre
 - [ ] Rate books, write reviews, and get recommendations
-- [ ] View a Feed of Friend activity and recommended books
 
 ## Design Docs
 * [View Wireframes][view]
@@ -33,13 +33,13 @@ and React.js. Ready allows users to:
 Phase 1 will use BCrypt to allow user signup and secure login. On login, users will
 be taken to the main page, with containers for the user's feed/React components.
 For now, pages will render JSON.
-The user model will contain a username, email, and a Librarian boolean indicating administrator access. They will also have an optional favorite_genres attribute, to be used later.
+The user model will contain a username, email, and a Librarian boolean indicating administrator access.
 
 [Details][phase-one]
 
-### Phase 2: Books, Shelves, Flux and Views (2.5 days)
+### Phase 2: Books, Shelves, Flux and Views (2 days)
 
-In Phase 2, I'll create the Book model (with title, author, ISBN) and seed with some example books. Next, there will be a shelf model (belonging to a user and having many books through Shelvings). The next step will be to set up Flux routing for individual book view pages, genres, and an individual's shelves. There will be a Book Store, although only Librarians will be able to perform CRUD.
+In Phase 2, I'll create the Book model (with title, author, ISBN) and seed with some example books. Next, there will be a shelf model (belonging to a user and having many books through Shelvings). The next step will be to set up Flux routing for individual book view pages and an individual's shelves. There will be a Book Store, although only Librarians will be able to perform CRUD.
 
 [Details][phase-two]
 
@@ -55,15 +55,15 @@ Users will be able to add friends through a Friendship join table and see those 
 
 [Details][phase-four]
 
-### Phase 5: Book Genre Tagging and Searching (1 day)
+### Phase 5: Rating, Reviews, & Recommendations (1.5 days)
 
-In Phase 5, books will be taggable by genre [for Librarians only] via Genres and Genre-Taggings join tables. I'll optionally add a view for each genre to show popular books for that genre. Users will also be able to select favorite genres.
+Users will be able to rate a book on a 5-point scale; their ratings will be used to generate a list of recommended books by genre (using only the user's favorites if any). Top recommended books will also be shown in the user's activity feed, along with books rated by friends and any "sponsored" books.
 
 [Details][phase-five]
 
-### Phase 6: Rating, Reviews, & Recommendations (1.5 days)
+### Phase 6: Book Genre Tagging and Searching (1 day)
 
-Users will be able to rate a book on a 5-point scale; their ratings will be used to generate a list of recommended books by genre (using only the user's favorites if any). Top recommended books will also be shown in the user's activity feed, along with books rated by friends and any "sponsored" books.
+In Phase 5, books will be taggable by genre [for Librarians only] via Genres and Genre-Taggings join tables. I'll optionally add a view for each genre to show popular books for that genre. Users will also be able to select favorite genres.
 
 [Details][phase-six]
 

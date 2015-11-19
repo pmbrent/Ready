@@ -1,26 +1,31 @@
-# Phase 5: Book Genre Tagging and Searching (1 day)
+# Phase 6: Rating, Reviews, & Recommendations (1.5 days)
 
 ## Rails
 ### Models
-* Genre
-* Genre-Tagging
-* User (add favorite genres)
+* Rating
 
 ### Controllers
-* Api::GenresController (create, destroy, index, show)
-* Api::GenreTaggingsController (create, destroy)
+* Api::RatingsController (create, destroy, index, edit, update)
 
 ### Views
-* genre/index.json.jbuilder
+* /user/:id/rated
 
 ## Flux
 ### Views (React Components)
-* GenreIndex
+* Rating
 
 ### Stores
+* Rating
 
 ### Actions
+* ApiActions.receiveAllRatings
+* ApiActions.receiveRating
+* ApiActions.deleteRating
 
 ### ApiUtil
+* ApiUtil.fetchAllRatings
+* ApiUtil.fetchRating
+* ApiUtil.removeRating
 
 ## Gems/Libraries
+* Flux Dispatcher
