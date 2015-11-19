@@ -5,7 +5,7 @@ window.ShelfList = React.createClass({
       <div className="shelfList sideBox">
         <p>All Bookshelves:</p>
         {this.props.shelves.map(function(shelf) {
-          return <p id={shelf.id}>{shelf.title} ({shelf.books.length})</p>;
+          return <p key={shelf.id}>{shelf.title} ({shelf.books.length})</p>;
         })}
       </div>
     );

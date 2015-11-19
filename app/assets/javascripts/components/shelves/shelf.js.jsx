@@ -14,7 +14,7 @@ window.Shelf = React.createClass({
         <ul className="book-items group">
           {this.props.shelf.books.map(function(book) {
             var bookurl = "/#/books/" + book.id;
-            return <li><a href={bookurl} id={book.id}>{book.title}</a></li>;
+            return <li key={book.id}><a href={bookurl}>{book.title}</a></li>;
           })}
         </ul>
         <a href="#" className="slide">◀</a>

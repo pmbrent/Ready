@@ -12,6 +12,10 @@ window.UserIndex = React.createClass({
     this.setState({ users: UserStore.all() });
   },
 
+  componentWillUnmount: function() {
+    UserStore.removeChangeListener(this.updateUsers);
+  },
+
   render: function() {
     var uidx = this;
     return (

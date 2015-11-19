@@ -24,6 +24,10 @@ window.Home = React.createClass({
     }
   },
 
+  componentWillUnmount: function() {
+    UserStore.removeChangeListener(this.updateUser);
+  },
+
   render: function() {
     return (
       <div className="home">

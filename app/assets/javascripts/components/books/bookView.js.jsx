@@ -46,6 +46,7 @@ window.BookView = React.createClass ({
 
   componentWillUnmount: function() {
     BookStore.removeChangeListener(this.updateBook);
+    UserStore.removeChangeListener(this.updateShelves);
   },
 
   render: function() {
