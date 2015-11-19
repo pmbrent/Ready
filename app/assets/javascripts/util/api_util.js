@@ -43,9 +43,6 @@ window.ApiUtil = {
           book_id: bookId,
           shelf_id: shelfId
         }
-      },
-      success: function(shelving) {
-        // TBD (REFACTOR)
       }
     });
   }

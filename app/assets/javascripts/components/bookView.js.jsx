@@ -30,11 +30,13 @@ window.BookView = React.createClass ({
     } else {
       return (
         <div>
-          <Book book={this.state.book}/>
+        <div className="sideColumn">
           <BookShelver
             book={this.state.book}
             shelves={this.state.shelves}
           />
+        </div>
+          <Book book={this.state.book}/>
         </div>
       );
     }
@@ -45,7 +47,7 @@ window.BookView = React.createClass ({
   },
 
   render: function() {
-    return (<div className="bookView">
+    return (<div className="bookView group">
               {this.showBook()}
             </div>);
   }

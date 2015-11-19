@@ -4,11 +4,15 @@
 
 @import "scss/globals.scss";
 
-.bookShelver {
-  border: 1px solid $darkred;
+.bookView {
+  display: relative;
   margin: 20px;
-  width: 200px;
-  padding: 10px;
+  margin-top: 0px;
+}
+
+.bookShelver {
+
+  border: 1px solid $darkred;
   text-align: center;
   height: 90px;
 }
@@ -18,5 +22,16 @@
 }
 
 .book {
-  margin: 20px;
+  background: $tan;
+  float: right;
+  width: calc(100% - 320px);
+  margin: 10px;
+  padding: 20px;
+  padding-top: 0;
+}
+
+.bookView .book :first-child {
+  font-size: 24px;
+  font-family: Pacifico;
+  font-weight: bold;
 }

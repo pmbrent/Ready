@@ -6,6 +6,10 @@
 @import url(https://fonts.googleapis.com/css?family=Pacifico);
 @import url(https://fonts.googleapis.com/css?family=Vollkorn:400,400italic);
 
+html {
+  background: $offwhite;
+}
+
 .logo {
   font-size: 36px;
   padding-left: 15px;
@@ -19,6 +23,7 @@
   color: $darkerred;
   overflow: hidden;
   border-bottom: 1px solid $darkred;
+  clear: both;
 }
 
 .nav img {
@@ -27,8 +32,33 @@
   height: 65px;
 }
 
+.sideColumn {
+  position: absolute;
+  display: block;
+  float: left;
+
+  top: 0;
+  bottom: 0;
+  width: 200px;
+
+  padding: 20px;
+  border-right: 1px solid $darkerred;
+  background: $darkerred;
+}
+
+.sideBox {
+  border: 1px solid $darkred;
+  background: $offwhite;
+  padding: 5px;
+  margin: 5px;
+}
+
+.sideBox p {
+  padding: 0px 15px;
+}
+
 .select {
-  background: lighten($darkred, 80%);
+  background: $lightred;
   border-radius: 0;
   width: 150px;
   overflow: hidden;
@@ -36,4 +66,5 @@
 
 .button {
   background: $offwhite;
+  border: 1px;
 }
