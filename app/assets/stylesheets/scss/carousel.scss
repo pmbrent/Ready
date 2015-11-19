@@ -1,0 +1,38 @@
+@import "scss/globals.scss";
+
+.book-items li {
+  width: 20%;
+  display: block;
+  float: left;
+}
+
+.carousel div.active {
+  width: 100%;
+}
+
+.carousel a.slide {
+  background: transparent;
+  text-align: center;
+  margin: 0;
+  width: 5%;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+}
+
+.carousel a.slide:last-child {
+  right: 0;
+  text-align: left;
+}
+
+.carousel .book-items {
+  width: 90%;
+  position: relative;
+  left: 5%;
+}
+
+.books {
+  position: relative;
+}
