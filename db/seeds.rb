@@ -68,6 +68,7 @@ Shelving.create!(book_id: 3, shelf_id: 2)
                isbn: 1234567890000 + i,
                description: "Book #{i+4} by ADF")
   10.times do
-    Shelving.create!(book_id: i+4, shelf_id: Random.rand(57) + 2)
+    ## Use soft create to not worry about duplicates
+    Shelving.create(book_id: i+4, shelf_id: Random.rand(57) + 2)
   end
 end
