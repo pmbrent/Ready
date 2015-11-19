@@ -6,10 +6,6 @@ window.UserTabs = React.createClass({
     });
   },
 
-  componentWillUnmount: function() {
-    window.Tabs.resetTabs();
-  },
-
   render: function() {
     return(
       <div className="tabs group">
