@@ -33,9 +33,20 @@ window.ApiUtil = {
     });
   },
 
-  shelveBook: function() {
+  shelveBook: function(bookId, shelfId) {
     $.ajax({
-      url: "/shelvings"
+      url: "/shelvings",
+      method: "POST",
+      dataType: "json",
+      data: {
+        shelving: {
+          book_id: bookId,
+          shelf_id: shelfId
+        }
+      },
+      success: function(shelving) {
+        // TBD (REFACTOR)
+      }
     });
   }
 };
