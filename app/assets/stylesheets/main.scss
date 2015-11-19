@@ -65,6 +65,9 @@ html {
 }
 
 .button {
-  background: $offwhite;
-  border: 1px;
+  font-size: 12px;
+  border-radius: 2px;
+  padding: 2px 8px;
+  color: $offwhite;
+  background: $darkred;
 }
