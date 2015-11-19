@@ -32,6 +32,20 @@ html {
   height: 65px;
 }
 
+.view {
+  position: relative;
+  margin-top: 0px;
+}
+
+.bodyContainer {
+  background: $tan;
+  float: right;
+  width: calc(100% - 320px);
+  margin: 20px;
+  padding: 20px;
+  padding-top: 0;
+}
+
 .sideColumn {
   position: absolute;
   display: block;

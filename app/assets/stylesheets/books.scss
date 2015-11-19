@@ -4,11 +4,6 @@
 
 @import "scss/globals.scss";
 
-.bookView {
-  position: relative;
-  margin-top: 0px;
-}
-
 .bookShelver {
   text-align: center;
 }
@@ -21,15 +16,6 @@
 
 .bookShelver .select {
   margin: auto;
-}
-
-.book {
-  background: $tan;
-  float: right;
-  width: calc(100% - 320px);
-  margin: 20px;
-  padding: 20px;
-  padding-top: 0;
 }
 
 .bookView .book :first-child {

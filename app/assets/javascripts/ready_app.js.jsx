@@ -15,6 +15,7 @@ $(function () {
           // Recommended
         </Route>
         <Route path="users" component={UserIndex}/>
+        <Route path="users/:userId" component={UserView}/>
         <Route path="books/:bookId" component={BookView}/>
       </Router>
     ), rootEl);
