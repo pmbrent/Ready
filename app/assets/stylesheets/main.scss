@@ -26,3 +26,15 @@
   top: -13px;
   height: 65px;
 }
+
+.select {
+  background: lighten($darkred, 80%);
+  border-radius: 0;
+  width: 150px;
+  overflow: hidden;
+}
+
+button {
+  background: $offwhite;
+  border: 0;
+}
