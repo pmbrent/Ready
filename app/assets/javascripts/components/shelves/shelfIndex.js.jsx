@@ -21,7 +21,7 @@ window.ShelfIndex = React.createClass({
           </section>
           <section className="shelves">
           {this.props.user.shelves.map(function(shelf) {
-            return <Shelf id={shelf.id} shelf={shelf}/>;
+            return <Shelf key={shelf.id} shelf={shelf}/>;
           })}
           </section>
         </div>
