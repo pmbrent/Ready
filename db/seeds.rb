@@ -72,3 +72,10 @@ Shelving.create!(book_id: 3, shelf_id: 2)
     Shelving.create(book_id: i+4, shelf_id: Random.rand(57) + 2)
   end
 end
+
+Book.create!(title: "The Well-Known and Beloved Book With An Excessively and Unnecessarily Lengthy Title",
+             author: "Dr. Sarah Samantha Dean-Whittingsmith the Fourteenth",
+             isbn: 9999999999999,
+             description: "Hilarious.")
+
+Shelving.create(book_id: 54, shelf_id: 1)

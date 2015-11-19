@@ -11,17 +11,12 @@
 
 .bookShelver {
   text-align: center;
-  height: 120px;
 }
 
 .bookShelver .button {
   margin: auto;
   margin-top: 10px;
-  font-size: 12px;
-  border-radius: 2px;
-  padding: 2px 5px;
-  color: $offwhite;
-  background: $darkred;
+  margin-bottom: 5px;
 }
 
 .bookShelver .select {
