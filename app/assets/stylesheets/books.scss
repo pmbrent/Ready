@@ -5,8 +5,7 @@
 @import "scss/globals.scss";
 
 .bookView {
-  display: relative;
-  margin: 20px;
+  position: relative;
   margin-top: 0px;
 }
 
@@ -25,7 +24,7 @@
   background: $tan;
   float: right;
   width: calc(100% - 320px);
-  margin: 10px;
+  margin: 20px;
   padding: 20px;
   padding-top: 0;
 }

@@ -30,13 +30,13 @@ window.BookView = React.createClass ({
     } else {
       return (
         <div>
-        <div className="sideColumn">
-          <BookShelver
-            book={this.state.book}
-            shelves={this.state.shelves}
-          />
-        </div>
-          <Book book={this.state.book}/>
+          <div className="sideColumn">
+            <BookShelver
+              book={this.state.book}
+              shelves={this.state.shelves}
+            />
+          </div>
+            <Book book={this.state.book}/>
         </div>
       );
     }
