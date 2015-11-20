@@ -11,15 +11,24 @@ window.SearchBar = React.createClass({
     });
   },
 
-  search: function() {
-    BookStore.search(this.state.query);
+  trySearch: function() {
+    if (BookStore.all().length === 0) {
+      ApiUtil.fetchBooks(function() {
+        this.search(this.state.query);
+      });
+    } else {
+      this.search(this.state.query);
+    }
+  },
+
+  search: function(query) {
+    BookStore.search(query);
     this.history.pushState(null, "/search");
-    this.forceUpdate();
   },
 
   render: function() {
     return (
-      <form id="search" className="searchBar" onSubmit={this.search}>
+      <form id="search" className="searchBar" onSubmit={this.trySearch}>
         <input id="query"
           type="text"
           value={this.state.query}

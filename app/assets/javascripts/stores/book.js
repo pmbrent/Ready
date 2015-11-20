@@ -19,11 +19,11 @@
     search: function(input) {
       var regex;
 
-      if (parseInt(input).isNaN) {
-      input = input.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-      regex = newRegExp("^" + input);
+      if (isNaN(parseInt(input))) {
+        input = input.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+        regex = new RegExp("^" + input);
         _searchResults = _books.filter(function(book) {
-          return (regex.test(book.author) || regex.text(book.title));
+          return (regex.test(book.author) || regex.test(book.title));
         });
       } else {
         regex = new RegExp("^" + input);

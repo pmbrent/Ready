@@ -22,13 +22,16 @@ window.ApiUtil = {
     });
   },
 
-  fetchBooks: function() {
+  fetchBooks: function(onSuccess) {
     $.ajax({
       url: "/books",
       method: "GET",
       dataType: "json",
       success: function(books) {
         ApiActions.receiveAllBooks(books);
+        if (onSuccess) {
+          onSuccess();
+        }
       }
     });
   },
