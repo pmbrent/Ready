@@ -22,12 +22,12 @@
       if (parseInt(input).isNaN) {
       input = input.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
       regex = newRegExp("^" + input);
-        this._searchResults = _books.filter(function(book) {
+        _searchResults = _books.filter(function(book) {
           return (regex.test(book.author) || regex.text(book.title));
         });
       } else {
         regex = new RegExp("^" + input);
-        this._searchResults = _books.filter(function(book) {
+        _searchResults = _books.filter(function(book) {
           return regex.test(book.isbn);
         });
       }

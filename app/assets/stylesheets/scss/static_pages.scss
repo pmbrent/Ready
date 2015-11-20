@@ -12,39 +12,6 @@
   float: right;
 }
 
-
-.searchBar {
-  width: 200px;
-  height: 25px;
-  position: absolute;
-  top: 50%;
-  left: 150px;
-  transform: translateY(-50%);
-  float: left;
-}
-
-.searchBar input#query {
-  position: absolute;
-  width: 100%;
-  height: 20px;
-  border: 1px solid $darkred;
-}
-
-.searchBar input#submit {
-  font-size: 14px;
-  position: absolute;
-  right: -4px;
-  top: 11px;
-  transform: translateY(-50%);
-  background: transparent;
-  height: 100%;
-  width: auto;
-  border: 0;
-  padding: 5px;
-  padding-top: 0px;
-  margin: 0;
-}
-
 .coming_soon {
   background: $tan;
   color: $darkred;

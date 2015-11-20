@@ -14,6 +14,7 @@ window.SearchBar = React.createClass({
   search: function() {
     BookStore.search(this.state.query);
     this.history.pushState(null, "/search");
+    this.forceUpdate();
   },
 
   render: function() {
