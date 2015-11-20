@@ -6,7 +6,6 @@ var SessionsUtil = {
       dataType: 'json',
       data: credentials,
       success: function (currentUser) {
-        console.log("logged in!");
         SessionActions.receiveCurrentUser(currentUser);
         if (onSuccess) {
           onSuccess();
@@ -21,7 +20,6 @@ var SessionsUtil = {
       type: 'DELETE',
       dataType: 'json',
       success: function () {
-        console.log("logged out!");
         SessionActions.receiveCurrentUser({});
         if (onSuccess) {
           onSuccess();

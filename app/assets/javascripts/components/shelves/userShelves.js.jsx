@@ -20,7 +20,7 @@ window.UserShelves = React.createClass({
     } else {
       return (
         <div>
-          <ShelfIndex user={this.state.user}/>
+          <ShelfIndex userId={this.state.user.id}/>
         </div>);
     }
   },

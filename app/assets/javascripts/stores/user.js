@@ -53,7 +53,7 @@
     dispatcherID: AppDispatcher.register(function(payload) {
       switch(payload.actionType) {
         case UserConstants.USERS_RECEIVED:
-          this.updateUsers(payload.users);
+          UserStore.updateUsers(payload.users);
           UserStore.emit(CHANGE_EVENT);
         break;
         case UserConstants.USER_SHELVES_RECEIVED:
