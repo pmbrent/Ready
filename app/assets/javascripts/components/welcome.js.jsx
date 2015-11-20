@@ -1,13 +1,18 @@
 window.Welcome = React.createClass({
-  signUp: function() {
+  mixins: [ReactRouter.History],
+
+  signUp: function(e) {
     e.preventDefault();
     var credentials = {
       user: {
-        name: $('input:name').val(),
-        email: $('input:email').val(),
-        password: $('input:password').val()
+        name: $('#name').val(),
+        email: $('#email').val(),
+        password: $('#password').val()
       }
     };
+    SessionsUtil.createUser(credentials, function () {
+      this.history.pushState(null, "home/updates");
+    }.bind(this));
   },
 
   render: function() {

@@ -39,7 +39,21 @@ var SessionsUtil = {
         SessionActions.receiveCurrentUser(currentUser);
       }
     });
-  }
+  },
 
+  createUser: function(credentials, onSuccess) {
+    $.ajax({
+      url: '/users',
+      type: 'POST',
+      dataType: 'json',
+      data: credentials,
+      success: function(user) {
+        SessionActions.receiveCurrentUser(user);
+        if (onSuccess) {
+          onSuccess();
+        }
+      }
+    });
+  }
 
 };

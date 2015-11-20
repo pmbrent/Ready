@@ -1,7 +1,7 @@
 window.UserShelves = React.createClass({
 
   getInitialState: function() {
-    return ({ user: UserStore.find(window.currentUserId) });
+    return ({ user: CurrentUserStore.currentUser() });
   },
 
   componentDidMount: function() {
@@ -10,18 +10,23 @@ window.UserShelves = React.createClass({
   },
 
   updateUser: function() {
-    this.setState({ user: UserStore.find(window.currentUserId) });
+    this.setState({ user: CurrentUserStore.currentUser() });
   },
 
   shelfPage: function() {
-    if (typeof this.state.user === "undefined") {
-      return <div/>;
+    if (!CurrentUserStore.isLoggedIn()) {
+      return <div>
+        </div>;
     } else {
       return (
         <div>
           <ShelfIndex user={this.state.user}/>
         </div>);
     }
+  },
+
+  componentWillUnmount: function() {
+    UserStore.removeChangeListener(this.updateUser);
   },
 
   render: function() {

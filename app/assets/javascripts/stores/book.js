@@ -30,7 +30,6 @@
           BookStore.emit(CHANGE_EVENT);
         break;
       }
-
     })
 
   });

@@ -1,35 +1,39 @@
 $(function () {
 
   window.Ready = React.createClass({
-    getInitialState: function () {
-     return { currentUser: null };
-   },
-
    mixins: [ReactRouter.History],
 
-   componentWillMount: function () {
-     CurrentUserStore.addChangeHandler(this._ensureLoggedIn);
-     SessionsUtil.fetchCurrentUser();
-   },
+  getInitialState: function () {
+    return { currentUser: null };
+  },
 
-   _ensureLoggedIn: function () {
-     if (!CurrentUserStore.isLoggedIn()) {
-       this.history.pushState(null, "welcome");
-     }
+  componentWillMount: function () {
+    CurrentUserStore.addChangeListener(this._ensureLoggedIn);
+    SessionsUtil.fetchCurrentUser();
+  },
 
-     this.setState({currentUser: CurrentUserStore.currentUser()});
-   },
+  _ensureLoggedIn: function () {
+   if (!CurrentUserStore.isLoggedIn()) {
+     this.history.pushState(null, "welcome");
+   }
 
-    render: function() {
-      return(
-        <div id="ready">
-          <ReadyBar/>
-          <div id="content">
-            { this.props.children || <Home/> }
-          </div>
+   this.setState({currentUser: CurrentUserStore.currentUser()});
+  },
+
+  componentWillUnmount: function() {
+   CurrentUserStore.removeChangeListener(this._ensureLoggedIn);
+  },
+
+  render: function() {
+    return(
+      <div id="ready">
+        <ReadyBar/>
+        <div id="content">
+          { this.props.children || <Home/> }
         </div>
-      );
-    }
+      </div>
+    );
+  }
   });
 
   var Router = ReactRouter.Router;
@@ -40,9 +44,9 @@ $(function () {
   React.render((
     <Router>
       <Route path="/" component={Ready}>
-        <Route component={Home}>
+        <Route path="home" component={Home}>
           <Route path="updates" component={Updates}/>
-          <Route path="shelves" component={UserShelves}/>
+          <Route path="/shelves" component={UserShelves}/>
           // Reviews
           // Recommended
         </Route>

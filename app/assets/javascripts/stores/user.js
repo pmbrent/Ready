@@ -15,6 +15,23 @@
       })[0];
     },
 
+    updateUsers: function(newUsers) {
+      if (_users.length === 0) {
+        _users = newUsers;
+        return;
+      }
+
+      // Refactor -- sort by id
+
+      newUsers.forEach(function(user) {
+        if (!_users.some(function(_user) {
+          return _user.id === user.id;
+        })) {
+          _users.push(user);
+        }
+      });
+    },
+
     updateUser: function(shelfUser) {
       for (var i = 0, n = _users.length; i < n; i++) {
         if (_users[i].id === shelfUser.id) {
@@ -36,7 +53,7 @@
     dispatcherID: AppDispatcher.register(function(payload) {
       switch(payload.actionType) {
         case UserConstants.USERS_RECEIVED:
-          _users = payload.users;
+          this.updateUsers(payload.users);
           UserStore.emit(CHANGE_EVENT);
         break;
         case UserConstants.USER_SHELVES_RECEIVED:

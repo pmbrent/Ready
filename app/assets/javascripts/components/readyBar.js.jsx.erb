@@ -6,7 +6,7 @@ window.ReadyBar = React.createClass({
 },
 
   componentDidMount: function () {
-    CurrentUserStore.addChangeHandler(this._onChange);
+    CurrentUserStore.addChangeListener(this._onChange);
   },
 
   _onChange: function () {
@@ -58,6 +58,10 @@ window.ReadyBar = React.createClass({
         </form>
       </div>
     );
+  },
+
+  componentWillUnmount: function () {
+    CurrentUserStore.removeChangeListener(this._onChange);
   },
 
   render: function() {

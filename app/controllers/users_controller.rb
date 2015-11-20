@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     @user = User.create(user_params)
     if @user.save
       log_in(@user)
-      render json: current_user
+      render json: current_user, only: [:id, :name, :email]
     else
       render json: {errors: ["Invalid information."], status: 401}
     end
@@ -21,6 +21,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    # fix with JBuilder
     render json: @user.as_json(include: {
                                   shelves: {
                                     include: {
