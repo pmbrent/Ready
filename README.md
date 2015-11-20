@@ -14,6 +14,7 @@ and React.js. Ready allows users to:
 - [x] Create an account
 - [x] Log in / Log out
 - [x] Organize books within Shelves displayed on User pages
+- [x] Search for Books by Author, Title, ISBN
 - [ ] Add Friends
 - [ ] View a Feed of Friend activity and recommended books
 - [ ] Tag books with multiple genres and search books by genre

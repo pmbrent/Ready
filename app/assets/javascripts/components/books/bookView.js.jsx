@@ -4,7 +4,7 @@ window.BookView = React.createClass ({
 
     return {
       book: BookStore.find(parseInt(this.props.params.bookId)),
-      shelves: [] };
+      shelves: UserStore.currentUser.shelves };
     },
 
   componentDidMount: function() {
@@ -12,7 +12,9 @@ window.BookView = React.createClass ({
     ApiUtil.fetchBooks();
 
     UserStore.addChangeListener(this.updateShelves);
-    ApiUtil.fetchUserShelves(window.currentUserId);
+    if (this.state.shelves.length === 0) {
+      ApiUtil.fetchUserShelves(window.currentUserId);
+    }
   },
 
   updateShelves: function() {

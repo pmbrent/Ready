@@ -37,7 +37,12 @@ window.SearchResults = React.createClass({
       <div className="resultPage group">
         <section className="sideColumn" id="bookAdder">
           <section className="sideBox">
-            (Refactor Link/Form to add a book)
+            <strong>Popular Searches:</strong>
+            <ul>
+              <li>97</li>
+              <li>Neil</li>
+              <li>Alan</li>
+            </ul>
           </section>
         </section>
         {this.results()}
