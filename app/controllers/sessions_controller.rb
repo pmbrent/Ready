@@ -1,30 +1,29 @@
 class SessionsController < ApplicationController
 
-  def new
-    if logged_in?
-      redirect_to root_url
-    end
-    @user = User.new
-  end
-
   def create
     @user = User.find_by_credentials(user_params[:info], user_params[:password])
     if @user
       log_in(@user)
+      render json: current_user, only: [:id, :name, :email]
     else
       @user = User.new
-      render :new
+      render json: {errors: ["Please recheck your login information."], status: 401}
     end
   end
 
   def show
-    render json: current_user
+    unless current_user
+      render json: {}
+    else
+      @user = current_user
+      render json: current_user, only: [:id, :name, :email]
+    end
   end
 
   def destroy
     current_user.reset_session_token!
     session[:session_token] = nil
-    redirect_to new_session_url
+    render json: {}
   end
 
 private

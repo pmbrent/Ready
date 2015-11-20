@@ -17,15 +17,15 @@
       this.removeListener(CHANGE_EVENT, callback);
     },
 
-    isSignedIn: function () {
-      return (typeof _currentUser.id !== "undefined");
+    isLoggedIn: function () {
+      return (typeof _currentUser !== "undefined" &&
+              typeof _currentUser.id !== "undefined");
     },
 
-    dispatcherId: AppDispatcher.register(function (payload) {
-      switch (payload.actionType) {
-
+    dispatcherId: AppDispatcher.register(function(payload) {
+      switch(payload.actionType) {
         case CurrentUserConstants.RECEIVE_CURRENT_USER:
-          _currentUser = payload.currentUser;
+          _currentUser = payload.user;
           CurrentUserStore.emit(CHANGE_EVENT);
           break;
 

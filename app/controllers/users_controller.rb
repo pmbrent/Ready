@@ -8,8 +8,9 @@ class UsersController < ApplicationController
     @user = User.create(user_params)
     if @user.save
       log_in(@user)
+      render json: current_user
     else
-      redirect_to new_session_url
+      render json: {errors: ["Invalid information."], status: 401}
     end
   end
 

@@ -1,5 +1,9 @@
 window.BookShelver = React.createClass({
 
+  getInitialState: function() {
+    return {selectedShelf: 0};
+  },
+
   selectShelf: function(e) {
     this.setState({selectedShelf: e.currentTarget.selectedOptions[0].id});
   },

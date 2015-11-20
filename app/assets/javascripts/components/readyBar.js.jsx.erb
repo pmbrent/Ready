@@ -1,0 +1,78 @@
+window.ReadyBar = React.createClass({
+  mixins: [ReactRouter.History],
+
+  getInitialState: function () {
+  return { currentUser: CurrentUserStore.currentUser() };
+},
+
+  componentDidMount: function () {
+    CurrentUserStore.addChangeHandler(this._onChange);
+  },
+
+  _onChange: function () {
+    this.setState({currentUser: CurrentUserStore.currentUser()});
+  },
+
+  submitLogin: function (e) {
+      e.preventDefault();
+      var credentials = {
+        user: {
+          info: $('input:text').val(),
+          password: $('input:password').val()
+        }
+      }
+      SessionsUtil.login(credentials, function () {
+        this.history.pushState(null, "home/updates");
+      }.bind(this));
+    },
+
+  logout: function () {
+    SessionsUtil.logout(function() {
+      this.history.pushState(null, "welcome");
+    });
+  },
+
+  loggedIn: function() {
+    return(
+      <div className="logged_in">
+        Welcome, {this.state.currentUser.name}!
+        <form onSubmit={this.logout}>
+          <input type="hidden" name="_method" value="DELETE"/>
+          <input type="submit" value="Log Out"/>
+        </form>
+      </div>
+    );
+  },
+
+  logIn: function() {
+    return(
+      <div className="login">
+        <form onSubmit={this.submitLogin}>
+          <label htmlFor="userinfo">Username/Email:
+            <input type="text" name="[user]info" id="userinfo"></input>
+          </label>
+          <label htmlFor="password">Password:
+            <input type="password" name="[user]password" id="password"></input>
+          </label>
+          <input type="submit" value="Log in!"></input>
+        </form>
+      </div>
+    );
+  },
+
+  render: function() {
+    var barContent = <div/>;
+    if (CurrentUserStore.isLoggedIn()) {
+      barContent = this.loggedIn();
+    } else {
+      barContent = this.logIn();
+    }
+
+    return(
+      <div className="nav">
+        <a href="#/"><img src="<%= asset_path('Ready-logo.png') %>"/></a>
+        {barContent}
+      </div>
+    );
+  }
+});
