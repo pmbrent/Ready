@@ -5,10 +5,9 @@ window.SearchBar = React.createClass({
     return {query: ""};
   },
 
-  updateQuery: function(e) {
-    debugger
+  updateQuery: function() {
     this.setState({
-      query: $(e.currentTarget).value
+      query: $('input#query').val()
     });
   },
 
@@ -19,12 +18,13 @@ window.SearchBar = React.createClass({
 
   render: function() {
     return (
-      <form id="search" className="searchBar"
+      <form id="search" className="searchBar" onSubmit={this.search}>
+        <input id="query"
+          type="text"
+          value={this.state.query}
           onChange={this.updateQuery}
-          onSubmit={this.search}>
-        <input id="query" type="text" value={this.state.query}
-          placeholder="Author/Title/ISBN"/>
-        <input id="submit" type="submit" value="Search"/>
+          placeholder="Title / Author / ISBN"/>
+        <input id="submit" type="submit" value="🔍"/>
       </form>
     );
   }
