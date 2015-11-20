@@ -9,6 +9,20 @@
   top: 50%;
   right: 10px;
   transform: translateY(-50%);
+  float: right;
+}
+
+
+.searchBar {
+  position: absolute;
+  top: 50%;
+  left: 150px;
+  transform: translateY(-50%);
+  float: left;
+}
+
+.searchBar input#query {
+  width: 200px;
 }
 
 .coming_soon {

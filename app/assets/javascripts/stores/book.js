@@ -2,6 +2,7 @@
   CHANGE_EVENT = "change";
 
   _books = [];
+  _searchResults = [];
 
   root.BookStore = $.extend({}, EventEmitter.prototype, {
 
@@ -21,15 +22,19 @@
       if (parseInt(input).isNaN) {
       input = input.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
       regex = newRegExp("^" + input);
-        return _books.filter(function(book) {
+        this._searchResults = _books.filter(function(book) {
           return (regex.test(book.author) || regex.text(book.title));
         });
       } else {
         regex = new RegExp("^" + input);
-        return _books.filter(function(book) {
+        this._searchResults = _books.filter(function(book) {
           return regex.test(book.isbn);
         });
       }
+    },
+
+    results: function() {
+      return _searchResults.slice();
     },
 
     addChangeListener: function(callback) {

@@ -1,7 +1,7 @@
 $(function () {
 
   window.Ready = React.createClass({
-   mixins: [ReactRouter.History],
+  mixins: [ReactRouter.History],
 
   getInitialState: function () {
     return { currentUser: null };
@@ -42,6 +42,7 @@ $(function () {
   React.render((
     <Router>
       <Route path="/" component={Ready}>
+        <Route path="search" component={SearchResults}/>
         <Route path="home" component={Home}>
           <Route path="updates" component={Updates}/>
           <Route path="/shelves" component={UserShelves}/>
