@@ -19,6 +19,7 @@
 
     isLoggedIn: function () {
       return (typeof _currentUser !== "undefined" &&
+              typeof _currentUser.errors === "undefined" &&
               typeof _currentUser.id !== "undefined");
     },
 
