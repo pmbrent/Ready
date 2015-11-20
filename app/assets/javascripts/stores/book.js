@@ -15,6 +15,23 @@
       })[0];
     },
 
+    search: function(input) {
+      var regex;
+
+      if (parseInt(input).isNaN) {
+      input = input.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+      regex = newRegExp("^" + input);
+        return _books.filter(function(book) {
+          return (regex.test(book.author) || regex.text(book.title));
+        });
+      } else {
+        regex = new RegExp("^" + input);
+        return _books.filter(function(book) {
+          return regex.test(book.isbn);
+        });
+      }
+    },
+
     addChangeListener: function(callback) {
       this.on(CHANGE_EVENT, callback);
     },
