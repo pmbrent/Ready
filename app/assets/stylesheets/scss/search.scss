@@ -50,10 +50,6 @@
   border-bottom: 1px solid $darkred;
 }
 
-.key p:first-child {
-  width: 37px;
-}
-
 .bookResult img {
   margin: 0px 10px;
   width: 37px;
@@ -67,8 +63,20 @@
   float: left;
 }
 
-.bookResult > p:last-child {
+.bookResult > p:nth-child(3) {
   width: 400px;
+}
+
+.key p:first-child {
+  width: 37px;
+}
+
+.key p:nth-child(4) {
+  width: 400px;
+}
+
+.key p:nth-child(3) {
+  width: 100px;
 }
 
 #bookAdder {

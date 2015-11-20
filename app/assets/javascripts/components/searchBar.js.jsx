@@ -12,9 +12,10 @@ window.SearchBar = React.createClass({
   },
 
   trySearch: function() {
+    var context = this;
     if (BookStore.all().length === 0) {
       ApiUtil.fetchBooks(function() {
-        this.search(this.state.query);
+        context.search(context.state.query);
       });
     } else {
       this.search(this.state.query);

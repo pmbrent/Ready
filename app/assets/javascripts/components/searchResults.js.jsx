@@ -12,6 +12,7 @@ window.SearchResults = React.createClass({
           <p>Title</p>
           <p>Author</p>
           <p>Description</p>
+          <p>Add to Shelf</p>
         </li>
         {BookStore.results().map(function(book) {
           var bookUrl = "/#/books/" + book.id;
@@ -24,6 +25,7 @@ window.SearchResults = React.createClass({
               </a>
               <p>{book.author}</p>
               <p>{book.description.slice(0,200) + "..."}</p>
+              <MiniShelver book={book} shelves={CurrentUserStore.currentUser().shelves}/>
             </li>);
         })}
       </ul>

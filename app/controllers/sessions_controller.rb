@@ -16,7 +16,14 @@ class SessionsController < ApplicationController
       render json: {}
     else
       @user = current_user
-      render json: current_user, only: [:id, :name, :email]
+      render json: @user.as_json(only: [:id, :name, :email],
+                                  include: {
+                                    shelves: {
+                                      include: {
+                                        books: {only: [:title, :id, :isbn]}
+                                      }
+                                    }
+                                  })
     end
   end
 

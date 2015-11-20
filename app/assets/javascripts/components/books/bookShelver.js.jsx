@@ -1,7 +1,7 @@
 window.BookShelver = React.createClass({
 
   getInitialState: function() {
-    return {selectedShelf: 0};
+    return {selectedShelf: this.props.shelves[0].id};
   },
 
   selectShelf: function(e) {
@@ -9,9 +9,6 @@ window.BookShelver = React.createClass({
   },
 
   shelveBook: function() {
-    if (this.state === "null") {
-      this.setState({selectedShelf: this.props.shelves[0].id});
-    }
     ApiUtil.shelveBook(this.props.book.id, this.state.selectedShelf);
   },
 

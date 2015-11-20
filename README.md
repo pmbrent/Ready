@@ -45,7 +45,7 @@ In Phase 2, I'll create the Book model (with title, author, ISBN) and seed with 
 
 ### Phase 3: Book Searching (1 day)
 
-Phase 3 will be to give the Book model (with title, author, ISBN) live searching by any of those three. Search result components should allow immediate rating or adding to shelves, or a redirect to the book's show page, which also allows those actions.
+Phase 3 will be to give the Book model (with title, author, ISBN) searching by any of those three. Search result components should allow immediate rating [to be implemented] or adding to shelves, or a redirect to the book's show page, which also allows those actions.
 
 [Details][phase-three]
 

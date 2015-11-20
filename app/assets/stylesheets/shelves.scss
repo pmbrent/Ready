@@ -54,3 +54,13 @@
 .shelfList > :first-child {
   margin: 10px;
 }
+
+.miniShelver {
+  float: left;
+  width: 200px;
+}
+
+.miniShelver > select, button {
+  float: left;
+  margin-right: 5px;
+}
