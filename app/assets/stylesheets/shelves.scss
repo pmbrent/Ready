@@ -19,12 +19,22 @@
 }
 
 .shelf a {
+  position: relative;
   display: block;
   float: left;
   height: 150px;
   width: 100px;
   background: $tan;
   margin: 10px;
+  text-align: center;
+}
+
+.shelf img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: inherit;
+  height: inherit;
 }
 
 .shelf {

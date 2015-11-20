@@ -23,7 +23,7 @@ class UsersController < ApplicationController
     render json: @user.as_json(include: {
                                   shelves: {
                                     include: {
-                                      books: {only: [:title, :id]}
+                                      books: {only: [:title, :id, :isbn]}
                                     }
                                   }
                                 })

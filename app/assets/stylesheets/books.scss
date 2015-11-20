@@ -18,8 +18,17 @@
   margin: auto;
 }
 
-.bookView .book :first-child {
+.book {
+  padding: 20px 0px;
+}
+
+.bookView h2 {
   font-size: 24px;
-  font-family: Pacifico;
   font-weight: bold;
+}
+
+.book .cover {
+  float: left;
+  border: 1px solid #000;
+  margin-right: 20px;
 }

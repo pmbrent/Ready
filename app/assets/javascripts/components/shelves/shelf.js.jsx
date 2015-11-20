@@ -13,8 +13,15 @@ window.Shelf = React.createClass({
         <div className="active"></div>
         <ul className="book-items group">
           {this.props.shelf.books.map(function(book) {
-            var bookurl = "/#/books/" + book.id;
-            return <li key={book.id}><a href={bookurl}>{book.title}</a></li>;
+            var bookUrl = "/#/books/" + book.id;
+            var coverUrl = "http://covers.openlibrary.org/b/isbn/" +
+                            book.isbn + "-M.jpg";
+            return (
+              <li key={book.id}>
+                <a href={bookUrl}>{book.title}
+                  <img src={coverUrl} alt={book.title}/>
+                </a>
+              </li>);
           })}
         </ul>
         <a href="#" className="slide">◀</a>

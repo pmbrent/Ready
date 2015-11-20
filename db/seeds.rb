@@ -38,7 +38,7 @@ end
 
 Book.create!(title: "Ancillary Justice",
              author: "Ann Leckie",
-             isbn: 9780316246620,
+             isbn: 9780356502403,
              description: "Winner of the Hugo, Nebula, British Science Fiction, Locus and Arthur C. Clarke Awards.
 On a remote, icy planet, the soldier known as Breq is drawing closer to completing her quest.
 Once, she was the Justice of Toren - a colossal starship with an artificial intelligence linking thousands of soldiers in the service of the Radch, the empire that conquered the galaxy.
