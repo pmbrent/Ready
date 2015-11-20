@@ -43,7 +43,39 @@
   padding: 25px;
 }
 
+.bookResult {
+  font-size: 14px;
+  display: block;
+  padding: 20px;
+  border-bottom: 1px solid $darkred;
+}
+
+.key p:first-child {
+  width: 37px;
+}
+
+.bookResult img {
+  margin: 0px 10px;
+  width: 37px;
+  float: left;
+}
+
+.bookResult p {
+  width: 100px;
+  margin: 0px 10px;
+  display: block;
+  float: left;
+}
+
+.bookResult > p:last-child {
+  width: 400px;
+}
+
 #bookAdder {
   float: right;
   right: 0;
+}
+
+.noResults {
+  margin: 20px 40px;
 }

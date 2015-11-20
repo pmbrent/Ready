@@ -10,7 +10,9 @@ $(function () {
   componentWillMount: function () {
     CurrentUserStore.addChangeListener(this._ensureLoggedIn);
     SessionsUtil.fetchCurrentUser();
-    ApiUtil.fetchBooks();
+    if (BookStore.all().length === 0) {
+      ApiUtil.fetchBooks();
+    }
   },
 
   _ensureLoggedIn: function () {
