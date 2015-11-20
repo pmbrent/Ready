@@ -1,7 +1,7 @@
 (function(root) {
+  CHANGE_EVENT = "change";
 
   _users = [];
-  CHANGE_EVENT = "change";
 
   root.UserStore = $.extend({}, EventEmitter.prototype, {
 

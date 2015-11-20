@@ -1,7 +1,7 @@
 (function(root) {
+  CHANGE_EVENT = "change";
 
   _books = [];
-  CHANGE_EVENT = "change";
 
   root.BookStore = $.extend({}, EventEmitter.prototype, {
 

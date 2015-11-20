@@ -17,6 +17,10 @@ class SessionsController < ApplicationController
     end
   end
 
+  def show
+    render json: current_user
+  end
+
   def destroy
     current_user.reset_session_token!
     session[:session_token] = nil
