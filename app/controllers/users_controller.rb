@@ -22,7 +22,8 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     # fix with JBuilder
-    render json: @user.as_json(include: {
+    render json: @user.as_json(only: [:id, :name, :email],
+                                include: {
                                   shelves: {
                                     include: {
                                       books: {only: [:title, :id, :isbn]}
