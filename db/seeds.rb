@@ -61,7 +61,7 @@ They arrive expecting the unexpected, and Area X delivers―they discover a mass
 Book.create!(title: "Monster, Vol. 1",
              author: "Naoki Urasawa",
              isbn: 9781591166412,
-             description: "An ice-cold killer is on the loose, and brilliant Dr. Kenzo Tenma is the only one who can stop him! Conspiracies, serial murders, and a scathing indictment of hospital politics are all masterfully woven together in this compelling manga thriller. Tenma risks his promising medical career to save the life of a critically wounded young boy. Unbeknownst to him, this child is destined for a terrible fate. Who could have known that Tenma would create a monster!"
+             description: "An ice-cold killer is on the loose, and brilliant Dr. Kenzo Tenma is the only one who can stop him! Conspiracies, serial murders, and a scathing indictment of hospital politics are all masterfully woven together in this compelling manga thriller. Tenma risks his promising medical career to save the life of a critically wounded young boy. Unbeknownst to him, this child is destined for a terrible fate. Who could have known that Tenma would create a monster!")
 
 Shelving.create!(book_id: 1, shelf_id: 1)
 Shelving.create!(book_id: 2, shelf_id: 1)
@@ -85,3 +85,10 @@ Book.create!(title: "The Well-Known and Beloved Book With An Excessively and Unn
              description: "Hilarious.")
 
 Shelving.create(book_id: Book.last.id, shelf_id: 1)
+
+20.times do |i|
+  10.times do
+    j = Random.rand(19) + 1
+    Friendship.create(following_user_id: i+1, followed_user_id: j+1)
+  end
+end

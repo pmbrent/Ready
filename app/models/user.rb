@@ -10,6 +10,13 @@ class User < ActiveRecord::Base
   has_many :shelves
   has_many :books, through: :shelves
 
+  has_many :friendships,
+    foreign_key: :following_user_id
+
+  has_many :friends,
+    through: :friendships,
+    source: :followed_user
+
   def self.find_by_credentials(userinfo, password)
     user = User.find_by_email(userinfo) || User.find_by_name(userinfo)
     return nil if user.nil?
