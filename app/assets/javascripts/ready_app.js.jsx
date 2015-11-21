@@ -28,7 +28,9 @@ $(function () {
     return(
       <div id="ready">
         <ReadyBar/>
-        { this.props.children || <Home/> }
+        <div className="mainContent">
+          { this.props.children || <Home/> }
+        </div>
       </div>
     );
   }

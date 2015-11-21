@@ -16,14 +16,27 @@ html {
   color: $darkerred;
 }
 
-.nav {
+.header {
   @include linearGradient($tan, $offwhite);
   position: relative;
   height: 40px;
   color: $darkerred;
   overflow: hidden;
   border-bottom: 1px solid $darkred;
-  clear: both;
+}
+
+.nav {
+  height: inherit;
+  position: relative;
+  width: 900px;
+  margin: auto;
+}
+
+.mainContent {
+  position: relative;
+  width: 900px;
+  margin: auto;
+  font-size: 14px;
 }
 
 .nav img {
@@ -38,9 +51,9 @@ html {
 }
 
 .bodyContainer {
-  background: $tan;
+  background: $offwhite;
   float: right;
-  width: calc(100% - 320px);
+  width: calc(100% - 280px);
   margin: 20px;
   padding: 20px;
   padding-top: 0;
@@ -53,9 +66,9 @@ html {
 
   top: 0;
   bottom: 0;
-  width: 200px;
+  width: 180px;
 
-  padding: 20px;
+  padding: 10px;
   border-right: 1px solid $darkerred;
   background: $darkerred;
 }

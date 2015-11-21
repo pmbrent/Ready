@@ -9,12 +9,20 @@
   margin: 10px;
   background: $offwhite;
   height: 170px;
-  width: 720px;
+  width: 610px;
 }
 
 .shelf strong {
+  display: block;
+  @include linearGradient($tan, $offwhite);
+  width: 95%;
+  margin: auto;
+  border: 1px solid $tan;
+  padding: 0px 10px;
+  box-shadow: 1px 1px $darkred;
+
   font-family: Pacifico;
-  font-size: 20px;
+  font-size: 16px;
   font-color: $darkred;
 }
 
@@ -39,11 +47,12 @@
 
 .shelf {
   margin: 10px;
+  margin-bottom: 35px;
 }
 
 .shelves {
   float: right;
-  width: calc(100% - 300px);
+  width: calc(100% - 250px);
   padding: 25px;
 }
 
@@ -56,8 +65,9 @@
 }
 
 .miniShelver {
+  margin: 0px 5px;
   float: left;
-  width: 200px;
+  width: 195px;
 }
 
 .miniShelver > select, button {

@@ -39,40 +39,40 @@
 
 .results {
   float: left;
-  width: calc(100% - 300px);
-  padding: 25px;
+  width: calc(100% - 230px);
+  padding: 15px;
 }
 
 .bookResult {
-  font-size: 14px;
+  font-size: 12px;
   display: block;
-  padding: 20px;
+  padding: 20px 15px;
   border-bottom: 1px solid $darkred;
 }
 
 .bookResult img {
-  margin: 0px 10px;
+  margin: 0px 5px;
   width: 37px;
   float: left;
 }
 
 .bookResult p {
-  width: 100px;
-  margin: 0px 10px;
+  width: 75px;
+  margin: 0px 5px;
   display: block;
   float: left;
 }
 
 .bookResult > p:nth-child(3) {
-  width: 400px;
+  width: 200px;
+}
+
+.key p:nth-child(4) {
+  width: 200px;
 }
 
 .key p:first-child {
   width: 37px;
-}
-
-.key p:nth-child(4) {
-  width: 400px;
 }
 
 .key p:nth-child(3) {
