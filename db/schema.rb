@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151117185937) do
+ActiveRecord::Schema.define(version: 20151121211848) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,16 @@ ActiveRecord::Schema.define(version: 20151117185937) do
   add_index "books", ["author_id"], name: "index_books_on_author_id", using: :btree
   add_index "books", ["isbn"], name: "index_books_on_isbn", unique: true, using: :btree
   add_index "books", ["title"], name: "index_books_on_title", using: :btree
+
+  create_table "friendships", force: :cascade do |t|
+    t.integer  "followed_user_id",  null: false
+    t.integer  "following_user_id", null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
+
+  add_index "friendships", ["followed_user_id"], name: "index_friendships_on_followed_user_id", using: :btree
+  add_index "friendships", ["following_user_id"], name: "index_friendships_on_following_user_id", using: :btree
 
   create_table "shelves", force: :cascade do |t|
     t.integer  "user_id",    null: false
@@ -64,6 +74,8 @@ ActiveRecord::Schema.define(version: 20151117185937) do
   add_index "users", ["name"], name: "index_users_on_name", unique: true, using: :btree
   add_index "users", ["session_token"], name: "index_users_on_session_token", unique: true, using: :btree
 
+  add_foreign_key "friendships", "users", column: "followed_user_id"
+  add_foreign_key "friendships", "users", column: "following_user_id"
   add_foreign_key "shelves", "users"
   add_foreign_key "shelvings", "books"
   add_foreign_key "shelvings", "shelves"
