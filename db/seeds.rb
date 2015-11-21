@@ -58,9 +58,15 @@ Book.create!(title: "Annihilation",
 The group is made up of four women: an anthropologist; a surveyor; a psychologist, the de facto leader; and our narrator, a biologist. Their mission is to map the terrain, record all observations of their surroundings and of one anotioner, and, above all, avoid being contaminated by Area X itself.
 They arrive expecting the unexpected, and Area X delivers―they discover a massive topographic anomaly and life forms that surpass understanding―but it's the surprises that came across the border with them and the secrets the expedition members are keeping from one another that change everything.")
 
+Book.create!(title: "Monster, Vol. 1",
+             author: "Naoki Urasawa",
+             isbn: 9781591166412,
+             description: "An ice-cold killer is on the loose, and brilliant Dr. Kenzo Tenma is the only one who can stop him! Conspiracies, serial murders, and a scathing indictment of hospital politics are all masterfully woven together in this compelling manga thriller. Tenma risks his promising medical career to save the life of a critically wounded young boy. Unbeknownst to him, this child is destined for a terrible fate. Who could have known that Tenma would create a monster!"
+
 Shelving.create!(book_id: 1, shelf_id: 1)
 Shelving.create!(book_id: 2, shelf_id: 1)
 Shelving.create!(book_id: 3, shelf_id: 2)
+Shelving.create!(book_id: 4, shelf_id: 3)
 
 50.times do |i|
   Book.create!(title: "Book #{i+4}",
@@ -78,4 +84,4 @@ Book.create!(title: "The Well-Known and Beloved Book With An Excessively and Unn
              isbn: 9999999999999,
              description: "Hilarious.")
 
-Shelving.create(book_id: 54, shelf_id: 1)
+Shelving.create(book_id: Book.last.id, shelf_id: 1)

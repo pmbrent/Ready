@@ -5,7 +5,7 @@ window.Book = React.createClass({
                     this.props.book.isbn + "-M.jpg";
 
     return (
-      <div className="book">
+      <div className="book group">
         <img className="cover" src={coverUrl} />
         <h2>{this.props.book.title}</h2>
         <p>{this.props.book.author}</p>

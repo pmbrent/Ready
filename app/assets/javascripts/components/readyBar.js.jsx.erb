@@ -38,7 +38,7 @@ window.ReadyBar = React.createClass({
         Welcome, {this.state.currentUser.name}!
         <form onSubmit={this.logout}>
           <input type="hidden" name="_method" value="DELETE"/>
-          <input type="submit" value="Log Out"/>
+          <input type="submit" className="button" value="Log Out"/>
         </form>
       </div>
     );
@@ -54,7 +54,7 @@ window.ReadyBar = React.createClass({
           <label htmlFor="password">Password:
             <input type="password" name="[user]password" id="password"></input>
           </label>
-          <input type="submit" value="Log in!"></input>
+          <input type="submit" className="button" value="Log in!"></input>
         </form>
       </div>
     );

@@ -21,14 +21,15 @@ window.BookView = React.createClass ({
         CurrentUserStore.removeChangeListener(this.updateShelves);
         this.setState({listening: false});
       }
+
+      this.setState({
+        shelves: CurrentUserStore.currentUser().shelves
+      });
+
       if (typeof this.state.shelves === "undefined" ||
           this.state.shelves.length === 0) {
         ApiUtil.fetchUserShelves(CurrentUserStore.currentUserId());
       }
-
-      this.setState({
-        shelves: UserStore.find(CurrentUserStore.currentUserId()).shelves
-      });
     }
   },
 

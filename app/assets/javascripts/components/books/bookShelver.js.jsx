@@ -15,7 +15,7 @@ window.BookShelver = React.createClass({
   render: function() {
     // Current User's shelves here REFACTOR
     return (
-      <div className="bookShelver sideBox">
+      <div className="bookShelver sideBox group">
         <p>Add {this.props.book.title} to Shelf:</p>
         <form>
           <select
