@@ -9,6 +9,10 @@
       return $.extend({}, _currentUser);
     },
 
+    currentUserId: function () {
+      return $.extend({}, _currentUser).id;
+    },
+
     addChangeListener: function (callback) {
       this.on(CHANGE_EVENT, callback);
     },

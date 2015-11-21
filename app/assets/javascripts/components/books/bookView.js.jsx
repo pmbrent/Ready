@@ -1,24 +1,35 @@
 window.BookView = React.createClass ({
 
   getInitialState: function() {
-
     return {
       book: BookStore.find(parseInt(this.props.params.bookId)),
-      shelves: UserStore.currentUser.shelves };
+      shelves: CurrentUserStore.currentUser().shelves,
+      listening: true };
     },
 
   componentDidMount: function() {
     BookStore.addChangeListener(this.updateBook);
     ApiUtil.fetchBooks();
 
+    CurrentUserStore.addChangeListener(this.updateShelves);
     UserStore.addChangeListener(this.updateShelves);
-    if (this.state.shelves.length === 0) {
-      ApiUtil.fetchUserShelves(window.currentUserId);
-    }
   },
 
   updateShelves: function() {
-    this.setState({ shelves: UserStore.find(window.currentUserId).shelves });
+    if (typeof CurrentUserStore.currentUserId() !== "undefined") {
+      if (this.state.listening === true) {
+        CurrentUserStore.removeChangeListener(this.updateShelves);
+        this.setState({listening: false});
+      }
+      if (typeof this.state.shelves === "undefined" ||
+          this.state.shelves.length === 0) {
+        ApiUtil.fetchUserShelves(CurrentUserStore.currentUserId());
+      }
+
+      this.setState({
+        shelves: UserStore.find(CurrentUserStore.currentUserId()).shelves
+      });
+    }
   },
 
   updateBook: function() {

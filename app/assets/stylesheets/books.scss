@@ -18,6 +18,17 @@
   margin: auto;
 }
 
+.miniShelver {
+  margin: 0px 5px;
+  float: left;
+  width: 195px;
+}
+
+.miniShelver > select, button {
+  float: left;
+  margin-right: 5px;
+}
+
 .book {
   padding: 20px 0px;
 }
