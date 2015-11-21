@@ -17,9 +17,9 @@ html {
 }
 
 .nav {
+  @include linearGradient($tan, $offwhite);
   position: relative;
   height: 40px;
-  background: lighten($tan, 5%);
   color: $darkerred;
   overflow: hidden;
   border-bottom: 1px solid $darkred;
