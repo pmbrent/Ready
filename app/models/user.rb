@@ -45,4 +45,15 @@ class User < ActiveRecord::Base
     self.session_token
   end
 
+  def make_default_shelves
+    Shelf.create!(title: "Read",
+                  user_id: id)
+
+    Shelf.create!(title: "Reading",
+                  user_id: id)
+
+    Shelf.create!(title: "Want to Read",
+                  user_id: id)
+  end
+
 end

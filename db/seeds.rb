@@ -8,34 +8,24 @@
 
 require_relative 'seed_books.rb'
 
-User.create!(name: "admin",
+admin = User.create!(name: "admin",
              email: "admin@ready.com",
              password: "admin",
              librarian: true)
+admin.make_default_shelves
 
-Shelf.create!(title: "Read",
-              user_id: 1)
-
-Shelf.create!(title: "Reading",
-              user_id: 1)
-
-Shelf.create!(title: "Want to Read",
-              user_id: 1)
+guest = User.create!(name: "guest",
+             email: "guest@ready.com",
+             password: "guest",
+             librarian: true)
+guest.make_default_shelves
 
 20.times do |i|
-  User.create!(name: "user#{i+2}",
+  user = User.create!(name: "user#{i+2}",
                email: "user#{i+2}@place.com",
                password: "password#{i+2}",
                librarian: false)
-
-  Shelf.create!(title: "Read",
-                user_id: i+2)
-
-  Shelf.create!(title: "Reading",
-                user_id: i+2)
-
-  Shelf.create!(title: "Want to Read",
-                user_id: i+2)
+  user.make_default_shelves
 end
 
 Book.create!(title: "Ancillary Justice",

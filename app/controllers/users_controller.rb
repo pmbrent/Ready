@@ -7,6 +7,7 @@ class UsersController < ApplicationController
   def create
     @user = User.create(user_params)
     if @user.save
+      @user.make_default_shelves
       log_in(@user)
       render json: current_user, only: [:id, :name, :email]
     else
