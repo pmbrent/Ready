@@ -44,6 +44,10 @@ window.Welcome = React.createClass({
             <br/>
             <input type="submit" value="Sign up!"></input>
           </form>
+          <br/>
+          <p>
+            Or log in with "guest/guest" to explore!
+          </p>
         </div>
       </div>
     );

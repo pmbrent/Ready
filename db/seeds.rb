@@ -17,7 +17,7 @@ admin.make_default_shelves
 guest = User.create!(name: "guest",
              email: "guest@ready.com",
              password: "guest",
-             librarian: true)
+             librarian: false)
 guest.make_default_shelves
 
 20.times do |i|
@@ -43,12 +43,12 @@ Book.create!(title: "American Gods",
 Flying home for the funeral, as a violent storm rocks the plane, a strange man in the seat next to him introduces himself. The man calls himself Mr. Wednesday, and he knows more about Shadow than is possible.
 He warns Shadow that a far bigger storm is coming. And from that moment on, nothing will ever be the same...")
 
-Book.create!(title: "Annihilation",
-             author: "Jeff VanderMeer",
-             isbn: 9780374104092,
-             description: "Area X has been cut off from the rest of the continent for decades. Nature has reclaimed the last vestiges of human civilization. The first expedition returned with reports of a pristine, Edenic landscape; the second expedition ended in mass suicide, the third expedition in a hail of gunfire as its members turned on one another. The members of the eleventh expedition returned as shadows of their former selves, and within weeks, all had died of cancer. In Annihilation, the first volume of Jeff VanderMeer's Southern Reach trilogy, we join the twelfth expedition.
-The group is made up of four women: an anthropologist; a surveyor; a psychologist, the de facto leader; and our narrator, a biologist. Their mission is to map the terrain, record all observations of their surroundings and of one anotioner, and, above all, avoid being contaminated by Area X itself.
-They arrive expecting the unexpected, and Area X delivers―they discover a massive topographic anomaly and life forms that surpass understanding―but it's the surprises that came across the border with them and the secrets the expedition members are keeping from one another that change everything.")
+# Book.create!(title: "Annihilation",
+#              author: "Jeff VanderMeer",
+#              isbn: 9780374104092,
+#              description: "Area X has been cut off from the rest of the continent for decades. Nature has reclaimed the last vestiges of human civilization. The first expedition returned with reports of a pristine, Edenic landscape; the second expedition ended in mass suicide, the third expedition in a hail of gunfire as its members turned on one another. The members of the eleventh expedition returned as shadows of their former selves, and within weeks, all had died of cancer. In Annihilation, the first volume of Jeff VanderMeer's Southern Reach trilogy, we join the twelfth expedition.
+# The group is made up of four women: an anthropologist; a surveyor; a psychologist, the de facto leader; and our narrator, a biologist. Their mission is to map the terrain, record all observations of their surroundings and of one anotioner, and, above all, avoid being contaminated by Area X itself.
+# They arrive expecting the unexpected, and Area X delivers―they discover a massive topographic anomaly and life forms that surpass understanding―but it's the surprises that came across the border with them and the secrets the expedition members are keeping from one another that change everything.")
 
 Book.create!(title: "Monster, Vol. 1",
              author: "Naoki Urasawa",
@@ -57,8 +57,7 @@ Book.create!(title: "Monster, Vol. 1",
 
 Shelving.create!(book_id: 1, shelf_id: 1)
 Shelving.create!(book_id: 2, shelf_id: 1)
-Shelving.create!(book_id: 3, shelf_id: 2)
-Shelving.create!(book_id: 4, shelf_id: 3)
+Shelving.create!(book_id: 3, shelf_id: 3)
 
 # 50.times do |i|
 #   Book.create!(title: "Book #{i+4}",
@@ -74,19 +73,24 @@ Shelving.create!(book_id: 4, shelf_id: 3)
 add_open_library_books
 
 totalBooks = Book.all.count
-totalShelves = Shelf.all.count
 
-totalBooks.times do |i|
-  15.times do
-    ## Use soft create to not worry about duplicates
-    Shelving.create(book_id: i+1, shelf_id: Random.rand(totalShelves - 1) + 2)
+Shelf.all.each do |shelf|
+  # Generate a more reasonable number of currently-reading books
+  if shelf.id % 3 == 2
+    4.times do
+      Shelving.create(book_id: Random.rand(totalBooks) + 1, shelf_id: shelf.id)
+    end
+  else
+    25.times do
+      Shelving.create(book_id: Random.rand(totalBooks) + 1, shelf_id: shelf.id)
+    end
   end
 end
 
-Book.create!(title: "The Well-Known and Beloved Book With An Excessively and Unnecessarily Lengthy Title",
-             author: "Dr. Sarah Samantha Dean-Whittingsmith the Fourteenth",
-             isbn: 9999999999999,
-             description: "Hilarious.")
+# Book.create!(title: "The Well-Known and Beloved Book With An Excessively and Unnecessarily Lengthy Title",
+#              author: "Dr. Sarah Samantha Dean-Whittingsmith the Fourteenth",
+#              isbn: 9999999999999,
+#              description: "Hilarious.")
 
 Shelving.create(book_id: Book.last.id, shelf_id: 1)
 

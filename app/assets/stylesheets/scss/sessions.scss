@@ -37,9 +37,13 @@
   border-top: 0;
 }
 
-.new_user p {
+.new_user p:first-child {
   font-size: 16px;
   font-weight: bold;
+}
+
+.new_user p:last-child {
+  font-size: 12px;
 }
 
 .new_user input {
