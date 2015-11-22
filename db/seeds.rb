@@ -6,6 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+require_relative 'seed_books.rb'
+
 User.create!(name: "admin",
              email: "admin@ready.com",
              password: "admin",
@@ -68,14 +70,26 @@ Shelving.create!(book_id: 2, shelf_id: 1)
 Shelving.create!(book_id: 3, shelf_id: 2)
 Shelving.create!(book_id: 4, shelf_id: 3)
 
-50.times do |i|
-  Book.create!(title: "Book #{i+4}",
-               author: "Alan Dean Foster",
-               isbn: 1234567890000 + i,
-               description: "Book #{i+4} by ADF")
-  10.times do
+# 50.times do |i|
+#   Book.create!(title: "Book #{i+4}",
+#                author: "Alan Dean Foster",
+#                isbn: 1234567890000 + i,
+#                description: "Book #{i+4} by ADF")
+#   10.times do
+#     ## Use soft create to not worry about duplicates
+#     Shelving.create(book_id: i+4, shelf_id: Random.rand(57) + 2)
+#   end
+# end
+
+add_open_library_books
+
+totalBooks = Book.all.count
+totalShelves = Shelf.all.count
+
+totalBooks.times do |i|
+  15.times do
     ## Use soft create to not worry about duplicates
-    Shelving.create(book_id: i+4, shelf_id: Random.rand(57) + 2)
+    Shelving.create(book_id: i+1, shelf_id: Random.rand(totalShelves - 1) + 2)
   end
 end
 
