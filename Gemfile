@@ -30,6 +30,8 @@ gem 'react-rails', '~>1.3.0'
 
 gem 'flux-rails-assets', '~> 2.1.0'
 
+gem 'faker'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
@@ -45,8 +47,6 @@ group :development, :test do
   gem 'binding_of_caller'
 
   gem 'pry-rails'
-
-  gem 'faker'
 end
 
 group :development do
