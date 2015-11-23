@@ -12,10 +12,6 @@
 @import url(https://fonts.googleapis.com/css?family=Pacifico);
 @import url(https://fonts.googleapis.com/css?family=Vollkorn:400,400italic);
 
-html {
-  background: $offwhite;
-}
-
 .logo {
   font-size: 36px;
   padding-left: 15px;
@@ -65,9 +61,9 @@ html {
 .bodyContainer {
   background: $offwhite;
   float: right;
-  width: calc(100% - 280px);
+  width: calc(100% - 260px);
   margin: 20px;
-  padding: 20px;
+  padding: 10px;
   padding-top: 0;
 }
 
