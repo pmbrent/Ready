@@ -28,7 +28,7 @@ window.BookView = React.createClass ({
 
       if (typeof this.state.shelves === "undefined" ||
           this.state.shelves.length === 0) {
-        ApiUtil.fetchUserShelves(CurrentUserStore.currentUserId());
+        ApiUtil.fetchUserInfo(CurrentUserStore.currentUserId());
       }
     }
   },

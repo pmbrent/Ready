@@ -11,6 +11,12 @@
       return $.extend({}, _currentUser);
     },
 
+    isFriend: function(user_id) {
+      return _currentUser.friends.some(function(friend) {
+        return (friend.id === user_id);
+      });
+    },
+
     userFeed: function() {
       return _userFeed.slice();
     },

@@ -6,7 +6,7 @@ window.ShelfIndex = React.createClass({
 
   componentDidMount: function() {
     UserStore.addChangeListener(this.updateUser);
-    ApiUtil.fetchUserShelves(this.props.userId);
+    ApiUtil.fetchUserInfo(this.props.userId);
   },
 
   updateUser: function() {

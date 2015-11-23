@@ -14,6 +14,8 @@ Rails.application.routes.draw do
 
   resources :shelvings, only: [:create, :destroy]
 
+  resources :friendships, only: [:create, :destroy]
+
   root 'static_pages#index'
 
   # The priority is based upon order of creation: first created -> highest priority.

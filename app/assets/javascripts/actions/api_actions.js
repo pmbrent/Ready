@@ -6,7 +6,7 @@ window.ApiActions = {
     });
   },
 
-  receiveUserShelves: function(user) {
+  receiveUserInfo: function(user) {
     AppDispatcher.dispatch({
       actionType: UserConstants.USER_SHELVES_RECEIVED,
       user: user

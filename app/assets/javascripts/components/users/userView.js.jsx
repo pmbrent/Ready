@@ -8,7 +8,7 @@ window.UserView = React.createClass ({
 
   componentDidMount: function() {
     UserStore.addChangeListener(this.updateUser);
-    ApiUtil.fetchUserShelves(this.props.params.userId);
+    ApiUtil.fetchUserInfo(this.props.params.userId);
   },
 
   updateUser: function() {

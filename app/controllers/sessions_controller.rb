@@ -22,7 +22,7 @@ class SessionsController < ApplicationController
                                       include: {
                                         books: {only: [:title, :id, :isbn]}
                                       }
-                                    }
+                                    }, friends: {only: :id}
                                   })
     end
   end

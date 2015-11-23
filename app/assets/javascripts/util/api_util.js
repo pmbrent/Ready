@@ -11,13 +11,13 @@ window.ApiUtil = {
     });
   },
 
-  fetchUserShelves: function(userId) {
+  fetchUserInfo: function(userId) {
     $.ajax({
       url: "/users/" + userId,
       method: "GET",
       dataType: "json",
       success: function(user) {
-        ApiActions.receiveUserShelves(user);
+        ApiActions.receiveUserInfo(user);
       }
     });
   },
