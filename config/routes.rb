@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'users/feed' => 'users#feed'
+
   resources :users, only: [:new, :create, :index, :show]
 
   resource :session, only: [:show, :create, :destroy]
@@ -13,8 +15,6 @@ Rails.application.routes.draw do
   resources :shelvings, only: [:create, :destroy]
 
   root 'static_pages#index'
-
-  get 'users/feed' => 'user#feed'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -37,7 +37,6 @@ window.ReadyBar = React.createClass({
       <div className="logged_in">
         Welcome, {this.state.currentUser.name}!
         <form onSubmit={this.logout}>
-          <input type="hidden" name="_method" value="DELETE"/>
           <input type="submit" className="button" value="Log Out"/>
         </form>
       </div>

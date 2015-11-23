@@ -61,7 +61,9 @@ class User < ActiveRecord::Base
   def get_feed
     Book.find_by_sql([<<-SQL, self.id])
       SELECT
-        books.id, books.isbn, books.author, books.title, friends.id AS friend_id, shelvings.created_at
+        books.id, books.isbn, books.author, books.title,
+        friends.name AS friend, shelves.title AS shelf_title,
+        shelvings.created_at
       FROM
         books
       JOIN

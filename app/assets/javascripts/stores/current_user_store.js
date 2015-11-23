@@ -1,13 +1,18 @@
 (function (root) {
   var CHANGE_EVENT = "change";
+  var FEED_EVENT = "feed";
 
   var _currentUser = {};
-  var _userFeed = {};
+  var _userFeed = [];
 
   root.CurrentUserStore = $.extend({}, EventEmitter.prototype, {
 
     currentUser: function () {
       return $.extend({}, _currentUser);
+    },
+
+    userFeed: function() {
+      return _userFeed.slice();
     },
 
     currentUserId: function () {
