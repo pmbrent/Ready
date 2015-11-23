@@ -21,7 +21,7 @@ guest = User.create!(name: "guest",
 guest.make_default_shelves
 
 30.times do |i|
-  user = User.create!(name: Faker::Name.name,
+  user = User.create(name: Faker::Name.name,
                email: Faker::Internet.email,
                password: "password#{i+2}",
                librarian: false)
