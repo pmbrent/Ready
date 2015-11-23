@@ -33,7 +33,11 @@ class UsersController < ApplicationController
   end
 
   def feed
-    @user = current_user
+    if current_user
+      @user = current_user
+    else
+      @user = User.new
+    end
     render json: @user.get_feed
   end
 

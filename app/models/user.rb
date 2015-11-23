@@ -61,10 +61,10 @@ class User < ActiveRecord::Base
   def get_feed
     Book.find_by_sql([<<-SQL, self.id])
       SELECT
-        books.id, books.isbn, books.author, books.title,
+        books.id AS book_id, books.isbn, books.author, books.title,
         friends.name AS friend, friends.id AS friend_id,
         shelves.title AS shelf_title,
-        shelvings.created_at
+        shelvings.created_at, shelvings.id
       FROM
         books
       JOIN
@@ -81,7 +81,7 @@ class User < ActiveRecord::Base
       WHERE
         friendships.following_user_id = ?
       ORDER BY
-        shelvings.created_at
+        shelvings.created_at DESC
       LIMIT
         25
     SQL

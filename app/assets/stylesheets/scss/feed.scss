@@ -18,9 +18,15 @@
 
 .feedItem p {
   display: block;
-  padding: 10px;
+  padding: 0px 10px;
+  margin: 5px;
   float: left;
   width: 80%;
+}
+
+.feedItem p:last-child {
+  font-style: italic;
+  color: lighten($darkred, 10%);
 }
 
 .feedItem a {

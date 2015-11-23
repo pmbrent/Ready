@@ -20,9 +20,9 @@ guest = User.create!(name: "guest",
              librarian: false)
 guest.make_default_shelves
 
-20.times do |i|
-  user = User.create!(name: "user#{i+2}",
-               email: "user#{i+2}@place.com",
+30.times do |i|
+  user = User.create!(name: Faker::Name.name,
+               email: Faker::Internet.email,
                password: "password#{i+2}",
                librarian: false)
   user.make_default_shelves
@@ -77,16 +77,31 @@ totalBooks = Book.all.count
 Shelf.all.each do |shelf|
   # Generate a more reasonable number of currently-reading books
   if shelf.id % 3 == 2
-    4.times do
-      sleep 0.1
-      Shelving.create(book_id: Random.rand(totalBooks) + 1, shelf_id: shelf.id)
-    end
+    new_shelf = Shelving.create(book_id: Random.rand(totalBooks) + 1, shelf_id: shelf.id)
+    new_shelf.created_at = Faker::Date.backward(10)
+    new_shelf.save
   else
-    25.times do
-      sleep 0.1
-      Shelving.create(book_id: Random.rand(totalBooks) + 1, shelf_id: shelf.id)
+    30.times do
+      new_shelf = Shelving.create(book_id: Random.rand(totalBooks) + 1, shelf_id: shelf.id)
+      new_shelf.created_at = Faker::Date.backward(40)
+      new_shelf.save
     end
   end
+end
+
+# Generate some more recent activity for the user feed
+
+50.times do
+  user_id = Random.rand(20) + 2;
+  shelf_id = 3 * user_id - Random.rand(3);
+  num_times = Random.rand(3);
+
+  num_times.times do
+    new_shelf = Shelving.create(book_id: Random.rand(totalBooks) + 1, shelf_id: shelf_id)
+    new_shelf.created_at = Time.now() - Random.rand(17280);
+    new_shelf.save
+  end
+
 end
 
 # Book.create!(title: "The Well-Known and Beloved Book With An Excessively and Unnecessarily Lengthy Title",
