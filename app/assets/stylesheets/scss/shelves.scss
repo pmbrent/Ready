@@ -1,0 +1,64 @@
+// Place all the styles related to the shelves controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "scss/globals.scss";
+
+.books {
+  margin: 10px;
+  background: $offwhite;
+  height: 170px;
+  width: 610px;
+}
+
+.shelf strong {
+  display: block;
+  @include linearGradient($tan, $offwhite);
+  width: 95%;
+  margin: auto;
+  border: 1px solid $tan;
+  padding: 0px 10px;
+  box-shadow: 1px 1px $darkred;
+
+  font-family: Pacifico;
+  font-size: 16px;
+  font-color: $darkred;
+}
+
+.shelf a {
+  position: relative;
+  display: block;
+  float: left;
+  height: 150px;
+  width: 100px;
+  background: $tan;
+  margin: 10px;
+  text-align: center;
+}
+
+.shelf img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: inherit;
+  height: inherit;
+}
+
+.shelf {
+  margin: 10px;
+  margin-bottom: 35px;
+}
+
+.shelves {
+  float: right;
+  width: calc(100% - 250px);
+  padding: 25px;
+}
+
+.shelfIndex {
+  position: relative;
+}
+
+.shelfList > :first-child {
+  margin: 10px;
+}

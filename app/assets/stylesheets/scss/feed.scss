@@ -1,0 +1,36 @@
+@import "scss/globals.scss";
+
+.updatesPage {
+  position: relative;
+}
+
+.feedItem {
+  border-bottom: 1px solid $darkred;
+  padding: 10px;
+}
+
+.feedItem .imgBox {
+  float: left;
+  height: 58px;
+  width: 37px;
+  overflow: hidden;
+}
+
+.feedItem p {
+  display: block;
+  padding: 10px;
+  float: left;
+  width: 80%;
+}
+
+.feedItem a {
+  display: inline;
+}
+
+.updates {
+  right: 0;
+}
+
+.userFeed {
+  float: left;
+}

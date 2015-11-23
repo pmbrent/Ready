@@ -18,10 +18,17 @@ window.Updates = React.createClass({
 
   render: function() {
     return (
-      <div className="userFeed">
-        {this.state.feed.map(function(feedItem) {
-          return <FeedItem key={feedItem.id} feedItem={feedItem}/>;
-        })}
+      <div className="updatesPage group">
+        <div className="userFeed bodyContainer">
+          {this.state.feed.map(function(feedItem) {
+            return <FeedItem key={feedItem.id} feedItem={feedItem}/>;
+          })}
+        </div>
+        <div className="sideColumn updates group">
+          <div className="sideBox">
+            Placeholder!
+          </div>
+        </div>
       </div>
     );
 

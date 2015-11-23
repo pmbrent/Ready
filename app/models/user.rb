@@ -62,7 +62,8 @@ class User < ActiveRecord::Base
     Book.find_by_sql([<<-SQL, self.id])
       SELECT
         books.id, books.isbn, books.author, books.title,
-        friends.name AS friend, shelves.title AS shelf_title,
+        friends.name AS friend, friends.id AS friend_id,
+        shelves.title AS shelf_title,
         shelvings.created_at
       FROM
         books
