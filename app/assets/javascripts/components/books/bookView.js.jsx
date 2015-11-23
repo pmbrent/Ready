@@ -38,9 +38,12 @@ window.BookView = React.createClass ({
   },
 
   showBook: function() {
-    if (typeof this.state.book === "undefined" ||
-        typeof this.state.shelves === "undefined" ) {
+    if (typeof this.state.book === "undefined") {
       return <div/>;
+    } else if (typeof this.state.shelves === "undefined" ) {
+      return (<div className="bodyContainer">
+        <Book book={this.state.book}/>
+      </div>);
     } else {
       return (
         <div>

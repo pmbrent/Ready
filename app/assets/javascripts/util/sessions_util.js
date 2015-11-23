@@ -52,6 +52,16 @@ var SessionsUtil = {
         }
       }
     });
+  },
+
+  fetchCurrentUserFeed: function() {
+    $.ajax({
+      url: '/users/feed',
+      type: 'GET',
+      success: function(feed) {
+        SessionActions.receiveCurrentUserFeed(feed);
+      }
+    });
   }
 
 };

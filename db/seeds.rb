@@ -78,10 +78,12 @@ Shelf.all.each do |shelf|
   # Generate a more reasonable number of currently-reading books
   if shelf.id % 3 == 2
     4.times do
+      sleep 0.1
       Shelving.create(book_id: Random.rand(totalBooks) + 1, shelf_id: shelf.id)
     end
   else
     25.times do
+      sleep 0.1
       Shelving.create(book_id: Random.rand(totalBooks) + 1, shelf_id: shelf.id)
     end
   end

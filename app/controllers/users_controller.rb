@@ -32,6 +32,11 @@ class UsersController < ApplicationController
                                 })
   end
 
+  def feed
+    @user = curent_user
+    render json: @user.get_feed
+  end
+
 private
   def user_params
     params.require(:user).permit(:name, :email, :password)

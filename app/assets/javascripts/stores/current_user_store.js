@@ -2,6 +2,7 @@
   var CHANGE_EVENT = "change";
 
   var _currentUser = {};
+  var _userFeed = {};
 
   root.CurrentUserStore = $.extend({}, EventEmitter.prototype, {
 
@@ -21,6 +22,14 @@
       this.removeListener(CHANGE_EVENT, callback);
     },
 
+    addFeedListener: function (callback) {
+      this.on(FEED_EVENT, callback);
+    },
+
+    removeFeedListener: function (callback) {
+      this.removeListener(FEED_EVENT, callback);
+    },
+
     isLoggedIn: function () {
       return (typeof _currentUser !== "undefined" &&
               typeof _currentUser.errors === "undefined" &&
@@ -33,7 +42,10 @@
           _currentUser = payload.user;
           CurrentUserStore.emit(CHANGE_EVENT);
           break;
-
+        case CurrentUserConstants.RECEIVE_CURRENT_USER_FEED:
+          _userFeed = payload.userFeed;
+          CurrentUserStore.emit(FEED_EVENT);
+          break;
       }
     }),
   });
