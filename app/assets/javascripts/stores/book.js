@@ -17,16 +17,14 @@
     },
 
     search: function(input) {
-      var regex;
+      var regex = new RegExp(input);
 
       if (isNaN(parseInt(input))) {
         input = input.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-        regex = new RegExp("^" + input);
         _searchResults = _books.filter(function(book) {
           return (regex.test(book.author) || regex.test(book.title));
         });
       } else {
-        regex = new RegExp("^" + input);
         _searchResults = _books.filter(function(book) {
           return regex.test(book.isbn);
         });

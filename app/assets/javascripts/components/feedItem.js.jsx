@@ -27,7 +27,7 @@ window.FeedItem = React.createClass({
 
   fname: function() {
     var names = this.props.feedItem.friend.split(" ");
-    var regex = new RegExp("^Mr|^Ms|^Miss");
+    var regex = new RegExp("^Mr|^Ms|^Miss|^Dr.");
     if (regex.test(names[0])) {
       return names[1];
     } else {

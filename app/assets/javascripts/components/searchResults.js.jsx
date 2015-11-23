@@ -39,9 +39,9 @@ window.SearchResults = React.createClass({
           <section className="sideBox">
             <strong>Popular Searches:</strong>
             <ul>
-              <li>97</li>
               <li>Neil</li>
-              <li>Alan</li>
+              <li>97</li>
+              <li>John</li>
             </ul>
           </section>
         </section>
