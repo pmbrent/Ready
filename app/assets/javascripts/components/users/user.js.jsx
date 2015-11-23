@@ -18,11 +18,12 @@ window.User = React.createClass({
 
   render: function() {
     return (
-      <div className="user">
-        <img className="userpic"/>
-        <p>{this.props.user.name}</p>
-        {this.friendButton()}
-        <br/>
+      <div className="user group">
+        <div className="userProps">
+          <img className="userpic"/>
+          <p>{this.props.user.name}</p>
+          {this.friendButton()}
+        </div>
         <div className="userProfile">
           User Profile Placeholder
         </div>
