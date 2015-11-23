@@ -10,9 +10,9 @@ window.User = React.createClass({
 
   friendButton: function() {
     if (CurrentUserStore.isFriend(this.props.user.id)) {
-      return <button className="button" onClick={this.removeFriend}>Remove Friend</button>;
+      return <button className="friending button" onClick={this.removeFriend}>Unfriend</button>;
     } else {
-      return <button className="button" onClick={this.addFriend}>Add Friend</button>;
+      return <button className="friending button" onClick={this.addFriend}>Add Friend</button>;
     }
   },
 

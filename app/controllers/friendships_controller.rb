@@ -1,7 +1,8 @@
 class FriendshipsController < ApplicationController
 
   def create
-    @friendship = Friendship.create(following_user_id: current_user.id, followed_user: params[:id])
+    @friendship = Friendship.create(following_user_id: current_user.id,
+                                    followed_user_id: params[:id].to_i)
     if @friendship.save
       render json: @friendship
     else

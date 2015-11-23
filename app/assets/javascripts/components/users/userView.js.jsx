@@ -7,12 +7,19 @@ window.UserView = React.createClass ({
   },
 
   componentDidMount: function() {
+    CurrentUserStore.addChangeListener(this.updateFriendship);
     UserStore.addChangeListener(this.updateUser);
     ApiUtil.fetchUserInfo(this.props.params.userId);
   },
 
   updateUser: function() {
     this.setState({ user: UserStore.find(parseInt(this.props.params.userId)) });
+  },
+
+  updateFriendship: function() {
+    this.setState(
+      {isFriend: CurrentUserStore.isFriend(this.props.params.userId)}
+    );
   },
 
   showUser: function() {
@@ -38,6 +45,7 @@ window.UserView = React.createClass ({
 
   componentWillUnmount: function() {
     UserStore.removeChangeListener(this.updateUser);
+    CurrentUserStore.removeChangeListener(this.updateFriendship);
   },
 
   render: function() {
