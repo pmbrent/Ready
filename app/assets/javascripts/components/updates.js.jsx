@@ -12,6 +12,19 @@ window.Updates = React.createClass({
     this.setState({ feed: CurrentUserStore.userFeed() });
   },
 
+  showFeed: function() {
+    if (this.state.feed.length < 1) {
+      return <div className="userFeed bodyContainer">Loading Feed...</div>;
+    } else {
+      return (<div className="userFeed bodyContainer">
+          {this.state.feed.map(function(feedItem) {
+            return <FeedItem key={feedItem.id} feedItem={feedItem}/>;
+          })}
+        </div>
+      );
+    }
+  },
+
   componentWillUnmount: function() {
     CurrentUserStore.removeFeedListener(this.updateFeed);
   },
@@ -19,11 +32,7 @@ window.Updates = React.createClass({
   render: function() {
     return (
       <div className="updatesPage group">
-        <div className="userFeed bodyContainer">
-          {this.state.feed.map(function(feedItem) {
-            return <FeedItem key={feedItem.id} feedItem={feedItem}/>;
-          })}
-        </div>
+        {this.showFeed()}
         <div className="sideColumn updates group">
           <div className="sideBox">
             Placeholder!
