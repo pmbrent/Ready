@@ -31,11 +31,14 @@ window.Updates = React.createClass({
 
   render: function() {
     return (
-      <div className="updatesPage group">
-        {this.showFeed()}
-        <div className="sideColumn updates group">
-          <div className="sideBox">
-            Placeholder!
+      <div>
+        <UserTabs active="updates"/>
+        <div className="updatesPage group">
+          {this.showFeed()}
+          <div className="sideColumn updates group">
+            <div className="sideBox">
+              Placeholder!
+            </div>
           </div>
         </div>
       </div>

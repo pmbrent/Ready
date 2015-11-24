@@ -45,9 +45,8 @@ $(function () {
   React.render((
     <Router>
       <Route path="/" component={Ready}>
-        <IndexRoute component={Home}/>
+        <IndexRoute component={Updates}/>
         <Route path="search" component={SearchResults}/>
-        <Route path="updates" component={Updates}/>
         <Route path="shelves" component={UserShelves}/>
         <Route path="reviews" component={ComingSoon}/>
         <Route path="recommended" component={ComingSoon}/>

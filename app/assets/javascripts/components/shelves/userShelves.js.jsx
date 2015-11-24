@@ -31,8 +31,11 @@ window.UserShelves = React.createClass({
 
   render: function() {
     return (
-      <div className="userShelf">
-        {this.shelfPage()}
+      <div>
+        <UserTabs active="shelves"/>
+        <div className="userShelf">
+          {this.shelfPage()}
+        </div>
       </div>
     );
   }
