@@ -1,4 +1,4 @@
-window.SearchBar = React.createClass({
+window.BookSearchBar = React.createClass({
   mixins: [ReactRouter.History],
 
   getInitialState: function() {
@@ -29,7 +29,7 @@ window.SearchBar = React.createClass({
 
   render: function() {
     return (
-      <form id="search" className="searchBar" onSubmit={this.trySearch}>
+      <form id="search" className="searchBar forBooks" onSubmit={this.trySearch}>
         <input id="query"
           type="text"
           value={this.state.query}

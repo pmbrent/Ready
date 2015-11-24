@@ -17,10 +17,10 @@
     },
 
     search: function(input) {
+      input = input.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
       var regex = new RegExp(input);
 
       if (isNaN(parseInt(input))) {
-        input = input.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
         _searchResults = _books.filter(function(book) {
           return (regex.test(book.author) || regex.test(book.title));
         });

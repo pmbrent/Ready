@@ -2,6 +2,7 @@
   CHANGE_EVENT = "change";
 
   _users = [];
+  _searchResults = [];
 
   root.UserStore = $.extend({}, EventEmitter.prototype, {
 
@@ -13,6 +14,19 @@
       return _users.filter(function(user) {
         return user.id === userId;
       })[0];
+    },
+
+    search: function(input) {
+      input = input.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+      var regex = new RegExp(input);
+
+      _searchResults = _users.filter(function(user) {
+        return (regex.test(user.name) || regex.test(user.email));
+      });
+    },
+
+    results: function() {
+      return _searchResults.slice();
     },
 
     updateUsers: function(newUsers) {

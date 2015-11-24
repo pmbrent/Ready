@@ -1,6 +1,6 @@
 @import "scss/globals.scss";
 
-.searchBar {
+.forBooks {
   width: 200px;
   height: 25px;
   position: absolute;
@@ -8,6 +8,12 @@
   left: 150px;
   transform: translateY(-50%);
   float: left;
+}
+
+.forUsers {
+  position: relative;
+  width: 180px;
+
 }
 
 .searchBar input#query {

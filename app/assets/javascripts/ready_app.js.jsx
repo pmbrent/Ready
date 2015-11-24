@@ -46,7 +46,8 @@ $(function () {
     <Router>
       <Route path="/" component={Ready}>
         <IndexRoute component={Updates}/>
-        <Route path="search" component={SearchResults}/>
+        <Route path="search" component={BookSearchResults}/>
+        <Route path="directory" component={UserSearchResults}/>
         <Route path="shelves" component={UserShelves}/>
         <Route path="reviews" component={Reviews}/>
         <Route path="recommended" component={Recommended}/>

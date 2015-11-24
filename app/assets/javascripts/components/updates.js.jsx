@@ -30,6 +30,9 @@ window.Updates = React.createClass({
   },
 
   render: function() {
+            // <div className="sideBox">
+            //   <UserSearchBar/>
+            // </div>
     return (
       <div>
         <UserTabs active="updates"/>

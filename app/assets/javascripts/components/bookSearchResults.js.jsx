@@ -1,4 +1,4 @@
-window.SearchResults = React.createClass({
+window.BookSearchResults = React.createClass({
 
   results: function() {
     if (BookStore.results().length === 0) {
