@@ -59,32 +59,31 @@ class User < ActiveRecord::Base
   ## We want the friend's ID (and userpic); Book ISBN, ID, Author, Title; Shelving timestamp
 
   def get_feed
-    Book.find_by_sql([<<-SQL, self.id])
-      SELECT
+    result = ActiveRecord::Base.connection.execute(<<-SQL)
+      SELECT DISTINCT
+        shelvings.created_at, shelvings.id,
         books.id AS book_id, books.isbn, books.author, books.title,
         friends.name AS friend, friends.id AS friend_id,
-        shelves.title AS shelf_title,
-        shelvings.created_at, shelvings.id
+        shelves.title AS shelf_title
       FROM
-        books
-      JOIN
         shelvings
-        ON
-          shelvings.book_id = books.id
-      JOIN
-        shelves
+      JOIN books
+        ON shelvings.book_id = books.id
+      JOIN shelves
         ON shelvings.shelf_id = shelves.id
       JOIN users
         AS friends ON friends.id = shelves.user_id
       JOIN friendships
         ON friendships.followed_user_id = friends.id
       WHERE
-        friendships.following_user_id = ?
+        friendships.following_user_id = #{ActiveRecord::Base.sanitize(self.id)}
       ORDER BY
         shelvings.created_at DESC
       LIMIT
         25
     SQL
+
+    return result.to_json
   end
 
 end
