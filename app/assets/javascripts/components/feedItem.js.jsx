@@ -58,17 +58,19 @@ window.FeedItem = React.createClass({
 
     return (
       <div className="feedItem group">
-        <div className={"imgBoxbefore" + this.hoverName()}>
-          <p>{this.props.feedItem.title}</p>
-          <p>by {this.props.feedItem.author}</p>
-          <p>{this.props.feedItem.description}</p>
-          <p>[Rating Placeholder]</p>
-        </div>
-        <div className="imgBox" onMouseEnter={this.toggleState}
+        <div className="feedBox" onMouseEnter={this.toggleState}
                                 onMouseLeave={this.toggleState}>
-          <a href={bookUrl}><img src={coverUrl}/></a>
+          <div className={"feedBoxbefore" + this.hoverName()}>
+            <p>{this.props.feedItem.title}</p>
+            <p>by {this.props.feedItem.author}</p>
+            <p>{this.props.feedItem.description}</p>
+            <p>[Rating Placeholder]</p>
+          </div>
+            <div className="imgBox">
+              <a href={bookUrl}><img src={coverUrl}/></a>
+            </div>
+          <div className={"feedBoxafter" + this.hoverName()}/>
         </div>
-        <div className={"imgBoxafter" + this.hoverName()}/>
         <p><a href={friendUrl}>{this.fname()}</a> added {this.props.feedItem.title} by {this.props.feedItem.author} to their "{this.props.feedItem.shelf_title}" shelf.</p>
         <p>{this.getTime()}</p>
       </div>
