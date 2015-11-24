@@ -48,5 +48,22 @@ window.ApiUtil = {
         }
       }
     });
+  },
+
+  unshelveBook: function(bookId, shelfId, userId) {
+    $.ajax({
+      url: "/shelvings/0",
+      method: "DELETE",
+      dataType: "json",
+      data: {
+        shelving: {
+          book_id: bookId,
+          shelf_id: shelfId
+        }
+      },
+      success: function() {
+        ApiUtil.fetchUserInfo(userId);
+      }
+    });
   }
 };

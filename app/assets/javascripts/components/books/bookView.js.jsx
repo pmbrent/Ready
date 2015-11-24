@@ -15,15 +15,23 @@ window.BookView = React.createClass ({
     CurrentUserStore.addChangeListener(this.updateShelves);
   },
 
+  inShelves: function() {
+    return this.state.shelves.filter((function (shelf) {
+      return shelf.books.some((function (book) {
+        return book.id === parseInt(this.props.params.bookId);
+      }).bind(this));
+    }).bind(this));
+  },
+
   updateShelves: function() {
     if (typeof CurrentUserStore.currentUserId() !== "undefined") {
-      if (this.state.listening === true) {
-        CurrentUserStore.removeChangeListener(this.updateShelves);
-        this.setState({listening: false});
-      }
 
       this.setState({
         shelves: CurrentUserStore.currentUser().shelves
+      });
+
+      this.setState({
+        inShelves: this.inShelves()
       });
 
       if (typeof this.state.shelves === "undefined" ||
@@ -51,7 +59,8 @@ window.BookView = React.createClass ({
             <BookShelver
               book={this.state.book}
               shelves={this.state.shelves}
-            />
+              inShelves={this.state.inShelves}
+              updateShelves={this.updateShelves}/>
           </div>
             <div className="bodyContainer">
               <Book book={this.state.book}/>
@@ -63,6 +72,7 @@ window.BookView = React.createClass ({
 
   componentWillUnmount: function() {
     BookStore.removeChangeListener(this.updateBook);
+    CurrentUserStore.removeChangeListener(this.updateShelves);
   },
 
   render: function() {
