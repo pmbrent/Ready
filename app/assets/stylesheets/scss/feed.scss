@@ -7,9 +7,12 @@
 .feedItem {
   border-bottom: 1px solid $darkred;
   padding: 10px;
+  position: relative;
 }
 
 .feedItem .imgBox {
+  display: block;
+  position: relative;
   float: left;
   height: 58px;
   width: 37px;
@@ -24,13 +27,19 @@
   width: 80%;
 }
 
-.feedItem p:last-child {
+.feedItem > p:last-child {
   font-style: italic;
   color: lighten($darkred, 10%);
 }
 
 .feedItem a {
+  position: relative;
   display: inline;
+  font-weight: bold;
+}
+
+.feedItem a:hover {
+  text-decoration: underline;
 }
 
 .updates {
@@ -39,4 +48,45 @@
 
 .userFeed {
   float: left;
+}
+
+.imgBoxbefore{
+  display: none;
+  content: attr(title);
+  height: 150px;
+  width: 250px;
+  position: absolute;
+  padding: 5px;
+  font-size: 12px;
+  font-weight: 400;
+  color: $darkerred;
+  background: $offwhite;
+  border: 3px solid $darkerred;
+  left: 60px;
+  z-index: 10;
+}
+
+.imgBoxbefore p:first-child {
+  font-size: 16px;
+}
+
+.imgBoxafter{
+  display: none;
+  position: absolute;
+  left: 50px;
+  width: 0;
+  height: 0;
+  background: transparent;
+  border-top: 10px solid transparent;
+  border-left: none;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid $darkerred;
+  margin: 5px auto;
+  padding: 0;
+  content: "";
+  z-index: 10;
+}
+
+.feedItem .active {
+  display: block;
 }

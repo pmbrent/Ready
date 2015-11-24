@@ -1,5 +1,21 @@
 window.FeedItem = React.createClass({
 
+  getInitialState: function() {
+    return {hovering: false};
+  },
+
+  hoverName: function() {
+    if (this.state.hovering) {
+      return " active";
+    } else {
+      return "";
+    }
+  },
+
+  toggleState: function() {
+    this.setState({hovering: !this.state.hovering});
+  },
+
   getTime: function() {
     var elapsed = Date.now() - Date.parse(this.props.feedItem.created_at);
 
@@ -22,7 +38,6 @@ window.FeedItem = React.createClass({
     } else {
       return "Over a month ago.";
     }
-
   },
 
   fname: function() {
@@ -33,7 +48,6 @@ window.FeedItem = React.createClass({
     } else {
       return names[0];
     }
-
   },
 
   render: function() {
@@ -44,7 +58,17 @@ window.FeedItem = React.createClass({
 
     return (
       <div className="feedItem group">
-        <div className="imgBox"><a href={bookUrl}><img src={coverUrl}/></a></div>
+        <div className={"imgBoxbefore" + this.hoverName()}>
+          <p>{this.props.feedItem.title}</p>
+          <p>by {this.props.feedItem.author}</p>
+          <p>{this.props.feedItem.description}</p>
+          <p>[Rating Placeholder]</p>
+        </div>
+        <div className="imgBox" onMouseEnter={this.toggleState}
+                                onMouseLeave={this.toggleState}>
+          <a href={bookUrl}><img src={coverUrl}/></a>
+        </div>
+        <div className={"imgBoxafter" + this.hoverName()}/>
         <p><a href={friendUrl}>{this.fname()}</a> added {this.props.feedItem.title} by {this.props.feedItem.author} to their "{this.props.feedItem.shelf_title}" shelf.</p>
         <p>{this.getTime()}</p>
       </div>

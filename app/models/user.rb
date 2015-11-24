@@ -62,7 +62,7 @@ class User < ActiveRecord::Base
     result = ActiveRecord::Base.connection.execute(<<-SQL)
       SELECT DISTINCT
         shelvings.created_at, shelvings.id,
-        books.id AS book_id, books.isbn, books.author, books.title,
+        books.id AS book_id, books.isbn, books.author, books.title, books.description,
         friends.name AS friend, friends.id AS friend_id,
         shelves.title AS shelf_title
       FROM
