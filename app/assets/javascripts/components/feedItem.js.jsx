@@ -63,7 +63,7 @@ window.FeedItem = React.createClass({
           <div className={"feedBoxbefore" + this.hoverName()}>
             <p>{this.props.feedItem.title}</p>
             <p>by {this.props.feedItem.author}</p>
-            <p>{this.props.feedItem.description}</p>
+            <p>{this.props.feedItem.description.slice(0,100) + "..."}</p>
             <p>[Rating Placeholder]</p>
           </div>
             <div className="imgBox">
