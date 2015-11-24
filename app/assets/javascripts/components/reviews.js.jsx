@@ -1,9 +1,9 @@
-window.ComingSoon = React.createClass({
+window.Reviews = React.createClass({
 
   render: function() {
     return (
       <div>
-        <UserTabs active=""/>
+        <UserTabs active="reviews"/>
         <div className="coming_soon">
           Welcome! More is coming soon!
         </div>
