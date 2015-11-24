@@ -41,3 +41,22 @@
   border: 1px solid #000;
   margin-right: 20px;
 }
+
+.currentShelves {
+  padding: 10px 0px;
+  clear: both;
+}
+
+.currentShelves li {
+  margin-top: 5px;
+}
+
+.currentShelves a {
+  font-size: 12px;
+  font-style: italic;
+  font-color: $darkred;
+}
+
+.currentShelves a:hover {
+  text-decoration: underline;
+}

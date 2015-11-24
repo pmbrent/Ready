@@ -27,12 +27,10 @@ window.BookShelver = React.createClass({
             {this.props.inShelves.map(function(shelf) {
               return (
                 <li key={shelf.id}>{shelf.title}
-                  <a href="#"
-                    onClick={function() {
-                      this.unshelveBook(shelf.id);
-                    }.bind(this)}>
-                    Unshelve
-                  </a>
+                <a href="#"
+                  onClick={function() {
+                    this.unshelveBook(shelf.id);
+                  }.bind(this)}> Unshelve </a>
                 </li>
               );
             }.bind(this))}
@@ -57,6 +55,7 @@ window.BookShelver = React.createClass({
           </select>
           <button className="button" onClick={this.shelveBook}>Add</button>
         </form>
+        <br/>
         {this.curShelves()}
       </div>);
   }
