@@ -8,7 +8,7 @@ window.ApiActions = {
 
   receiveUserInfo: function(user) {
     AppDispatcher.dispatch({
-      actionType: UserConstants.USER_SHELVES_RECEIVED,
+      actionType: UserConstants.USER_INFO_RECEIVED,
       user: user
     });
   },

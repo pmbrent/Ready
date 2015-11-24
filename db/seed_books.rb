@@ -307,10 +307,6 @@ Book.create!(title: "Obsession",
                            author: "Jonathan Kellerman",
                            isbn: 9780345452634,
                            description: "")
-Book.create!(title: "Blood meridian, or, The evening redness in the West",
-                           author: "Cormac McCarthy",
-                           isbn: 9780439139601,
-                           description: "")
 Book.create!(title: "Weep no more, my lady",
                            author: "Mary Higgins Clark",
                            isbn: 9780385517874,

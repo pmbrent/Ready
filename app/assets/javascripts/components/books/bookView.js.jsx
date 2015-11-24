@@ -11,8 +11,8 @@ window.BookView = React.createClass ({
     BookStore.addChangeListener(this.updateBook);
     ApiUtil.fetchBooks();
 
+    SessionsUtil.fetchCurrentUser();
     CurrentUserStore.addChangeListener(this.updateShelves);
-    UserStore.addChangeListener(this.updateShelves);
   },
 
   updateShelves: function() {
@@ -63,7 +63,6 @@ window.BookView = React.createClass ({
 
   componentWillUnmount: function() {
     BookStore.removeChangeListener(this.updateBook);
-    UserStore.removeChangeListener(this.updateShelves);
   },
 
   render: function() {

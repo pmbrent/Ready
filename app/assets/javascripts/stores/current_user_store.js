@@ -12,6 +12,9 @@
     },
 
     isFriend: function(user_id) {
+      if (typeof _currentUser.friends === "undefined") {
+        return false;
+      }
       return _currentUser.friends.some(function(friend) {
         return (friend.id === user_id);
       });

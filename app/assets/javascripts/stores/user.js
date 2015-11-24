@@ -56,7 +56,7 @@
           UserStore.updateUsers(payload.users);
           UserStore.emit(CHANGE_EVENT);
         break;
-        case UserConstants.USER_SHELVES_RECEIVED:
+        case UserConstants.USER_INFO_RECEIVED:
           UserStore.updateUser(payload.user);
           UserStore.emit(CHANGE_EVENT);
         break;
