@@ -23,7 +23,8 @@ window.UserView = React.createClass ({
   },
 
   showUser: function() {
-    if (typeof this.state.user === "undefined") {
+    if (typeof this.state.user === "undefined" ||
+        typeof this.state.user.shelves === "undefined") {
       return <div/>;
     } else {
       return (

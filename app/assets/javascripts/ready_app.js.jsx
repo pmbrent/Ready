@@ -46,10 +46,10 @@ $(function () {
       <Route path="/" component={Ready}>
         <Route path="search" component={SearchResults}/>
         <Route path="home" component={Home}>
-          <Route path="updates" component={Updates}/>
+          <Route path="/updates" component={Updates}/>
           <Route path="/shelves" component={UserShelves}/>
           <Route path="/reviews" component={ComingSoon}/>
-          <Route path="recommended" component={ComingSoon}/>
+          <Route path="/recommended" component={ComingSoon}/>
         </Route>
         <Route path="welcome" component={Welcome}/>
         <Route path="users/:userId" component={UserView}/>

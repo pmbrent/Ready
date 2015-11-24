@@ -22,7 +22,7 @@ window.ReadyBar = React.createClass({
         }
       }
       SessionsUtil.login(credentials, function () {
-        this.history.pushState(null, "home/updates");
+        this.history.pushState(null, "/");
       }.bind(this));
     },
 
