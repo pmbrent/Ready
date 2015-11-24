@@ -48,8 +48,8 @@ $(function () {
         <IndexRoute component={Updates}/>
         <Route path="search" component={SearchResults}/>
         <Route path="shelves" component={UserShelves}/>
-        <Route path="reviews" component={ComingSoon}/>
-        <Route path="recommended" component={ComingSoon}/>
+        <Route path="reviews" component={Reviews}/>
+        <Route path="recommended" component={Recommended}/>
         <Route path="welcome" component={Welcome}/>
         <Route path="users/:userId" component={UserView}/>
         <Route path="users" component={UserIndex}/>

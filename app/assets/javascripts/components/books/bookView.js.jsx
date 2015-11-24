@@ -54,7 +54,6 @@ window.BookView = React.createClass ({
         <Book book={this.state.book}/>
       </div>);
     } else {
-      debugger
       return (
         <div>
           <div className="sideColumn">

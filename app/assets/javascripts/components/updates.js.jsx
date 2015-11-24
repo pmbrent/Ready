@@ -39,6 +39,9 @@ window.Updates = React.createClass({
             <div className="sideBox">
               Placeholder!
             </div>
+            <div className="sideBox">
+              Know someone who would enjoy the site? Invite them!
+            </div>
           </div>
         </div>
       </div>
