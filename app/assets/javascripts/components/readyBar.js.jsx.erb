@@ -14,17 +14,29 @@ window.ReadyBar = React.createClass({
   },
 
   submitLogin: function (e) {
-      e.preventDefault();
-      var credentials = {
-        user: {
-          info: $('input#userinfo').val(),
-          password: $('input:password').val()
-        }
+    e.preventDefault();
+    var credentials = {
+      user: {
+        info: $('input#userinfo').val(),
+        password: $('input:password').val()
       }
-      SessionsUtil.login(credentials, function () {
-        this.history.pushState(null, "/");
-      }.bind(this));
-    },
+    }
+    SessionsUtil.login(credentials, function () {
+      this.history.pushState(null, "/");
+    }.bind(this));
+  },
+
+  loginAsGuest: function() {
+    var credentials = {
+      user: {
+        info: "guest",
+        password: "guest"
+      }
+    }
+    SessionsUtil.login(credentials, function () {
+      this.history.pushState(null, "/");
+    }.bind(this));
+  },
 
   logout: function () {
     SessionsUtil.logout(function() {
@@ -63,6 +75,18 @@ window.ReadyBar = React.createClass({
     CurrentUserStore.removeChangeListener(this._onChange);
   },
 
+  guestButton: function() {
+    if (CurrentUserStore.isLoggedIn()) {
+      return <div/>
+    } else {
+      return (
+        <button className="guest button" onClick={this.loginAsGuest}>
+          Demo Login
+        </button>
+      );
+    }
+  },
+
   render: function() {
     var barContent = <div/>;
     if (CurrentUserStore.isLoggedIn()) {
@@ -78,6 +102,7 @@ window.ReadyBar = React.createClass({
           <BookSearchBar />
           {barContent}
         </div>
+        {this.guestButton()}
       </div>
     );
   }

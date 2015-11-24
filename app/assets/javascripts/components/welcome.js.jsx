@@ -17,7 +17,7 @@ window.Welcome = React.createClass({
 
   render: function() {
     return (
-      <div>
+      <div className="welcomeBack">
         <section className="welcome">
           <strong>Welcome to Ready!</strong>
           <p>Get ready to find your next favorite book!</p>
@@ -25,7 +25,7 @@ window.Welcome = React.createClass({
 
         <div className="new_user">
           <p>New user signup:</p>
-          <form onSubmit={this.signUp}>
+          <form className="new_user_form" onSubmit={this.signUp}>
             <label htmlFor="name">Name:
               <input type="text"
                      id="name">
@@ -42,12 +42,9 @@ window.Welcome = React.createClass({
               <input type="password" id="password"></input>
             </label>
             <br/>
-            <input type="submit" value="Sign up!"></input>
+            <input type="submit" className="button" value="Sign up!"></input>
           </form>
           <br/>
-          <p>
-            Or log in with "guest/guest" to explore!
-          </p>
         </div>
       </div>
     );

@@ -11,6 +11,19 @@
   transform: translateY(-50%);
 }
 
+.mainContent {
+  display: relative;
+}
+
+.welcomeBack {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: $darkerred;
+}
+
 .welcome {
   background: $tan;
   float: left;
@@ -28,6 +41,7 @@
 }
 
 .new_user {
+  position: relative;
   background: $tan;
   float: right;
   width: 220px;
@@ -49,4 +63,11 @@
 .new_user input {
   position: absolute;
   right: 10px;
+}
+
+.guest {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: calc(50% + 475px);
 }
