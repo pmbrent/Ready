@@ -22,7 +22,7 @@ window.BookShelver = React.createClass({
             onChange={this.selectShelf}
             className="select">
             {this.props.shelves.map(function(shelf) {
-              return <option key={shelf.id}>{shelf.title}</option>;
+              return <option id={shelf.id} key={shelf.id}>{shelf.title}</option>;
             })}
           </select>
           <button className="button" onClick={this.shelveBook}>Add</button>
