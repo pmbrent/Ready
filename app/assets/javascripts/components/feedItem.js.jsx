@@ -67,7 +67,9 @@ window.FeedItem = React.createClass({
             <p>[Rating Placeholder]</p>
           </div>
             <div className="imgBox">
-              <a href={bookUrl}><img src={coverUrl}/></a>
+              <a href={bookUrl}>
+                <img src={coverUrl}/>
+              </a>
             </div>
           <div className={"feedBoxafter" + this.hoverName()}/>
         </div>

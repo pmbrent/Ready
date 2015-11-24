@@ -4,6 +4,7 @@ window.BookView = React.createClass ({
     return {
       book: BookStore.find(parseInt(this.props.params.bookId)),
       shelves: CurrentUserStore.currentUser().shelves,
+      inShelves: [],
       listening: true };
     },
 
@@ -11,8 +12,8 @@ window.BookView = React.createClass ({
     BookStore.addChangeListener(this.updateBook);
     ApiUtil.fetchBooks();
 
-    SessionsUtil.fetchCurrentUser();
     CurrentUserStore.addChangeListener(this.updateShelves);
+    SessionsUtil.fetchCurrentUser();
   },
 
   inShelves: function() {
@@ -53,6 +54,7 @@ window.BookView = React.createClass ({
         <Book book={this.state.book}/>
       </div>);
     } else {
+      debugger
       return (
         <div>
           <div className="sideColumn">
