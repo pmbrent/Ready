@@ -8,4 +8,6 @@ class Book < ActiveRecord::Base
   has_many :shelvings
   has_many :shelves, through: :shelvings
 
+  has_many :ratings
+
 end

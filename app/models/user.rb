@@ -17,6 +17,8 @@ class User < ActiveRecord::Base
     through: :friendships,
     source: :followed_user
 
+  has_many :ratings
+
   def self.find_by_credentials(userinfo, password)
     user = User.find_by_email(userinfo) || User.find_by_name(userinfo)
     return nil if user.nil?

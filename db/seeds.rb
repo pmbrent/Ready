@@ -83,8 +83,21 @@ Shelf.all.each do |shelf|
     new_shelf = Shelving.create(book_id: Random.rand(totalBooks) + 1, shelf_id: shelf.id)
     new_shelf.created_at = Faker::Date.backward(10)
     new_shelf.save
-  else
+  elsif shelf.id % 3 == 1
     30.times do
+      book_id = Random.rand(totalBooks) + 1
+      date = Faker::Date.backward(40)
+      user_id = (shelf.id + 2) / 3
+
+      new_shelf = Shelving.create(book_id: book_id, shelf_id: shelf.id)
+      new_shelf.created_at = date
+      new_shelf.save
+      new_rating = Rating.create(book_id: book_id, user_id: user_id, rating: Random.rand(4) + 2)
+      new_rating.created_at = date
+      new_rating.save
+    end
+  else
+    15.times do
       new_shelf = Shelving.create(book_id: Random.rand(totalBooks) + 1, shelf_id: shelf.id)
       new_shelf.created_at = Faker::Date.backward(40)
       new_shelf.save
@@ -100,9 +113,19 @@ end
   num_times = Random.rand(3);
 
   num_times.times do
-    new_shelf = Shelving.create(book_id: Random.rand(totalBooks) + 1, shelf_id: shelf_id)
-    new_shelf.created_at = Time.now() - Random.rand(17280);
+    book_id = Random.rand(totalBooks) + 1
+    date = Time.now() - Random.rand(17280)
+    user_id = (shelf_id + 2) / 3
+
+    new_shelf = Shelving.create(book_id: book_id, shelf_id: shelf_id)
+    new_shelf.created_at = date
     new_shelf.save
+
+    if (shelf_id % 3 == 1 && Random.rand(2) == 0)
+      new_rating = Rating.create(book_id: book_id, user_id: user_id, rating: Random.rand(4) + 2)
+      new_rating.created_at = date
+      new_rating.save
+    end
   end
 
 end

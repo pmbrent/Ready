@@ -29,8 +29,8 @@ title       | string    | not null
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-book_id     | integer   | not null, foreign key (references books)
-shelf_id    | integer   | not null, foreign key (references shelves)
+book_id     | integer   | not null, indexed, foreign key (references books)
+shelf_id    | integer   | not null, indexed, foreign key (references shelves)
 
 ## genres
 column name | data type | details
@@ -51,3 +51,11 @@ column name     | data type | details
 id              | integer   | not null, primary key
 followed_user   | integer   | not null, indexed, foreign key (references users)
 following_user  | integer   | not null, indexed, foreign key (references users)
+
+## ratings
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+rating      | integer   | not null, indexed
+book_id     | integer   | not null, indexed, foreign key (references books)
+user_id     | integer   | not null, indexed, foreign key (references users)

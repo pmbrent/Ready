@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151121211848) do
+ActiveRecord::Schema.define(version: 20151125023814) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,17 @@ ActiveRecord::Schema.define(version: 20151121211848) do
 
   add_index "friendships", ["followed_user_id"], name: "index_friendships_on_followed_user_id", using: :btree
   add_index "friendships", ["following_user_id"], name: "index_friendships_on_following_user_id", using: :btree
+
+  create_table "ratings", force: :cascade do |t|
+    t.integer  "rating",     null: false
+    t.integer  "user_id",    null: false
+    t.integer  "book_id",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "ratings", ["book_id"], name: "index_ratings_on_book_id", using: :btree
+  add_index "ratings", ["user_id"], name: "index_ratings_on_user_id", using: :btree
 
   create_table "shelves", force: :cascade do |t|
     t.integer  "user_id",    null: false
@@ -76,6 +87,8 @@ ActiveRecord::Schema.define(version: 20151121211848) do
 
   add_foreign_key "friendships", "users", column: "followed_user_id"
   add_foreign_key "friendships", "users", column: "following_user_id"
+  add_foreign_key "ratings", "books"
+  add_foreign_key "ratings", "users"
   add_foreign_key "shelves", "users"
   add_foreign_key "shelvings", "books"
   add_foreign_key "shelvings", "shelves"
