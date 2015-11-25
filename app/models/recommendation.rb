@@ -1,12 +1,12 @@
 class Recommendation < ActiveRecord::Base
 
   validates :user_id, :book_id, presence: true
-  validates :rejected, inclusion: { in: %w(true false) }
+  validates :rejected, inclusion: { in: [true, false] }
   validates :book_id, uniqueness: { scope: :user_id }
 
   def self.generate_recs_for_user_id(user_id)
     Recommendation.list_rec_ids_for_user_id(user_id).each do |book_id|
-      Recommendation.create(user_id: user_id, book_id: book_id)
+      Recommendation.create(user_id: user_id, book_id: book_id, rejected: false)
     end
   end
 
