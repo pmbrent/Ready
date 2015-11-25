@@ -107,3 +107,17 @@
   color: $offwhite;
   background: $darkred;
 }
+
+.strongBar {
+  display: block;
+  @include linearGradient($tan, $offwhite);
+  width: 95%;
+  margin: auto;
+  border: 1px solid $tan;
+  padding: 0px 10px;
+  box-shadow: 1px 1px $darkred;
+
+  font-family: Pacifico;
+  font-size: 16px;
+  font-color: $darkred;
+}

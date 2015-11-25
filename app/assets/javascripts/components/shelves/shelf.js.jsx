@@ -7,7 +7,7 @@ window.Shelf = React.createClass({
   render: function() {
     //REFACTOR to display hovered book in a bubble window
     return (<div className="shelf">
-      <strong>{this.props.shelf.title}</strong>
+      <strong className="strongBar">{this.props.shelf.title}</strong>
 
       <div className="books carousel">
         <div className="active"></div>

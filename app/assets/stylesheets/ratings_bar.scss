@@ -1,0 +1,53 @@
+@import "scss/globals.scss";
+
+.ratingBar {
+  font-size: inherit;
+  color: $darkred;
+  margin: auto;
+}
+
+.ratingBar:hover {
+  cursor: pointer;
+  color: lighten($darkred, 20%);
+}
+
+.ratingBar li:hover ~ li {
+  color: $darkred;
+}
+
+.largeBar {
+  display: block;
+  position: relative;
+  font-size: 24px;
+  width: 182px;
+  height: 30px;
+}
+
+.largeBar .ratingBar {
+  position: absolute;
+  left: 30px;
+}
+
+.smallBar {
+  position: relative;
+  font-size: 16px;
+  float: left;
+}
+
+.smallBar .stars {
+  margin-left: 15px;
+  margin-bottom: 10px;
+}
+
+.stars {
+  display: block;
+}
+
+.stars li {
+  float: left;
+}
+
+.ratings p {
+  font-size: 14px;
+  margin: 0px;
+}

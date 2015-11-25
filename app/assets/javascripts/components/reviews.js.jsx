@@ -29,6 +29,7 @@ window.Reviews = React.createClass({
         <UserTabs active="reviews"/>
         <div className="reviewsPage group">
           <div className="reviewsList bodyContainer">
+          <strong className="strongBar">My Reviewed Books</strong>
             {this.state.reviews.map(function(book) {
               return <ReviewItem key={book.id} book={book}/>;
             })}

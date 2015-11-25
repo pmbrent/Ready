@@ -74,7 +74,7 @@ window.RatingBar = React.createClass({
   render: function() {
     var rateString;
     if (this.state.rating) {
-      rateString = "Your Rating:";
+      rateString = "My Rating:";
     } else {
       rateString = "Rate:";
     }
