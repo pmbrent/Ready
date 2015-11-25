@@ -53,7 +53,7 @@ window.ApiUtil = {
   unshelveBook: function(bookId, shelfId, userId) {
     //REFACTOR
     $.ajax({
-      url: "/shelvings/0",
+      url: "/shelvings",
       method: "DELETE",
       dataType: "json",
       data: {

@@ -12,9 +12,13 @@ Rails.application.routes.draw do
 
   resources :shelves, only: [:index, :show]
 
-  resources :shelvings, only: [:create, :destroy]
+  delete 'shelvings' => 'shelvings#destroy'
+  resources :shelvings, only: [:create]
 
   resources :friendships, only: [:create, :destroy]
+
+  delete 'ratings' => 'ratings#destroy'
+  resources :ratings, only: [:create]
 
   root 'static_pages#index'
 
