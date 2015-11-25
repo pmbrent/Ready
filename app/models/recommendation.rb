@@ -4,13 +4,49 @@ class Recommendation < ActiveRecord::Base
   validates :rejected, inclusion: { in: %w(true false) }
   validates :book_id, uniqueness: { scope: :user_id }
 
+  def self.generate_recs_for_user_id(user_id)
+    rec_users = Recommendation.generate_trusted_users_for_user(user_id)
 
+    book_ids = []
 
-  def self.generate_recs_for_user(user_id)
+    rec_users.each do |rec|
+      book_ids.concat(Recommendation.get_top_books_from_user_id(rec["user_id"]));
+    end
+
+    return book_ids.uniq
+  end
+
+  def self.get_top_books_from_user_id(given_id)
+
     result = ActiveRecord::Base.connection.execute(<<-SQL)
 
     SELECT DISTINCT
-      ratings.user_id, ratings.created_at, ratings.book_id
+      ratings.book_id, ratings.rating
+    FROM
+      ratings
+    WHERE
+      ratings.user_id = #{ActiveRecord::Base.sanitize(given_id)}
+    ORDER BY
+      ratings.rating DESC
+    LIMIT 5
+
+    SQL
+
+    book_ids = []
+
+    result.map do |item|
+      book_ids.push(item["book_id"].to_i)
+    end
+
+    book_ids
+
+  end
+
+  def self.generate_trusted_users_for_user(user_id)
+    result = ActiveRecord::Base.connection.execute(<<-SQL)
+
+    SELECT DISTINCT
+      ratings.user_id, ratings.created_at
     FROM
       ratings
     JOIN (
@@ -29,10 +65,6 @@ class Recommendation < ActiveRecord::Base
     LIMIT 100
 
     SQL
-
-    ## Makes a list of users who have agreed with current user on one rating.
-
-    return result.to_json
   end
 
 end
