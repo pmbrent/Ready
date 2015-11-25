@@ -5,6 +5,11 @@ window.Updates = React.createClass({
 
   componentDidMount: function() {
     CurrentUserStore.addFeedListener(this.updateFeed);
+    BookStore.addChangeListener(this.reloadFeed);
+    SessionsUtil.fetchCurrentUserFeed();
+  },
+
+  reloadFeed: function() {
     SessionsUtil.fetchCurrentUserFeed();
   },
 
@@ -27,6 +32,7 @@ window.Updates = React.createClass({
 
   componentWillUnmount: function() {
     CurrentUserStore.removeFeedListener(this.updateFeed);
+    BookStore.removeChangeListener(this.reloadFeed);
   },
 
   render: function() {
