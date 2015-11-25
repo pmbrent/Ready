@@ -70,7 +70,7 @@ window.ApiUtil = {
   rateBook: function(bookId, rating) {
     $.ajax({
       url: "/ratings",
-      method: "CREATE",
+      method: "POST",
       dataType: "json",
       data: {
         rating: {

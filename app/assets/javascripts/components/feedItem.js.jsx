@@ -64,7 +64,11 @@ window.FeedItem = React.createClass({
             <p>{this.props.feedItem.title}</p>
             <p>by {this.props.feedItem.author}</p>
             <p>{this.props.feedItem.description.slice(0,100) + "..."}</p>
-            <RatingBox rating={this.props.feedItem.user_rating}/>
+            <div className="smallBar">
+              <RatingBar
+                rating={this.props.feedItem.user_rating}
+                bookId={this.props.feedItem.book_id}/>
+            </div>
           </div>
             <div className="imgBox">
               <a href={bookUrl}>

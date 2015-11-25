@@ -10,7 +10,6 @@ window.Book = React.createClass({
         <h2>{this.props.book.title}</h2>
         <p>{this.props.book.author}</p>
         <p>{this.props.book.description}</p>
-        <RatingBox rating={this.props.book.rating}/>
       </div>);
   }
 

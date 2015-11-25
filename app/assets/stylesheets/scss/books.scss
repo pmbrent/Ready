@@ -60,3 +60,32 @@
 .currentShelves a:hover {
   text-decoration: underline;
 }
+
+.ratingBar {
+  font-size: inherit;
+  color: $darkred;
+}
+
+.ratingBar:hover {
+  color: lighten($darkred, 20%);
+}
+
+.ratingBar li:hover ~ li {
+  color: $darkred;
+}
+
+.largeBar {
+  font-size: 24px;
+}
+
+.smallBar {
+  font-size: 16px;
+}
+
+.stars {
+  display: block;
+}
+
+.stars li {
+  float: left;
+}

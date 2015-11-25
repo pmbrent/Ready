@@ -65,6 +65,11 @@ window.BookView = React.createClass ({
           </div>
             <div className="bodyContainer">
               <Book book={this.state.book}/>
+              <div className="largeBar">
+                <RatingBar
+                  rating={this.state.book.rating}
+                  bookId={this.state.book.id}/>
+              </div>
             </div>
         </div>
       );
