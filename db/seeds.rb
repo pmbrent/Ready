@@ -58,6 +58,9 @@ Book.create!(title: "Monster, Vol. 1",
 Shelving.create!(book_id: 1, shelf_id: 1)
 Shelving.create!(book_id: 2, shelf_id: 1)
 Shelving.create!(book_id: 3, shelf_id: 3)
+Shelving.create!(book_id: 1, shelf_id: 4)
+Shelving.create!(book_id: 2, shelf_id: 5)
+Shelving.create!(book_id: 3, shelf_id: 6)
 
 # 50.times do |i|
 #   Book.create!(title: "Book #{i+4}",

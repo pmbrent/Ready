@@ -1,7 +1,7 @@
 class Book < ActiveRecord::Base
 
   validates :title, :author, :isbn, presence: true
-  validates :isbn, length: {is: 13} #no ISBN 10
+  validates :isbn, length: {in: 10..13}
 
   # has_one :author, foreign_key: :author_id
 
