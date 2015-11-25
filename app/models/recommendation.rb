@@ -5,6 +5,12 @@ class Recommendation < ActiveRecord::Base
   validates :book_id, uniqueness: { scope: :user_id }
 
   def self.generate_recs_for_user_id(user_id)
+    Recommendation.list_rec_ids_for_user_id(user_id).each do |book_id|
+      Recommendation.create(user_id: user_id, book_id: book_id)
+    end
+  end
+
+  def self.list_rec_ids_for_user_id(user_id)
     rec_users = Recommendation.generate_trusted_users_for_user(user_id)
 
     book_ids = []

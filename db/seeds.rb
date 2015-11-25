@@ -153,3 +153,6 @@ end
 Book.all.each do |book|
   book.calc_avg_rating
 end
+
+Recommendation.generate_recs_for_user_id(1)
+Recommendation.generate_recs_for_user_id(2)
