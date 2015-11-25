@@ -72,9 +72,19 @@ window.RatingBar = React.createClass({
   // onMouseLeave={bar.revertStars()}
 
   render: function() {
+    var rateString;
+    if (this.state.rating) {
+      rateString = "Your Rating:";
+    } else {
+      rateString = "Rate:";
+    }
+
     return (
-      <div className="ratingBar">
-        {this.stars()}
+      <div className="ratings">
+        <p>{rateString}</p>
+        <div className="ratingBar">
+          {this.stars()}
+        </div>
       </div>
     );
   }

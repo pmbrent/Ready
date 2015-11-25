@@ -64,6 +64,7 @@
 .ratingBar {
   font-size: inherit;
   color: $darkred;
+  margin: auto;
 }
 
 .ratingBar:hover {
@@ -75,11 +76,27 @@
 }
 
 .largeBar {
+  display: block;
+  position: relative;
   font-size: 24px;
+  width: 182px;
+  height: 30px;
+}
+
+.largeBar .ratingBar {
+  position: absolute;
+  left: 30px;
 }
 
 .smallBar {
+  position: relative;
   font-size: 16px;
+  float: left;
+}
+
+.smallBar .stars {
+  margin-left: 15px;
+  margin-bottom: 10px;
 }
 
 .stars {
@@ -88,4 +105,9 @@
 
 .stars li {
   float: left;
+}
+
+.ratings p {
+  font-size: 14px;
+  margin: 0px;
 }
