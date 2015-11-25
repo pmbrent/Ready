@@ -31,6 +31,12 @@
       }
     },
 
+    rated: function() {
+      return _books.filter(function(book) {
+        return (!isNaN(parseInt(book.rating)));
+      });
+    },
+
     results: function() {
       return _searchResults.slice();
     },

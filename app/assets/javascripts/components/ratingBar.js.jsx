@@ -80,7 +80,7 @@ window.RatingBar = React.createClass({
     }
 
     return (
-      <div className="ratings">
+      <div className="ratings group">
         <p>{rateString}</p>
         <div className="ratingBar">
           {this.stars()}
