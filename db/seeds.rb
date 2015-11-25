@@ -121,10 +121,16 @@ end
     new_shelf.created_at = date
     new_shelf.save
 
-    if (shelf_id % 3 == 1 && Random.rand(2) == 0)
-      new_rating = Rating.create(book_id: book_id, user_id: user_id, rating: Random.rand(4) + 2)
-      new_rating.created_at = date
-      new_rating.save
+    if (shelf_id % 3 == 1)
+      if(Random.rand(5) != 0)
+        new_rating = Rating.create(book_id: book_id, user_id: user_id, rating: Random.rand(2) + 4)
+        new_rating.created_at = date
+        new_rating.save
+      elsif (Random.rand(2) == 0)
+        new_rating = Rating.create(book_id: book_id, user_id: user_id, rating: Random.rand(2) + 4)
+        new_rating.created_at = date
+        new_rating.save
+      end
     end
   end
 
