@@ -9,6 +9,7 @@ window.Book = React.createClass({
         <img className="cover" src={coverUrl} />
         <h2>{this.props.book.title}</h2>
         <p>{this.props.book.author}</p>
+        <p>Average rating: {parseFloat(this.props.book.avg_rating).toPrecision(3)}</p>
         <p>{this.props.book.description}</p>
       </div>);
   }

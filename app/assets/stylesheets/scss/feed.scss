@@ -62,21 +62,40 @@
 .feedBoxbefore{
   display: none;
   content: attr(title);
-  height: 150px;
-  width: 250px;
+  height: 200px;
+  width: 300px;
   position: absolute;
   padding: 5px;
   font-size: 12px;
   font-weight: 400;
   color: $darkerred;
-  background: $offwhite;
+  background: lighten($tan, 10%);
   border: 3px solid $darkerred;
   left: 60px;
   z-index: 10;
 }
 
-.feedBoxbefore p:first-child {
-  font-size: 16px;
+.feedBoxbefore > p:first-child {
+  font-size: 24px;
+  color: $darkred;
+}
+
+.ratingInfo {
+  display: block;
+  position: absolute;
+  width: 100%;
+  bottom: 5px;
+}
+
+.ratingInfo p:last-child {
+  display: block;
+  float: right;
+  margin-right: 10px;
+  width: 100px;
+}
+
+.ratingInfo .smallBar {
+  float: left;
 }
 
 .feedBoxafter{

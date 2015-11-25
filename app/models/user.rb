@@ -67,7 +67,8 @@ class User < ActiveRecord::Base
     FROM
       (SELECT DISTINCT
         shelvings.created_at, shelvings.id,
-        books.id AS book_id, books.isbn, books.author, books.title, books.description,
+        books.id AS book_id, books.isbn, books.author, books.title,
+        books.description, books.avg_rating,
         friends.name AS friend, friends.id AS friend_id,
         shelves.title AS shelf_title
       FROM

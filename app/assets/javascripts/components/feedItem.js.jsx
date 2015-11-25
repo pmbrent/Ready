@@ -1,7 +1,6 @@
 window.FeedItem = React.createClass({
 
   getInitialState: function() {
-    console.log(this.props.feedItem.created_at);
     return {
       hovering: false,
       elapsed: Date.now() - Date.parse(this.props.feedItem.created_at)
@@ -72,11 +71,14 @@ window.FeedItem = React.createClass({
           <div className={"feedBoxbefore" + this.hoverName()}>
             <p>{this.props.feedItem.title}</p>
             <p>by {this.props.feedItem.author}</p>
-            <p>{this.props.feedItem.description.slice(0,100) + "..."}</p>
-            <div className="smallBar">
-              <RatingBar
-                rating={this.props.feedItem.user_rating}
-                bookId={this.props.feedItem.book_id}/>
+            <p>{this.props.feedItem.description.slice(0,200) + "..."}</p>
+            <div className="ratingInfo group">
+              <div className="smallBar">
+                <RatingBar
+                  rating={this.props.feedItem.user_rating}
+                  bookId={this.props.feedItem.book_id}/>
+              </div>
+              <p>Average rating: {parseFloat(this.props.feedItem.avg_rating).toPrecision(3)}</p>
             </div>
           </div>
             <div className="imgBox">
