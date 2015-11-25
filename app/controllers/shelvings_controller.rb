@@ -9,9 +9,8 @@ class ShelvingsController < ApplicationController
   def destroy
     @shelving = Shelving.where(book_id: shelving_params[:book_id])
                         .where(shelf_id: shelving_params[:shelf_id])[0]
-    if @shelving
-      @shelving.destroy!
-    end
+
+    @shelving.destroy! if @shelving
     render json: @shelving
   end
 

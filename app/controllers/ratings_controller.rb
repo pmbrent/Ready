@@ -9,12 +9,15 @@ class RatingsController < ApplicationController
   end
 
   def destroy
-    @rating 
+    @rating = Rating.where(book_id: rating_params[:book_id])
+                    .where(user_id: current_user.id)[0]
+    @rating.destroy! if @rating
+    render json: @rating
   end
 
 private
-  def ratings_params
-    params.permit(:rating, :book_id)
+  def rating_params
+    params.require(:rating).permit(:rating, :book_id)
   end
 
 end

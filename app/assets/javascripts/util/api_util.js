@@ -51,7 +51,6 @@ window.ApiUtil = {
   },
 
   unshelveBook: function(bookId, shelfId, userId) {
-    //REFACTOR
     $.ajax({
       url: "/shelvings",
       method: "DELETE",
@@ -66,5 +65,39 @@ window.ApiUtil = {
         ApiUtil.fetchUserInfo(userId);
       }
     });
-  }
+  },
+
+  rateBook: function(bookId, rating) {
+    $.ajax({
+      url: "/ratings",
+      method: "CREATE",
+      dataType: "json",
+      data: {
+        rating: {
+          book_id: bookId,
+          rating: rating
+        }
+      },
+      success: function() {
+        ApiUtil.fetchBooks();
+      }
+    });
+  },
+
+  unrateBook: function(bookId) {
+    $.ajax({
+      url: "/ratings",
+      method: "DELETE",
+      dataType: "json",
+      data: {
+        rating: {
+          book_id: bookId
+        }
+      },
+      success: function() {
+        ApiUtil.fetchBooks();
+      }
+    });
+  },
+
 };
