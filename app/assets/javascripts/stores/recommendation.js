@@ -9,7 +9,7 @@
       return _recommendations.slice();
     },
 
-    fetch: function(num) {
+    fetchRecs: function(num) {
       return _recommendations.slice(0, num);
     },
 

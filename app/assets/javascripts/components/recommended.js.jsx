@@ -2,18 +2,36 @@ window.Recommended = React.createClass({
 
   getInitialState: function() {
     return ({
-      popular: BookStore.popular()
+      popular: BookStore.popular(),
+      recommended: RecommendationStore.fetchRecs(10)
     });
   },
 
   componentDidMount: function() {
     BookStore.addChangeListener(this.updatePopular);
     ApiUtil.fetchBooks();
+
+    RecommendationStore.addChangeListener(this.updateRecs);
+    if (!CurrentUserStore.currentUserId()) {
+      CurrentUserStore.addChangeListener(this.tempFunction);
+    }
+    ApiUtil.fetchUserRecommendations(CurrentUserStore.currentUserId());
+  },
+
+  tempFunction: function() {
+    ApiUtil.fetchUserRecommendations(CurrentUserStore.currentUserId());
+    CurrentUserStore.removeChangeListener(this.tempFunction);
   },
 
   updatePopular: function() {
     this.setState({
       popular: BookStore.popular()
+    });
+  },
+
+  updateRecs: function() {
+    this.setState({
+      recommended: RecommendationStore.fetchRecs(10)
     });
   },
 
@@ -29,6 +47,18 @@ window.Recommended = React.createClass({
     }
   },
 
+  showRecommendations: function() {
+    if (!this.state.recommended.length) {
+      return <div/>;
+    } else {
+      var recShelf = {
+        title: "Recommended for you",
+        books: this.state.recommended
+      };
+      return <Shelf shelf={recShelf}/>;
+    }
+  },
+
   componentWillUnmount: function() {
     BookStore.removeChangeListener(this.updatePopular);
   },
@@ -40,12 +70,11 @@ window.Recommended = React.createClass({
         <div className="recommendedPage group">
           <div className="sideColumn">
             <div className="sideBox">
-              Placeholder text~~~
+              How are my personal recommendations calculated?
             </div>
           </div>
           <div className="bodyContainer">
-            <strong className="strongBar">Personalized Reviews</strong>
-            <div>Coming soon!</div>
+              {this.showRecommendations()}
               {this.showPopular()}
             </div>
         </div>
