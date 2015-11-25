@@ -50,22 +50,6 @@ window.FeedItem = React.createClass({
     }
   },
 
-  ratingBox: function() {
-    if (this.props.feedItem.user_rating) {
-      return (
-        <div className="ratingBox">
-          Your rating: {parseInt(this.props.feedItem.user_rating)}
-        </div>
-      );
-    } else {
-      return (
-        <div className="ratingBox">
-          Rate this book: 1 2 3 4 5
-        </div>
-      );
-    }
-  },
-
   render: function() {
     var coverUrl = "http://covers.openlibrary.org/b/isbn/" +
                     this.props.feedItem.isbn + "-S.jpg";
@@ -80,7 +64,7 @@ window.FeedItem = React.createClass({
             <p>{this.props.feedItem.title}</p>
             <p>by {this.props.feedItem.author}</p>
             <p>{this.props.feedItem.description.slice(0,100) + "..."}</p>
-            {this.ratingBox()}
+            <RatingBox rating={this.props.feedItem.user_rating}/>
           </div>
             <div className="imgBox">
               <a href={bookUrl}>
