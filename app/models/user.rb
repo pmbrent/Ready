@@ -58,8 +58,6 @@ class User < ActiveRecord::Base
                   user_id: id)
   end
 
-  ## We want the friend's ID (and userpic); Book ISBN, ID, Author, Title; Shelving timestamp
-
   def get_feed
     result = ActiveRecord::Base.connection.execute(<<-SQL)
     SELECT

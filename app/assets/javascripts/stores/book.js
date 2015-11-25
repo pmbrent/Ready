@@ -37,6 +37,10 @@
       });
     },
 
+    popular: function() {
+      return _books.slice(0,26);
+    },
+
     results: function() {
       return _searchResults.slice();
     },

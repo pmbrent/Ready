@@ -31,7 +31,7 @@ class Book < ActiveRecord::Base
         ) AS user_ratings
         ON user_ratings.book_id = books.id
       ORDER BY
-        books.id
+        books.avg_rating DESC
     SQL
 
     return result.to_json
