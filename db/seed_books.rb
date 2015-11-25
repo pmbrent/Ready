@@ -142,23 +142,26 @@ Book.create!(title: "Home before dark",
 Book.create!(title: "Gilead",
                            author: "Marilynne Robinson",
                            isbn: 9781844081479,
-                           description: "")
+                           description: "WINNER OF THE 2005 PULITZER PRIZE FOR FICTION
+In 1956, toward the end of Reverend John Ames’s life, he begins a letter to his young son, an account of himself and his forebears. Ames is the son of an Iowan preacher and the grandson of a minister who, as a young man in Maine, saw a vision of Christ bound in chains and came west to Kansas to fight for abolition: He “preached men into the Civil War,” then, at age fifty, became a chaplain in the Union Army, losing his right eye in battle.
+Reverend Ames writes to his son about the tension between his father—an ardent pacifist—and his grandfather, whose pistol and bloody shirts, concealed in an army blanket, may be relics from the fight between the abolitionists and those settlers who wanted to vote Kansas into the union as a slave state. And he tells a story of the sacred bonds between fathers and sons, which are tested in his tender and strained relationship with his namesake, John Ames Boughton, his best friend’s wayward son.
+Gilead is the long-hoped-for second novel by one of our finest writers, a hymn of praise and lamentation to the God-haunted existence that Reverend Ames loves passionately, and from which he will soon part.")
 Book.create!(title: "The Great Gatsby",
                            author: "F. Scott Fitzgerald",
                            isbn: 9780743273565,
                            description: "Jay Gatsby had once loved beautiful, spoiled Daisy Buchanan, then lost her to a rich boy. Now, mysteriously wealthy, he is ready to risk everything to woo her back. This is the definitive, textually accurate edition of a classic of twentieth-century literature, The Great Gatsby. The story of the fabulously wealthy Jay Gatsby and his love for the beautiful Daisy Buchanan has been acclaimed by generations of readers. But the first edition contained a number of errors resulting from Fitzgerald's extensive revisions and a rushed production schedule.")
 Book.create!(title: "Harry Potter and the Chamber of Secrets",
-                           author: "J.K. Rowling ; illustrations by Mary GrandPre\u0301",
+                           author: "J.K. Rowling",
                            isbn: 9780439064866,
                            description: "When the Chamber of Secrets is opened again at the Hogwarts School for Witchcraft and Wizardry, second-year student Harry Potter finds himself in danger from a dark power that has once more been released on the school.")
 Book.create!(title: "Hot ice",
                            author: "Nora Roberts",
                            isbn: 9780553264616,
-                           description: "")
+                           description: "Rich, gorgeous Whitney MacAllister possesses all the wealth and beauty every woman dreams of. Reckless Whitney likes fast cars, vintage movies, and dangerous men. But even this jaded, high-living Manhattan socialite is taken by surprise when a stranger in black leather hijacks her Mercedes--just before the bullets start flying. Streetwise Douglas Lord has the good looks and quick wits to be a success at his chosen profession: larceny. International jewel thief Douglas is used to living life on the run--part of the lure of his chosen profession is the thrill of the chase. But he has one iron-clad rule: he always works alone. Until now.")
 Book.create!(title: "Moonlight becomes you",
                            author: "Mary Higgins Clark",
                            isbn: 9780684810386,
-                           description: "")
+                           description: "I HATE COCKTAIL PARTIES, MAGGIE THOUCHT WRYLY, WON-dering why she always felt like an alien when she attended one.")
 Book.create!(title: "Bad luck and trouble",
                            author: "Lee Child",
                            isbn: 9780385340557,
@@ -322,7 +325,7 @@ Book.create!(title: "A sudden change of heart",
 Book.create!(title: "Rainbow Six",
                            author: "Tom Clancy",
                            isbn: 9780399143908,
-                           description: "")
+                           description: "Over the course of nine novels, Tom Clancy's genius for big, compelling plots and his natural narrative gift (The New York Times Magazine) have mesmerized hundreds of millions of readers and established him as one of the preeminent storytellers of our time. Rainbow Six, however, goes beyond anything he has done before.At its heart is John Clark, the ex-Navy SEAL of Without Remorse and well-known from several of Clancy's novels as "the dark side of Jack Ryan," the man who conducts the secret operational missions Ryan can have no part of. Whether hunting warlords in Japan, druglords in Colombia, or nuclear terrorists in the United States, Clark is efficient and deadly, but even he has ghosts in his past, demons that must be exorcised. And nothing is more demonic than the peril he must face in Rainbow Six: a group of terrorists like none the world has ever encountered before, a band of men and women so extreme that their success could literally mean the end of life on this earth as we know it. It is Tom Clancy's most shocking story ever-and closer to reality than any government would care to admit.As Clancy takes us through the twists and turns of Rainbow Six, he blends the exceptional realism and authenticity that are his hallmarks with intricate plotting, knife-edge suspense, and a remarkable cast of characters. This is Clancy at his best-and there is none better.")
 Book.create!(title: "Executive Orders",
                            author: "Tom Clancy",
                            isbn: 9780399142185,
@@ -398,11 +401,11 @@ Book.create!(title: "Down the long hills",
 Book.create!(title: "20,000 leagues under the sea",
                            author: "Jules Verne ; illustrated by Scott McKowen",
                            isbn: 9781402725999,
-                           description: "")
+                           description: "Originally published in 1870, Verne’s amazing undersea adventure is one of the earliest science fiction novels ever written. Since that time, generations of readers have plunged below the ocean’s waves with Captain Nemo and his first-ever submarine, The Nautilus. It’s a voyage of exploration and the imagination.")
 Book.create!(title: "The broker",
                            author: "John Grisham",
                            isbn: 9780440241584,
-                           description: "")
+                           description: "In his final hours in the Oval Office, the outgoing President grants a controversial last-minute pardon to Joel Backman, a notorious Washington power broker who has spent the last six years hidden away in a federal prison. What no one knows is that the President issues the pardon only after receiving enormous pressure from the CIA. It seems Backman, in his power broker heyday, may have obtained secrets that compromise the world's most sophisticated satellite surveillance system.Backman is quietly smuggled out of the country in a military cargo plane, given a new name, a new identity, and a new home in Italy. Eventually, after he has settled into his new life, the CIA will leak his whereabouts to the Israelis, the Russians, the Chinese, and the Saudis. Then the CIA will do what it does best: sit back and watch. The question is not whether Backman will survive--there is no chance of that. The question the CIA needs answered is, who will kill him? From the Hardcover edition.")
 Book.create!(title: "The tale of Cuckoo Brow Wood",
                            author: "Susan Wittig Albert",
                            isbn: 9780425210048,
@@ -410,7 +413,7 @@ Book.create!(title: "The tale of Cuckoo Brow Wood",
 Book.create!(title: "Still life with elephant",
                            author: "Judy Reene Singer",
                            isbn: 9780767926775,
-                           description: "")
+                           description: "Can a badly abused elephant halfway across the world help a woman win back her cheating husband? In this funny, heartwarming story, the author of the beloved novel Horseplay presents another smart, memorable heroine and the animals--and men--she loves.Neelie Sterling never did listen well to the conversation around her. Always preoccupied with an inner monologue, she sometimes missed things. She was happy when Matt, her veterinarian husband, told her he was getting a collie; she liked dogs. He had said colleague, to help with his busy practice. The problems start when the pretty blonde "collie" calls Neelie to say that she is pregnant with Matt's child. Sent into a tailspin, Neelie throws herself into her horse training business until she discovers that Matt is part of a group planning to leave for Zimbabwe to rescue a badly injured elephant. Thinking she could win Matt's heart again, Neelie manages to get included.The trip is dangerous, exhilarating, and revealing. Neelie learns about herself as a wife and a woman. Back at home, she discovers secrets everywhere--with her parents, with Matt, even in training an elephant. Fighting to keep her life from unraveling as she struggles to gain the elephant's trust, she ultimately learns that healing can be mutual.")
 Book.create!(title: "Imperial hubris",
                            author: "Anonymous",
                            isbn: 1574888498,
@@ -418,7 +421,7 @@ Book.create!(title: "Imperial hubris",
 Book.create!(title: "The Scarlet Pimpernel",
                            author: "Baroness Orczy ; with an introduction by Gary Hoppenstand",
                            isbn: 9780451527622,
-                           description: "")
+                           description: "The Scarlet Pimpernel (1905) is a play and adventure novel by Baroness Emmuska Orczy set during the Reign of Terror following the start of the French Revolution.")
 Book.create!(title: "Where are the children?",
                            author: "Mary Higgins Clark",
                            isbn: 1416507779,
@@ -426,7 +429,7 @@ Book.create!(title: "Where are the children?",
 Book.create!(title: "Death dance",
                            author: "Linda Fairstein",
                            isbn: 9780743254892,
-                           description: "")
+                           description: "While investigating a doctor accused of drug-facilitated sexual assaults, Manhattan Assistant DA Alex Cooper learns of the grisly death of a world-class ballerina at Lincoln Center.")
 Book.create!(title: "The cage",
                            author: "Audrey Schulman",
                            isbn: 1565120353,
@@ -606,7 +609,11 @@ Book.create!(title: "Obsession",
 Book.create!(title: "Pride and prejudice",
                            author: "Jane Austen ; with an introduction and notes by Carol Howard",
                            isbn: 1593080204,
-                           description: "")
+                           description: "In this historic romance, young Elizabeth Bennet strives for love, independence and honesty in the vapid high society of 19th century England.
+
+She deals with issues of manners, upbringing, morality, education, and marriage in the society of the landed gentry of the British Regency. Elizabeth is the second of five daughters of a country gentleman living near the fictional town of Meryton in Hertfordshire, near London.
+
+Though Austen set the story at the turn of the 19th century, it retains a fascination for modern readers, continuing near the top of lists of "most loved books." It has become one of the most popular novels in English literature, selling over 20 million copies, and receives considerable attention from literary scholars. Modern interest in the book has resulted in a number of dramatic adaptations and an abundance of novels and stories imitating Austen's memorable characters or themes.")
 Book.create!(title: "Getting mother's body",
                            author: "Suzan-Lori Parks",
                            isbn: 1400060222,
