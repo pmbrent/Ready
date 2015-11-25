@@ -17,9 +17,9 @@ and React.js. Ready allows users to:
 - [x] Search for Books by Author, Title, ISBN
 - [x] Add Friends
 - [x] View a Feed of Friend activity
-- [ ] Rate books, write reviews, and get recommendations
+- [x] Rate books and get recommendations
 - [ ] Feed contains recommended books
-- [ ] Tag books with multiple genres and search books by genre
+- [ ] Write reviews as part of ratings
 
 ## Design Docs
 * [View Wireframes][view]
@@ -57,25 +57,20 @@ Users will be able to add friends through a Friendship join table and see those 
 
 [Details][phase-four]
 
-### Phase 5: Rating, Reviews, & Recommendations (1.5 days)
+### Phase 5: Rating, Reviews, & Recommendations (2 days)
 
 Users will be able to rate a book on a 5-point scale; their ratings will be used to generate a list of recommended books by genre (using only the user's favorites if any). Top recommended books will also be shown in the user's activity feed, along with books rated by friends and any "sponsored" books.
 
 [Details][phase-five]
 
-### Phase 6: Book Genre Tagging and Searching (1 day)
+### Phase 6: Refactoring and CSS (1 day)
 
-In Phase 5, books will be taggable by genre [for Librarians only] via Genres and Genre-Taggings join tables. I'll optionally add a view for each genre to show popular books for that genre. Users will also be able to select favorite genres.
+In Phase 6, the user experience will be enhanced dramatically by the implementation of more polished layouts.
 
 [Details][phase-six]
 
-### Phase 7: Refactoring and CSS (1 day)
-
-In Phase 7, the user experience will be enhanced dramatically by the implementation of more polished layouts.
-
-[Details][phase-seven]
-
 ### Bonus Features (TBD)
+- [ ] Tag books with multiple genres and search books by genre
 - [ ] Users can like/comment on other users' ratings
 - [ ] Receive notifications of new Friends and comments
 - [ ] Set reading goals and track progress

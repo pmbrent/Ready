@@ -1,21 +1,14 @@
-# Phase 5: Book Genre Tagging and Searching (1 day)
+# Phase 7: Refactoring and CSS (1 day)
 
 ## Rails
 ### Models
-* Genre
-* Genre-Tagging
-* User (add favorite genres)
 
 ### Controllers
-* Api::GenresController (create, destroy, index, show)
-* Api::GenreTaggingsController (create, destroy)
 
 ### Views
-* genre/index.json.jbuilder
 
 ## Flux
 ### Views (React Components)
-* GenreIndex
 
 ### Stores
 
@@ -24,3 +17,5 @@
 ### ApiUtil
 
 ## Gems/Libraries
+
+This will be a day primarily for refactoring, retooling, and CSS styling; no new backend resources should be created.
