@@ -143,3 +143,7 @@ Shelving.create(book_id: Book.last.id, shelf_id: 1)
     Friendship.create(following_user_id: i+1, followed_user_id: j+1)
   end
 end
+
+Book.all.each do |book|
+  book.calc_avg_rating
+end

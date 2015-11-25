@@ -12,13 +12,17 @@ class RatingsController < ApplicationController
     end
 
     @rating.save
+    Book.find(rating_params[:book_id]).calc_avg_rating
     render json: @rating
   end
 
   def destroy
     @rating = Rating.where(book_id: rating_params[:book_id])
                     .where(user_id: current_user.id)[0]
-    @rating.destroy! if @rating
+    if @rating
+      @rating.destroy!
+      Book.find(rating_params[:book_id]).calc_avg_rating
+    end
     render json: @rating
   end
 
