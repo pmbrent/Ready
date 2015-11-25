@@ -10,6 +10,11 @@ class Book < ActiveRecord::Base
 
   has_many :ratings
 
+  has_many :recommendations
+  has_many :recommended_users,
+    through: :recommendations,
+    source: :user
+
   def calc_avg_rating
     self.avg_rating = self.ratings.average(:rating).to_f
     self.save

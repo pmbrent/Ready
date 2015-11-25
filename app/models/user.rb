@@ -19,6 +19,12 @@ class User < ActiveRecord::Base
 
   has_many :ratings
 
+  has_many :recommendations
+
+  has_many :recommended_books,
+    through: :recommendations,
+    source: :book
+
   def self.find_by_credentials(userinfo, password)
     user = User.find_by_email(userinfo) || User.find_by_name(userinfo)
     return nil if user.nil?

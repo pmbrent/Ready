@@ -70,7 +70,11 @@ window.Recommended = React.createClass({
         <div className="recommendedPage group">
           <div className="sideColumn">
             <div className="sideBox">
-              How are my personal recommendations calculated?
+              Please note: Recommendations are in a preliminary phase and cannot currently load cover images. Thank you for your patience.
+            </div>
+            <div className="sideBox">
+              <p>Q: How are my personal recommendations calculated?</p>
+              <p>A: The answer is SQL!</p>
             </div>
           </div>
           <div className="bodyContainer">
