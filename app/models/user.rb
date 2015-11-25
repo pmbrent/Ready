@@ -62,7 +62,10 @@ class User < ActiveRecord::Base
 
   def get_feed
     result = ActiveRecord::Base.connection.execute(<<-SQL)
-      SELECT DISTINCT
+    SELECT
+      results.*, user_ratings.rating AS user_rating
+    FROM
+      (SELECT DISTINCT
         shelvings.created_at, shelvings.id,
         books.id AS book_id, books.isbn, books.author, books.title, books.description,
         friends.name AS friend, friends.id AS friend_id,
@@ -82,7 +85,18 @@ class User < ActiveRecord::Base
       ORDER BY
         shelvings.created_at DESC
       LIMIT
-        25
+        25) AS results
+    LEFT OUTER JOIN
+      (SELECT
+         *
+       FROM
+         ratings
+       WHERE
+         ratings.user_id = #{ActiveRecord::Base.sanitize(self.id)}) AS user_ratings
+    ON user_ratings.book_id = results.book_id
+    ORDER BY
+      results.created_at DESC
+
     SQL
 
     return result.to_json

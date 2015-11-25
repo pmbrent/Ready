@@ -1,7 +1,7 @@
 class BooksController < ApplicationController
 
   def index
-    @books = Book.all
+    @books = Book.all_with_ratings(current_user.id)
     render json: @books
   end
 

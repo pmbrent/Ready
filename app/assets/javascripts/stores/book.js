@@ -12,7 +12,7 @@
 
     find: function(bookId) {
       return _books.filter(function(book) {
-        return book.id === bookId;
+        return book.id == bookId;
       })[0];
     },
 
