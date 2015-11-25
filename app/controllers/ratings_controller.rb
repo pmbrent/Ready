@@ -1,9 +1,16 @@
 class RatingsController < ApplicationController
 
   def create
-    @rating = Rating.new(user_id: current_user.id,
-                         book_id: params[:book_id],
-                         rating: params[:rating])
+    @rating = Rating.where(user_id: current_user.id)
+                    .where(book_id: rating_params[:book_id])[0]
+    if @rating
+      @rating.rating = rating_params[:rating].to_i
+    else
+      @rating = Rating.new(user_id: current_user.id,
+                           book_id: rating_params[:book_id],
+                           rating: rating_params[:rating])
+    end
+
     @rating.save
     render json: @rating
   end

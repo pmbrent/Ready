@@ -14,6 +14,20 @@ window.RatingBar = React.createClass({
      });
   },
 
+  componentWillReceiveProps: function(props) {
+    var rating;
+    if (props.rating) {
+      rating = parseInt(props.rating);
+    } else {
+      rating = 0;
+    }
+
+    this.setState({
+      rating: rating,
+      filled: rating
+    });
+  },
+
   onClick: function(e) {
     ApiUtil.rateBook(this.props.bookId, parseInt(e.currentTarget.id));
   },

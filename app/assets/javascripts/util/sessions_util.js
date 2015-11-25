@@ -1,5 +1,5 @@
 var SessionsUtil = {
-  login: function (credentials, onSuccess) {
+  login: function (credentials, callback) {
     $.ajax({
       url: '/session',
       type: 'POST',
@@ -7,22 +7,22 @@ var SessionsUtil = {
       data: credentials,
       success: function (currentUser) {
         SessionActions.receiveCurrentUser(currentUser);
-        if (onSuccess) {
-          onSuccess();
+        if (callback) {
+          callback();
         }
       }
     });
   },
 
-  logout: function (onSuccess) {
+  logout: function (callback) {
     $.ajax({
       url: '/session',
       type: 'DELETE',
       dataType: 'json',
       success: function () {
         SessionActions.receiveCurrentUser({});
-        if (onSuccess) {
-          onSuccess();
+        if (callback) {
+          callback();
         }
       }
     });
@@ -39,7 +39,7 @@ var SessionsUtil = {
     });
   },
 
-  createUser: function(credentials, onSuccess) {
+  createUser: function(credentials, callback) {
     $.ajax({
       url: '/users',
       type: 'POST',
@@ -47,8 +47,8 @@ var SessionsUtil = {
       data: credentials,
       success: function(user) {
         SessionActions.receiveCurrentUser(user);
-        if (onSuccess) {
-          onSuccess();
+        if (callback) {
+          callback();
         }
       }
     });
