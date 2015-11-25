@@ -1,7 +1,17 @@
 window.FeedItem = React.createClass({
 
   getInitialState: function() {
-    return {hovering: false};
+    console.log(this.props.feedItem.created_at);
+    return {
+      hovering: false,
+      elapsed: Date.now() - Date.parse(this.props.feedItem.created_at)
+    };
+  },
+
+  componentWillReceiveProps: function(props) {
+    this.setState({
+      elapsed: Date.now() - Date.parse(props.feedItem.created_at)
+    });
   },
 
   hoverName: function() {
@@ -17,8 +27,7 @@ window.FeedItem = React.createClass({
   },
 
   getTime: function() {
-    var elapsed = Date.now() - Date.parse(this.props.feedItem.created_at);
-
+    var elapsed = this.state.elapsed;
     if (elapsed < 2000) {
       return "Just now.";
     } else if (elapsed < 60000) {
