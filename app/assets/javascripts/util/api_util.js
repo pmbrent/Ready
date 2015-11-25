@@ -22,6 +22,17 @@ window.ApiUtil = {
     });
   },
 
+  fetchUserRecommendations: function(userId) {
+    $.ajax({
+      url: "/recommendations/" + userId,
+      method: "GET",
+      dataType: "json",
+      success: function(recommendations) {
+        ApiActions.receiveUserRecommendations(recommendations);
+      }
+    });
+  },
+
   fetchBooks: function(onSuccess) {
     $.ajax({
       url: "/books",

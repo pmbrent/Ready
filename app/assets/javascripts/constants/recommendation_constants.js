@@ -1,0 +1,3 @@
+window.RecommendationConstants = {
+  RECOMMENDATIONS_RECEIVED: "RECOMMENDATIONS_RECEIVED"
+};

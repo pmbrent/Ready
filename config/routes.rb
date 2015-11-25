@@ -20,6 +20,8 @@ Rails.application.routes.draw do
   delete 'ratings' => 'ratings#destroy'
   resources :ratings, only: [:create]
 
+  resources :recommendations, only: [:show]
+
   root 'static_pages#index'
 
   # The priority is based upon order of creation: first created -> highest priority.

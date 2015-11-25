@@ -18,6 +18,13 @@ window.ApiActions = {
       actionType: BookConstants.BOOKS_RECEIVED,
       books: books
     });
+  },
+
+  receiveUserRecommendations: function(recommendations) {
+    AppDispatcher.dispatch({
+      actionType: RecommendationConstants.RECOMMENDATIONS_RECEIVED,
+      recommendations: recommendations
+    });
   }
 
 };
