@@ -17,34 +17,35 @@ window.Welcome = React.createClass({
 
   render: function() {
     return (
-      <div className="welcomeBack">
-        <section className="welcome">
-          <strong>Welcome to Ready!</strong>
-          <p>Get ready to find your next favorite book!</p>
-        </section>
-
-        <div className="new_user">
-          <p>New user signup:</p>
-          <form className="new_user_form" onSubmit={this.signUp}>
-            <label htmlFor="name">Name:
-              <input type="text"
-                     id="name">
-              </input>
-            </label>
+      <div className="heightFix">
+        <div className="welcomeBack">
+          <div className="welcome">
+            <strong>Welcome to Ready!</strong>
+            <p>Get ready to find your next favorite book!</p>
+          </div>
+          <div className="new_user">
+            <p>New user signup:</p>
+            <form className="new_user_form" onSubmit={this.signUp}>
+              <label htmlFor="name">Name:
+                <input type="text"
+                       id="name">
+                </input>
+              </label>
+              <br/>
+              <label htmlFor="email">Email:
+                <input type="text"
+                       id="email">
+                </input>
+              </label>
+              <br/>
+              <label htmlFor="password">Password:
+                <input type="password" id="password"></input>
+              </label>
+              <br/>
+              <input type="submit" className="button" value="Sign up!"></input>
+            </form>
             <br/>
-            <label htmlFor="email">Email:
-              <input type="text"
-                     id="email">
-              </input>
-            </label>
-            <br/>
-            <label htmlFor="password">Password:
-              <input type="password" id="password"></input>
-            </label>
-            <br/>
-            <input type="submit" className="button" value="Sign up!"></input>
-          </form>
-          <br/>
+          </div>
         </div>
       </div>
     );
