@@ -110,7 +110,7 @@ Book.create!(title: "Into the storm",
 Book.create!(title: "Double cross",
                            author: "James Patterson",
                            isbn: 9780316015059,
-                           description: "")
+                           description: "Detective Alex Cross rejoins the police force in the wake of a series of murders in Washington, D.C., and finds himself working to outmaneuver the killer's penchant for inducing hysteria with increasingly sensational killings.")
 Book.create!(title: "Bleachers",
                            author: "John Grisham",
                            isbn: 9780440242000,
@@ -123,10 +123,10 @@ Book.create!(title: "16 Lighthouse Road",
                            author: "Debbie Macomber",
                            isbn: 9780739420232,
                            description: "You don't know me yet, but in a few hours that's going to change. You see, I'm inviting you to my home and my town of Cedar Cove because I want you to meet my family, friends and neighbors.")
-Book.create!(title: "Mark Twain",
+Book.create!(title: "Mark Twain: a Life",
                            author: "Ron Powers",
                            isbn: 9780743248990,
-                           description: "")
+                           description: "The prairie in its loneliness and peace: that was what came back to him toward the end of his life, after he had pulled the rug out from under all the literary nabobs, and fired off all his nubs and snappers, and sashayed through all the nations, and collected all his ceremonial gowns and degrees, and tweaked all the grinning presidents, and schmoozed all the newspaper reporters, and stuck it to all his enemies, and shocked librarians, and cried out all his midnight blasphemies, and buried most of his family.")
 Book.create!(title: "Free Fall",
                            author: "Fern Michaels",
                            isbn: 9780821778814,
@@ -134,7 +134,9 @@ Book.create!(title: "Free Fall",
 Book.create!(title: "High Profile",
                            author: "Robert B. Parker",
                            isbn: 9780399154041,
-                           description: "")
+                           description: "The murder of a notorious public figure places Paradise, Massachusetts, police chief Jesse Stone in the harsh glare of the media spotlight.When the body of controversial talk-show host Walton Weeks is discovered hanging from a tree on the outskirts of Paradise, police chief Jesse Stone finds himself at the center of a highly public case, forcing him to deal with small-minded local officials and national media scrutiny. When another dead body-that of a young woman-is discovered just a few days later, the pressure becomes almost unbearable.
+                           Two victims in less than a week should provide a host of clues, but all Jesse runs into are dead ends. But what may be the most disturbing aspect of these murders is the fact that no one seems to care-not a single one of Weeks's ex-wives, not the family of the girl. And when the medical examiner reveals a heartbreaking link between the two departed souls, the mystery only deepens.Despite Weeks's reputation and the girl's tender age, Jesse is hard-pressed to find legitimate suspects. Though the crimes are perhaps the most gruesome Jesse has ever witnessed, it is the malevolence behind them that makes them all the more frightening.
+                           Forced to delve into a world of stormy relationships, Jesse soon comes to realize that knowing whom he can trust is indeed a matter of life and death.")
 Book.create!(title: "Home before dark",
                            author: "Susan Wiggs",
                            isbn: 1551666731,
@@ -601,7 +603,7 @@ Book.create!(title: "1st to Die",
 Book.create!(title: "The gentle rebel",
                            author: "Gilbert Morris",
                            isbn: 1556610068,
-                           description: "")
+                           description: "The House of Winslow, bk. 4")
 Book.create!(title: "Obsession",
                            author: "Jonathan Kellerman",
                            isbn: 9780345452634,
@@ -610,26 +612,25 @@ Book.create!(title: "Pride and prejudice",
                            author: "Jane Austen ; with an introduction and notes by Carol Howard",
                            isbn: 1593080204,
                            description: "In this historic romance, young Elizabeth Bennet strives for love, independence and honesty in the vapid high society of 19th century England.
-
 She deals with issues of manners, upbringing, morality, education, and marriage in the society of the landed gentry of the British Regency. Elizabeth is the second of five daughters of a country gentleman living near the fictional town of Meryton in Hertfordshire, near London.
-
 Though Austen set the story at the turn of the 19th century, it retains a fascination for modern readers, continuing near the top of lists of 'most loved books.' It has become one of the most popular novels in English literature, selling over 20 million copies, and receives considerable attention from literary scholars. Modern interest in the book has resulted in a number of dramatic adaptations and an abundance of novels and stories imitating Austen's memorable characters or themes.")
 Book.create!(title: "Getting mother's body",
                            author: "Suzan-Lori Parks",
                            isbn: 1400060222,
                            description: "")
-Book.create!(title: "Rant",
+Book.create!(title: "Rant: An Oral Biography of Buster Casey",
                            author: "Chuck Palahniuk",
                            isbn: 9780385517874,
-                           description: "")
+                           description: "Like most people I didn't meet Rant Casey until after he was dead. That's how it works for most celebrities: After they croak, their circle of friends just explodes.... Rant is the mind-bending new novel from Chuck Palahniuk, the literary provocateur responsible for such books as the generation-defining classic Fight Club and the pedal-to-the-metal horrorfest Haunted. It takes the form of an oral history of one Buster 'Rant' Casey, who may or may not be the most efficient serial killer of our time. 'What 'Typhoid Mary' Mallon was to typhoid, what Gaetan Dugas was to AIDS, and Liu Jian-lun was to SARS, Buster Casey would become for rabies.' A high school rebel who always wins (and a childhood murderer?), Rant Casey escapes from his small hometown of Middleton for the big city. He becomes the leader of an urban demolition derby called Party Crashing. On appointed nights participants recognize one another by such designated car markings as 'Just Married' toothpaste graffiti and then stalk and crash into each other.
+                           Rant Casey will die a spectacular highway death, after which his friends gather testimony needed to build an oral history of his short, violent life. Their collected anecdotes explore the possibility that his saliva caused a silent urban plague of rabies and that he found a way to escape the prison house of linear time....'The future you have, tomorrow, won't be the same future you had, yesterday.'--Rant Casey Expect hilarity, horror, and blazing insight into the desperate and surreal contemporary human condition as only Chuck Palahniuk can deliver it. He's the postmillennial Jonathan Swift, the visionary to watch to learn what's --uh-oh--coming next.")
 Book.create!(title: "Red sky in mourning",
                            author: "Patricia H. Rushford",
                            isbn: 1556617313,
-                           description: "")
+                           description: "Originally published in series: Helen Bradley mysteries.")
 Book.create!(title: "Ship shapely",
                            author: "Alistair Boyle",
                            isbn: 1888310995,
-                           description: "")
+                           description: "a Gil Yates private investigator novel")
 Book.create!(title: "Step on a crack",
                            author: "James Patterson and Michael Ledwidge",
                            isbn: 9780316013949,
@@ -637,11 +638,12 @@ Book.create!(title: "Step on a crack",
 Book.create!(title: "The luck of the Bodkins",
                            author: "P.G. Wodehouse",
                            isbn: 1585673366,
-                           description: "")
+                           description: "Into the face of the young man who sat on the terrace of the Hotel Magnifique at Cannes there had crept a look of furtive shame, the shifty, hangdog look which announces that an Englishman is about to talk French.")
 Book.create!(title: "A breath of snow and ashes",
                            author: "Diana Gabaldon",
                            isbn: 9780385324168,
-                           description: "")
+                           description: "Eagerly anticipated by her legions of fans, this sixth novel in Diana Gabaldon's bestselling Outlander saga is a masterpiece of historical fiction from one of the most popular authors of our time.Since the initial publication of Outlander fifteen years ago, Diana Gabaldon's New York Times bestselling saga has won the hearts of readers the world over -- and sold more than twelve million books. Now, A Breath of Snow and Ashes continues the extraordinary story of 18th-century Scotsman Jamie Fraser and his 20th-century wife, Claire.The year is 1772, and on the eve of the American Revolution, the long fuse of rebellion has already been lit. Men lie dead in the streets of Boston, and in the backwoods of North Carolina, isolated cabins burn in the forest.With chaos brewing, the governor calls upon Jamie Fraser to unite the backcountry and safeguard the colony for King and Crown. But from his wife Jamie knows that three years hence the shot heard round the world will be fired, and the result will be independence --
+                           with those loyal to the King either dead or in exile. And there is also the matter of a tiny clipping from The Wilmington Gazette, dated 1776, which reports Jamie's death, along with his kin. For once, he hopes, his time-traveling family may be wrong about the future.From the Hardcover edition.")
 Book.create!(title: "Scream of eagles",
                            author: "William W. Johnstone",
                            isbn: 1575660164,
@@ -682,10 +684,6 @@ Book.create!(title: "Complete novels",
                            author: "Dashiell Hammett",
                            isbn: 1883011671,
                            description: "")
-Book.create!(title: "Murder in Hawaii",
-                           author: "Steve Allen",
-                           isbn: 1575663759,
-                           description: "")
 Book.create!(title: "Die laughing",
                            author: "Steve Allen",
                            isbn: 1575662418,
@@ -693,15 +691,15 @@ Book.create!(title: "Die laughing",
 Book.create!(title: "Morality for beautiful girls",
                            author: "Alexander McCall Smith",
                            isbn: 1400031362,
-                           description: "")
+                           description: "THE NO.1 LADIES' DETECTIVE AGENCY published in 1998, introduced the world to the one and only Precious Ramotswe, the engaging and sassy owner of Botswana's only detective agency. TEARS OF THE GIRAFFE took us further into this world, and now, continuing the adventures of Mma Ramotswe, MORALITY FOR BEAUTIFUL GIRLS, finds her expanding her business to take in the world of car repair and a beauty pageant. Alexander McCall Smith's sense of humour and gentle charm have created a substantial cult following. MORALITY FOR BEAUTIFUL GIRLS will win him yet more fans.")
 Book.create!(title: "The girl who remembered snow",
                            author: "Charles Mathes",
                            isbn: 9780373262571,
-                           description: "")
-Book.create!(title: "Scarlett",
+                           description: "A Thomas Dunne book.")
+Book.create!(title: "Scarlett: The Sequel to Margaret Mitchell's 'Gone With the Wind'",
                            author: "Alexandra Ripley",
-                           isbn: 9780446515078,
-                           description: "")
+                           isbn: 9780446502375,
+                           description: "This will be over soon, and then I can go home to Tara.")
 Book.create!(title: "Blind man's bluff",
                            author: "Sherry Sontag and Christopher Drew, with Annette Lawrence Drew",
                            isbn: 1891620088,
@@ -729,10 +727,6 @@ Book.create!(title: "Snobs",
 Book.create!(title: "Skeleton Coast",
                            author: "Clive Cussler, with Jack Du Brul",
                            isbn: 9780425211892,
-                           description: "")
-Book.create!(title: "Promise me tomorrow",
-                           author: "Lori Wick",
-                           isbn: 1565076958,
                            description: "")
 Book.create!(title: "The places in between",
                            author: "Rory Stewart",
@@ -773,15 +767,16 @@ Book.create!(title: "The grapes of wrath ; The moon is down ; Cannery Row ; East
 Book.create!(title: "Full house",
                            author: "Janet Evanovich",
                            isbn: 9780312983277,
-                           description: "")
+                           description: "Originally published in 1989 under the name Steffie Hall. This edition revised with the help of Charlotte Hughes.")
 Book.create!(title: "Fresh disasters",
                            author: "Stuart Woods",
                            isbn: 9780399154102,
-                           description: "")
+                           description: "Stone Barrington embarks on his most dangerous adventure yet when he takes on a job as a lawyer for a sleazy and clueless con man-and ends up getting embroiled in the underworld of the New York mafia. It started out as just another late night at Elaine's, where Stone was eating a porterhouse steak and enjoying the company of his friends. But when Herbie Fisher, a notoriously not-so-sharp swindler, walked in, the pleasant atmosphere turned to ice.Herbie convinces Bill Eggers, the managing partner of Woodman & Weld, to sign him on as a client-with the goal of taking down the infamous mafia boss Carmine Datilla. And even though Stone doesn't want to have anything to do with Herbie-or the mafia, for that matter-he is soon coerced into being Herbie's lawyer.With the help of his ex-partner, Dino, Stone investigates 'Datilla the Hun,' and the rest of the mob family, encountering intrigue and danger at every turn. Will Stone finally take a stand, or will he end up at the bottom of Sheepshead Bay?With the swift action, razor-sharp characters,
+                           and crackling dialogue that are Stuart Woods's hallmarks, Fresh Disasters is Woods at the very height of his storytelling powers.")
 Book.create!(title: "Flashpoint",
                            author: "Linda Barnes",
                            isbn: 1568958560,
-                           description: "")
+                           description: "A Carlotta Carlyle mystery.")
 Book.create!(title: "Finding Noel",
                            author: "Richard Paul Evans",
                            isbn: 9780743287036,
@@ -789,11 +784,11 @@ Book.create!(title: "Finding Noel",
 Book.create!(title: "Executive power",
                            author: "Vince Flynn",
                            isbn: 9780743453950,
-                           description: "")
+                           description: "Clipper thriller.")
 Book.create!(title: "The end of summer",
                            author: "Rosamunde Pilcher",
                            isbn: 9780440202554,
-                           description: "")
+                           description: "All summer long the weather had been heavy and clouded, the warmth of the sun blanketed by sea fogs which had continually rolled in from the Pacific.")
 Book.create!(title: "Don't make me stop this car!",
                            author: "Al Roker ; with illustrations by the author",
                            isbn: 1568959222,
@@ -801,19 +796,19 @@ Book.create!(title: "Don't make me stop this car!",
 Book.create!(title: "Destination unknown",
                            author: "Agatha Christie",
                            isbn: 9780671542139,
-                           description: "")
+                           description: "Hilary Craven has lost the will to live, Mrs Betterton is already dead. Then Hilary is asked to impersonate the dead woman and to trace her husband - a missing nuclear scientist - and her will to live returns. A faked air disaster, a string of radio-active pearls, a leper colony floundering in the dry heat of the Moroccan desert. Hilary is lead towards a terrifying discovery and her new found enthusiasm for life turns into ice-cold fear...Christie based this book partly on the activities of two famous physicists of the early 1950s: Bruno Ponecorvo, who defected to Russia, and Emil Fuchs, who spied for the Russians. It is another of Christie's light-hearted thriller novels featuring a daring and fearless heroine.")
 Book.create!(title: "Classics illustrated",
                            author: "Miguel de Cervantes ; illstrations by Zanksy",
                            isbn: 9781578400546,
-                           description: "")
+                           description: "Includes study notes and essay by Gregory Feeley. Originally published as Classics Illustrated no. 55.")
 Book.create!(title: "The bright forever",
                            author: "Lee Martin",
                            isbn: 1400097916,
-                           description: "")
-Book.create!(title: "Bones to ashes",
+                           description: "On an evening like any other, nine-year-old Katie Mackey, daughter of the most affluent family in a small town on the plains of Indiana, sets out on her bicycle to return some library books.This simple act is at the heart of The Bright Forever, a suspenseful, deeply affecting novel about the choices people make that change their lives forever. Keeping fact, speculation, and contradiction playing off one another as the details unfold, author Lee Martin creates a fast-paced story that is as gripping as it is richly human. His beautiful, clear-eyed prose builds to an extremely nuanced portrayal of the complicated give and take among people struggling to maintain their humanity in the shadow of a loss.Reminiscent of books such as The Little Friend and The Lovely Bones, but most memorable for its own perceptions and power, The Bright Forever is a compelling and emotional tale about the human need to know even the hardest truth.")
+Book.create!(title: "Monday Mourning",
                            author: "Kathy Reichs",
-                           isbn: 9780743294379,
-                           description: "")
+                           isbn: 0743453018,
+                           description: "AS THE TUNE PLAYED INSIDE MY HEAD, GUNFIRE EXPLODED IN the cramped underground space around me.")
 Book.create!(title: "Black widow's wardrobe",
                            author: "Lucha Corpi",
                            isbn: 1558852883,
@@ -821,13 +816,41 @@ Book.create!(title: "Black widow's wardrobe",
 Book.create!(title: "Bangkok tattoo",
                            author: "John Burdett",
                            isbn: 1400040450,
-                           description: "")
+                           description: "Detective Sonchai Jitpleecheep of the Royal Thai Police returns in his riveting and smokily atmospheric new thriller.A farang--a foreigner--has been murdered, his body horribly mutilated, at the Bangkok brothel co-owned by Sonchai's mother and his boss. The dead man was a CIA agent. To make matters worse, the apparent culprit is sweet-natured Chanya, the brothel's top earner and a woman whom the devoutly Buddhist sleuth has loved for several lifetimes. How can Sonchai solve this crime without sending Chanya to prison? How can he engage in a cover-up without endangering his karma? And how will he ever get to the bottom of a case whose interested parties include American spooks, Muslim fundamentalists, and gangsters from three countries? As addictive as opium, as hot as Sriracha chili sauce, and bursting with surprises, Bangkok Tattoo will leave its mark on you. From the Trade Paperback edition.")
 Book.create!(title: "Angry housewives eating bon bons",
                            author: "Lorna Landvik",
                            isbn: 9780345442826,
-                           description: "")
+                           description: "A FULLER BRUSH salesman had the unfortunate task of trying to sell his wares to the women of Freesia Court during the fifth day of a March cold snap.")
 Book.create!(title: "Absent friends",
                            author: "S.J. Rozan",
                            isbn: 9780440241850,
-                           description: "")
+                           description: "The secrets of a group of childhood friends unravel in this haunting thriller by Edgar Award winner S. J. Rozan. Set in New York in the unforgettable aftermath of September 11, Absent Friends brilliantly captures a time and place unlike any other, as it winds through the wounded streets of New York and Staten Island...and into a maze of old crimes, damaged lives, and heartbreaking revelations. The result is not only an electrifying mystery and a riveting piece of storytelling but an elegiac novel that powerfully explores a world changed forever on a clear September morning.In a novel that will catch you off guard at every turn, and one that is guaranteed to become a classic, S. J. Rozan masterfully ratchets up the tension one revelation at a time as she dares you to ponder the bonds of friendship, the meaning of truth, and the stuff of heroism.From the Hardcover edition.")
+Book.create!(title: "Volpone",
+                            author: "Ben Johnson",
+                            isbn: 0486280497,
+                            description: "'Unabridged'--Cover.")
+Book.create!(title: "Lathe of Heaven",
+                            author: "Ursula K. LeGuin",
+                            isbn: 9780380791859,
+                            description: "Current-borne, wave-flung, tugged hugely by the whole might of ocean, the jellyfish drifts in the tidal abyss.")
+Book.create!(title: "Sewing Essentials (Singer Sewing Reference Library)",
+                            author: Cowles Creative Publishing,
+                            isbn: 9780865732018,
+                            description: "Like any other art or craft, sewing begins with basic techniques.")
+Book.create!(title: "The Dispossessed: an ambiguous Utopia",
+                            author: "Ursula K. LeGuin",
+                            isbn: 9780061054884,
+                            description: "There was a wall.")
+Book.create!(title: "Out",
+                            author: "Natsuo Kirino",
+                            isbn: 9781400078370,
+                            description: "In the Tokyo suburbs four women work the draining graveyard shift at a boxed-lunch factory. Burdened with chores and heavy debts and isolated from husbands and children, they all secretly dream of a way out of their dead-end lives.")
+Book.create!(title: "His Majesty's Dragon",
+                            author: "Naomi Novik",
+                            isbn: 9780345481283,
+                            description: "Aerial combat brings a thrilling new dimension to the Napoleonic Wars as valiant warriors rise to Britain's defense by taking to the skies . . . not aboard aircraft but atop the mighty backs of fighting dragons.When HMS Reliant captures a French frigate and seizes its precious cargo, an unhatched dragon egg, fate sweeps Capt. Will Laurence from his seafaring life into an uncertain future--and an unexpected kinship with a most extraordinary creature. Thrust into the rarified world of the Aerial Corps as master of the dragon Temeraire, he will face a crash course in the daring tactics of airborne battle. For as France's own dragon-borne forces rally to breach British soil in Bonaparte's boldest gambit, Laurence and Temeraire must soar into their own baptism of fire.")
+Book.create!(title: "Blood Bond: San Angelo showdown"
+                            author: "William W. Johnstone",
+                            isbn: 9780821744666,
+                            description: "Texas Ranger Josiah Finch convinces blood brothers Matt Bodine and Sam Two Wolves to pin on badges and help corral a bloodthirsty gang of cattle thieves who are heading for the Mexican border.")
 end
