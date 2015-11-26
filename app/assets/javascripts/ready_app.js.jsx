@@ -54,6 +54,7 @@ $(function () {
         <Route path="recommended" component={Recommended}/>
         <Route path="welcome" component={Welcome}/>
         // <Route path="users/search" component={UserSearchResults}/>
+        <Route path="users/:userId/shelves" component={ShelfIndex}/>
         <Route path="users/:userId" component={UserView}/>
         <Route path="users" component={UserIndex}/>
         <Route path="books/:bookId" component={BookView}/>

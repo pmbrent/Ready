@@ -49,3 +49,14 @@
 .shelfList > :first-child {
   margin: 10px;
 }
+
+.shelfList a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.strongTitle {
+  display: block;
+  font-size: 20px;
+  margin-bottom: 20px;
+}

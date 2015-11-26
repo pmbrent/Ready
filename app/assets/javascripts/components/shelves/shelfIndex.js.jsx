@@ -5,12 +5,16 @@ window.ShelfIndex = React.createClass({
   },
 
   componentDidMount: function() {
+    var userId = this.props.userId ||
+      parseInt(this.props.location.pathname.split("/")[2]);
     UserStore.addChangeListener(this.updateUser);
-    ApiUtil.fetchUserInfo(this.props.userId);
+    ApiUtil.fetchUserInfo(userId);
   },
 
   updateUser: function() {
-    this.setState({ user: UserStore.find(this.props.userId) });
+    var userId = this.props.userId ||
+      parseInt(this.props.location.pathname.split("/")[2]);
+    this.setState({ user: UserStore.find(userId) });
   },
 
   getUserShelves: function() {
@@ -24,6 +28,7 @@ window.ShelfIndex = React.createClass({
             <ShelfList shelves={this.state.user.shelves}/>
           </section>
           <section className="shelves">
+            <strong className="strongTitle">{this.state.user.name + "'s shelves"}</strong>
           {this.state.user.shelves.map(function(shelf) {
             return <Shelf key={shelf.id} shelf={shelf}/>;
           })}

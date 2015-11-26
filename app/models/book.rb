@@ -1,7 +1,7 @@
 class Book < ActiveRecord::Base
 
-  include PgSearch
-  pg_search_scope :search_by_info, :against => [:title, :author, :isbn]
+  # include PgSearch
+  # pg_search_scope :search_by_info, :against => [:title, :author, :isbn]
 
   validates :title, :author, :isbn, presence: true
   validates :isbn, length: {in: 10..13}
