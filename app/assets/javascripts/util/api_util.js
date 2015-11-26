@@ -111,4 +111,21 @@ window.ApiUtil = {
     });
   },
 
+  rejectBook: function(bookId, userId) {
+    $.ajax({
+      url: "/recommendations/",
+      method: "POST",
+      dataType: "json",
+      data: {
+        rec: {
+          book_id: bookId,
+          rejected: true
+        }
+      },
+      success: function() {
+        ApiUtil.fetchUserRecommendations(userId);
+      }
+    });
+  }
+
 };

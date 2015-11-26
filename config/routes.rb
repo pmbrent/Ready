@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   delete 'ratings' => 'ratings#destroy'
   resources :ratings, only: [:create]
 
-  resources :recommendations, only: [:show]
+  resources :recommendations, only: [:show, :create]
 
   root 'static_pages#index'
 

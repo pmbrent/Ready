@@ -1,5 +1,28 @@
 class RecommendationsController < ApplicationController
 
+
+  def create
+    debugger
+    # Refactor to allow useres to send other users recommendations
+
+    # Dismissals always override existing recommendations
+    @recommendation = Recommendation.where(user_id: current_user.id)
+                                    .where(book_id: rec_params[:book_id])[0]
+    if !!@recommendation
+      @recommendation.rejected = to_bool(rec_params[:rejected])
+    else
+      @recommendation = Recommendation.new(user_id: current_user.id,
+                                           book_id: rec_params[:book_id],
+                                           rejected: rec_params[:rejected] || false)
+    end
+
+    if @recommendation.save
+      render json: @recommendation
+    else
+      render json: {}
+    end
+  end
+
   def show
     @recommendations = reqs_with_books
     unless @recommendations
@@ -18,4 +41,14 @@ class RecommendationsController < ApplicationController
               books.author, books.description')
   end
 
+private
+
+  # Refactor to allow users to send other users recommendations
+  def rec_params
+    params.require(:rec).permit(:book_id, :rejected)
+  end
+
+  def to_bool(str)
+    str == "true"
+  end
 end

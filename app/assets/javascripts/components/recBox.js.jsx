@@ -1,21 +1,32 @@
 window.RecBox = React.createClass({
 
+  dismissBook: function(bookId) {
+    return function() {
+      ApiUtil.rejectBook(bookId, CurrentUserStore.currentUserId());
+    };
+  },
+
   // RatedBooks have a book_id; regular books, just use id
   makeShelves: function() {
+    context = this;
+
     return this.props.recs.books.map(function(book) {
-      var bookUrl = "/#/books/" + book.book_id;
+      var bookId = book.book_id || book.id;
+      var bookUrl = "/#/books/" + bookId;
       var coverUrl = "http://covers.openlibrary.org/b/isbn/" +
                       book.isbn + "-M.jpg";
       return (
-        <div key={book.id} className="recItem">
+        <div key={bookId} className="recItem">
           <li>
             <a href={bookUrl}>{book.title}
               <img src={coverUrl} alt={book.title}/>
             </a>
             <div className="smallBar">
-              <RatingBar bookId={book.book_id || book.id} rating={book.rating}/>
+              <RatingBar bookId={bookId} rating={book.rating}/>
             </div>
-            <button className="button">Dismiss</button>
+            <button onClick={context.dismissBook(bookId)} className="button">
+              Dismiss
+            </button>
           </li>
         </div>
       );

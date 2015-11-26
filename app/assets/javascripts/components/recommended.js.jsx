@@ -3,7 +3,7 @@ window.Recommended = React.createClass({
   getInitialState: function() {
     return ({
       popular: BookStore.popular(10),
-      recommended: RecommendationStore.fetchRecs(10)
+      recommended: []
     });
   },
 
@@ -14,8 +14,9 @@ window.Recommended = React.createClass({
     RecommendationStore.addChangeListener(this.updateRecs);
     if (!CurrentUserStore.currentUserId()) {
       CurrentUserStore.addChangeListener(this.tempFunction);
+    } else {
+      ApiUtil.fetchUserRecommendations(CurrentUserStore.currentUserId());
     }
-    ApiUtil.fetchUserRecommendations(CurrentUserStore.currentUserId());
   },
 
   tempFunction: function() {
