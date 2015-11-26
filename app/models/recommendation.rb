@@ -4,7 +4,7 @@ class Recommendation < ActiveRecord::Base
   validates :rejected, inclusion: { in: [true, false] }
   validates :book_id, uniqueness: { scope: :user_id }
 
-  validate :user_has_not_read_or_rated
+  validate :user_has_not_shelved_or_rated
 
   belongs_to :book
   belongs_to :user
@@ -79,16 +79,18 @@ class Recommendation < ActiveRecord::Base
   end
 
 private
-  def user_has_not_read_or_rated
-    has_not_read && has_not_rated
+  def user_has_not_shelved_or_rated
+    has_not_shelved && has_not_rated
   end
 
-  def has_not_read
-    shelf_id = 3 * self.user_id - 2
-    User.find(self.user_id).shelves.find(shelf_id).books.find(self.book_id)
+  def has_not_shelved
+    shelf_ids = User.find(self.user_id).shelves.pluck(:id)
+    !shelf_ids.any? do |id|
+      User.find(self.user_id).shelves.find(id).books.exists?(self.book_id)
+    end
   end
 
   def has_not_rated
-    User.find(self.user_id).rated_books.find(self.book_id)
+    !User.find(self.user_id).rated_books.exists?(self.book_id)
   end
 end
