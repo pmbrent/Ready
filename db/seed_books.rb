@@ -199,15 +199,20 @@ Book.create!(title: "Betrayal in death",
 Book.create!(title: "From Botswana to the Bering Sea",
                            author: "Thomas Y. Canby",
                            isbn: 1559635177,
-                           description: "")
-Book.create!(title: "The cat who brought down the house",
-                           author: "Lilian Jackson Braun",
-                           isbn: 1594130116,
-                           description: "")
+                           description: "My thirty years with National geographic")
+Book.create!(title: "The cat who went bananas",
+                          author: "Lilian Jackson Braun",
+                          isbn: 9780755321254,
+                          description: "Jim Qwilleran was primarily a columnist for the Moose County Something, but he was more.")
+Book.create!(title: "The cat who saw red",
+                          author: "Lilian Jackson Braun",
+                          isbn: 9780515084917,
+                          description: "Jim Qwilleran slumped in a chair in the Press Club dining room, his six-feet-two telescoped into a picture of dejection and his morose expression intensified by the droop of his oversized mustache.")
 Book.create!(title: "Springwater",
                            author: "Linda Lael Miller",
                            isbn: 1568957866,
-                           description: "")
+                           description: "Montana Territory, 1870. Evangeline Keating came west because she had to; after her husband's passing, she needed to build a new life for her young daughter, and marrying a stranger from Montana Territory was her best chance. After a difficult winter journey, she arrives at an isolated outpost called Springwater Station. But the handsome man who's come for her is not her husband-to-be, and Evangeline soon finds herself thrust into a most inconvenient -- and highly improper -- arrangement.
+Scully Wainwright never intended to be left alone with his ranching partner's fiancee. But his partner's not due back until spring, and he can't leave a defenseless woman and her child unguarded -- not with wolves and Indians threatening. Biding his time with the lovely Evangeline begins to feel dangerously close to setting up a real home. But as a reckless passion sparks between them, Scully and Evangeline discover a destiny -- and a passion -- as boundless as the open frontier.")
 Book.create!(title: "Dead wrong",
                            author: "J.A. Jance",
                            isbn: 9780060540906,
@@ -347,11 +352,7 @@ Book.create!(title: "Wake up to murder",
 Book.create!(title: "Honor thyself",
                            author: "Danielle Steel",
                            isbn: 9780385340243,
-                           description: "")
-Book.create!(title: "The greatest generation speaks",
-                           author: "Tom Brokaw",
-                           isbn: 9780375503948,
-                           description: "")
+                           description: "In the days that follow a tragic accident, a woman who the whole world knows slowly awakens with no memory of who she is. Every detail must be pieced back together--from a childhood in rural Mississippi to the early days of her career, from the unintentional hurt inflicted on her daughter to a fifteen year-old secret love affair that went tragically wrong. But for this woman an extraordinary opportunity has arisen in a life-threatening crisis: a second chance to count her blessings, heal wounded hearts, recapture lost love... and to live a life that will truly honor others--beginning with herself.--From publisher description.")
 Book.create!(title: "The chase",
                            author: "Clive Cussler",
                            isbn: 9780399154386,
@@ -359,31 +360,27 @@ Book.create!(title: "The chase",
 Book.create!(title: "Strawberry shortcake murder",
                            author: "Joanne Fluke",
                            isbn: 1575666448,
-                           description: "")
+                           description: "In her debut mystery, Chocolate Chip Cookie Murder, intrepid amateur sleuth and bakery owner Hannah Swensen proved that when it comes to crime, nothing is sweeter than a woman who knows how to really mix it up. Now, the flame-haired, tart-talking (and baking) heroine is back, judging a contest where the competition is really murder. Strawberry Shortcake Murder When the president of Hartland Flour chooses cozy Lake Eden, Minnesota, as the spot for their first annual Dessert Bake-Off, Hannah is thrilled to serve as the head judge. But when a fellow judge, Coach Boyd Watson, is found stone-cold dead, facedown in Hannah's celebrated strawberry shortcake, Lake Eden's sweet ride to fame turns very sour indeed. Between perfecting her Cheddar Cheese Apple Pie and Chocolate Crunchies, Hannah's snooping into the coach's private life and not coming up short on suspects. And could Watson's harsh criticism during the judging have given one of the contestants a license to kill? The stakes are rising faster than dough, and Hannah will have to be very careful, because somebody is cooking up a recipe for murder…with Hannah landing on the “necessary ingredients” list.")
 Book.create!(title: "The Poe shadow",
                            author: "Pearl Matthew",
                            isbn: 1400061032,
                            description: "")
-Book.create!(title: "Kill Alex Cross",
-                           author: "James Patterson",
-                           isbn: 9780316198738,
-                           description: "")
 Book.create!(title: "Goodnight nobody",
                            author: "Jennifer Weiner",
                            isbn: 1585477230,
-                           description: "")
+                           description: "'Hello?' I tapped on Kitty Cavanaugh's red front door, then lifted the brass knocker and gave it a few thumps for good measure.")
 Book.create!(title: "Water for elephants",
                            author: "Sara Gruen",
                            isbn: 1565124995,
-                           description: "")
+                           description: "As a young man, Jacob Jankowski was tossed by fate onto a rickety train that was home to the Benzini Brothers Most Spectacular Show on Earth. It was the early part of the great Depression, and for Jacob, now ninety, the circus world he remembers was both his salvation and a living hell. A veterinary student just shy of a degree, he was put in charge of caring for the circus menagerie. It was there that he met Marlena, the beautiful equestrian star married to August, the charismatic but twisted animal trainer. And he met Rosie, an untrainable elephant who was the great gray hope for this third-rate traveling show. The bond that grew among this unlikely trio was one of love and trust, and, ultimately, it was their only hope for survival.")
 Book.create!(title: "The body in the bouillon",
                            author: "Katherine Hall Page",
                            isbn: 1574902768,
-                           description: "")
+                           description: "I'm not going to tell you anything unless you do exactly as I say and do not get involved any further than is necessary for my peace of mind.")
 Book.create!(title: "To kill a mockingbird",
                            author: "Harper Lee",
                            isbn: 9780060935467,
-                           description: "")
+                           description: "The Pulitzer Prize winning novel of racial prejudice and inequality in the American South during the Great Depression in the nineteen thirties. The story, narrated by a young girl, focuses on the girl’s father, a lawyer who is appointed to defend a black man accused of raping a white woman.")
 Book.create!(title: "The two minute rule",
                            author: "Robert Crais",
                            isbn: 9780743281614,
@@ -391,15 +388,18 @@ Book.create!(title: "The two minute rule",
 Book.create!(title: "Brionne",
                            author: "Louis L'Amour",
                            isbn: 9780553281071,
-                           description: "")
+                           description: "151 pg. Originally published, New York, Bantam; London, Corgi, 1968.")
 Book.create!(title: "Atlantis Found",
                            author: "Clive Cussler",
                            isbn: 9780399145889,
-                           description: "")
+                           description: "An Antarctic whaler stumbles across an aged wreck—her frozen crew guarding a priceless treasure.
+A team of anthropologists is buried under a mountain by a deliberate explosion.
+A ship that should have died fifty-six years ago reappears, and almost sinks a National Underwater and Marine Agency ship.
+Dirk Pitt knows that somehow these events are connected. His investigations lead to an ancient mystery with devastating modern consequences, and a diabolical enemy unlike any he has ever known. Now, he is racing to save not only his life—but the world. The trap is set. The clock is ticking. And only one man stands between the earth and Armageddon…")
 Book.create!(title: "Down the long hills",
                            author: "Louis L'Amour",
                            isbn: 9780553280814,
-                           description: "")
+                           description: "After the massacre Hardy and Betty Sue were left with only a horse and a knife with which to face the long battle against the wilderness. A seven-year-old boy and a three-year-old girl, stranded on the limitless prairie. They were up against starvation, marauding Indians, savage outlaws, and wild animals. They were mighty stubborn, but the odds were against them--and their luck was about to run out.From the Paperback edition.")
 Book.create!(title: "20,000 leagues under the sea",
                            author: "Jules Verne ; illustrated by Scott McKowen",
                            isbn: 9781402725999,
@@ -427,7 +427,7 @@ Book.create!(title: "The Scarlet Pimpernel",
 Book.create!(title: "Where are the children?",
                            author: "Mary Higgins Clark",
                            isbn: 1416507779,
-                           description: "")
+                           description: "A novel of suspense. 'RAY CAME DOWN THE STAIRS pulling the knot closed on his tie.'")
 Book.create!(title: "Death dance",
                            author: "Linda Fairstein",
                            isbn: 9780743254892,
@@ -435,31 +435,24 @@ Book.create!(title: "Death dance",
 Book.create!(title: "The cage",
                            author: "Audrey Schulman",
                            isbn: 1565120353,
-                           description: "")
+                           description: "Beryl holds an ice cube in her hand as she sits in her closet.")
 Book.create!(title: "Bergdorf blondes",
                            author: "Plum Sykes",
                            isbn: 1401351964,
-                           description: "")
+                           description: "Bergdorf Blondes are a thing, you know, a New York craze.")
 Book.create!(title: "Provence--to die for",
                            author: "Jessica Fletcher and Donald Bain",
                            isbn: 1587242842,
-                           description: "")
+                           description: "In her seventeeth book adventure, bestselling author Jessica Fletcher travels to provence for some haute cuisine, and becomes embroiled in a culinary murder mystery.")
 Book.create!(title: "Himalayan odyssey",
                            author: "Parker Antin with Phyllis Wachob Weiss",
                            isbn: 1556111975,
-                           description: "")
-Book.create!(title: "Fool's gold",
-                           author: "Jane S. Smith",
-                           isbn: 1581950357,
-                           description: "")
-Book.create!(title: "Boogers are my beat",
-                           author: "Dave Barry ; illustrations by Jeff MacNelly",
-                           isbn: 1400047579,
-                           description: "")
+                           description: "the perilous trek to western Nepal")
 Book.create!(title: "Carolina Isle",
                            author: "Jude Deveraux",
                            isbn: 1416509720,
-                           description: "")
+                           description: "New York Times bestselling author Jude Deveraux uncovers the passions and scandals that take a small town by storm when two cousins switch lives.
+Ariel and Sara never imagined their high-spirited attempt to step into each other’s shoes would cause such upheaval. The lifelong pen pals, who look exactly alike, meet for the first time in their twenties and embark on a daring adventure of changing identities. Southern belle Ariel is determined to win the heart of a man who doesn’t know she exists, while Sara yearns to leave behind her hardscrabble existence and taste the good life that fate has denied her. But in pretty Arundel, North Carolina, nothing is as it seems — including the dangers that are closing in on their new dream lives, as the deepest of fears and darkest of secrets and betrayals come to light.")
 Book.create!(title: "Blow the house down",
                            author: "Robert Baer",
                            isbn: 1400098351,
@@ -467,59 +460,61 @@ Book.create!(title: "Blow the house down",
 Book.create!(title: "The Braxtons of Miracle Springs",
                            author: "Michael Phillips",
                            isbn: 1556619049,
-                           description: "")
+                           description: "The journals of Corrie & Christopher ;, bk. 1")
 Book.create!(title: "Toxic bachelors",
                            author: "Danielle Steel",
                            isbn: 9780385338271,
-                           description: "")
+                           description: "Danielle Steel explores the perils of dating, relationships, and love in a novel that takes us into the intoxicating, infuriating world of three charming single men, also known as...Toxic BachelorsThey were the best of friends and the most daunting of bachelors....Charlie Harrington, a handsome philanthropist, has such high expectations for his perfect bride that no mortal need apply....Adam Weiss, a forty-something celebrity lawyer, prefers his women very young, very voluptuous, and very short-term....And for Gray Hawk, a gifted artist with a knack for attracting troubled relationships, women are fine; it's just the idea of family he can't imagine (particularly the family of the woman he's dating). Now the three friends, spending their annual summer vacation cruising the Mediterranean aboard Charlie's majestic yacht, are about to have their bachelorhood rocked. By autumn all three will fall precipitously into relationships they never saw coming. Charlie begins dating a crusading social worker who couldn't be further from his ideal--until he makes a stunning discovery about her. Adam gets involved with his usual twenty-something bombshell--only this one has a remarkable mind of her own. And Gray, who has avoided both business and family like the plague, has managed to fall head over heels for a successful career woman--who just happens to be a mother as well.As another holiday on the yacht approaches, and with it a turning point in each man's life, the three bachelors are forced to face the things that scare them most: their phobias about relationships, the wounds of the past--and the kind of women who challenge their deepest terrors. What happens next will spark big changes for Charlie, Adam, and Gray--and might just put an end to their carousing days forever. For as the once-carefree trio is about to discover, love is the most unpredictable adventure of all.Filled with all the joy, complexity, and unexpected surprises of life, Toxic Bachelors is Danielle Steel at her poignant and penetrating best.From the Hardcover edition.")
 Book.create!(title: "Ain't myth-behaving",
                            author: "Katie Macalister",
                            isbn: 9781416524939,
-                           description: "")
+                           description: "Stag party	/ Norse truly.")
 Book.create!(title: "Blowing up Russia",
                            author: "Yuri Felshtinsky, Alexander Litvinenko ; translated from the Russian by Geofrey Andrews & Co",
                            isbn: 9781594032011,
-                           description: "")
+                           description: "terror from within : acts of terror, abductions and contract killings organized by the Federal Security Service of the Russian Federation")
 Book.create!(title: "Jingle bell bark",
                            author: "Laurien Berenson",
                            isbn: 1575667584,
-                           description: "")
+                           description: "a Melanie Travis mystery")
 Book.create!(title: "Firehouse",
                            author: "David Halberstam",
                            isbn: 1401300057,
-                           description: "")
+                           description: "Edition Notes: Portraits of firemen on back cover.")
 Book.create!(title: "Strangers in death",
                            author: "J.D. Robb",
                            isbn: 9780399154706,
-                           description: "")
+                           description: "An Eve Dallas Investigation In Death. Technology may be different in 2060 New York, yet the city is still a place of many cultures and great divides. But as ever, some murders receive more attention than others-especially those in which the victim is a prominent businessman, found in his Park Avenue apartment, tied to the bed-and strangled-with cords of black velvet.
+It doesn't surprise Lieutenant Eve Dallas that Thomas Anders's scandalous death is a source of titillation and speculation to the public-and of humiliation to his family. But while people in the city are talking about it, those close to Anders aren't so anxious to do the same. Fortunately, Eve's billionaire husband, Roarke, happens to own the prime real estate where Thomas Anders's sporting-goods firm is headquartered, giving her some help with access. Before long, she's knocking on doors--and barging through them--to look for the answers she needs.
+But the facts don't add up. Physical evidence suggests that the victim didn't struggle. The security breach in the apartment indicates that the killer was someone known to the family. And also others things don't add up--and everyone's alibi checks out, from the wife who was off in the tropics to the nephew who stood to inherit millions. Was this a crime of passion in a kinky game gone wrong-or a meticulously planned execution? It's up to Dallas to solve this sensational case in which those who seem to be intimates sometimes guard secrets from each other--and strangers may be connected in unexpected, and deadly, ways....")
 Book.create!(title: "Chill factor",
                            author: "Sandra Brown",
                            isbn: 9780743245548,
-                           description: "")
-Book.create!(title: "Cervantes Don Quixote",
-                           author: "being a faithful translation and adaptation by Magda Bogin of the first part of Cervantes's original classic published in 1605 ; masterfully illustrated by Manuel Boix",
+                           description: "When a serial killer who leaves a blue ribbon at the site of his victims' last sightings appears in the peaceful town of Cleary, North Carolina, police chief Dutch Burton finds the case complicated by his ex-wife's disappearance during a blizzard.")
+Book.create!(title: "Don Quixote",
+                           author: "Cervantes",
                            isbn: 1556702019,
-                           description: "")
+                           description: "being a faithful translation and adaptation by Magda Bogin of the first part of Cervantes's original classic published in 1605 ; masterfully illustrated by Manuel Boix")
 Book.create!(title: "The Sea Hunters II",
                            author: "Clive Cussler and Craig Dirgo",
                            isbn: 9780399149252,
-                           description: "")
+                           description: "From the author of the #1 bestselling The Sea Hunters comes more unforgettable true adventures with famous shipwrecks.")
 Book.create!(title: "The winner",
                            author: "David Baldacci",
                            isbn: 9780446606325,
-                           description: "")
+                           description: "Jackson studied the shopping mall's long corridor, noting haggard mothers piloting loaded strollers and the senior citizens group walking the mall both for exercise and conversation.")
 Book.create!(title: "The Da Vinci Code",
                            author: "Dan Brown",
                            isbn: 9780307277671,
-                           description: "")
+                           description: "While in Paris on business, Harvard symbologist Robert Langdon receives an urgent late-night phone call: the elderly curator of the Louvre has been murdered inside the museum. Near the body, police mbers included Sir Isaac Newton, Botticelli, Victor Hugo, and Da Vinci, among others. In a breathless race through Paris, London, and beyond, Langdon and Neveu match wits with a faceless powerbroker who seems to anticipate their every move. Unless Langdon and Neveu can decipher the labyrinthine puzzle in time, the Priory's ancient secret -- and an explosive historical truth -- will be lost forever.THE DA VINCI CODE heralds the arrival of a new breed of lightning-paced, intelligent thriller...utterly unpredictable right up to its stunning conclusion.From the Hardcover edition.")
 Book.create!(title: "Dark tort",
                            author: "Diane Mott Davidson",
                            isbn: 9780060527310,
-                           description: "")
+                           description: "The New York Times bestselling author cooks up a knockout treat featuring the irrepres-sible caterer Goldy Schulz "I tripped over the body ofDusty Routt at half past ten on thenight of October 19. . . ."Goldy Schulz has a lucrative new gig, preparing breakfasts and conference-room snacks for a local law firm. It's time-consuming, but Goldy is enjoying it -- until the night she arrives to find Dusty, the firm's paralegal, dead.The poor young woman also happened to be Goldy's friend and neighbor, and now Dusty's grieving mother begs Goldy to find out who murdered her daughter. Just because the police are on the case doesn't mean Goldy can't do a little snooping herself.While catering a party at the home of one of the firm's lawyers, she manages to overhear an incriminating conversation and ends up discover-ing a few clues in the kitchen.Before long, Goldy is knee-deep in suspects, one of whom is incredibly dangerous and very liable to cook Goldy's goose.")
 Book.create!(title: "Hair of the dog",
                            author: "Laurien Berenson",
                            isbn: 1575662221,
-                           description: "")
+                           description: "a Melanie Travis mystery")
 Book.create!(title: "Queen Bess",
                            author: "Doris L. Rich",
                            isbn: 1560982659,
