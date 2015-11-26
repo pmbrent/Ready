@@ -51,11 +51,11 @@ window.Recommended = React.createClass({
     if (!this.state.recommended.length) {
       return <div/>;
     } else {
-      var recShelf = {
+      var recs = {
         title: "Recommended for you",
         books: this.state.recommended
       };
-      return <Shelf shelf={recShelf}/>;
+      return <RecBox recs={recs}/>;
     }
   },
 
@@ -74,10 +74,10 @@ window.Recommended = React.createClass({
               <p>A: The answer is SQL!</p>
             </div>
           </div>
-          <div className="bodyContainer">
+          <div className="shelves">
               {this.showRecommendations()}
               {this.showPopular()}
-            </div>
+          </div>
         </div>
       </div>
     );

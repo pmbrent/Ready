@@ -1,5 +1,44 @@
+// Note: this class shares many styles with shelves.scss and carousel.scss
+
 @import "scss/globals.scss";
 
 .recommendedPage {
   position: relative;
+}
+
+.recBox .book-items {
+  width: 92%;
+  position: relative;
+  left: 3%;
+}
+
+.recs {
+  width: 610px;
+  height: 440px;
+}
+
+.recItem a {
+  z-index: 2;
+}
+
+.recItem > li {
+  position: relative;
+  height: 210px;
+  margin-bottom: 20px;
+}
+
+.recs .smallBar {
+  left: 5px;
+  top: -20px;
+}
+
+.recs .smallBar p {
+  color: $offwhite;
+}
+
+.recs button {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
 }
