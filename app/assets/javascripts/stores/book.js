@@ -37,8 +37,8 @@
       });
     },
 
-    popular: function() {
-      return _books.slice(0,26);
+    popular: function(num) {
+      return _books.slice(0,num);
     },
 
     results: function() {

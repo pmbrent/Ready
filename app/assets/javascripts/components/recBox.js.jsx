@@ -1,5 +1,6 @@
 window.RecBox = React.createClass({
 
+  // RatedBooks have a book_id; regular books, just use id
   makeShelves: function() {
     return this.props.recs.books.map(function(book) {
       var bookUrl = "/#/books/" + book.book_id;
@@ -12,7 +13,7 @@ window.RecBox = React.createClass({
               <img src={coverUrl} alt={book.title}/>
             </a>
             <div className="smallBar">
-              <RatingBar bookId={book.book_id}/>
+              <RatingBar bookId={book.book_id || book.id} rating={book.rating}/>
             </div>
             <button className="button">Dismiss</button>
           </li>

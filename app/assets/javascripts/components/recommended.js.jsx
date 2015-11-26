@@ -2,7 +2,7 @@ window.Recommended = React.createClass({
 
   getInitialState: function() {
     return ({
-      popular: BookStore.popular(),
+      popular: BookStore.popular(10),
       recommended: RecommendationStore.fetchRecs(10)
     });
   },
@@ -25,7 +25,7 @@ window.Recommended = React.createClass({
 
   updatePopular: function() {
     this.setState({
-      popular: BookStore.popular()
+      popular: BookStore.popular(10)
     });
   },
 
@@ -39,11 +39,11 @@ window.Recommended = React.createClass({
     if (!this.state.popular.length) {
       return <div/>;
     } else {
-      var popShelf = {
+      var popRecs = {
         title: "Popular on Ready",
         books: this.state.popular
       };
-      return <Shelf shelf={popShelf}/>;
+      return <RecBox recs={popRecs}/>;
     }
   },
 
@@ -51,11 +51,11 @@ window.Recommended = React.createClass({
     if (!this.state.recommended.length) {
       return <div/>;
     } else {
-      var recs = {
+      var userRecs = {
         title: "Recommended for you",
         books: this.state.recommended
       };
-      return <RecBox recs={recs}/>;
+      return <RecBox recs={userRecs}/>;
     }
   },
 
@@ -71,7 +71,11 @@ window.Recommended = React.createClass({
           <div className="sideColumn">
             <div className="sideBox">
               <p>Q: How are my personal recommendations calculated?</p>
-              <p>A: The answer is SQL!</p>
+              <p>A: Users who tend to rate similarly to you are selected using SQL; you are then presented with some of their favorite books.</p>
+            </div>
+            <div className="sideBox">
+              <p>Q: I'm not a fan of these popular books.</p>
+              <p>A: Your rating helps determine their popularity; if you haven't, try rating them and see what happens!</p>
             </div>
           </div>
           <div className="shelves">
