@@ -46,10 +46,10 @@ window.Updates = React.createClass({
           {this.showFeed()}
           <div className="sideColumn updates group">
             <div className="sideBox">
-              Placeholder!
+              Tip: You can hover over a book to view more detailed information or rate it!
             </div>
             <div className="sideBox">
-              Know someone who would enjoy the site? Invite them!
+              Know someone who would enjoy the site? Our recommendations depend on our users. Invite them to join!
             </div>
           </div>
         </div>

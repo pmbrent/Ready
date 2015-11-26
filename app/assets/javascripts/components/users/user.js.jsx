@@ -27,7 +27,7 @@ window.User = React.createClass({
           {this.friendButton()}
         </div>
         <div className="userProfile">
-          User Profile Placeholder
+          
         </div>
       </div>);
   }

@@ -72,7 +72,7 @@ window.Recommended = React.createClass({
           <div className="sideColumn">
             <div className="sideBox">
               <p>Q: How are my personal recommendations calculated?</p>
-              <p>A: Users who tend to rate similarly to you are selected using SQL; you are then presented with some of their favorite books.</p>
+              <p>A: Users who tend to rate similarly to you are selected using SQL; you are then presented with some of their most favorite books.</p>
             </div>
             <div className="sideBox">
               <p>Q: Why can't I dismiss popular books?</p>
