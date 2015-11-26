@@ -153,3 +153,11 @@
   font-size: 16px;
   font-color: $darkred;
 }
+
+html, body {
+  min-height: 100vh;
+}
+
+.content, .ready, .bodyContainer {
+  min-height: 100vh;
+}
