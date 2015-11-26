@@ -74,8 +74,8 @@ window.Recommended = React.createClass({
               <p>A: Users who tend to rate similarly to you are selected using SQL; you are then presented with some of their favorite books.</p>
             </div>
             <div className="sideBox">
-              <p>Q: I'm not a fan of these popular books.</p>
-              <p>A: Your rating helps determine their popularity; if you haven't, try rating them and see what happens!</p>
+              <p>Q: Why can't I dismiss popular books?</p>
+              <p>A: Dismissing them will reject them from your personal recommendations but does not affect their popularity. However, if you haven't, try rating them and see what happens!</p>
             </div>
           </div>
           <div className="shelves">
