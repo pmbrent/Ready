@@ -62,6 +62,12 @@ window.BookView = React.createClass ({
               shelves={this.state.shelves}
               inShelves={this.state.inShelves}
               updateShelves={this.updateShelves}/>
+            <div className="sideBox">
+              <p>Find a physical copy of this book at a library near you!</p>
+              <a href={"http://www.worldcat.org/isbn/" + this.state.book.isbn}>
+                <WorldCat title={this.state.book.title}/>
+              </a>
+            </div>
           </div>
             <div className="bodyContainer">
               <Book book={this.state.book}/>
