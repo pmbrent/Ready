@@ -18,6 +18,9 @@ class User < ActiveRecord::Base
     source: :followed_user
 
   has_many :ratings
+  has_many :rated_books,
+    through: :ratings,
+    source: :book
 
   has_many :recommendations
 
