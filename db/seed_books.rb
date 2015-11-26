@@ -805,10 +805,6 @@ Book.create!(title: "The bright forever",
                            author: "Lee Martin",
                            isbn: 1400097916,
                            description: "On an evening like any other, nine-year-old Katie Mackey, daughter of the most affluent family in a small town on the plains of Indiana, sets out on her bicycle to return some library books.This simple act is at the heart of The Bright Forever, a suspenseful, deeply affecting novel about the choices people make that change their lives forever. Keeping fact, speculation, and contradiction playing off one another as the details unfold, author Lee Martin creates a fast-paced story that is as gripping as it is richly human. His beautiful, clear-eyed prose builds to an extremely nuanced portrayal of the complicated give and take among people struggling to maintain their humanity in the shadow of a loss.Reminiscent of books such as The Little Friend and The Lovely Bones, but most memorable for its own perceptions and power, The Bright Forever is a compelling and emotional tale about the human need to know even the hardest truth.")
-Book.create!(title: "Monday Mourning",
-                           author: "Kathy Reichs",
-                           isbn: 0743453018,
-                           description: "AS THE TUNE PLAYED INSIDE MY HEAD, GUNFIRE EXPLODED IN the cramped underground space around me.")
 Book.create!(title: "Black widow's wardrobe",
                            author: "Lucha Corpi",
                            isbn: 1558852883,
@@ -825,16 +821,12 @@ Book.create!(title: "Absent friends",
                            author: "S.J. Rozan",
                            isbn: 9780440241850,
                            description: "The secrets of a group of childhood friends unravel in this haunting thriller by Edgar Award winner S. J. Rozan. Set in New York in the unforgettable aftermath of September 11, Absent Friends brilliantly captures a time and place unlike any other, as it winds through the wounded streets of New York and Staten Island...and into a maze of old crimes, damaged lives, and heartbreaking revelations. The result is not only an electrifying mystery and a riveting piece of storytelling but an elegiac novel that powerfully explores a world changed forever on a clear September morning.In a novel that will catch you off guard at every turn, and one that is guaranteed to become a classic, S. J. Rozan masterfully ratchets up the tension one revelation at a time as she dares you to ponder the bonds of friendship, the meaning of truth, and the stuff of heroism.From the Hardcover edition.")
-Book.create!(title: "Volpone",
-                            author: "Ben Johnson",
-                            isbn: 0486280497,
-                            description: "'Unabridged'--Cover.")
 Book.create!(title: "Lathe of Heaven",
                             author: "Ursula K. LeGuin",
                             isbn: 9780380791859,
                             description: "Current-borne, wave-flung, tugged hugely by the whole might of ocean, the jellyfish drifts in the tidal abyss.")
 Book.create!(title: "Sewing Essentials (Singer Sewing Reference Library)",
-                            author: Cowles Creative Publishing,
+                            author: "Cowles Creative Publishing",
                             isbn: 9780865732018,
                             description: "Like any other art or craft, sewing begins with basic techniques.")
 Book.create!(title: "The Dispossessed: an ambiguous Utopia",
@@ -849,7 +841,7 @@ Book.create!(title: "His Majesty's Dragon",
                             author: "Naomi Novik",
                             isbn: 9780345481283,
                             description: "Aerial combat brings a thrilling new dimension to the Napoleonic Wars as valiant warriors rise to Britain's defense by taking to the skies . . . not aboard aircraft but atop the mighty backs of fighting dragons.When HMS Reliant captures a French frigate and seizes its precious cargo, an unhatched dragon egg, fate sweeps Capt. Will Laurence from his seafaring life into an uncertain future--and an unexpected kinship with a most extraordinary creature. Thrust into the rarified world of the Aerial Corps as master of the dragon Temeraire, he will face a crash course in the daring tactics of airborne battle. For as France's own dragon-borne forces rally to breach British soil in Bonaparte's boldest gambit, Laurence and Temeraire must soar into their own baptism of fire.")
-Book.create!(title: "Blood Bond: San Angelo showdown"
+Book.create!(title: "Blood Bond: San Angelo showdown",
                             author: "William W. Johnstone",
                             isbn: 9780821744666,
                             description: "Texas Ranger Josiah Finch convinces blood brothers Matt Bodine and Sam Two Wolves to pin on badges and help corral a bloodthirsty gang of cattle thieves who are heading for the Mexican border.")

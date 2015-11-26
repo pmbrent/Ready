@@ -58,6 +58,14 @@ window.FeedItem = React.createClass({
     }
   },
 
+  showDescription: function() {
+    if (this.props.feedItem.title.length > 23) {
+      return this.props.feedItem.description.slice(0,165) + "...";
+    } else {
+      return this.props.feedItem.description.slice(0,220) + "...";
+    }
+  },
+
   render: function() {
     var coverUrl = "http://covers.openlibrary.org/b/isbn/" +
                     this.props.feedItem.isbn + "-S.jpg";
@@ -71,7 +79,7 @@ window.FeedItem = React.createClass({
           <div className={"feedBoxbefore" + this.hoverName()}>
             <p>{this.props.feedItem.title}</p>
             <p>by {this.props.feedItem.author}</p>
-            <p>{this.props.feedItem.description.slice(0,200) + "..."}</p>
+            <p>{this.showDescription()}</p>
             <div className="ratingInfo group">
               <div className="smallBar">
                 <RatingBar
