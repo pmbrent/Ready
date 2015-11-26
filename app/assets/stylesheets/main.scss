@@ -23,13 +23,43 @@
   position: relative;
   height: 40px;
   color: $darkerred;
-  font-size: 16px;
+  font-size: 14px;
   overflow: hidden;
   border-bottom: 1px solid $darkred;
 }
 
+.footer {
+  position: relative;
+  margin: 0;
+  height: 30px;
+  color: $darkerred;
+  background: lighten($tan, 10%);
+  font-size: 12px;
+  border-top: 1px solid $darkred;
+}
+
+.footer .copyright {
+  float: left;
+}
+
+.copyright p {
+  float: left;
+  padding: 8px;
+  margin: 0;
+}
+
+.footer ul {
+  float: right;
+  display: block;
+  margin: auto;
+}
+
+.footer li {
+  padding: 8px;
+  float: left;
+}
+
 .nav {
-  font-size: 14px;
   height: inherit;
   position: relative;
   width: 900px;
@@ -40,17 +70,17 @@
   margin-right: 5px;
 }
 
+.nav img {
+  position: absolute;
+  top: -13px;
+  height: 65px;
+}
+
 .mainContent {
   position: relative;
   width: 900px;
   margin: auto;
   font-size: 14px;
-}
-
-.nav img {
-  position: absolute;
-  top: -13px;
-  height: 65px;
 }
 
 .view {

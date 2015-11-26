@@ -31,6 +31,7 @@ $(function () {
         <div className="mainContent">
           { this.props.children }
         </div>
+        <FooterBar/>
       </div>
     );
   }
