@@ -33,6 +33,36 @@ window.ApiUtil = {
     });
   },
 
+  searchUsers: function(query, page) {
+    $.ajax({
+      url: "/users/search",
+      method: "POST",
+      dataType: "json",
+      data: {
+        query: query,
+        page: page
+      },
+      success: function(users) {
+        ApiActions.receiveSearchedUsers(users);
+      }
+    });
+  },
+
+  searchBooks: function(query, page) {
+    $.ajax({
+      url: "/books/search",
+      method: "POST",
+      dataType: "json",
+      data: {
+        query: query,
+        page: page
+      },
+      success: function(books) {
+        ApiActions.receiveSearchedBooks(books);
+      }
+    });
+  },
+
   fetchBooks: function(onSuccess) {
     $.ajax({
       url: "/books",

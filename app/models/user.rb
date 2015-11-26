@@ -1,5 +1,8 @@
 class User < ActiveRecord::Base
 
+  include PgSearch
+  pg_search_scope :search_by_info, :against => [:name, :email]
+
   validates :name, :email, :session_token, presence: true, uniqueness: true
   validates :password_digest, presence: true
   validates :librarian, inclusion: {in: [true, false]}

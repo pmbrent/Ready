@@ -2,7 +2,11 @@ window.BookSearchResults = React.createClass({
 
   results: function() {
     if (BookStore.results().length === 0) {
-      return (<p className="noResults">No results found.</p>);
+      return (
+        <div className="bodyContainer">
+          <p className="noResults">No results found.</p>
+        </div>
+      );
     }
 
     return (
@@ -34,7 +38,7 @@ window.BookSearchResults = React.createClass({
 
   render: function() {
     return (
-      <div className="resultPage group">
+      <div className="resultsPage group">
         <section className="sideColumn" id="bookAdder">
           <section className="sideBox">
             <strong>Popular Searches:</strong>

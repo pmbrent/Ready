@@ -41,6 +41,11 @@ class UsersController < ApplicationController
     render json: @user.get_feed
   end
 
+  def search
+    @users = User.search_by_info(params[:query]).page(params[:page])
+    render json: @users
+  end
+
 private
   def user_params
     params.require(:user).permit(:name, :email, :password)

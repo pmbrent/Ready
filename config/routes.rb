@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
   get 'users/feed' => 'users#feed'
+  # post 'users/search' => 'users#search'
+  post 'books/search' => 'books#search'
 
   resources :users, only: [:new, :create, :index, :show]
 

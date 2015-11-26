@@ -1,38 +1,24 @@
 window.UserSearchBar = React.createClass({
   mixins: [ReactRouter.History],
 
-  getInitialState: function() {
-    return {query: ""};
-  },
-
-  updateQuery: function() {
-    this.setState({
-      query: $('input#userquery').val()
+  updateQuery: function(e) {
+    e.preventDefault();
+    var query = $('input#userquery').val();
+    this.history.pushState(null, "/users/search", {
+      query: query,
+      page: 1
     });
   },
 
-  trySearch: function() {
-    var context = this;
-    if (UserStore.all().length === 0) {
-      ApiUtil.fetchUsers(function() {
-        context.search(context.state.query);
-      });
-    } else {
-      this.search(this.state.query);
-    }
-  },
-
-  search: function(query) {
-    UserStore.search(query);
-    this.history.pushState(null, "/directory");
-  },
+  // search: function() {
+  //   ApiUtil.searchUsers(this.state.query, 1);
+  // },
 
   render: function() {
     return (
-      <form id="userSearch" className="searchBar forUsers" onSubmit={this.trySearch}>
+      <form id="userSearch" className="searchBar forUsers">
         <input id="userquery"
           type="text"
-          value={this.state.query}
           onChange={this.updateQuery}
           placeholder="Name or Email"/>
         <input id="submit" type="submit" value="🔍"/>

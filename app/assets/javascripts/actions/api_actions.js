@@ -13,6 +13,20 @@ window.ApiActions = {
     });
   },
 
+  receiveSearchedUsers: function(users) {
+    AppDispatcher.dispatch({
+      actionType: SearchConstants.USERS_RECEIVED,
+      users: users
+    });
+  },
+
+  receiveSearchedBooks: function(books) {
+    AppDispatcher.dispatch({
+      actionType: SearchConstants.BOOKS_RECEIVED,
+      books: books
+    });
+  },
+
   receiveAllBooks: function(books) {
     AppDispatcher.dispatch({
       actionType: BookConstants.BOOKS_RECEIVED,

@@ -10,4 +10,9 @@ class BooksController < ApplicationController
     render json: @book
   end
 
+  def search
+    @books = Book.search_by_info(params[:query]).page(params[:page])
+    render json: @books
+  end
+
 end
