@@ -12,9 +12,7 @@ window.RecBox = React.createClass({
 
     return this.props.recs.books.map(function(book) {
       var bookId = book.book_id || book.id;
-      var bookUrl = "/#/books/" + bookId;
-      var coverUrl = "http://covers.openlibrary.org/b/isbn/" +
-                      book.isbn + "-M.jpg";
+
       return (
         <div key={bookId} className="recItem">
           <li>

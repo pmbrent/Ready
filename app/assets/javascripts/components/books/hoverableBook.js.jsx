@@ -27,10 +27,11 @@ window.HoverableBook = React.createClass({
   },
 
   render: function() {
+    var bookId = this.props.book.book_id || this.props.book.id;
+    var bookUrl = "/#/books/" + bookId;
+
     var coverUrl = "http://covers.openlibrary.org/b/isbn/" +
                     this.props.book.isbn + "-M.jpg";
-    var bookUrl = "#/books/" + this.props.book.book_id;
-              //Remember, this "book" is really a recommendation, has a book_id
 
     return (
       <div className="hoverableBook" onMouseEnter={this.toggleState}
@@ -42,7 +43,7 @@ window.HoverableBook = React.createClass({
           <div className="ratingInfo group">
             <div className="smallBar">
               <RatingBar
-                bookId={this.props.book.book_id}/>
+                bookId={bookId}/>
             </div>
             <p>Average rating: {parseFloat(this.props.book.avg_rating).toPrecision(3)}</p>
           </div>
