@@ -353,10 +353,10 @@ Book.create!(title: "Honor thyself",
                            author: "Danielle Steel",
                            isbn: 9780385340243,
                            description: "In the days that follow a tragic accident, a woman who the whole world knows slowly awakens with no memory of who she is. Every detail must be pieced back together--from a childhood in rural Mississippi to the early days of her career, from the unintentional hurt inflicted on her daughter to a fifteen year-old secret love affair that went tragically wrong. But for this woman an extraordinary opportunity has arisen in a life-threatening crisis: a second chance to count her blessings, heal wounded hearts, recapture lost love... and to live a life that will truly honor others--beginning with herself.--From publisher description.")
-Book.create!(title: "The chase",
-                           author: "Clive Cussler",
-                           isbn: 9780399154386,
-                           description: "")
+# Book.create!(title: "The chase",
+#                            author: "Clive Cussler",
+#                            isbn: 9780399154386,
+#                            description: "")
 Book.create!(title: "Strawberry shortcake murder",
                            author: "Joanne Fluke",
                            isbn: 1575666448,
@@ -562,47 +562,47 @@ Book.create!(title: "Cross Country",
 Book.create!(title: "The navigator",
                            author: "Clive Cussler with Paul Kemprecos",
                            isbn: 9780399154195,
-                           description: "")
+                           description: "Years after an ancient Phoenician statue is stolen from the Baghdad museum, a series of murders sparks interest in the statue's relevance in Austin and Zavala, who lead the NUMA team on a historical investigation into the lost treasures of King Solomon.")
 Book.create!(title: "Nop's Hope",
                            author: "Donald McCaig",
                            isbn: 1558215743,
-                           description: "")
-Book.create!(title: "Faith of my fathers",
-                           author: "John McCain with Mark Salter",
-                           isbn: 9780375501913,
-                           description: "")
+                           description: "Penny Burkholder, a young teacher grieving for a husband and daughter killed in a car accident, sets out from Virginia in a truck with Hope, her collie, to go on the dog show circuit. In the process she finds happiness and Hope has a reunion with his father, Nop. By the author of Nop's Trials.")
+Book.create!(title: "The Audacity of Hope",
+                           author: "Barack Obama",
+                           isbn: 9780307237705,
+                           description: "Senator Obama calls for a different brand of politics--a politics for those weary of bitter partisanship and alienated by the 'endless clash of armies' we see in Congress and on the campaign trail; a politics rooted in the faith, inclusiveness, and nobility of spirit at the heart of our democracy. He explores those forces--from the fear of losing, to the perpetual need to raise money, to the power of the media--that can stifle even the best-intentioned politician. He examines the growing economic insecurity of American families, the racial and religious tensions within the body politic, and the transnational threats--from terrorism to pandemic--that gather beyond our shores. And he grapples with the role that faith plays in a democracy. Only by returning to the principles that gave birth to our Constitution, he says, can Americans repair a broken political process, and restore to working order a government dangerously out of touch with millions of ordinary Americans.--From publisher description.")
 Book.create!(title: "Wolves of the Calla",
                            author: "Stephen King",
                            isbn: 1880418568,
-                           description: "")
+                           description: "The final volume sees gunslinger Roland on a roller-coaster mix of exhilarating triumph and aching loss in his unrelenting quest to reach the dark tower.")
 Book.create!(title: "2nd chance",
                            author: "James Patterson with Andrew Gross",
                            isbn: 9780316693202,
-                           description: "")
+                           description: "2nd Chance reconvenes the Women's Murder Club, four friends (a detective, a reporter, an assistant district attorney, and a medical examiner) who used their networking skills, feminine intuition, and professional wiles to solve a baffling series of murders in 1st to Die. This time, the murders of two African Americans, a little girl and an old woman, bear all the signs of a serial killer for Lindsay Boxer, newly promoted to lieutenant of San Fransisco's homicide squad. But there's an odd detail she finds even more disturbing: both victims were related to city cops.")
 Book.create!(title: "Blaze",
                            author: "Richard Bachman ; foreword by Stephen King",
                            isbn: 9781416554844,
-                           description: "")
+                           description: "Originally written thirty-five years ago but never published, a crime novel chronicles the life and times of Clayton Blaisdell, Jr.--the crimes committed against him and the crimes he himself commits, including a kidnapping he is doomed to attempt.")
 Book.create!(title: "Roses are Red",
                            author: "James Patterson",
                            isbn: 9780316693257,
-                           description: "")
+                           description: "A brilliant criminal known only as the Mastermind orchestrates a series of bank robberies that are notable for their very precise demands--and their explosive violence when the demands are not met. Alex Cross takes on the case and as he gets close to identifying a suspect, the Mastermind pulls off the most outrageous kidnapping scheme in U.S. history--and walks away with the largest ransom ever.")
 Book.create!(title: "Nights of rain and stars",
                            author: "Maeve Binchy",
                            isbn: 1552784312,
-                           description: "")
+                           description: "Four people from different corners of the world, each with his or her life in turmoil, are thrown together by an unexpected tragedy.")
 Book.create!(title: "1st to Die",
                            author: "James Patterson",
                            isbn: 9780316666008,
-                           description: "")
+                           description: "Four women--a police detective, an assistant D.A., a reporter, and a medical examiner who call themselves the Women's Murder Club--develop lifelong bonds as they pursue a killer whose twisted imagination has stunned an entire city.")
 Book.create!(title: "The gentle rebel",
                            author: "Gilbert Morris",
                            isbn: 1556610068,
-                           description: "The House of Winslow, bk. 4")
+                           description: "Indentured heart: Molly Burns, a young beggar girl in England, is given the chance of a lifetime when Adam Winslow offers to bring her to America on the condition that she work ten years as an indentured servant, but when her term is over, she realizes she is being held captive by her heart.")
 Book.create!(title: "Obsession",
                            author: "Jonathan Kellerman",
                            isbn: 9780345452634,
-                           description: "")
+                           description: "Obsession is the latest Alex Delaware novel by mega-bestselling author Jonathan Kellerman. A deathbed confession of past murder, a girl with a sordid past, and a gritty Los Angeles backdrop make Obsession a worthy addition to the series.")
 Book.create!(title: "Pride and prejudice",
                            author: "Jane Austen ; with an introduction and notes by Carol Howard",
                            isbn: 1593080204,
@@ -612,7 +612,7 @@ Though Austen set the story at the turn of the 19th century, it retains a fascin
 Book.create!(title: "Getting mother's body",
                            author: "Suzan-Lori Parks",
                            isbn: 1400060222,
-                           description: "")
+                           description: "Learning that a company plans to dig up the area where her mother is buried, supposedly with a cache of jewels, Billy Beede, poor and pregnant, heads for Arizona to rescue her mother's body and search for the jewels that could bring her a new life.")
 Book.create!(title: "Rant: An Oral Biography of Buster Casey",
                            author: "Chuck Palahniuk",
                            isbn: 9780385517874,
@@ -621,15 +621,15 @@ Book.create!(title: "Rant: An Oral Biography of Buster Casey",
 Book.create!(title: "Red sky in mourning",
                            author: "Patricia H. Rushford",
                            isbn: 1556617313,
-                           description: "Originally published in series: Helen Bradley mysteries.")
+                           description: "When Helen Bradley arrives at a coastal village to complete a regional travel guide, she learns that the woman who started the project was killed in an accident which may have been staged to cover illegal activity in this supposedly tranquil town.")
 Book.create!(title: "Ship shapely",
                            author: "Alistair Boyle",
                            isbn: 1888310995,
-                           description: "a Gil Yates private investigator novel")
+                           description: "PI Gil Yates of Hawaii investigates the drowning of the captain of a boat, crewed by five beautiful women. It appears the ladies had to serve the captain in his bunk as well as on deck.")
 Book.create!(title: "Step on a crack",
                            author: "James Patterson and Michael Ledwidge",
                            isbn: 9780316013949,
-                           description: "")
+                           description: "First there was Alex Cross. Then there was the Women's Murder Club. With the unexpected death of a beloved former first lady, the nation falls into mourning as the world's most powerful people gather in New York for her funeral. Then the inconceivable occurs. Billionaires, politicians, and superstars of every kind are suddenly trapped by one man's brilliant and ruthless scenario. Now meet detective Michael Bennett, NYPD. Pulled into the fray, Detective Michael Bennett-father of ten-faces the most sinister challenge of his career: a criminal who kills without hesitation and counters everything the NYPD and FBI throw at him with impunity. As New York descends into chaos, Bennett learns that the great love of his life, his wife, is battling a terrible disease and he may have to raise their children alone. Now with the entire world watching and the tension reaching a boiling point, Bennett must quickly find a way out-or become responsible for the greatest debacle in history.")
 Book.create!(title: "The luck of the Bodkins",
                            author: "P.G. Wodehouse",
                            isbn: 1585673366,
@@ -642,47 +642,47 @@ Book.create!(title: "A breath of snow and ashes",
 Book.create!(title: "Scream of eagles",
                            author: "William W. Johnstone",
                            isbn: 1575660164,
-                           description: "")
+                           description: "When his beloved wife is murdered by the notorious Miles Nelson gang, Jamie MacCallister, hero of the Alamo and the Civil War, decides to take the law into his hands. He tracks the gang, numbering some 50 men, and wipes them out one by one. By the author of Tallons of Eagles.")
 Book.create!(title: "Older but wilder",
                            author: "Effie Leland Wilder ; with illustrations by Laurie Allen Klein",
                            isbn: 1561451827,
-                           description: "")
+                           description: "Old age through the eyes of Hattie McNair a resident of a retirement home, chronicling the daily activities, relationships and ailments. By the author of Out to Pasture.")
 Book.create!(title: "Introducing Aunt Dimity, paranormal detective",
                            author: "Nancy Atherton",
                            isbn: 9780143116066,
-                           description: "")
-Book.create!(title: "Perry Mason 2 in 1",
-                           author: "Erle Stanley Gardner",
-                           isbn: 9780671800741,
-                           description: "")
-Book.create!(title: "Gap Creek",
-                           author: "Robert Morgan",
-                           isbn: 1565122429,
-                           description: "")
-Book.create!(title: "The careful use of compliments",
-                           author: "Alexander McCall Smith",
-                           isbn: 9780375423017,
-                           description: "")
-Book.create!(title: "Fiddlers",
-                           author: "Ed McBain",
-                           isbn: 9780151012169,
-                           description: "")
-Book.create!(title: "Saturnalia",
-                           author: "Lindsey Davis",
-                           isbn: 9780312361297,
-                           description: "")
-Book.create!(title: "Damsels in distress",
-                           author: "Joan Hess",
-                           isbn: 9780312315016,
-                           description: "")
+                           description: "An irresistible introduction to everyone's favorite cozy mystery series Over the course of fourteen successful books, Nancy Atherton's Aunt Dimity series has become enormously popular. Now, with the first two mysteries in one volume, Introducing Aunt Dimity, Paranormal Detective makes it easy to get a taste of the ghostly sleuth's delightful debut. In Aunt Dimity's Death, Aunt Dimity's American niece, Lori Shepherd, had long thought her mother's childhood tales of Aunt Dimity were merely comforting bedtime stories. But when a pair of lawyers informs her that her mysterious aunt has just died and made the down-on-her-luck Lori a rich woman, she finds a reason to believe. Aunt Dimity and the Duke finds the benevolent spirit helping Emma Porter'forty, fat, and frumpy'tame a Duke's overgrown garden and discover romance along the way. These two tales continue to enchant Atherton's devoted fans and, packaged together, are sure to attract even more new readers to the series.")
+# Book.create!(title: "Perry Mason 2 in 1",
+#                            author: "Erle Stanley Gardner",
+#                            isbn: 9780671800741,
+#                            description: "")
+# Book.create!(title: "Gap Creek",
+#                            author: "Robert Morgan",
+#                            isbn: 1565122429,
+#                            description: "")
+# Book.create!(title: "The careful use of compliments",
+#                            author: "Alexander McCall Smith",
+#                            isbn: 9780375423017,
+#                            description: "")
+# Book.create!(title: "Fiddlers",
+#                            author: "Ed McBain",
+#                            isbn: 9780151012169,
+#                            description: "")
+# Book.create!(title: "Saturnalia",
+#                            author: "Lindsey Davis",
+#                            isbn: 9780312361297,
+#                            description: "")
+# Book.create!(title: "Damsels in distress",
+#                            author: "Joan Hess",
+#                            isbn: 9780312315016,
+#                            description: "")
 Book.create!(title: "Complete novels",
                            author: "Dashiell Hammett",
                            isbn: 1883011671,
-                           description: "")
+                           description: "Complete Novels. Red Harvest, The Dain Curse, The Maltese Falcon, the Glass Key, the Thin Man.")
 Book.create!(title: "Die laughing",
                            author: "Steve Allen",
                            isbn: 1575662418,
-                           description: "")
+                           description: "Steve Allen and Jayne Meadows investigate the spate of murders of comedians which began when slapstick king Terry Parker is discovered stabbed to death while attending the black-tie funeral for Benny Hartman, the 85-year-old, cigar-chomping veteran of vaudeville, radio, stage, and screen.")
 Book.create!(title: "Morality for beautiful girls",
                            author: "Alexander McCall Smith",
                            isbn: 1400031362,
@@ -698,7 +698,7 @@ Book.create!(title: "Scarlett: The Sequel to Margaret Mitchell's 'Gone With the 
 Book.create!(title: "Blind man's bluff",
                            author: "Sherry Sontag and Christopher Drew, with Annette Lawrence Drew",
                            isbn: 1891620088,
-                           description: "")
+                           description: "Chronicles the history of American submarine espionage and discusses how submarines were used to tap underwater telephone cables in Russia, how the Navy might have been able to save the men on the USS Scorpion, and how the fight between the CIA and the Navy almost ruined one of the most important American undersea missions.")
 Book.create!(title: "Lunch at the Piccadilly",
                            author: "Clyde Edgerton",
                            isbn: 1565121953,
