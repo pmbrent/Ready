@@ -49,6 +49,9 @@ window.Updates = React.createClass({
               Tip: You can hover over a book to view more detailed information or rate it!
             </div>
             <div className="sideBox">
+              Is someone missing? Check out our <strong id="showLink"><a href="#/directory">User Directory</a></strong>.
+            </div>
+            <div className="sideBox">
               Know someone who would enjoy the site? Our recommendations depend on our users. Invite them to join!
             </div>
           </div>

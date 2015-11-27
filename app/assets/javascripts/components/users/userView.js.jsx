@@ -36,7 +36,7 @@ window.UserView = React.createClass ({
             <User user={this.state.user}/>
             <Shelf shelf={this.state.user.shelves[0]}/>
             <div className="userReviews">
-              
+
             </div>
           </div>
         </div>

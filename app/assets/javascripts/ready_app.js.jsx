@@ -24,11 +24,19 @@ $(function () {
    CurrentUserStore.removeChangeListener(this._ensureLoggedIn);
   },
 
+  maybeBackground: function() {
+    if (this.props.location.pathname=="/welcome") {
+      return " library";
+    } else {
+      return "";
+    }
+  },
+
   render: function() {
     return(
       <div id="ready">
         <ReadyBar/>
-        <div className="mainContent">
+        <div className={"mainContent" + this.maybeBackground()}>
           { this.props.children }
         </div>
         <FooterBar/>
@@ -48,17 +56,16 @@ $(function () {
       <Route path="/" component={Ready}>
         <IndexRoute component={Updates}/>
         <Route path="search" component={BookSearchResults}/>
-        <Route path="directory" component={UserSearchResults}/>
         <Route path="shelves" component={UserShelves}/>
         <Route path="reviews" component={Reviews}/>
         <Route path="recommended" component={Recommended}/>
         <Route path="welcome" component={Welcome}/>
+        <Route path="directory" component={UserIndex}/>
         // <Route path="users/search" component={UserSearchResults}/>
         <Route path="users/:userId/shelves" component={ShelfIndex}/>
         <Route path="users/:userId" component={UserView}/>
-        <Route path="users" component={UserIndex}/>
         <Route path="books/:bookId" component={BookView}/>
-        <Route path="about" component={About}/>
+        // <Route path="about" component={About}/>
       </Route>
     </Router>
   ), rootEl);

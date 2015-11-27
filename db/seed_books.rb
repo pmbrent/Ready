@@ -2,23 +2,23 @@ def add_open_library_books
 Book.create!(title: "The broken bubble",
                            author: "Philip K. Dick",
                            isbn: 1557100128,
-                           description: "")
+                           description: "Set in San Francisco in 1956, The Broken Bubble traces the ups and downs and ins and outs of four characters who are not quite sure of the lives they're living. Jim Briskin, local radio DJ, his ex-wife Pat, the young married couple Art and Rachel Emmanual, all are acutely observed and sympathetically portrayed. Briskin is suspended from his job for refusing to read a particularly repellant ad, while Art foolishly gets mixed up in a group of absurd would-be revolutionaries. As they all get entangled and not quite disentangled with each other, it becomes apparent they are seeking only, in typical Dick fashion, to live more or less happily, if not ever after, then at least for a while. Modest as it may seem, it is an ambition very difficult to achieve.")
 Book.create!(title: "Nine Tomorrows",
                            author: "Isaac Asimov",
                            isbn: 9780345320728,
-                           description: "")
+                           description: "Science Fiction/Essays.")
 Book.create!(title: "The rough guide to the Beatles",
                            author: "[Chris Ingham]",
                            isbn: 1843531402,
-                           description: "")
-Book.create!(title: "The Best of A. E. van Vogt",
-                           author: "A. E. van Vogt",
-                           isbn: 9780671805463,
-                           description: "")
+                           description: "The Beatles are the ultimate band the most popular, the most respected, the most influential. This book covers every aspect of the Fab Four, delving deep into the music, lyrics, movies and solo careers.")
+# Book.create!(title: "The Best of A. E. van Vogt",
+#                            author: "A. E. van Vogt",
+#                            isbn: 9780671805463,
+#                            description: "")
 Book.create!(title: "Before the Golden Age",
                            author: "edited by Isaac Asimov",
                            isbn: 9780449229132,
-                           description: "")
+                           description: "A science fiction anthology of the 1930's.")
 Book.create!(title: "The yellow feather mystery",
                            author: "Franklin W. Dixon",
                            isbn: 9780448089331,
@@ -26,83 +26,83 @@ Book.create!(title: "The yellow feather mystery",
 Book.create!(title: "The molecule hunt",
                            author: "Martin Jones",
                            isbn: 1559706112,
-                           description: "")
+                           description: "A revolution is underway in archaeology. For the first time the molecular record of past life, entombed for millennia in archaeological and geological material, has become widely accessible to science. Miraculous-seeming techniques now allow ancient remains to speak volumes about a past we thought lost. For twenty-five years, Martin Jones's work has involved shifting the emphasis within archaeology from inert material objects to fragments of the living, breathing past. The Molecule Hunt uses Jones's perspective at the forefront of bio-archaeology to show how pioneering science is rewriting human history.")
 Book.create!(title: "Astral voyages",
                            author: "Bruce Goldberg",
                            isbn: 1567183085,
-                           description: "")
+                           description: "This text contains 65 exercises to train the soul to leave the body and travel unharmed through the astral plane. Based on 25 years' work in the field, Goldberg's scripts for out-of-body living guide the reader through lucid dreaming, cabalistic projection, and accessing the Akashic records...")
 Book.create!(title: "Writing solid code",
                            author: "Steve Maguire ; foreword by Dave Moore",
                            isbn: 1556155514,
-                           description: "")
-Book.create!(title: "The human impact on the natural environment",
-                           author: "Andrew S. Goudie",
-                           isbn: 9781405127042,
-                           description: "")
-Book.create!(title: "The critical reader, thinker, and writer",
-                           author: "W. Ross Winterowd, Geoffrey R. Winterowd",
-                           isbn: 1559345918,
-                           description: "")
+                           description: "Microsoft's techniques for developing bug-free C programs. A Microsoft developer examines the problem of programming 'bugs,' showing how and where developers make mistakes along the development process and providing ways users can detect errors early. ")
+# Book.create!(title: "The human impact on the natural environment",
+#                            author: "Andrew S. Goudie",
+#                            isbn: 9781405127042,
+#                            description: "")
+# Book.create!(title: "The critical reader, thinker, and writer",
+#                            author: "W. Ross Winterowd, Geoffrey R. Winterowd",
+#                            isbn: 1559345918,
+#                            description: "")
 Book.create!(title: "Cataclysm!",
                            author: "D.S. Allan & J.B. Delair ; [introduced by Rand Flem-Ath]",
                            isbn: 1879181428,
-                           description: "")
+                           description: "compelling evidence of a cosmic catastrophe in 9500 B.C.")
 Book.create!(title: "The secret chronicles of Sherlock Holmes",
                            author: "June Thomson with the assistance of Aubrey B. Watson",
                            isbn: 1883402379,
-                           description: "")
+                           description: "New accounts of the cases solved by Sherlock Holmes, including Lord Deerswood's unwanted legacy, the jealous contortionist, the beautiful housekeeper, and the costumed Russian.")
 Book.create!(title: "Nature's web",
                            author: "Peter Marshall",
                            isbn: 1557786526,
-                           description: "")
+                           description: "This powerful book provides the first comprehensive overview of the intellectual roots of the worldwide environmental movement - from ancient religions and philosophies to modern science and ethics - and synthesizes them into a new philosophy of nature in which to ground our moral values and social action. It traces the origins and evolution of the dominant worldview that has built our industrial, technocratic, man-centered civilization, and brought us to the current ecological crisis. At the same time, it uncovers an alternative cultural tradition in the world's different religions and philosophies and describes how these ideas are now surfacing and coalescing to form an ecological sensibility and a new vision of nature which recognizes the inter-relatedness of all living things. Finally, this book integrates these varied traditions with modern physics and the science of ecology into a larger philosophical whole that provides the environmental movement with a comprehensive vision of an organic and sustainable society in harmony with nature. As ecological disasters continue to threaten our planet, becoming worse with every passing moment of indifference, it has become clear that we must take action. We must change our relationship with nature, and return to the days when our lives were intimately connected to and dependent upon the natural world. Nature's Web lays the foundations for that change by explaining where our complex ideas about nature come from, why they are wrong, and what we can do to change them.")
 Book.create!(title: "Nothing in this book is true, but that's exactly how things are",
                            author: "Bob Frissell",
                            isbn: 1883319013,
-                           description: "")
+                           description: "the esoteric meaning of the monuments on Mars")
 Book.create!(title: "The best-ever book of pyramids",
                            author: "Anne Millard",
                            isbn: 1856973719,
-                           description: "")
-Book.create!(title: "Enzymes",
+                           description: "Describes the pyramids of Egypt and Central America and their signifcance in the social, political and religious life of the ancient civilizations. Suggested level: primary, intermediate.")
+Book.create!(title: "Enzymes: the Fountain of Life",
                            author: "D.A. Lopez, R.M. Williams, M. [sic] Miehlke",
                            isbn: 1884303005,
-                           description: "")
+                           description: "Enzymes: the Fountain of Life reviews the role of enzymes in health and disease, with emphasis on their importance in maintianing our health, disease prevention and their uses in medicine.")
 Book.create!(title: "Exposing Northern exposure",
                            author: "Scott Nance",
                            isbn: 1556983247,
-                           description: "")
+                           description: "About Norther Exposure, the television program.")
 Book.create!(title: "Imbalance",
                            author: "V.E. Mitchell",
                            isbn: 9780671775711,
-                           description: "")
+                           description: "Lured to Jarada on a peaceful mission to exchange ambassadors, Captain Picard and the crew of the 'Enterprise' are suddenly the captives of the Jarada, a mysterious race of insectoid beings.")
 Book.create!(title: "Here there be dragons",
                            author: "John Peel",
                            isbn: 9780671865719,
-                           description: "")
+                           description: "When Captain John-Luc Picard and the crew of the USS Enterprise receive news of a human planet hidden in the centre of an immense stellar cloud they immediately investigate. Beaming down, an away team soon becomes embroiled in a web of intrigue and murder.")
 Book.create!(title: "A fury scorned",
                            author: "Pamela Sargent and George Zebrowski",
                            isbn: 9780671527037,
-                           description: "")
+                           description: "When the sun warming the planet Epictetus III starts to go nova, the 'Enterprise' is the only ship that can reach the planet in time. Captain Picard must somehow save the population before their world is destroyed. Data has an idea that could save everyone, but if it fails, everyone will perish.")
 Book.create!(title: "The escape",
                            author: "Dean Wesley Smith and Kristine Kathryn Rusch",
                            isbn: 9780671520960,
-                           description: "")
+                           description: "The U.S.S. Voyager is in desperate trouble, her systems damaged, her warp engines failing. Without immediate repairs the starship and her crew will be trapped forever between the stars. Captain Kathryn Janeway must guide her ship to an ancient, deserted planet that could hold the key to their survival -- a planet that is hiding more than one deadly secret ...")
 Book.create!(title: "Debtors' planet",
                            author: "W.R. Thompson",
                            isbn: 9780671883416,
-                           description: "")
+                           description: "Captain Picard must save a planet from slavery!")
 Book.create!(title: "Dances with wolves",
                            author: "Michael Blake",
                            isbn: 1557040915,
-                           description: "")
+                           description: "The original novel with an afterword by the author.")
 Book.create!(title: "Women in love",
                            author: "D.H. Lawrence",
                            isbn: 1853268402,
-                           description: "")
+                           description: "Gudrun and Ursula Brangwen are the two intelligent, incisive, and observant sisters whose temperamental differences spark an ongoing debate regarding their society and their inner lives. The two very different sisters pursue thrilling, torrid affairs, but their search for more mature emotional relationships reveals some startling information about themselves as well as their lovers, Rupert Birkin and Gerald Crich.")
 Book.create!(title: "Johnny got his gun",
                            author: "Dalton Trumbo",
                            isbn: 9780553274325,
-                           description: "")
+                           description: "An immediate bestseller upon its original publication in 1939, Dalton Trumbos stark, profoundly troubling masterpiece about the horrors of World War I brilliantly crystallized the uncompromising brutality of war and became the most influential protest novel. This work continues to rivet readers with its story of an American youth who survives World War I as an armless, legless, and faceless basket case with his mind intact.")
 Book.create!(title: "Into the storm",
                            author: "Suzanne Brockmann",
                            isbn: 9780345480149,
@@ -140,7 +140,7 @@ Book.create!(title: "High Profile",
 Book.create!(title: "Home before dark",
                            author: "Susan Wiggs",
                            isbn: 1551666731,
-                           description: "")
+                           description: "After being away for fifteen years, photojournalist Jesse Ryder returns to her childhood home in Texas to finally meet the daughter she gave up for adoption, but secrets from her past threaten to destroy their newfound friendship.")
 Book.create!(title: "Gilead",
                            author: "Marilynne Robinson",
                            isbn: 9781844081479,
@@ -167,35 +167,35 @@ Book.create!(title: "Moonlight becomes you",
 Book.create!(title: "Bad luck and trouble",
                            author: "Lee Child",
                            isbn: 9780385340557,
-                           description: "")
+                           description: "When a man is killed by being thrown from a helicopter high over the California desert, loner Jack Reacher discovers that someone is targeting his old friends and teammates and launches a personal campaign to end the conspiracy before it claims any more lives.")
 Book.create!(title: "The hard way",
                            author: "Lee Child",
                            isbn: 9780385336697,
-                           description: "")
+                           description: "In Lee Child's astonishing new thriller, ex-military cop Reacher sees more than most people would, and because of that, he's thrust into an explosive situation that's about to blow up in his face. For the only way to find the truth, and save two innocent lives, is to do it the way Jack Reacher does it best: the hard way. Jack Reacher was alone, the way he liked it, soaking up the hot, electric New York City night, watching a man cross the street to a parked Mercedes and drive it away. The car contained one million dollars in ransom money. And Edward Lane, the man who paid it, will pay even more to get his family back. Lane runs a highly illegal soldiers for hire operation. He will use any amount of money and any tool to find his beautiful wife and child. And then he'll turn Jack Reacher loose with a vengeance because Reacher is the best man hunter in the world. On the trail of a vicious kidnapper, Reacher is learning the chilling secrets of his employer's past, and of a horrific drama in the heart of a nasty little war. He's beginning to realize that Edward Lane is hiding something. Something dirty. Something big. But Reacher also knows this: he's already in way too deep to stop now. ")
 Book.create!(title: "The Face",
                            author: "Dean Koontz",
                            isbn: 9780553802481,
-                           description: "")
+                           description: "A riveting tour de force of suspense, mystery, and miraculous revelation, The Face is that rare novel that entertains, provokes, and uplifts at the same time. It will make you laugh, It will give you chills, It will fill you with hope.")
 Book.create!(title: "Born to be wild",
                            author: "Catherine Coulter",
                            isbn: 9780515142396,
-                           description: "")
+                           description: "When someone tries to kill her, believing her to be the evil character she plays on a popular soap opera, daytime drama superstar Mary Lisa Beverly is forced to get help from an unexpected source.")
 Book.create!(title: "Bag of Bones",
                            author: "Stephen King",
                            isbn: 9780684853505,
-                           description: "")
+                           description: "On falling in love with a woman half his age, novelist Michael Noonan of Maine is drawn into a custody battle for the woman's daughter. The father-in-law, a nasty millionaire, is trying to take the girl away and to complicate matters malevolent spirits are at work. Part love, part ghost story.")
 Book.create!(title: "The Darcys & the Bingleys",
                            author: "Marsha Altman",
                            isbn: 9781402213489,
-                           description: "")
+                           description: "Three days before their double wedding, Charles Bingley is desperate to have a word with his dear friend Fitzwilliam Darcy, seeking advice of a most delicate nature. Bingley is shocked when Darcy gives him a copy of The Kama Sutra--but it does tell him everything he needs to know. Eventually, of course, Jane finds this remarkable volume and in utmost secrecy shows it to her dear sister Elizabeth, who goes searching for a copy in the Pemberley library.")
 Book.create!(title: "Creation in death",
                            author: "J. D. Robb",
                            isbn: 9780399154362,
-                           description: "")
+                           description: "Reopening an unsolved case from years earlier when the body of a torture victim is discovered, Lieutenant Eve Dallas becomes worried when clues reveal links between the killing and her billionaire husband's store that suggest Eve herself is being targeted.")
 Book.create!(title: "Betrayal in death",
                            author: "[Nora Roberts writing as] J.D. Robb",
                            isbn: 9780425178577,
-                           description: "")
+                           description: "Sly Yost, a virtuoso of music and murder is a hit man for the elite. Lieutenant Eve Dallas knows him well, because there's someone else involved, someone with a more personal motive. Eve must face a terrifying possibility - that the real target may, in fact, be her husband Roarke.")
 Book.create!(title: "From Botswana to the Bering Sea",
                            author: "Thomas Y. Canby",
                            isbn: 1559635177,
@@ -216,15 +216,15 @@ Scully Wainwright never intended to be left alone with his ranching partner's fi
 Book.create!(title: "Dead wrong",
                            author: "J.A. Jance",
                            isbn: 9780060540906,
-                           description: "")
+                           description: "As if juggling a family, including the impending birth of a second child, a career and a staff shortage at the Sheriff's office aren't enough, Sheriff Joanna Brady has to deal with two serious crimes. The first is the dead body of an ex-con who was found in the desert with all his fingers severed. The second is the brutal attack of one of her officers while on unauthorized stakeout. Being a sheriff is what she is and Joanna will stop at nothing to get the job done.")
 Book.create!(title: "Runaway",
                            author: "Alice Munro",
                            isbn: 1400077915,
-                           description: "")
+                           description: "A collection of short fiction captures the lives of women of all ages and circumstances, as they deal with the limits and lies of passion, unfulfilled dreams, motherhood, betrayal, and the bonds of love.")
 Book.create!(title: "The  murder room",
                            author: "P.D. James",
                            isbn: 1400041414,
-                           description: "")
+                           description: "The Dupayne, a small private museum on the edge of London's Hampstead Heath devoted to the interwar years 1919-39, is in turmoil. The trustees--the three children of the museum founder, old Max Dupayne--are bitterly at odds over whether it should be closed. Then one of them is brutally murdered, and what seemed to be no more than a family dispute erupts into horror. For even as Commander Adam Dalgiesh and his team investigate the first killing, a second corpse is discovered. Clearly, someone at the Dupayne is prepared to kill, and kill again. The case is fraught with danger and complexity from the outset, not least because of the range of possible suspects--and victims. And still more sinister, the murders appear to echo the notorious crimes of th epast featured in one of the museum's most popular galleries, the Murder Room. For Dalgiesh, P.D. James's formidable detective, the search for the murderer poses an unexpected complication. After years of bachelorhood, he has embarked on a promising new relationship with Emma Lavenham--first introduced in Death in Holy Orders--which is at a critical stage. Yet his struggle to solve the Dupayne murders faces him with a frustrating dilemma: each new development distances him further from commitment to the woman he loves. The Murder Room is a story dark with the passions that lie at the heart of crime, a masterful work of psychological intricacy.")
 Book.create!(title: "The Darkest Evening of the Year",
                            author: "Dean Koontz",
                            isbn: 9780553804829,
@@ -232,15 +232,15 @@ Book.create!(title: "The Darkest Evening of the Year",
 Book.create!(title: "Seize the Night",
                            author: "Dean Koontz",
                            isbn: 9780553106657,
-                           description: "")
+                           description: "Poet Christopher Snow, a man who cannot stand daylight, teams up with his genetically engineered dog, Orson, to investigate the abduction of children in Moonlight Bay, California. The children are believed to be prisoners in an army base populated by intelligent animals, produced by scientific experiments. Snow and Orson penetrate the base to search for them. A sequel to Fear Nothing.")
 Book.create!(title: "Sole Survivor",
                            author: "Dean Koontz",
                            isbn: 9780679425267,
-                           description: "")
-Book.create!(title: "Murder, she wrote",
-                           author: "Jessica Fletcher & Donald Bain ; based on the Universal television series created by Peter S. Fischer, Richard Levinson, and William Link",
+                           description: "A thriller on afterlife, featuring a Los Angeles crime reporter. Visiting the graves of his family, killed in a plane crash, Joe Carpenter sees men attack a woman taking pictures. It turns out the camera captures images of afterlife from the graves, a hush-hush scientific breakthrough over which people are fighting.")
+Book.create!(title: "Murder, She Wrote: a Palette for Murder",
+                           author: "Jessica Fletcher & Donald Bain",
                            isbn: 9780451188205,
-                           description: "")
+                           description: "While vacationing in the Hamptons, Jessica Fletcher enrolls in an art class in which a lovely young model suddenly turns up dead. Based on the Universal television series created by Peter S. Fischer, Richard Levinson, and William Link")
 Book.create!(title: "The cove",
                            author: "Catherine Coulter",
                            isbn: 9780515118650,
@@ -702,63 +702,63 @@ Book.create!(title: "Blind man's bluff",
 Book.create!(title: "Lunch at the Piccadilly",
                            author: "Clyde Edgerton",
                            isbn: 1565121953,
-                           description: "")
+                           description: "The much-loved author of the bestselling Raney and Walking Across Egypt is back with an endearing novel of calamity and comedy that celebrates the spirit and spunk of old age.")
 Book.create!(title: "My old man and the sea",
                            author: "David Hays and Daniel Hays",
                            isbn: 1565121023,
-                           description: "")
+                           description: "Some fathers and sons go fishing together. Some play ball. David Hays and Daniel Hays sailed 17,000 miles through the world's most feared and fabled waters in a little boat they built together. This is their story.")
 Book.create!(title: "Tears of the giraffe",
                            author: "Alexander McCall Smith",
                            isbn: 1400031354,
-                           description: "")
+                           description: "Mma 'Precious' Ramotswe is now engaged to Mr. J.L.B. Matekoni, the kind owner of Tlokweng Road Speedy Motors. This new development provokes a hostile reaction from Mr. Matekoni's unscrupulous maid, who quickly begins plotting the disintegration of the engagement. Despite all this, duty calls, and Mma Ramotswe is asked to help find an American woman's son who has been missing in Africa for 10 years.")
 Book.create!(title: "Storm runners",
                            author: "T. Jefferson Parker",
                            isbn: 9780060854232,
-                           description: "")
+                           description: "Hitting rock bottom after losing his family and ability to work after an explosion that was intended to kill him, former police officer Matt Stromsoe takes a job as a bodyguard for a television personality whose private life has rendered her a stalker's target.")
 Book.create!(title: "Snobs",
                            author: "Julian Fellowes",
                            isbn: 1587249731,
-                           description: "")
+                           description: "Preparing to marry heir Charles Broughton, attractive accountant's daughter Edith Lavery makes humorous and astute observations about contemporary England's class system.")
 Book.create!(title: "Skeleton Coast",
                            author: "Clive Cussler, with Jack Du Brul",
                            isbn: 9780425211892,
-                           description: "")
+                           description: "Narrowly escaping following a mission on the Congo River, Juan Cabrillo and the crew of the Oregon rescue beautiful Sloane Macintyre--who is looking for a lost ship that may be carrying a fortune in diamonds--when her boat is attacked off the African coast and find themselves up against a deranged militant who plans to launch a devastating force of nature against those who oppose him.")
 Book.create!(title: "The places in between",
                            author: "Rory Stewart",
                            isbn: 9780156031561,
-                           description: "")
+                           description: "In January 2002 Rory Stewart walked across Afghanistan--surviving by his wits, his knowledge of Persian dialects and Muslim customs, and the kindness of strangers. By day he passed through mountains covered in nine feet of snow, hamlets burned and emptied by the Taliban, and communities thriving amid the remains of medieval civilizations. By night he slept on villagers' floors, shared their meals, and listened to their stories of the recent and ancient past. Along the way he met heroes and rogues, tribal elders and teenage soldiers, Taliban commanders and foreign-aid workers. He was also adopted by an unexpected companion--a retired fighting mastiff he named Babur in honor of Afghanistan's first Mughal emperor, in whose footsteps the pair was following. Through these encounters--by turns touching, confounding, surprising, and funny--Stewart makes tangible the forces of tradition, ideology, and allegiance that shape life in the map's countless places in between.--From publisher description.")
 Book.create!(title: "One more time",
                            author: "Effie Leland Wilder ; with illustrations by Laurie Allen Klein",
                            isbn: 1561452130,
-                           description: "")
+                           description: "A novel on aging through the eyes of a resident of an old people's home in South Carolina. She is Hattie McNair who records debates among residents on the merits of the past and the present.")
 Book.create!(title: "Nightlife",
                            author: "Thomas Perry",
                            isbn: 9780345496003,
-                           description: "")
+                           description: "When the cousin of a crime boss is found shot to death, the man's missing girlfriend, Tanya Starling, becomes the prime suspect, but as detective Catherine Hobbes investigates the crime, she discovers a deceptive killer who has become more elusive.")
 Book.create!(title: "Murder has no calories",
                            author: "Corinne Holt Sawyer",
                            isbn: 1556114125,
-                           description: "")
+                           description: "Two grey-haired sleuths, Angela Benbow and Caledonia Wingate, pose as guests in an exclusive spa which caters to matronly society women. The assignment: nab a killer who boiled a woman in a sauna. By the author of The Peanut Butter Murders.")
 Book.create!(title: "Hour game",
                            author: "David Baldacci",
                            isbn: 9780446531085,
-                           description: "")
+                           description: "As a series of brutal murders darkens the Wrightsburg, Virginia countryside, the killer taunts police by leaving watches on the victims set to the hour corresponding with their position on his hit list. What's more, he strives to replicate notorious murders of the past, improving on them through savage attention to detail. Sean King and Michelle Maxwell are already investigating a crime involving an aristocratic and dysfunctional Southern family, but when they're deputized to help in the serial killer hunt they realize the two cases may be connected. Adding to the tension is the appearance of a second killer, this one imitating the murders of the first. Soon, the two killers are playing a game of cat and mouse, with King and Maxwell racing to solve the intricate puzzle of their identities-before the body count escalates. ")
 Book.create!(title: "A home for the heart",
                            author: "Michael Phillips",
                            isbn: 1556614403,
-                           description: "")
+                           description: "Corrie returns home to California after two years working as a reporter back East during the Civil War, and begins to plan for her future by entering into an unusual contract with her prospective husband, Christopher.")
 Book.create!(title: "Heart of the lonely exile",
                            author: "B.J. Hoff",
                            isbn: 1556611110,
-                           description: "")
-Book.create!(title: "Great presidential wit",
+                           description: "Having escaped the famine that ravages their beloved Ireland, Nora Kavanagh and her son Daniel begin the difficult process of building a new life for themselves in America. Befriended by the wealthy Farmingtons and supported by the constant friendship of the injured Englishman, Evan Whittaker, Nora nevertheless finds herself caught in a conflict of the heart. Michael Burke, the strong, competent Irish policeman, desperately wants to keep his promise to his best friend Morgan Fitzgerald that he will marry Nora and take care of her. But something in Nora resists his proposal, and she must decide whether to give in to Michael's urgings or find a different direction. Can she trust her heart? In the midst of Nora's personal struggle, the heartaches from the old country continue to plague her. Will she ever overcome her grief and find peace?")
+Book.create!(title: "Great Presidential Wit: I wish I was in this Book",
                            author: "Bob Dole",
                            isbn: 9780446613439,
-                           description: "")
-Book.create!(title: "The grapes of wrath ; The moon is down ; Cannery Row ; East of Eden ; Of mice and men",
-                           author: "John Steinbeck ; [illustration by Ian Beck]",
-                           isbn: 1555800157,
-                           description: "")
+                           description: "The former senator and presidential candidate collects bipartisan presidential humor from famous, and not-so-famous, chief executives, from Washington to Clinton.")
+# Book.create!(title: "The grapes of wrath ; The moon is down ; Cannery Row ; East of Eden ; Of mice and men",
+#                            author: "John Steinbeck ; [illustration by Ian Beck]",
+#                            isbn: 1555800157,
+#                            description: "")
 Book.create!(title: "Full house",
                            author: "Janet Evanovich",
                            isbn: 9780312983277,
@@ -775,11 +775,11 @@ Book.create!(title: "Flashpoint",
 Book.create!(title: "Finding Noel",
                            author: "Richard Paul Evans",
                            isbn: 9780743287036,
-                           description: "")
+                           description: "A twenty-one-year-old woman searches for clues to her past while struggling with vague memories of being sent away by her parents at the age of seven, a younger sister, and a Christmas ornament inscribed with the word, 'Noel.'")
 Book.create!(title: "Executive power",
                            author: "Vince Flynn",
                            isbn: 9780743453950,
-                           description: "Clipper thriller.")
+                           description: "CIA superagent Mitch Rapp battles global terrorism in a high-octane follow-up to The New York Times bestselling Separation of Power -- another chillingly authentic adventure from the master of the political thriller. Mitch Rapp's cover has been blown. After leading a team of commandos deep into Iraq to prevent Saddam Hussein from joining the nuclear arms race, he was publicly hailed by the president as the single most important person in the fight against terrorism. But after years of working covertly behind the scenes, Rapp now lives in the glare of the public spotlight, lauded by the nation and an easy target for virtually every terrorist from Jakarta to London. As special advisor on counterterrorism to CIA director Dr. Irene Kennedy, Rapp is ready to fight the war on terrorism from CIA headquarters rather than the front line. That is, until a platoon of Navy SEALs, sent to the Philippines to save an American family kidnapped by radical Islamic terrorists, is caught in a deadly ambush. The mission had been top secret -- so who told the enemy? All evidence points to the State Department and the Philippine embassy. But a greater threat still lurks. An unknown assassin working closely with the highest powers in the Middle East is bent on igniting war. Now, with the world watching his every move, will Rapp be able to overcome this anonymous foe and once again keep the flames of war from raging? Transporting us into an intriguing geopolitical puzzle full of deadly motives, covert operatives, and all the true-to-life insider detail we've come to expect from Vince Flynn, Executive Power is a high-flying story that delivers shattering suspense with the velocity of a 9mm bullet.")
 Book.create!(title: "The end of summer",
                            author: "Rosamunde Pilcher",
                            isbn: 9780440202554,
@@ -787,7 +787,7 @@ Book.create!(title: "The end of summer",
 Book.create!(title: "Don't make me stop this car!",
                            author: "Al Roker ; with illustrations by the author",
                            isbn: 1568959222,
-                           description: "")
+                           description: "The weatherman from the Today show tells of his wife Deborah and their daughters Courtney and Leila and of how the joys and challenges of parenting have caused him to be more appreciative of his own parents.")
 Book.create!(title: "Destination unknown",
                            author: "Agatha Christie",
                            isbn: 9780671542139,
@@ -803,7 +803,7 @@ Book.create!(title: "The bright forever",
 Book.create!(title: "Black widow's wardrobe",
                            author: "Lucha Corpi",
                            isbn: 1558852883,
-                           description: "")
+                           description: "Was it a spectre from the past, some Aztec revenant that had inspired the 'Black Widow' to kill her husband? Or did these chilling murders have more to do with the rights of property and inheritance, and mere greed? Who better than Gloria Damasco, that indomitable detective with a flair for clairvoyance, to unravel this intricate and pulsing plot, which winds its way from an exotic Day of the Dead celebration in San Francisco to the even more exotic sites and customs of Tepozotlan. Gloria soon finds herself in an uncanny struggle to rescue the soul of Licia, the Black Widow, who believes herself possessed by the spirit of La Malinche, the eternally condemned slayer of her mixed-blood offspring during the Spanish conquest of Mexico. Part thriller, part exploration of myth and history, Black Widow's Wardrobe is a page-turner.")
 Book.create!(title: "Bangkok tattoo",
                            author: "John Burdett",
                            isbn: 1400040450,
@@ -840,4 +840,12 @@ Book.create!(title: "Blood Bond: San Angelo showdown",
                             author: "William W. Johnstone",
                             isbn: 9780821744666,
                             description: "Texas Ranger Josiah Finch convinces blood brothers Matt Bodine and Sam Two Wolves to pin on badges and help corral a bloodthirsty gang of cattle thieves who are heading for the Mexican border.")
+Book.create!(title: "The Sagan Diary",
+                            author: "John Scalzi",
+                            isbn: 9781596061033,
+                            description: "Fans of John Scalzi's 'Old Man' universe, prepare yourselves: there's a long new story in that universe, told from the point of view of one of the series' most intriguing characters. Subterranean Press is proud to present The Sagan Diary, a long novelette that for the first time looks at the worlds of the Hugo-nominated Old Man's War and its sequel The Ghost Brigades from the point of view of Lieutenant Jane Sagan, who in a series of diary entries gives her views on some of the events included in the series... and sheds new light into some previously unexplored corners. If you thought you knew Jane Sagan before, prepare to be surprised.")
+Book.create!(title: "Agent to the Stars",
+                            author: "John Scalzi",
+                            isbn: 9780765357007,
+                            description: "The space-faring Yherajk have come to begin humanity's first interstellar friendship. Unfortunately, they are hideous and they smell like rotting fish. They're going to need the best agent in Hollywood to make the friendly, odiferous creatures palatable to humanity.")
 end

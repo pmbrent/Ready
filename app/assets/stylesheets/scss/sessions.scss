@@ -12,6 +12,8 @@
 }
 
 .welcomeBack {
+  width: 900px;
+  margin: auto;
   min-height: 100vh;
 }
 
@@ -41,6 +43,7 @@
   padding: 20px;
   border: 1px solid darken($tan, 5%);
   border-top: 0;
+  z-index: 1;
 }
 
 .new_user p:first-child {
