@@ -18,6 +18,7 @@ $(function () {
    }
 
    this.setState({currentUser: CurrentUserStore.currentUser()});
+   this.forceUpdate();
   },
 
   componentWillUnmount: function() {

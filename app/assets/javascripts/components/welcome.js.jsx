@@ -11,9 +11,8 @@ window.Welcome = React.createClass({
       }
     };
     SessionsUtil.createUser(credentials, function () {
-      this.history.pushState(null, "home/updates");
+      this.history.pushState(null, "/");
     }.bind(this));
-    this.forceUpdate();
   },
 
   render: function() {
