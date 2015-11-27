@@ -27,9 +27,8 @@ window.HoverableBook = React.createClass({
   },
 
   render: function() {
-    // var coverUrl = "http://covers.openlibrary.org/b/isbn/" +
-    //                 this.props.book.isbn + "-M.jpg";
-    var coverUrl = "";
+    var coverUrl = "http://covers.openlibrary.org/b/isbn/" +
+                    this.props.book.isbn + "-M.jpg";
     var bookUrl = "#/books/" + this.props.book.book_id;
               //Remember, this "book" is really a recommendation, has a book_id
 
