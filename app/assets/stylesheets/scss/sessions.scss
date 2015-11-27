@@ -57,7 +57,12 @@
 
 .new_user input {
   position: absolute;
-  right: 10px;
+  right: 15px;
+}
+
+.new_user label {
+  display: block;
+  margin-bottom: 5px;
 }
 
 .guest {

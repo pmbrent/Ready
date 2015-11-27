@@ -31,20 +31,16 @@ window.Welcome = React.createClass({
                        id="name">
                 </input>
               </label>
-              <br/>
               <label htmlFor="email">Email:
                 <input type="text"
                        id="email">
                 </input>
               </label>
-              <br/>
               <label htmlFor="password">Password:
                 <input type="password" id="password"></input>
               </label>
-              <br/>
               <input type="submit" className="button" value="Sign up!"></input>
             </form>
-            <br/>
           </div>
         </div>
       </div>

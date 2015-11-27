@@ -170,3 +170,7 @@ html, body {
 #showLink:hover {
   text-decoration: underline;
 }
+
+*:focus {
+  outline: 1px solid $darkred;
+}
