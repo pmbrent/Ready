@@ -76,7 +76,7 @@ window.FeedItem = React.createClass({
       <div className="feedItem group">
         <div className="feedBox" onMouseEnter={this.toggleState}
                                 onMouseLeave={this.toggleState}>
-          <div className={"feedBoxbefore" + this.hoverName()}>
+          <div className={"bookImgBefore" + this.hoverName()}>
             <p>{this.props.feedItem.title}</p>
             <p>by {this.props.feedItem.author}</p>
             <p>{this.showDescription()}</p>
@@ -94,7 +94,7 @@ window.FeedItem = React.createClass({
                 <img src={coverUrl}/>
               </a>
             </div>
-          <div className={"feedBoxafter" + this.hoverName()}/>
+          <div className={"bookImgAfter" + this.hoverName()}/>
         </div>
         <p><a href={friendUrl}>{this.fname()}</a> added {this.props.feedItem.title} by {this.props.feedItem.author} to their "{this.props.feedItem.shelf_title}" shelf.</p>
         <p>{this.getTime()}</p>

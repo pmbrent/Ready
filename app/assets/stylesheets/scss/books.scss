@@ -70,3 +70,22 @@
   width: inherit;
   height: inherit;
 }
+
+// See feed.scss for more hoverbox styles
+.hoverableBook {
+  position: relative;
+  display: block;
+}
+
+.hoverableBook .active {
+  display: block;
+  top: 50px;
+}
+
+.hoverableBook p {
+  display: block;
+  padding: 0px 10px;
+  margin: 5px;
+  float: left;
+  width: 80%;
+}

@@ -59,7 +59,7 @@
   float: left;
 }
 
-.feedBoxbefore{
+.bookImgBefore{
   display: none;
   content: attr(title);
   height: 200px;
@@ -75,7 +75,7 @@
   z-index: 10;
 }
 
-.feedBoxbefore > p:first-child {
+.bookImgBefore > p:first-child {
   font-size: 24px;
   color: $darkred;
 }
@@ -98,7 +98,7 @@
   float: left;
 }
 
-.feedBoxafter{
+.bookImgAfter{
   display: none;
   position: absolute;
   left: 50px;

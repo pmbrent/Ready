@@ -33,7 +33,7 @@ class RecommendationsController < ApplicationController
       .where(recommendations: { user_id: current_user.id, rejected: false })
       .select('recommendations.id, recommendations.book_id,
               recommendations.rejected, recommendations.created_at,
-              books.title, books.isbn,
+              books.title, books.isbn, books.avg_rating,
               books.author, books.description')
   end
 

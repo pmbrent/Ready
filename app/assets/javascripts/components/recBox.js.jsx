@@ -18,10 +18,8 @@ window.RecBox = React.createClass({
       return (
         <div key={bookId} className="recItem">
           <li>
-            <a href={bookUrl}>{book.title}
-              <img src={coverUrl} alt={book.title}/>
-            </a>
-            <div className="smallBar">
+            <HoverableBook book={book}/>
+            <div className="smallBar hideText">
               <RatingBar bookId={bookId} rating={book.rating}/>
             </div>
             <button onClick={context.dismissBook(bookId)} className="button">
