@@ -80,7 +80,9 @@ class Recommendation < ActiveRecord::Base
 
 private
   def user_has_not_shelved_or_rated
-    has_not_shelved && has_not_rated
+    unless has_not_shelved && has_not_rated
+      errors.add(:book_id, "is already known to user.")
+    end
   end
 
   def has_not_shelved

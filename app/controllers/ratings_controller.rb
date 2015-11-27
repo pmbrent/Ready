@@ -13,7 +13,7 @@ class RatingsController < ApplicationController
     if @rating.save
       @recommendation = Recommendation.where(user_id: current_user.id)
                                       .where(book_id: rating_params[:book_id])[0]
-      @recommendation.destroy
+      @recommendation && @recommendation.destroy
 
       Book.find(rating_params[:book_id]).calc_avg_rating
     end
