@@ -20,7 +20,7 @@ guest = User.create!(name: "guest",
              librarian: false)
 guest.make_default_shelves
 
-30.times do |i|
+40.times do |i|
   user = User.create(name: Faker::Name.name,
                email: Faker::Internet.email,
                password: "password#{i+2}",
@@ -108,7 +108,7 @@ end
 # Generate some more recent activity for the user feed
 
 50.times do
-  user_id = Random.rand(20) + 2;
+  user_id = Random.rand(30) + 2;  # Some users aren't active yet.
   shelf_id = 3 * user_id - Random.rand(3);
   num_times = Random.rand(3);
 

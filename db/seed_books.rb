@@ -244,91 +244,91 @@ Book.create!(title: "Murder, She Wrote: a Palette for Murder",
 Book.create!(title: "The cove",
                            author: "Catherine Coulter",
                            isbn: 9780515118650,
-                           description: "")
+                           description: "Undercover FBI agent, James Quinlon, becomes attracted to Sally Brainerd, while he is investigating her for the murder of her father, Amory St. John.")
 Book.create!(title: "Ain't she sweet?",
                            author: "Susan Elizabeth Phillips",
                            isbn: 9780061137228,
-                           description: "")
+                           description: "The girl everyone loves to hate has returned to the town she'd sworn to leave behind forever. As the rich, spoiled princess of Parrish, Mississippi, Sugar Beth Carey had broken hearts, ruined friendships, and destroyed reputations.")
 Book.create!(title: "The good husband of Zebra Drive",
                            author: "Alexander McCall Smith",
                            isbn: 9781400075720,
-                           description: "")
+                           description: "Things go badly awry for Mr. J.L.B. Matekoni when he sets out to do something special for their adopted daughter, Motholeli, and it is up to his wife, Mma Precious Ramotswe, proprietor of the No. 1 Ladies' Detective Agency, to extricate him from his problems.")
 Book.create!(title: "High country bride",
                            author: "Linda Lael Miller",
                            isbn: 9780743422734,
-                           description: "")
+                           description: "Tired of waiting for his sons to settle down, Arizona territory rancher Angus McKettrick annouces a competition: the first son to marry and produce a grandchild will inherit Triple M ranch.")
 Book.create!(title: "Born in fire",
                            author: "Nora Roberts",
                            isbn: 9780515114690,
-                           description: "")
+                           description: "Attempting to hide from her past, reclusive glassmaker Maggie Concannon devotes her life to her art, until gallery owner Rogan Sweeney recognizes her talent and offers to help her build a lucrative career.")
 Book.create!(title: "Genuine lies",
                            author: "Nora Roberts",
                            isbn: 1568956789,
-                           description: "")
+                           description: "She is the last of the movie goddesses, and the greatest: a smoky-voiced sex symbol who clawed her way to the top. Eve has decided to write her memoirs-no holds barred. All Hollywood begs her not to. But Eve has her reasons.")
 Book.create!(title: "Sea swept",
                            author: "Nora Roberts",
                            isbn: 1568656068,
-                           description: "")
+                           description: "A champion boat racer, Cameron Quinn traveled the world. But when his dying father calls him home to care for Seth, a troubled young boy not unlike Cameron once was, his life changes overnight. . . In the end, a social worker, as tough as she is beautiful, will decide Seth's fate.")
 Book.create!(title: "Finding the dream",
                            author: "Nora Roberts",
                            isbn: 1568654227,
-                           description: "")
+                           description: "Laura faces a new challenge. His name is Michael Fury. Rather than the golden fairy-tale prince she once dreamed of, he is a man of passion and action and heat. He disrupts the ordered life she believed she wanted, and disturbs the heart she was sure she had locked.")
 Book.create!(title: "Glad tidings",
                            author: "Debbie Macomber",
                            isbn: 9780778323556,
-                           description: "")
-Book.create!(title: "Ramage & the guillotine",
+                           description: "While flying around the state of Washington, newspaper reporter Emma Collins discovers that her pilot, Oliver Hamilton, could be the love of her life; and, on Christmas Eve, Maryanne and Nolan Adams tell their children how they fell in love.")
+Book.create!(title: "Ramage & the freebooters",
                            author: "Dudley Pope",
-                           isbn: 9780935526813,
-                           description: "")
+                           isbn: 9780935526783,
+                           description: "Ramage is is summoned by the Admiralty and given command of the brig, Triton. But like the rest of the Navy, Triton's crew has mutinied. While sympathizing with some of their complaints, the lieutenant knows that if he fails to deliver three sealed dispatches to admirals off Brest and Cadiz, and in the Caribbean, he will become a convenient scapegoat.")
 Book.create!(title: "In search of kinship",
                            author: "Page Lambert",
                            isbn: 1555912664,
-                           description: "")
+                           description: "In the tradition of Terry Tempest Williams, Gretel Ehrlich, and Linda Hasselstrom, Page Lambert looks to the West in a wide-ranging search for a heritage to pass on to her children. When she and her husband move their young family north to Wyoming from Colorado, they transplant five generations of family roots to new soil but find that it is ancient land - land that the Lakota, the Crow, the Cheyenne still consider")
 Book.create!(title: "Adventuring along the Lewis and Clark Trail",
                            author: "Elizabeth Grossman",
                            isbn: 1578050677,
-                           description: "")
+                           description: "Missouri, Illinois, Iowa, Nebraska, South Dakota, North Dakota, Montana, Idaho, Oregon, Washington")
 Book.create!(title: "The measure of a mountain",
                            author: "Bruce Barcott",
                            isbn: 1570610746,
-                           description: "")
+                           description: "Mount Rainier is the largest and most dangerous volcano in the country. Looming massively above the rugged Cascade Range in Washington State, it is visited by millions, climbed by thousands, and romanticized as the most potent icon of the region. Yet it is a mountain that few truly know. In The Measure of a Mountain, Seattle writer Bruce Barcott sets out to know Rainier. His method is exploratory, meandering, personal. In a masterful work of narrative journalism, Barcott adroitly explores not only the natural place of Rainier, but also the psychology and meaning of all mountains.")
 Book.create!(title: "The life and legacy of Annie Oakley",
-                           author: "introduction by Carl Hiaasen",
+                           author: "Glenda Riley",
                            isbn: 9780806135069,
-                           description: "")
-Book.create!(title: "The Geezer Factory murders",
-                           author: "Corinne Holt Sawyer",
-                           isbn: 1556114974,
-                           description: "")
-Book.create!(title: "The collected short stories of Louis L'Amour",
-                           author: "Louis L'Amour",
-                           isbn: 9780375435355,
-                           description: "")
-Book.create!(title: "Nurse Kathryn",
-                           author: "Peggy O'More",
-                           isbn: 1555048978,
-                           description: "")
+                           description: "(introduction by Carl Hiaasen) A biography of America's greatest female sharpshooter delves beneath her popular image to reveal a conservative but competitive woman who wanted to succeed.")
+# Book.create!(title: "The Geezer Factory murders",
+#                            author: "Corinne Holt Sawyer",
+#                            isbn: 1556114974,
+#                            description: "")
+# Book.create!(title: "The collected short stories of Louis L'Amour",
+#                            author: "Louis L'Amour",
+#                            isbn: 9780375435355,
+#                            description: "")
+# Book.create!(title: "Nurse Kathryn",
+#                            author: "Peggy O'More",
+#                            isbn: 1555048978,
+#                            description: "")
 Book.create!(title: "High latitudes",
                            author: "Farley Mowat",
                            isbn: 1586420615,
-                           description: "")
+                           description: "In High Latitudes Farley Mowat chronicles for the first time a sometimes hazardous journey he took across northern Canada in 1966. He hoped to write a book that would let northern people speak for themselves and that would expose the speciousness of the political idea that the North was a 'bloody great wasteland' with no people in it, and therefore resource developers could exploit it however they chose. For reasons Mowat describes that book did not get written then. But here it is now, with the original conversations recorded by Mowat during that epic journey. In vintage Mowat fashion the legendary writer delivers a sweeping narrative brimming with breathtaking nature writing, suspenseful storytelling, larger-than-life characters, ferocious humor, pitiless rage, iconoclastic insights, and compassionate concern.")
 Book.create!(title: "Bob Hope",
                            author: "Bob Hope with Linda Hope",
                            isbn: 1401300952,
-                           description: "")
+                           description: "To mark his 100th birthday, Bob Hope, along with his daughter Linda, compile hundreds of jokes he has told throughout the years interweaving how they reflected his own life.")
 Book.create!(title: "Bad company",
                            author: "Jack Higgins",
                            isbn: 1594130205,
-                           description: "")
-Book.create!(title: "Eat, pray, love",
-                           author: "Elizabeth Gilbert",
-                           isbn: 1594132666,
-                           description: "")
+                           description: "When Hitler's secret diary resurfaces, revealing a plot between the United States and Germany to join forces against the Soviet Union, White House operative Blake Johnson acts to secure the diary and keep it hidden.")
+# Book.create!(title: "Eat, pray, love",
+#                            author: "Elizabeth Gilbert",
+#                            isbn: 1594132666,
+#                            description: "")
 Book.create!(title: "A sudden change of heart",
                            author: "Barbara Taylor Bradford",
                            isbn: 1568957351,
-                           description: "")
+                           description: "New York art dealer Laura Valiant flies to Paris to investigate artwork stolen by the Nazis and meets up with Claire Benson, editor of an art magazine and an old childhood friend. The women have marital problems-- Valiant's husband turns out to be bisexual--and the novel describes the way they support each other.")
 Book.create!(title: "Rainbow Six",
                            author: "Tom Clancy",
                            isbn: 9780399143908,
@@ -336,7 +336,7 @@ Book.create!(title: "Rainbow Six",
 Book.create!(title: "Executive Orders",
                            author: "Tom Clancy",
                            isbn: 9780399142185,
-                           description: "")
+                           description: "After an airliner crashes into the Capitol, killing the president, Jack Ryan, the vice-president takes over. The novel describes Ryan's campaign to impose a right-wing morality on the U.S. and a new order on the world, the latter accomplished with the aid of high-tech warfare. A sequel to Debt of Honor. Jack Ryan becomes president by sheer accident when the former president, most of Congress, the Cabinet and the Supreme Court are bombed out of existence. Ryan must jump in to discover who did it, all the while contending with the threat of military takeover and covert biological warfare.")
 Book.create!(title: "False impression",
                            author: "Jeffrey Archer",
                            isbn: 9780312939779,
@@ -344,11 +344,11 @@ Book.create!(title: "False impression",
 Book.create!(title: "Orphans preferred",
                            author: "Christopher Corbett",
                            isbn: 9780767906920,
-                           description: "")
+                           description: "Discusses the myths, dangers, and most noted riders of the Pony Express, describing the challenges that prompted its employers to advertise for adventure seekers without families.")
 Book.create!(title: "Wake up to murder",
                            author: "Steve Allen",
                            isbn: 1575660903,
-                           description: "")
+                           description: "Steve Allen and his wife are surrounded by murder while guest hosting on Good Morning, U.S.A.")
 Book.create!(title: "Honor thyself",
                            author: "Danielle Steel",
                            isbn: 9780385340243,
@@ -364,7 +364,7 @@ Book.create!(title: "Strawberry shortcake murder",
 Book.create!(title: "The Poe shadow",
                            author: "Pearl Matthew",
                            isbn: 1400061032,
-                           description: "")
+                           description: "In 1849 Baltimore, following the death of Edgar Allan Poe, Quentin Clark discovers that Poe's final days had been marked by a series of bizarre, unanswered questions, and launches his own investigation to resolve the mystery of Poe's death.")
 Book.create!(title: "Goodnight nobody",
                            author: "Jennifer Weiner",
                            isbn: 1585477230,
@@ -384,11 +384,11 @@ Book.create!(title: "To kill a mockingbird",
 Book.create!(title: "The two minute rule",
                            author: "Robert Crais",
                            isbn: 9780743281614,
-                           description: "")
+                           description: "Devastated by the murder of his estranged police officer son on the day of his own release from prison, former bank robber Max Holman launches a renegade investigation and discovers that the chief suspect is being wrongfully targeted by the LAPD.")
 Book.create!(title: "Brionne",
                            author: "Louis L'Amour",
                            isbn: 9780553281071,
-                           description: "151 pg. Originally published, New York, Bantam; London, Corgi, 1968.")
+                           description: "James Brionne lost his wife and home when the Allard family came for revenge, and even though Brionne took his son west seeking peace and a new life, the Allard family won't quit until Brionne is dead.")
 Book.create!(title: "Atlantis Found",
                            author: "Clive Cussler",
                            isbn: 9780399145889,
@@ -411,15 +411,15 @@ Book.create!(title: "The broker",
 Book.create!(title: "The tale of Cuckoo Brow Wood",
                            author: "Susan Wittig Albert",
                            isbn: 9780425210048,
-                           description: "")
+                           description: "When Beatrix Potter returns to her new hometown of Sawrey after some time away, she finds the village threatened by a mysterious outsider who plans to destroy the pristine shoreline of Lake Windermere by constructing a number of villas.")
 Book.create!(title: "Still life with elephant",
                            author: "Judy Reene Singer",
                            isbn: 9780767926775,
                            description: "Can a badly abused elephant halfway across the world help a woman win back her cheating husband? In this funny, heartwarming story, the author of the beloved novel Horseplay presents another smart, memorable heroine and the animals--and men--she loves.Neelie Sterling never did listen well to the conversation around her. Always preoccupied with an inner monologue, she sometimes missed things. She was happy when Matt, her veterinarian husband, told her he was getting a collie; she liked dogs. He had said colleague, to help with his busy practice. The problems start when the pretty blonde 'collie' calls Neelie to say that she is pregnant with Matt's child. Sent into a tailspin, Neelie throws herself into her horse training business until she discovers that Matt is part of a group planning to leave for Zimbabwe to rescue a badly injured elephant. Thinking she could win Matt's heart again, Neelie manages to get included.The trip is dangerous, exhilarating, and revealing. Neelie learns about herself as a wife and a woman. Back at home, she discovers secrets everywhere--with her parents, with Matt, even in training an elephant. Fighting to keep her life from unraveling as she struggles to gain the elephant's trust, she ultimately learns that healing can be mutual.")
 Book.create!(title: "Imperial hubris",
-                           author: "Anonymous",
+                           author: "Anonymous (Michael Scheuer)",
                            isbn: 1574888498,
-                           description: "")
+                           description: "An anonymous member of the U.S. intelligence community maintains that we are, in fact, losing the war on terror. Although aspects of the modern world may offend conservative Muslims, no Islamist leader has fomented jihad to destroy Western institutions. Rather, a growing segment of the Islamic world disapproves of specific U.S. policies and their attendant military, political, and economic implications. Osama bin Laden articulates a consistent and convincing case that Islam is under attack by America. "Anonymous" contends Al Qaeda seeks not to destroy our secular, democratic way of life, but to deter what they view as specific attacks on their lands, their communities, and their religion. Unless U.S. leaders recognize this fact and adjust their policies accordingly, even moderate Muslims will join the bin Laden camp.")
 Book.create!(title: "The Scarlet Pimpernel",
                            author: "Baroness Orczy ; with an introduction by Gary Hoppenstand",
                            isbn: 9780451527622,
@@ -456,11 +456,11 @@ Ariel and Sara never imagined their high-spirited attempt to step into each othe
 Book.create!(title: "Blow the house down",
                            author: "Robert Baer",
                            isbn: 1400098351,
-                           description: "")
+                           description: "Long obsessed with the abduction and murder of his agency mentor, veteran CIA officer Max Waller continues to investigate the crime, until he suddenly finds himself the target of powerful dark forces within the intelligence community.")
 Book.create!(title: "The Braxtons of Miracle Springs",
                            author: "Michael Phillips",
                            isbn: 1556619049,
-                           description: "The journals of Corrie & Christopher ;, bk. 1")
+                           description: "Corrie Belle Hollister and Christopher Braxton, newly married, are making their first home on the farm of Corrie's parents when an old enemy of her father shows up seeking revenge.")
 Book.create!(title: "Toxic bachelors",
                            author: "Danielle Steel",
                            isbn: 9780385338271,
@@ -514,39 +514,39 @@ Book.create!(title: "Dark tort",
 Book.create!(title: "Hair of the dog",
                            author: "Laurien Berenson",
                            isbn: 1575662221,
-                           description: "a Melanie Travis mystery")
-Book.create!(title: "Queen Bess",
+                           description: "A doghandler is murdered in his home in Connecticut. The victim had many enemies, other doghandlers on the dog show circuit and men whose wives he seduced. Sleuth Melanie Travis investigates.")
+Book.create!(title: "Queen Bess: Daredevil Aviator",
                            author: "Doris L. Rich",
                            isbn: 1560982659,
-                           description: "")
+                           description: "Bessie Coleman, the first African American woman aviator, was a barnstormer and flying circus performer in the early days of American aviation before her death in an airplane crash in 1926.")
 Book.create!(title: "I heard that song before",
                            author: "Mary Higgins Clark",
                            isbn: 9780743264914,
-                           description: "")
+                           description: "Marrying the son of her father's wealthy employer, twenty-eight-year-old gardener's daughter Kay Lansing becomes increasingly disturbed by the suspicion surrounding her husband, Peter, in regard to the mysterious deaths of his first wife and a high-school senior.")
 Book.create!(title: "The reluctant assassin",
                            author: "Preston Darby",
                            isbn: 1594141517,
-                           description: "")
+                           description: "While refurbishing an old ranch building in San Angelo, Texas, the author Preston Darby and his long time friend Ken Casper find the mummified human remains hidden between the walls of the structure. An autopsy reveals the memoirs of John Wilkes Booth secreted in the abdominal cavity. The memoirs disclose the scheme between Booth and his collaborators to kidnap President Abraham Lincoln. But the story also reveals that their plans were discovered by a greater conspiracy of high-ranking Union officials whose plan was much more insidious to assassinate the President. Reluctantly and in order to save himself, Booth agreed to be the one to pull the trigger, but foils the groups plan to silence him after the deed by escaping. The conspirators incorrectly identify a body as Booth, and promptly hang his accomplices before the true masterminds' identities can be revealed. Thus, begins the tale of Booth's years traveling the world, encountering a host of notable characters, and living a secret lie. ")
 Book.create!(title: "The Poet",
                            author: "Michael Connelly",
                            isbn: 9780316153980,
-                           description: "")
+                           description: "A psychological thriller on a serial killer who hunts homicide detectives. The hero of the tale is Denver newspaper reporter Jack McEvoy whose brother, a detective, shoots himself. McEvoy investigates police suicides in other cities and discovers a sinister pattern: sex killings followed by the 'suicide' of the detective on the case and a suicide note in the form of a poetic riddle. In this way McEvoy stumbles on the killer known to the FBI as The Poet, and teams up with Rachel Walling, a beautiful FBI agent, to capture him.")
 Book.create!(title: "Mortal Prey",
                            author: "John Sandford",
                            isbn: 9780399148637,
-                           description: "")
+                           description: "Lucas Davenport's boss is about to lose her job as chief of police, his fiancé is distracted with wedding plans, and his house-remodeling project is at a standstill. So when the FBI and DEA draft the Minneapolis cop to head off hit woman Clara Rinker's bloody murder spree, he's glad to oblige. The lady killer and the killer lady have tangled before in Sandford's Prey series, and their personal history seasons this fast-paced story of mayhem, murder, and revenge.")
 Book.create!(title: "A country affair",
                            author: "Rebecca Shaw",
                            isbn: 1400098203,
-                           description: "")
+                           description: "The first in a series of enchanting novels set in a veterinary practice on the outskirts of a Yorkshire, England, town introduces Kate, the receptionist in a busy veterinary practice; Scott, the flirty Australian vet; her faithful boyfriend, Adam; and the entertaining animal patients.")
 Book.create!(title: "A good woman",
                            author: "Danielle Steel",
                            isbn: 9780385340267,
-                           description: "")
+                           description: "Nineteen-year-old Annabelle Worthington was born into a life of privilege, raised amid the glamour of New York society, with glorious homes on Fifth Avenue and in Newport, Rhode Island. But everything changed on a cold April day in 1912, when the sinking of the Titanic shattered her family and her privileged world forever. When she is betrayed, and pursued by a scandal she does not deserve, Annabelle flees New York for war-ravaged France, hoping to lose herself in a life of service. There, in the heart of the First World War, in a groundbreaking field hospital run by women she finds her true calling. And when the war ends, Annabelle begins a new life in Paris--now a doctor, a mother, her past almost forgotten ... until a fateful meeting opens her heart to the world she had left behind and she returns to New York one more time.")
 Book.create!(title: "Pleasure of believing",
                            author: "Anastasia Hobbet",
                            isbn: 1569470855,
-                           description: "")
+                           description: "A conflict between ranchers and environmentalists in Wyoming. It starts when a rancher who no longer makes a living off the land calls for a ban on poison. He is now a senator whose wife converted their barns into a wildlife hospital. But the regular ranchers still need poison to protect their livestock from rapacious wildlife. A first novel.")
 Book.create!(title: "Dolores Claiborne",
                            author: "Stephen King",
                            isbn: 9780451177094,
@@ -554,7 +554,7 @@ Book.create!(title: "Dolores Claiborne",
 Book.create!(title: "The Clinic",
                            author: "Jonathan Kellerman",
                            isbn: 9780553089226,
-                           description: "")
+                           description: "A woman psychologist, famous for a book on human relations, is murdered in Los Angeles. The case is given to a two-man team, one a detective, the other a psychologist. The probe uncovers that for all her advice she was poor in her own human relations and made a lot of enemies.")
 Book.create!(title: "Cross Country",
                            author: "James Patterson",
                            isbn: 9780316018722,
