@@ -43,7 +43,7 @@ window.BookSearchResults = React.createClass({
           <section className="sideBox">
             <strong>Popular Searches:</strong>
             <ul>
-              <li>The Cat Who</li>
+              <li>The cat who</li>
               <li>Nora</li>
               <li>John</li>
             </ul>
