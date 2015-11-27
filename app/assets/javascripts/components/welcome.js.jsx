@@ -21,7 +21,7 @@ window.Welcome = React.createClass({
         <div className="welcomeBack">
           <div className="welcome">
             <strong>Welcome to Ready!</strong>
-            <p>Get ready to find your next favorite book!</p>
+            <p>Get ready to find your new favorite book!</p>
           </div>
           <div className="new_user">
             <p>New user signup:</p>
