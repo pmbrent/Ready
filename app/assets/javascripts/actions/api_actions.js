@@ -39,6 +39,12 @@ window.ApiActions = {
       actionType: RecommendationConstants.RECOMMENDATIONS_RECEIVED,
       recommendations: recommendations
     });
+  },
+
+  resetRecs: function() {
+    AppDispatcher.dispatch({
+      actionType: RecommendationConstants.RESET
+    });
   }
 
 };

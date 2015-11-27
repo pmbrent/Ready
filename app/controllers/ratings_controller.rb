@@ -10,9 +10,13 @@ class RatingsController < ApplicationController
                            book_id: rating_params[:book_id],
                            rating: rating_params[:rating])
     end
+    if @rating.save
+      @recommendation = Recommendation.where(user_id: current_user.id)
+                                      .where(book_id: rating_params[:book_id])[0]
+      @recommendation.destroy
 
-    @rating.save
-    Book.find(rating_params[:book_id]).calc_avg_rating
+      Book.find(rating_params[:book_id]).calc_avg_rating
+    end
     render json: @rating
   end
 

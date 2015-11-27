@@ -121,6 +121,7 @@ window.ApiUtil = {
       },
       success: function() {
         ApiUtil.fetchBooks();
+        ApiActions.resetRecs();
       }
     });
   },

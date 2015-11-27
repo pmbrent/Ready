@@ -22,11 +22,8 @@ class RecommendationsController < ApplicationController
   end
 
   def show
+    Recommendation.generate_recs_for_user_id(params[:id])
     @recommendations = reqs_with_books
-    unless @recommendations
-      Recommendation.generate_recs_for_user_id(params[:id])
-      @recommendations = reqs_with_books
-    end
 
     render json: @recommendations
   end
