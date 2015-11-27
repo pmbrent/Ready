@@ -9,9 +9,7 @@ window.User = React.createClass({
   },
 
   friendButton: function() {
-    if (typeof CurrentUserStore.currentUser().friends === "undefined") {
-      return <div className="buttonpending"/>;
-    } else if (CurrentUserStore.isFriend(this.props.user.id)) {
+    if (this.props.isFriend) {
       return <button className="friending button" onClick={this.removeFriend}>Unfriend</button>;
     } else {
       return <button className="friending button" onClick={this.addFriend}>Add Friend</button>;
@@ -27,7 +25,7 @@ window.User = React.createClass({
           {this.friendButton()}
         </div>
         <div className="userProfile">
-          
+
         </div>
       </div>);
   }

@@ -171,6 +171,6 @@ html, body {
   text-decoration: underline;
 }
 
-*:focus {
+input:focus, button:focus {
   outline: 1px solid $darkred;
 }
