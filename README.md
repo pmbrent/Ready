@@ -18,8 +18,6 @@ and React.js. Ready allows users to:
 - [x] Add Friends
 - [x] View a Feed of Friend activity
 - [x] Rate books and get recommendations
-- [ ] Feed contains recommended books
-- [ ] Write reviews as part of ratings
 
 ## Design Docs
 * [View Wireframes][view]
@@ -59,17 +57,19 @@ Users will be able to add friends through a Friendship join table and see those 
 
 ### Phase 5: Rating, Reviews, & Recommendations (2 days)
 
-Users will be able to rate a book on a 5-point scale; their ratings will be used to generate a list of recommended books by genre (using only the user's favorites if any). Top recommended books will also be shown in the user's activity feed, along with books rated by friends and any "sponsored" books.
+Users will be able to rate a book on a 5-point scale; their ratings will be used to generate a list of recommended books by genre (using only the user's favorites if any). These recommendations will update live based on the user's interactions with their recommendations.
 
 [Details][phase-five]
 
 ### Phase 6: Refactoring and CSS (1 day)
 
-In Phase 6, the user experience will be enhanced dramatically by the implementation of more polished layouts.
+In Phase 6, the user experience will be enhanced by the implementation of more polished layouts.
 
 [Details][phase-six]
 
 ### Bonus Features (TBD)
+- [ ] Feed contains recommended books
+- [ ] Write reviews as part of ratings
 - [ ] Tag books with multiple genres and search books by genre
 - [ ] Users can like/comment on other users' ratings
 - [ ] Receive notifications of new Friends and comments
@@ -88,4 +88,3 @@ In Phase 6, the user experience will be enhanced dramatically by the implementat
 [phase-four]: ./docs/phases/phase4.md
 [phase-five]: ./docs/phases/phase5.md
 [phase-six]: ./docs/phases/phase6.md
-[phase-seven]: ./docs/phases/phase7.md
