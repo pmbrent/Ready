@@ -2,7 +2,7 @@
 
 [Live project link][livelink]
 
-[livelink]: https://www.readybooks.xyz/
+[livelink]: http://www.readybooks.xyz/
 
 ## Minimum Viable Product
 
