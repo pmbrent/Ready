@@ -1,8 +1,8 @@
 # Ready
 
-[Heroku link][heroku]
+[Live project link][livelink]
 
-[heroku]: https://readybooks.herokuapp.com/
+[livelink]: https://www.readybooks.xyz/
 
 ## Minimum Viable Product
 
