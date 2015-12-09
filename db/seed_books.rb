@@ -848,4 +848,12 @@ Book.create!(title: "Agent to the Stars",
                             author: "John Scalzi",
                             isbn: 9780765357007,
                             description: "The space-faring Yherajk have come to begin humanity's first interstellar friendship. Unfortunately, they are hideous and they smell like rotting fish. They're going to need the best agent in Hollywood to make the friendly, odiferous creatures palatable to humanity.")
+Book.create!(title: "Americanah",
+                            author: "Chimamanda Ngozi Adichie",
+                            isbn: 9780307271082,
+                            description: "From the award-winning author of Half of a Yellow Sun, a dazzling new novel: a story of love and race centered around a young man and woman from Nigeria who face difficult choices and challenges in the countries they come to call home.
+As teenagers in a Lagos secondary school, Ifemelu and Obinze fall in love. Their Nigeria is under military dictatorship, and people are leaving the country if they can. Ifemelu—beautiful, self-assured—departs for America to study. She suffers defeats and triumphs, finds and loses relationships and friendships, all the while feeling the weight of something she never thought of back home: race. Obinze—the quiet, thoughtful son of a professor—had hoped to join her, but post-9/11 America will not let him in, and he plunges into a dangerous, undocumented life in London.
+Years later, Obinze is a wealthy man in a newly democratic Nigeria, while Ifemelu has achieved success as a writer of an eye-opening blog about race in America. But when Ifemelu returns to Nigeria, and she and Obinze reignite their shared passion—for their homeland and for each other—they will face the toughest decisions of their lives.
+Fearless, gripping, at once darkly funny and tender, spanning three continents and numerous lives, Americanah is a richly told story set in today’s globalized world: Chimamanda Ngozi Adichie’s most powerful and astonishing novel yet.")
+
 end
