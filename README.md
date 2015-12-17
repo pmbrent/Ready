@@ -4,7 +4,7 @@
 
 [livelink]: http://www.readybooks.xyz/
 
-## Get Ready to find your next favorite book!
+## Get Ready to find your new favorite book!
 
 Ready is a web application inspired by Goodreads built using Ruby on Rails and React.js. Ready allows users to:
 
