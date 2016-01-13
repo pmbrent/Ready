@@ -32,9 +32,11 @@ gem 'flux-rails-assets', '~> 2.1.0'
 
 gem 'faker'
 
-gem 'kaminari'
+gem 'titleize'
 
-gem 'pg_search'
+# gem 'kaminari'
+#
+# gem 'pg_search'
 
 # Use Unicorn as the app server
 # gem 'unicorn'

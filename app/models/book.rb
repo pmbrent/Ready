@@ -5,6 +5,7 @@ class Book < ActiveRecord::Base
 
   validates :title, :author, :isbn, presence: true
   validates :isbn, length: {in: 10..13}
+  validate :title_format
 
   # has_one :author, foreign_key: :author_id
 
@@ -43,5 +44,9 @@ class Book < ActiveRecord::Base
     SQL
 
     return result.to_json
+  end
+
+  def title_format
+    self.title = self.title.titleize
   end
 end
