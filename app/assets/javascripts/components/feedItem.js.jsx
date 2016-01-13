@@ -59,7 +59,9 @@ window.FeedItem = React.createClass({
   },
 
   showDescription: function() {
-    if (this.props.feedItem.title.length > 23) {
+    if (this.props.feedItem.title.length > 44) {
+      return this.props.feedItem.description.slice(0,85) + "...";
+    } else if (this.props.feedItem.title.length > 23) {
       return this.props.feedItem.description.slice(0,165) + "...";
     } else {
       return this.props.feedItem.description.slice(0,220) + "...";

@@ -7,7 +7,9 @@ window.HoverableBook = React.createClass({
   },
 
   showDescription: function() {
-    if (this.props.book.title.length > 23) {
+    if (this.props.book.title.length > 40) {
+      return this.props.book.description.slice(0,85) + "...";
+    } else if (this.props.book.title.length > 23) {
       return this.props.book.description.slice(0,165) + "...";
     } else {
       return this.props.book.description.slice(0,220) + "...";
