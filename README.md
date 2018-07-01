@@ -1,4 +1,5 @@
 # Ready
+(Note: Ready is no longer being actively maintained.)
 
 [Visit Ready! (Live)][livelink]
 
