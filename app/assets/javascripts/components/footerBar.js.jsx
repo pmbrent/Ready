@@ -6,7 +6,6 @@ window.FooterBar = React.createClass({
         <div className="nav group">
           <div className="copyright group">
             <p>© 2015 Patricia M. Brent</p>
-            <p><a href="mailto:info@readybooks.com">Contact</a></p>
           </div>
           <ul className="footerLinks group">
             <li>With thanks to:</li>
